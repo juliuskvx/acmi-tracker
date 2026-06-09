@@ -1,0 +1,35 @@
+name: Refresh ACMI Data
+
+on:
+  schedule:
+    - cron: "0 8 * * *"   # 10:00 AM Lithuania (UTC+2 year-round)
+  workflow_dispatch:        # allow manual trigger from GitHub UI
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run fetch script
+        env:
+          FR24_API_KEY: ${{ secrets.FR24_API_KEY }}
+        run: python3 scripts/fetch_acmi.py
+
+      - name: Commit and push acmi_data.json
+        run: |
+          git config user.name "acmi-bot"
+          git config user.email "acmi-bot@users.noreply.github.com"
+          git add data/acmi_data.json
+          git diff --staged --quiet || git commit -m "chore: refresh ACMI data $(date -u '+%Y-%m-%d %H:%M UTC')"
+          git push
