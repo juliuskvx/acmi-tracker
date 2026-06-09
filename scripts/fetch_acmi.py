@@ -9,7 +9,7 @@ import json
 import os
 import time
 import requests
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 
 FR24_BASE = "https://fr24api.flightradar24.com"
 FR24_TOKEN = os.environ.get("FR24_API_KEY", "")
@@ -37,11 +37,19 @@ def get_live_position(registration):
         print(f"  ERROR live {registration}: {e}")
         return None
 
-def get_flight_summary(registration, limit=1):
-    """GET /api/flight-summary/light?registrations=XX-XXX"""
+def get_flight_summary(registration):
+    """GET /api/flight-summary/light with registration + date range (last 2 days)"""
     url = f"{FR24_BASE}/api/flight-summary/light"
+    now = datetime.now(timezone.utc)
+    date_from = (now - timedelta(days=2)).strftime("%Y-%m-%dT%H:%M:%SZ")
+    date_to = now.strftime("%Y-%m-%dT%H:%M:%SZ")
     try:
-        r = requests.get(url, headers=HEADERS, params={"registrations": registration, "limit": limit}, timeout=10)
+        r = requests.get(url, headers=HEADERS, params={
+            "registrations": registration,
+            "flight_datetime_from": date_from,
+            "flight_datetime_to": date_to,
+            "limit": 1,
+        }, timeout=10)
         if r.status_code in (404, 204):
             return []
         r.raise_for_status()
@@ -126,7 +134,8 @@ def main():
                     own_ops_count += 1
                     print(f"own ops ({callsign})")
             else:
-                summary = get_flight_summary(reg, limit=1)
+                # Not airborne — get last flight from summary
+                summary = get_flight_summary(reg)
                 time.sleep(DELAY)
                 if summary:
                     last = summary[0]
