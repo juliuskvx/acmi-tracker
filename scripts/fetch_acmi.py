@@ -3,9 +3,6 @@
 fetch_acmi.py — ACMI Tracker FR24 data fetcher
 Queries FR24 Explorer API for each registration in fleet_registry.json
 Outputs data/acmi_data.json for the dashboard
-
-Usage: python3 scripts/fetch_acmi.py
-Requires: FR24_API_KEY environment variable
 """
 
 import json
@@ -14,12 +11,11 @@ import time
 import requests
 from datetime import datetime, timezone
 
-# --- Config ---
 FR24_BASE = "https://fr24api.flightradar24.com"
 FR24_TOKEN = os.environ.get("FR24_API_KEY", "")
 REGISTRY_FILE = os.path.join(os.path.dirname(__file__), "../data/fleet_registry.json")
 OUTPUT_FILE = os.path.join(os.path.dirname(__file__), "../data/acmi_data.json")
-DELAY = 0.4  # seconds between API calls
+DELAY = 0.5
 
 HEADERS = {
     "Authorization": f"Bearer {FR24_TOKEN}",
@@ -28,33 +24,37 @@ HEADERS = {
 }
 
 def get_live_position(registration):
-    url = f"{FR24_BASE}/api/flights/live/positions/full"
+    """GET /api/live/flight-positions/full?registration=XX-XXX"""
+    url = f"{FR24_BASE}/api/live/flight-positions/full"
     try:
         r = requests.get(url, headers=HEADERS, params={"registration": registration}, timeout=10)
+        if r.status_code == 404:
+            return None
         r.raise_for_status()
-        flights = r.json().get("data", [])
-        return flights[0] if flights else None
+        data = r.json().get("data", [])
+        return data[0] if data else None
     except Exception as e:
         print(f"  ERROR live {registration}: {e}")
         return None
 
-def get_recent_events(registration, limit=3):
-    url = f"{FR24_BASE}/api/flights/historic/events/full"
+def get_flight_summary(registration, limit=1):
+    """GET /api/flight-summary/light?registration=XX-XXX&limit=1"""
+    url = f"{FR24_BASE}/api/flight-summary/light"
     try:
         r = requests.get(url, headers=HEADERS, params={"registration": registration, "limit": limit}, timeout=10)
+        if r.status_code == 404:
+            return []
         r.raise_for_status()
         return r.json().get("data", [])
     except Exception as e:
-        print(f"  ERROR historic {registration}: {e}")
+        print(f"  ERROR summary {registration}: {e}")
         return []
 
 def detect_operator(callsign, owner_icao):
-    """Extract operator ICAO from callsign and compare to owner."""
-    if not callsign:
+    if not callsign or len(callsign) < 3:
         return None, False
     op_icao = callsign[:3].upper()
-    is_acmi = op_icao != owner_icao.upper()
-    return op_icao, is_acmi
+    return op_icao, op_icao != owner_icao.upper()
 
 def main():
     if not FR24_TOKEN:
@@ -90,7 +90,6 @@ def main():
                 "status": "unknown",
                 "callsign": None,
                 "current_operator_icao": None,
-                "current_operator_name": None,
                 "last_flight": None,
                 "last_route": None,
                 "last_seen": None,
@@ -104,38 +103,36 @@ def main():
             if live:
                 callsign = live.get("callsign", "")
                 op_icao, is_acmi = detect_operator(callsign, op["icao"])
-
-                entry["callsign"] = callsign
-                entry["current_operator_icao"] = op_icao
-                entry["last_seen"] = datetime.now(timezone.utc).isoformat()
-                entry["latitude"] = live.get("lat")
-                entry["longitude"] = live.get("lon")
-                entry["altitude"] = live.get("alt")
-                entry["speed"] = live.get("spd")
-                entry["heading"] = live.get("track")
-                entry["last_flight"] = callsign
-
+                entry.update({
+                    "callsign": callsign,
+                    "current_operator_icao": op_icao,
+                    "last_seen": datetime.now(timezone.utc).isoformat(),
+                    "latitude": live.get("lat"),
+                    "longitude": live.get("lon"),
+                    "altitude": live.get("alt"),
+                    "speed": live.get("spd"),
+                    "heading": live.get("track"),
+                    "last_flight": callsign,
+                    "status": "acmi_active" if is_acmi else "own_ops",
+                })
                 orig = live.get("orig_iata", "")
                 dest = live.get("dest_iata", "")
                 if orig and dest:
                     entry["last_route"] = f"{orig}-{dest}"
-
                 if is_acmi:
-                    entry["status"] = "acmi_active"
                     acmi_count += 1
                     print(f"ACMI → {op_icao} ({callsign})")
                 else:
-                    entry["status"] = "own_ops"
                     own_ops_count += 1
                     print(f"own ops ({callsign})")
             else:
-                # Not airborne — get last known flight from historic events
-                events = get_recent_events(reg, limit=1)
+                # Try flight summary for last known flight
+                summary = get_flight_summary(reg, limit=1)
                 time.sleep(DELAY)
-                if events:
-                    last = events[0]
+                if summary:
+                    last = summary[0]
                     entry["last_flight"] = last.get("callsign")
-                    entry["last_seen"] = last.get("arr_time") or last.get("dep_time")
+                    entry["last_seen"] = last.get("actual_arr_time") or last.get("actual_dep_time")
                     orig = last.get("orig_iata", "")
                     dest = last.get("dest_iata", "")
                     if orig and dest:
@@ -160,6 +157,7 @@ def main():
         "fleet": fleet,
     }
 
+    os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
     with open(OUTPUT_FILE, "w") as f:
         json.dump(output, f, indent=2)
 
