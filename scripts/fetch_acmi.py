@@ -64,9 +64,15 @@ def get_live_position(registration):
     return None
 
 def get_flight_summary(registration):
-    now = datetime.now(timezone.utc)
-    date_from = (now - timedelta(days=2)).strftime("%Y-%m-%dT%H:%M:%SZ")
-    date_to = now.strftime("%Y-%m-%dT%H:%M:%SZ")
+    # Reporting window: today 00:01 → 23:59 Lithuanian time (UTC+3 summer / UTC+2 winter)
+    # We use UTC+3 year-round as a practical approximation
+    now_utc = datetime.now(timezone.utc)
+    lt_offset = timedelta(hours=3)
+    now_lt = now_utc + lt_offset
+    day_start_lt = now_lt.replace(hour=0, minute=1, second=0, microsecond=0)
+    day_end_lt   = now_lt.replace(hour=23, minute=59, second=0, microsecond=0)
+    date_from = (day_start_lt - lt_offset).strftime("%Y-%m-%dT%H:%M:%SZ")
+    date_to   = (day_end_lt   - lt_offset).strftime("%Y-%m-%dT%H:%M:%SZ")
     result = api_get(
         f"{FR24_BASE}/api/flight-summary/light",
         {
@@ -177,8 +183,18 @@ def main():
 
             fleet.append(entry)
 
+    now_utc = datetime.now(timezone.utc)
+    lt_offset = timedelta(hours=3)
+    now_lt = now_utc + lt_offset
+    report_date = now_lt.strftime("%Y-%m-%d")
+    interval_from = f"{report_date} 00:01"
+    interval_to   = f"{report_date} 23:59"
+
     output = {
-        "last_updated": datetime.now(timezone.utc).isoformat(),
+        "last_updated": now_utc.isoformat(),
+        "report_date": report_date,
+        "interval_from": interval_from,
+        "interval_to": interval_to,
         "summary": {
             "total_aircraft": queried,
             "acmi_active": acmi_count,
