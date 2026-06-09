@@ -674,6 +674,7 @@
       <div class="live-dot"></div>
       <span id="live-status">loading...</span>
     </div>
+    <div id="report-interval" style="font-size:12px;color:var(--accent);font-family:var(--font-mono);background:rgba(0,212,255,0.08);border:1px solid rgba(0,212,255,0.2);border-radius:4px;padding:3px 10px;">—</div>
     <span id="last-updated">—</span>
     <span id="aircraft-count">— aircraft</span>
   </div>
@@ -829,8 +830,15 @@ function render() {
   document.getElementById('last-updated').textContent = lastUpdated
     ? lastUpdated.toUTCString().replace(' GMT', ' UTC')
     : '—';
+
+  // Reporting interval
+  const intervalFrom = fleetData.interval_from || '—';
+  const intervalTo   = fleetData.interval_to   || '—';
+  const reportDate   = fleetData.report_date    || '—';
+  document.getElementById('report-interval').textContent =
+    `${reportDate}  ${intervalFrom.split(' ')[1]} → ${intervalTo.split(' ')[1]} LT`;
   document.getElementById('footer-updated').textContent =
-    `Last updated: ${lastUpdated ? lastUpdated.toLocaleString() : '—'}`;
+    `Reporting interval: ${intervalFrom} → ${intervalTo} Lithuanian time · Refreshed: ${lastUpdated ? lastUpdated.toLocaleString() : '—'}`;
 
   // Stats
   document.getElementById('stat-acmi').textContent = summary.acmi_active ?? '—';
