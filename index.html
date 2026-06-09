@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ACMI Intel — European Wet Lease Tracker</title>
+<style>
+  /* ── Tokens ── */
+  :root {
+    --bg:        #060910;
+    --bg2:       #0d1320;
+    --bg3:       #111827;
+    --border:    #1e2d42;
+    --accent:    #00d4ff;
+    --green:     #00ff88;
+    --red:       #ff4444;
+    --amber:     #ffaa00;
+    --text:      #e2e8f0;
+    --muted:     #64748b;
+    --font-mono: 'JetBrains Mono', 'Fira Mono', monospace;
+    --font-ui:   'Inter', system-ui, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-ui);
+    font-size: 14px;
+    min-height: 100vh;
+  }
+
+  /* ── Google Fonts ── */
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  /* ── Header ── */
+  .header {
+    border-bottom: 1px solid var(--border);
+    padding: 0 24px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--bg);
+  }
+
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .logo-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(0,212,255,0.4); }
+    50% { opacity: 0.8; box-shadow: 0 0 0 6px rgba(0,212,255,0); }
+  }
+
+  .logo-text {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--text);
+  }
+
+  .logo-text span {
+    color: var(--accent);
+  }
+
+  .header-meta {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 12px;
+    color: var(--muted);
+    font-family: var(--font-mono);
+  }
+
+  .live-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--green);
+  }
+
+  .live-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--green);
+    animation: pulse-green 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-green {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  /* ── Layout ── */
+  .main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 24px;
+  }
+
+  /* ── Stat Bar ── */
+  .stat-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .stat-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+  }
+
+  .stat-card.accent::before { background: var(--accent); }
+  .stat-card.green::before  { background: var(--green); }
+  .stat-card.amber::before  { background: var(--amber); }
+  .stat-card.muted::before  { background: var(--muted); }
+
+  .stat-label {
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+
+  .stat-value {
+    font-size: 32px;
+    font-weight: 600;
+    font-family: var(--font-mono);
+    line-height: 1;
+  }
+
+  .stat-card.accent .stat-value { color: var(--accent); }
+  .stat-card.green .stat-value  { color: var(--green); }
+  .stat-card.amber .stat-value  { color: var(--amber); }
+  .stat-card.muted .stat-value  { color: var(--text); }
+
+  .stat-sub {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 4px;
+    font-family: var(--font-mono);
+  }
+
+  /* ── Section header ── */
+  .section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+  }
+
+  .section-count {
+    font-size: 11px;
+    font-family: var(--font-mono);
+    color: var(--muted);
+  }
+
+  /* ── ACMI Active Feed ── */
+  .acmi-feed {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 24px;
+    overflow: hidden;
+  }
+
+  .feed-header {
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .feed-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .feed-title .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: pulse-green 1.5s ease-in-out infinite;
+  }
+
+  .feed-empty {
+    padding: 40px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+  }
+
+  /* ── ACMI Row ── */
+  .acmi-row {
+    display: grid;
+    grid-template-columns: 100px 1fr 180px 160px 140px 120px;
+    align-items: center;
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--border);
+    gap: 16px;
+    transition: background 0.15s;
+  }
+
+  .acmi-row:hover { background: var(--bg3); }
+  .acmi-row:last-child { border-bottom: none; }
+
+  .acmi-row.header-row {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    padding: 10px 20px;
+    background: var(--bg3);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .acmi-row.header-row:hover { background: var(--bg3); }
+
+  .reg {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--accent);
+  }
+
+  .owner-info { display: flex; flex-direction: column; gap: 2px; }
+  .owner-name { font-size: 13px; font-weight: 500; }
+  .owner-sub  { font-size: 11px; color: var(--muted); }
+
+  .operator-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(0,212,255,0.1);
+    border: 1px solid rgba(0,212,255,0.2);
+    border-radius: 4px;
+    padding: 4px 10px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--accent);
+  }
+
+  .route {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .route-arrow { color: var(--muted); }
+
+  .callsign {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  .type-badge {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--muted);
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 2px 7px;
+    display: inline-block;
+  }
+
+  /* ── Fleet Table ── */
+  .fleet-table {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 24px;
+  }
+
+  .fleet-row {
+    display: grid;
+    grid-template-columns: 100px 1fr 140px 180px 160px 100px 90px;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid var(--border);
+    gap: 12px;
+    font-size: 12px;
+    transition: background 0.15s;
+  }
+
+  .fleet-row:hover { background: var(--bg3); }
+  .fleet-row:last-child { border-bottom: none; }
+
+  .fleet-row.header-row {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    padding: 10px 20px;
+    background: var(--bg3);
+    cursor: default;
+  }
+
+  .fleet-row.header-row:hover { background: var(--bg3); }
+
+  /* ── Status pill ── */
+  .status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    border-radius: 99px;
+    padding: 3px 9px;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+  }
+
+  .status-pill.acmi {
+    background: rgba(0,212,255,0.12);
+    color: var(--accent);
+    border: 1px solid rgba(0,212,255,0.25);
+  }
+
+  .status-pill.own {
+    background: rgba(0,255,136,0.08);
+    color: var(--green);
+    border: 1px solid rgba(0,255,136,0.2);
+  }
+
+  .status-pill.ground {
+    background: rgba(100,116,139,0.12);
+    color: var(--muted);
+    border: 1px solid rgba(100,116,139,0.2);
+  }
+
+  .status-pill.unknown {
+    background: rgba(255,170,0,0.08);
+    color: var(--amber);
+    border: 1px solid rgba(255,170,0,0.2);
+  }
+
+  .status-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: currentColor;
+  }
+
+  /* ── Operator Cards ── */
+  .operator-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .operator-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+    transition: border-color 0.15s;
+  }
+
+  .operator-card:hover { border-color: rgba(0,212,255,0.3); }
+
+  .op-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+
+  .op-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .op-icao {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  .op-country {
+    font-size: 11px;
+    color: var(--muted);
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 2px 7px;
+    font-family: var(--font-mono);
+  }
+
+  .op-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .op-stat {
+    text-align: center;
+    padding: 8px;
+    background: var(--bg3);
+    border-radius: 4px;
+  }
+
+  .op-stat-value {
+    font-family: var(--font-mono);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1;
+  }
+
+  .op-stat-label {
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  /* ── Filter bar ── */
+  .filter-bar {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 5px 12px;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: var(--font-ui);
+  }
+
+  .filter-btn:hover, .filter-btn.active {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(0,212,255,0.05);
+  }
+
+  .search-input {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 5px 12px;
+    font-size: 12px;
+    color: var(--text);
+    font-family: var(--font-mono);
+    outline: none;
+    width: 200px;
+    margin-left: auto;
+  }
+
+  .search-input::placeholder { color: var(--muted); }
+  .search-input:focus { border-color: var(--accent); }
+
+  /* ── Charts ── */
+  .charts-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .chart-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 20px;
+  }
+
+  .chart-title {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
+
+  .chart-wrap {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .chart-legend {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+  }
+
+  .legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  .legend-label { color: var(--muted); flex: 1; }
+  .legend-value {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text);
+  }
+
+  @media (max-width: 900px) {
+    .charts-row { grid-template-columns: 1fr; }
+  }
+
+  /* ── Footer ── */
+  .footer {
+    border-top: 1px solid var(--border);
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 11px;
+    color: var(--muted);
+    font-family: var(--font-mono);
+  }
+
+  /* ── Loading state ── */
+  .loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+    gap: 12px;
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 13px;
+  }
+
+  .spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--border);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ── Error state ── */
+  .error-state {
+    padding: 40px;
+    text-align: center;
+    color: var(--muted);
+  }
+
+  .error-state .error-title {
+    color: var(--red);
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  /* ── Tabs ── */
+  .tabs {
+    display: flex;
+    gap: 0;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 24px;
+  }
+
+  .tab {
+    padding: 12px 20px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    transition: all 0.15s;
+  }
+
+  .tab:hover { color: var(--text); }
+  .tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  /* ── Responsive ── */
+  @media (max-width: 900px) {
+    .stat-bar { grid-template-columns: repeat(2, 1fr); }
+    .acmi-row { grid-template-columns: 90px 1fr 140px; }
+    .acmi-row > *:nth-child(n+4) { display: none; }
+    .fleet-row { grid-template-columns: 90px 1fr 120px 80px; }
+    .fleet-row > *:nth-child(n+5) { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+  <div class="header-left">
+    <div class="logo-dot"></div>
+    <div class="logo-text">ACMI <span>Intel</span></div>
+  </div>
+  <div class="header-meta">
+    <div class="live-badge">
+      <div class="live-dot"></div>
+      <span id="live-status">loading...</span>
+    </div>
+    <span id="last-updated">—</span>
+    <span id="aircraft-count">— aircraft</span>
+  </div>
+</header>
+
+<!-- Main -->
+<main class="main">
+
+  <!-- Stat Bar -->
+  <div class="stat-bar">
+    <div class="stat-card accent">
+      <div class="stat-label">ACMI Active</div>
+      <div class="stat-value" id="stat-acmi">—</div>
+      <div class="stat-sub">currently wet-leased</div>
+    </div>
+    <div class="stat-card green">
+      <div class="stat-label">Own Operations</div>
+      <div class="stat-value" id="stat-own">—</div>
+      <div class="stat-sub">flying own callsign</div>
+    </div>
+    <div class="stat-card amber">
+      <div class="stat-label">On Ground</div>
+      <div class="stat-value" id="stat-ground">—</div>
+      <div class="stat-sub">parked / maintenance</div>
+    </div>
+    <div class="stat-card muted">
+      <div class="stat-label">Fleet Tracked</div>
+      <div class="stat-value" id="stat-total">—</div>
+      <div class="stat-sub">across <span id="stat-operators">—</span> operators</div>
+    </div>
+  </div>
+
+  <!-- Charts Row -->
+  <div class="charts-row">
+    <div class="chart-card">
+      <div class="chart-title">Fleet Status Distribution</div>
+      <div class="chart-wrap">
+        <canvas id="chart-status" width="180" height="180"></canvas>
+        <div class="chart-legend" id="legend-status"></div>
+      </div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">ACMI Activity by Operator</div>
+      <div class="chart-wrap">
+        <canvas id="chart-operators" width="180" height="180"></canvas>
+        <div class="chart-legend" id="legend-operators"></div>
+      </div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">Fleet Type Mix</div>
+      <div class="chart-wrap">
+        <canvas id="chart-types" width="180" height="180"></canvas>
+        <div class="chart-legend" id="legend-types"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <div class="tab active" onclick="switchTab('acmi')">ACMI Active</div>
+    <div class="tab" onclick="switchTab('fleet')">Fleet Status</div>
+    <div class="tab" onclick="switchTab('operators')">Operators</div>
+  </div>
+
+  <!-- Tab: ACMI Active -->
+  <div class="tab-content active" id="tab-acmi">
+    <div class="acmi-feed">
+      <div class="feed-header">
+        <div class="feed-title">
+          <div class="dot"></div>
+          Aircraft currently operating under a different airline's callsign
+        </div>
+        <div id="acmi-count-badge" style="font-size:12px;color:var(--muted);font-family:var(--font-mono);">—</div>
+      </div>
+      <div id="acmi-list">
+        <div class="loading"><div class="spinner"></div>Loading fleet data...</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab: Fleet Status -->
+  <div class="tab-content" id="tab-fleet">
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterFleet('all', this)">All</button>
+      <button class="filter-btn" onclick="filterFleet('acmi_active', this)">ACMI Active</button>
+      <button class="filter-btn" onclick="filterFleet('own_ops', this)">Own Ops</button>
+      <button class="filter-btn" onclick="filterFleet('on_ground', this)">On Ground</button>
+      <input class="search-input" id="fleet-search" placeholder="Search reg, operator..." oninput="renderFleet()">
+    </div>
+    <div class="fleet-table">
+      <div id="fleet-list">
+        <div class="loading"><div class="spinner"></div>Loading fleet data...</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab: Operators -->
+  <div class="tab-content" id="tab-operators">
+    <div class="operator-grid" id="operator-grid">
+      <div class="loading"><div class="spinner"></div>Loading operator data...</div>
+    </div>
+  </div>
+
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+  <span>ACMI Intel — European Wet Lease Tracker</span>
+  <span id="footer-updated">Data refreshed daily at 10:00 Lithuanian time</span>
+</footer>
+
+<script>
+// ── State ──
+let fleetData = null;
+let currentFilter = 'all';
+
+// ── Load Data ──
+async function loadData() {
+  try {
+    const res = await fetch('data/acmi_data.json');
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    fleetData = await res.json();
+    render();
+  } catch (e) {
+    showError(e.message);
+  }
+}
+
+function showError(msg) {
+  const errHtml = `
+    <div class="error-state">
+      <div class="error-title">No data available</div>
+      <div>${msg}</div>
+      <div style="margin-top:8px;font-size:11px;">Run the fetch script to generate acmi_data.json</div>
+    </div>`;
+  document.getElementById('acmi-list').innerHTML = errHtml;
+  document.getElementById('fleet-list').innerHTML = errHtml;
+  document.getElementById('operator-grid').innerHTML = errHtml;
+  document.getElementById('live-status').textContent = 'no data';
+}
+
+// ── Render All ──
+function render() {
+  if (!fleetData) return;
+
+  const fleet = fleetData.fleet || [];
+  const summary = fleetData.summary || {};
+  const lastUpdated = fleetData.last_updated ? new Date(fleetData.last_updated) : null;
+
+  // Header
+  document.getElementById('live-status').textContent = 'data loaded';
+  document.getElementById('aircraft-count').textContent = `${fleet.length} aircraft`;
+  document.getElementById('last-updated').textContent = lastUpdated
+    ? lastUpdated.toUTCString().replace(' GMT', ' UTC')
+    : '—';
+  document.getElementById('footer-updated').textContent =
+    `Last updated: ${lastUpdated ? lastUpdated.toLocaleString() : '—'}`;
+
+  // Stats
+  document.getElementById('stat-acmi').textContent = summary.acmi_active ?? '—';
+  document.getElementById('stat-own').textContent = summary.own_ops ?? '—';
+  document.getElementById('stat-ground').textContent = summary.on_ground ?? '—';
+  document.getElementById('stat-total').textContent = summary.total_aircraft ?? fleet.length;
+
+  // Count unique operators
+  const ops = [...new Set(fleet.map(a => a.owner_icao))];
+  document.getElementById('stat-operators').textContent = ops.length;
+
+  renderAcmi(fleet);
+  renderFleet(fleet);
+  renderOperators(fleet);
+  renderCharts(fleet);
+}
+
+// ── ACMI Active Tab ──
+function renderAcmi(fleet) {
+  const acmi = fleet.filter(a => a.status === 'acmi_active');
+  const container = document.getElementById('acmi-list');
+  document.getElementById('acmi-count-badge').textContent = `${acmi.length} aircraft`;
+
+  if (acmi.length === 0) {
+    container.innerHTML = `<div class="feed-empty">No aircraft currently detected on ACMI operations.<br><span style="font-size:11px;margin-top:4px;display:block;">This may mean all tracked aircraft are on the ground or flying their own callsigns.</span></div>`;
+    return;
+  }
+
+  const header = `
+    <div class="acmi-row header-row">
+      <span>Reg</span>
+      <span>Owner</span>
+      <span>Operating As</span>
+      <span>Route</span>
+      <span>Callsign</span>
+      <span>Type</span>
+    </div>`;
+
+  const rows = acmi.map(a => `
+    <div class="acmi-row">
+      <span class="reg">${a.registration}</span>
+      <div class="owner-info">
+        <span class="owner-name">${a.owner_name}</span>
+        <span class="owner-sub">${a.group !== a.owner_name ? a.group : a.owner_icao}</span>
+      </div>
+      <span>
+        <div class="operator-badge">${a.current_operator_icao || '—'}</div>
+      </span>
+      <span class="route">${formatRoute(a.last_route)}</span>
+      <span class="callsign">${a.callsign || '—'}</span>
+      <span><span class="type-badge">${a.type}</span></span>
+    </div>`).join('');
+
+  container.innerHTML = header + rows;
+}
+
+// ── Fleet Status Tab ──
+function renderFleet(fleet) {
+  fleet = fleet || (fleetData ? fleetData.fleet : []);
+  if (!fleet) return;
+
+  const search = document.getElementById('fleet-search')?.value?.toLowerCase() || '';
+
+  let filtered = fleet.filter(a => {
+    const matchFilter = currentFilter === 'all' || a.status === currentFilter;
+    const matchSearch = !search ||
+      a.registration.toLowerCase().includes(search) ||
+      (a.owner_name || '').toLowerCase().includes(search) ||
+      (a.current_operator_icao || '').toLowerCase().includes(search) ||
+      (a.callsign || '').toLowerCase().includes(search);
+    return matchFilter && matchSearch;
+  });
+
+  const container = document.getElementById('fleet-list');
+
+  const header = `
+    <div class="fleet-row header-row">
+      <span>Reg</span>
+      <span>Owner</span>
+      <span>Type</span>
+      <span>Current Operator</span>
+      <span>Last Route</span>
+      <span>Last Seen</span>
+      <span>Status</span>
+    </div>`;
+
+  if (filtered.length === 0) {
+    container.innerHTML = header + `<div style="padding:30px;text-align:center;color:var(--muted);">No aircraft match this filter.</div>`;
+    return;
+  }
+
+  const rows = filtered.map(a => `
+    <div class="fleet-row">
+      <span class="reg">${a.registration}</span>
+      <div class="owner-info">
+        <span class="owner-name">${a.owner_name}</span>
+        <span class="owner-sub">${a.group !== a.owner_name ? a.group : ''}</span>
+      </div>
+      <span><span class="type-badge">${a.type}</span></span>
+      <span class="callsign">${a.current_operator_icao || (a.status === 'own_ops' ? a.owner_icao : '—')}</span>
+      <span class="route">${formatRoute(a.last_route)}</span>
+      <span style="color:var(--muted);font-family:var(--font-mono);font-size:11px;">${formatTime(a.last_seen)}</span>
+      <span>${statusPill(a.status)}</span>
+    </div>`).join('');
+
+  container.innerHTML = header + rows;
+}
+
+// ── Operators Tab ──
+function renderOperators(fleet) {
+  // Group by operator
+  const ops = {};
+  fleet.forEach(a => {
+    if (!ops[a.owner_icao]) {
+      ops[a.owner_icao] = {
+        icao: a.owner_icao,
+        name: a.owner_name,
+        group: a.group,
+        total: 0, acmi: 0, own: 0, ground: 0, unknown: 0,
+      };
+    }
+    ops[a.owner_icao].total++;
+    if (a.status === 'acmi_active') ops[a.owner_icao].acmi++;
+    else if (a.status === 'own_ops') ops[a.owner_icao].own++;
+    else if (a.status === 'on_ground') ops[a.owner_icao].ground++;
+    else ops[a.owner_icao].unknown++;
+  });
+
+  // Sort by ACMI count desc
+  const sorted = Object.values(ops).sort((a, b) => b.acmi - a.acmi);
+
+  const container = document.getElementById('operator-grid');
+  container.innerHTML = sorted.map(op => `
+    <div class="operator-card">
+      <div class="op-header">
+        <div>
+          <div class="op-name">${op.name}</div>
+          <div class="op-icao">${op.icao}${op.group !== op.name ? ` · ${op.group}` : ''}</div>
+        </div>
+      </div>
+      <div class="op-stats">
+        <div class="op-stat">
+          <div class="op-stat-value" style="color:var(--accent)">${op.acmi}</div>
+          <div class="op-stat-label">ACMI Out</div>
+        </div>
+        <div class="op-stat">
+          <div class="op-stat-value" style="color:var(--green)">${op.own}</div>
+          <div class="op-stat-label">Own Ops</div>
+        </div>
+        <div class="op-stat">
+          <div class="op-stat-value" style="color:var(--muted)">${op.ground + op.unknown}</div>
+          <div class="op-stat-label">On Ground</div>
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+// ── Filter ──
+function filterFleet(filter, btn) {
+  currentFilter = filter;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderFleet();
+}
+
+// ── Tabs ──
+function switchTab(name) {
+  document.querySelectorAll('.tab').forEach((t, i) => {
+    const names = ['acmi', 'fleet', 'operators'];
+    t.classList.toggle('active', names[i] === name);
+  });
+  document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+  document.getElementById(`tab-${name}`).classList.add('active');
+}
+
+// ── Helpers ──
+function formatRoute(route) {
+  if (!route) return '<span style="color:var(--muted)">—</span>';
+  const [orig, dest] = route.split('-');
+  return `${orig} <span class="route-arrow">→</span> ${dest}`;
+}
+
+function formatTime(iso) {
+  if (!iso) return '—';
+  const d = new Date(iso);
+  const now = new Date();
+  const diff = Math.floor((now - d) / 1000 / 60);
+  if (diff < 60) return `${diff}m ago`;
+  if (diff < 1440) return `${Math.floor(diff/60)}h ago`;
+  return `${Math.floor(diff/1440)}d ago`;
+}
+
+function statusPill(status) {
+  const map = {
+    acmi_active: ['acmi', '● ACMI'],
+    own_ops:     ['own',   '● Own Ops'],
+    on_ground:   ['ground','● Ground'],
+    unknown:     ['unknown','● Unknown'],
+  };
+  const [cls, label] = map[status] || ['unknown', '● Unknown'];
+  return `<span class="status-pill ${cls}">${label}</span>`;
+}
+
+// ── Charts ──
+function drawPie(canvasId, legendId, segments) {
+  const canvas = document.getElementById(canvasId);
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const cx = canvas.width / 2;
+  const cy = canvas.height / 2;
+  const r = Math.min(cx, cy) - 10;
+  const total = segments.reduce((s, seg) => s + seg.value, 0);
+
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  if (total === 0) {
+    ctx.fillStyle = '#1e2d42';
+    ctx.beginPath();
+    ctx.arc(cx, cy, r, 0, Math.PI * 2);
+    ctx.fill();
+    return;
+  }
+
+  let startAngle = -Math.PI / 2;
+  segments.forEach(seg => {
+    const slice = (seg.value / total) * Math.PI * 2;
+    ctx.beginPath();
+    ctx.moveTo(cx, cy);
+    ctx.arc(cx, cy, r, startAngle, startAngle + slice);
+    ctx.closePath();
+    ctx.fillStyle = seg.color;
+    ctx.fill();
+    // thin gap between slices
+    ctx.strokeStyle = '#060910';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    startAngle += slice;
+  });
+
+  // Donut hole
+  ctx.beginPath();
+  ctx.arc(cx, cy, r * 0.55, 0, Math.PI * 2);
+  ctx.fillStyle = '#0d1320';
+  ctx.fill();
+
+  // Legend
+  const legend = document.getElementById(legendId);
+  if (!legend) return;
+  legend.innerHTML = segments.map(seg => `
+    <div class="legend-item">
+      <div class="legend-dot" style="background:${seg.color}"></div>
+      <span class="legend-label">${seg.label}</span>
+      <span class="legend-value">${seg.value}</span>
+    </div>`).join('');
+}
+
+function renderCharts(fleet) {
+  if (!fleet || fleet.length === 0) return;
+
+  // Chart 1: Status distribution
+  const acmiCount  = fleet.filter(a => a.status === 'acmi_active').length;
+  const ownCount   = fleet.filter(a => a.status === 'own_ops').length;
+  const gndCount   = fleet.filter(a => a.status === 'on_ground').length;
+  const unkCount   = fleet.filter(a => a.status === 'unknown').length;
+
+  drawPie('chart-status', 'legend-status', [
+    { label: 'ACMI Active', value: acmiCount, color: '#00d4ff' },
+    { label: 'Own Ops',     value: ownCount,  color: '#00ff88' },
+    { label: 'On Ground',   value: gndCount,  color: '#334155' },
+    { label: 'No Data',     value: unkCount,  color: '#1e2d42' },
+  ].filter(s => s.value > 0));
+
+  // Chart 2: ACMI active by operator group
+  const byGroup = {};
+  fleet.filter(a => a.status === 'acmi_active').forEach(a => {
+    const g = a.group || a.owner_name;
+    byGroup[g] = (byGroup[g] || 0) + 1;
+  });
+  const groupColors = ['#00d4ff','#00ff88','#ffaa00','#ff6b6b','#a78bfa','#34d399','#f472b6','#60a5fa'];
+  const groupSegs = Object.entries(byGroup)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 8)
+    .map(([label, value], i) => ({ label, value, color: groupColors[i % groupColors.length] }));
+
+  if (groupSegs.length === 0) {
+    drawPie('chart-operators', 'legend-operators', [{ label: 'No ACMI', value: 1, color: '#1e2d42' }]);
+    document.getElementById('legend-operators').innerHTML = '<div style="color:var(--muted);font-size:12px;">No ACMI activity detected</div>';
+  } else {
+    drawPie('chart-operators', 'legend-operators', groupSegs);
+  }
+
+  // Chart 3: Fleet type mix
+  const byType = {};
+  fleet.forEach(a => {
+    const t = a.type || 'Unknown';
+    byType[t] = (byType[t] || 0) + 1;
+  });
+  const typeColors = ['#00d4ff','#00ff88','#ffaa00','#ff6b6b','#a78bfa','#34d399'];
+  const typeSegs = Object.entries(byType)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 6)
+    .map(([label, value], i) => ({ label, value, color: typeColors[i % typeColors.length] }));
+
+  drawPie('chart-types', 'legend-types', typeSegs);
+}
+
+// ── Init ──
+loadData();
+</script>
+</body>
+</html>
