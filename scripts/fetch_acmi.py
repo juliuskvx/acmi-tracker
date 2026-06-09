@@ -15,7 +15,11 @@ FR24_BASE = "https://fr24api.flightradar24.com"
 FR24_TOKEN = os.environ.get("FR24_API_KEY", "")
 REGISTRY_FILE = os.path.join(os.path.dirname(__file__), "../data/fleet_registry.json")
 OUTPUT_FILE = os.path.join(os.path.dirname(__file__), "../data/acmi_data.json")
-DELAY = 0.5
+
+# Explorer plan rate limit: ~10 requests/minute → 6s between calls
+DELAY = 6.0
+RETRY_DELAY = 30.0  # wait 30s on 429 before retrying
+MAX_RETRIES = 3
 
 HEADERS = {
     "Authorization": f"Bearer {FR24_TOKEN}",
@@ -23,40 +27,59 @@ HEADERS = {
     "Accept": "application/json",
 }
 
-def get_live_position(registration):
-    """GET /api/live/flight-positions/full?registrations=XX-XXX"""
-    url = f"{FR24_BASE}/api/live/flight-positions/full"
-    try:
-        r = requests.get(url, headers=HEADERS, params={"registrations": registration}, timeout=10)
-        if r.status_code in (404, 204):
+def api_get(url, params, label=""):
+    """Make a GET request with retry on 429."""
+    for attempt in range(MAX_RETRIES):
+        try:
+            r = requests.get(url, headers=HEADERS, params=params, timeout=15)
+            if r.status_code == 429:
+                wait = RETRY_DELAY * (attempt + 1)
+                print(f"\n    rate limited, waiting {wait}s...", end=" ", flush=True)
+                time.sleep(wait)
+                continue
+            if r.status_code in (404, 204):
+                return None
+            r.raise_for_status()
+            return r.json()
+        except requests.exceptions.HTTPError as e:
+            if attempt < MAX_RETRIES - 1:
+                time.sleep(RETRY_DELAY)
+            else:
+                print(f"  ERROR {label}: {e}")
+                return None
+        except Exception as e:
+            print(f"  ERROR {label}: {e}")
             return None
-        r.raise_for_status()
-        data = r.json().get("data", [])
+    return None
+
+def get_live_position(registration):
+    result = api_get(
+        f"{FR24_BASE}/api/live/flight-positions/full",
+        {"registrations": registration},
+        f"live {registration}"
+    )
+    if result:
+        data = result.get("data", [])
         return data[0] if data else None
-    except Exception as e:
-        print(f"  ERROR live {registration}: {e}")
-        return None
+    return None
 
 def get_flight_summary(registration):
-    """GET /api/flight-summary/light with registration + date range (last 2 days)"""
-    url = f"{FR24_BASE}/api/flight-summary/light"
     now = datetime.now(timezone.utc)
     date_from = (now - timedelta(days=2)).strftime("%Y-%m-%dT%H:%M:%SZ")
     date_to = now.strftime("%Y-%m-%dT%H:%M:%SZ")
-    try:
-        r = requests.get(url, headers=HEADERS, params={
+    result = api_get(
+        f"{FR24_BASE}/api/flight-summary/light",
+        {
             "registrations": registration,
             "flight_datetime_from": date_from,
             "flight_datetime_to": date_to,
             "limit": 1,
-        }, timeout=10)
-        if r.status_code in (404, 204):
-            return []
-        r.raise_for_status()
-        return r.json().get("data", [])
-    except Exception as e:
-        print(f"  ERROR summary {registration}: {e}")
-        return []
+        },
+        f"summary {registration}"
+    )
+    if result:
+        return result.get("data", [])
+    return []
 
 def detect_operator(callsign, owner_icao):
     if not callsign or len(callsign) < 3:
@@ -74,6 +97,7 @@ def main():
 
     total = sum(len(op["aircraft"]) for op in registry["operators"])
     print(f"Fetching {total} aircraft across {len(registry['operators'])} operators")
+    print(f"Estimated time: ~{total * DELAY * 2 / 60:.0f} minutes (live + summary per aircraft)\n")
 
     fleet = []
     queried = acmi_count = own_ops_count = ground_count = 0
@@ -134,7 +158,6 @@ def main():
                     own_ops_count += 1
                     print(f"own ops ({callsign})")
             else:
-                # Not airborne — get last flight from summary
                 summary = get_flight_summary(reg)
                 time.sleep(DELAY)
                 if summary:
