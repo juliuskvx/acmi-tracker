@@ -24,11 +24,11 @@ HEADERS = {
 }
 
 def get_live_position(registration):
-    """GET /api/live/flight-positions/full?registration=XX-XXX"""
+    """GET /api/live/flight-positions/full?registrations=XX-XXX"""
     url = f"{FR24_BASE}/api/live/flight-positions/full"
     try:
-        r = requests.get(url, headers=HEADERS, params={"registration": registration}, timeout=10)
-        if r.status_code == 404:
+        r = requests.get(url, headers=HEADERS, params={"registrations": registration}, timeout=10)
+        if r.status_code in (404, 204):
             return None
         r.raise_for_status()
         data = r.json().get("data", [])
@@ -38,11 +38,11 @@ def get_live_position(registration):
         return None
 
 def get_flight_summary(registration, limit=1):
-    """GET /api/flight-summary/light?registration=XX-XXX&limit=1"""
+    """GET /api/flight-summary/light?registrations=XX-XXX"""
     url = f"{FR24_BASE}/api/flight-summary/light"
     try:
-        r = requests.get(url, headers=HEADERS, params={"registration": registration, "limit": limit}, timeout=10)
-        if r.status_code == 404:
+        r = requests.get(url, headers=HEADERS, params={"registrations": registration, "limit": limit}, timeout=10)
+        if r.status_code in (404, 204):
             return []
         r.raise_for_status()
         return r.json().get("data", [])
@@ -126,7 +126,6 @@ def main():
                     own_ops_count += 1
                     print(f"own ops ({callsign})")
             else:
-                # Try flight summary for last known flight
                 summary = get_flight_summary(reg, limit=1)
                 time.sleep(DELAY)
                 if summary:
