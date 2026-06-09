@@ -1,0 +1,885 @@
+{
+  "_meta": {
+    "last_updated": "2026-06-09",
+    "description": "Known ACMI operator fleet registry for acmi-tracker project",
+    "author": "juliuskvx",
+    "sources": [
+      "heston.aero/fleet",
+      "enterair.pl/fleet",
+      "planespotters.net",
+      "wikipedia",
+      "aviation24.be",
+      "press releases"
+    ],
+    "note": "Registrations collected from public sources. Verify and update regularly. Incomplete operators marked with TODO."
+  },
+  "operators": [
+    {
+      "icao": "AVE",
+      "iata": "6B",
+      "name": "Avion Express",
+      "group": "Avion Express",
+      "country": "LT",
+      "base": "Vilnius",
+      "fleet_type": "A320 family",
+      "registration_prefix": "LY-",
+      "aircraft": [
+        {
+          "registration": "LY-MLF",
+          "type": "A320"
+        },
+        {
+          "registration": "LY-MLG",
+          "type": "A320"
+        },
+        {
+          "registration": "LY-MLI",
+          "type": "A320"
+        },
+        {
+          "registration": "LY-NVE",
+          "type": "A320"
+        },
+        {
+          "registration": "LY-NVG",
+          "type": "A320"
+        },
+        {
+          "registration": "LY-NVI",
+          "type": "A320"
+        },
+        {
+          "registration": "LY-NVJ",
+          "type": "A320"
+        },
+        {
+          "registration": "LY-NVL",
+          "type": "A320"
+        },
+        {
+          "registration": "LY-NVM",
+          "type": "A320"
+        },
+        {
+          "registration": "LY-NVN",
+          "type": "A320"
+        }
+      ],
+      "note": "10 LY- aircraft verified from planespotters Jun 2026. LY-MLI leased to Transavia. LY-NVN leased to Air Peace. LY-MLG/NVI/NVJ/NVL/NVM parked. Wikipedia fleet size 55 includes Malta sub (26 aircraft) \u2014 combined group total ~36."
+    },
+    {
+      "icao": "MLT",
+      "iata": "4X",
+      "name": "Avion Express Malta",
+      "group": "Avion Express",
+      "country": "MT",
+      "base": "Malta",
+      "fleet_type": "A320 family",
+      "registration_prefix": "9H-",
+      "aircraft": [
+        {
+          "registration": "9H-AMH",
+          "type": "A320"
+        },
+        {
+          "registration": "9H-AMI",
+          "type": "A320"
+        },
+        {
+          "registration": "9H-AMJ",
+          "type": "A320"
+        },
+        {
+          "registration": "9H-AMK",
+          "type": "A320"
+        },
+        {
+          "registration": "9H-AML",
+          "type": "A320"
+        },
+        {
+          "registration": "9H-AMM",
+          "type": "A320"
+        },
+        {
+          "registration": "9H-AMP",
+          "type": "A320"
+        },
+        {
+          "registration": "9H-AMV",
+          "type": "A320"
+        },
+        {
+          "registration": "9H-GKJ",
+          "type": "A320"
+        },
+        {
+          "registration": "9H-GKK",
+          "type": "A320"
+        },
+        {
+          "registration": "9H-MLB",
+          "type": "A320"
+        },
+        {
+          "registration": "9H-MLE",
+          "type": "A320"
+        },
+        {
+          "registration": "9H-MLO",
+          "type": "A320"
+        },
+        {
+          "registration": "9H-MLP",
+          "type": "A320"
+        },
+        {
+          "registration": "9H-MLU",
+          "type": "A320"
+        },
+        {
+          "registration": "9H-MLX",
+          "type": "A320"
+        },
+        {
+          "registration": "9H-MLY",
+          "type": "A320"
+        },
+        {
+          "registration": "9H-SWA",
+          "type": "A320"
+        },
+        {
+          "registration": "9H-SWB",
+          "type": "A320"
+        },
+        {
+          "registration": "9H-SWC",
+          "type": "A320"
+        },
+        {
+          "registration": "9H-SWD",
+          "type": "A320"
+        },
+        {
+          "registration": "9H-SWE",
+          "type": "A320"
+        },
+        {
+          "registration": "9H-SWF",
+          "type": "A320"
+        },
+        {
+          "registration": "9H-SWG",
+          "type": "A320"
+        },
+        {
+          "registration": "9H-SWJ",
+          "type": "A320"
+        },
+        {
+          "registration": "9H-SWN",
+          "type": "A320"
+        }
+      ],
+      "note": "26 aircraft verified from planespotters Jun 2026. Major ACMI client: Eurowings (9H-AML/AMV/GKK/MLB/MLU/MLX/SWA/SWC/SWD/SWE). Several parked at CDT/RJK/LDE/MZJ."
+    },
+    {
+      "icao": "HST",
+      "iata": "HN",
+      "name": "Heston Airlines",
+      "group": "Heston",
+      "country": "LT",
+      "base": "Vilnius",
+      "fleet_type": "A320 / A330",
+      "registration_prefix": "LY-",
+      "aircraft": [
+        {
+          "registration": "LY-HMD",
+          "type": "A320"
+        },
+        {
+          "registration": "LY-JAM",
+          "type": "A320"
+        },
+        {
+          "registration": "LY-MAD",
+          "type": "A320"
+        },
+        {
+          "registration": "LY-MAF",
+          "type": "A320"
+        },
+        {
+          "registration": "LY-MAU",
+          "type": "A320"
+        },
+        {
+          "registration": "LY-MHL",
+          "type": "A320"
+        },
+        {
+          "registration": "LY-NRU",
+          "type": "A320"
+        },
+        {
+          "registration": "LY-PNG",
+          "type": "A320"
+        },
+        {
+          "registration": "LY-VUT",
+          "type": "A320"
+        },
+        {
+          "registration": "LY-WSM",
+          "type": "A320"
+        }
+      ],
+      "note": "10 LY- aircraft from planespotters (verified Jun 2026). LY-HMD/JAM/MAD/MHL/PNG leased to AZAL Azerbaijan Airlines. LY-NRU/VUT leased to Condor. LY-MAF/MAU/WSM in own ops."
+    },
+    {
+      "icao": "HOT",
+      "iata": null,
+      "name": "Valletta Airlines",
+      "group": "Heston",
+      "country": "MT",
+      "base": "Malta",
+      "fleet_type": "A320",
+      "registration_prefix": "9H-",
+      "aircraft": [
+        {
+          "registration": "9H-BRB",
+          "type": "A320"
+        },
+        {
+          "registration": "9H-FJI",
+          "type": "A320"
+        },
+        {
+          "registration": "9H-NZL",
+          "type": "A320"
+        },
+        {
+          "registration": "9H-REU",
+          "type": "A320"
+        },
+        {
+          "registration": "9H-SEY",
+          "type": "A320"
+        },
+        {
+          "registration": "9H-TRI",
+          "type": "A320"
+        }
+      ],
+      "note": "6 x 9H- aircraft from planespotters (verified Jun 2026). All operated by Valletta Airlines under Heston group. 9H-FJI parked/maintenance. 9H-SEY also subleased to AZAL."
+    },
+    {
+      "icao": "GJT",
+      "iata": "GW",
+      "name": "GetJet Airlines",
+      "group": "GetJet",
+      "country": "LT",
+      "base": "Vilnius",
+      "fleet_type": "A320 / A321 / B737-800",
+      "registration_prefix": "LY-",
+      "aircraft": [
+        {
+          "registration": "LY-CAP",
+          "type": "A320"
+        },
+        {
+          "registration": "LY-DAE",
+          "type": "A320"
+        },
+        {
+          "registration": "LY-EKB",
+          "type": "A320"
+        },
+        {
+          "registration": "LY-FAS",
+          "type": "A320"
+        },
+        {
+          "registration": "LY-FOX",
+          "type": "A320"
+        },
+        {
+          "registration": "LY-GYM",
+          "type": "A320"
+        },
+        {
+          "registration": "LY-MAL",
+          "type": "A320"
+        },
+        {
+          "registration": "LY-NOW",
+          "type": "A320"
+        },
+        {
+          "registration": "LY-TAP",
+          "type": "A320"
+        },
+        {
+          "registration": "LY-TEN",
+          "type": "A320"
+        },
+        {
+          "registration": "LY-WIL",
+          "type": "A320"
+        },
+        {
+          "registration": "LY-WIZ",
+          "type": "A320"
+        },
+        {
+          "registration": "LY-WSA",
+          "type": "A321"
+        },
+        {
+          "registration": "LY-CIN",
+          "type": "B738"
+        },
+        {
+          "registration": "LY-DUE",
+          "type": "B738"
+        },
+        {
+          "registration": "LY-KUA",
+          "type": "B738"
+        },
+        {
+          "registration": "LY-SEI",
+          "type": "B738"
+        },
+        {
+          "registration": "LY-TUI",
+          "type": "B738"
+        },
+        {
+          "registration": "LY-UNO",
+          "type": "B738"
+        }
+      ],
+      "note": "19 aircraft verified from planespotters Jun 2026. 12xA320 + 1xA321 + 6xB738. Major ACMI client: Eurowings (LY-CAP/DAE/EKB/FAS/GYM/WIL/WIZ). LY-FOX/MAL/DUE/KUA parked. LY-TEN newest delivery May 2026."
+    },
+    {
+      "icao": "GJM",
+      "iata": "AH",
+      "name": "GetJet Airlines Malta",
+      "group": "GetJet",
+      "country": "MT",
+      "base": "Malta",
+      "fleet_type": "A320",
+      "registration_prefix": "9H-",
+      "aircraft": [
+        {
+          "registration": "9H-GTS",
+          "type": "A320"
+        }
+      ],
+      "note": "Only 1 active 9H- aircraft (9H-GTS) verified from planespotters Jun 2026. Planespotters lists the full LY- fleet under this entity too \u2014 those are tracked under GetJet LT (GJT). Formerly Airhub Airlines. Transitioning to GetJet Airlines Malta branding."
+    },
+    {
+      "icao": "ENT",
+      "iata": "E4",
+      "name": "Enter Air",
+      "group": "Enter Air",
+      "country": "PL",
+      "base": "Warsaw",
+      "fleet_type": "B737-800 / B737 MAX 8",
+      "registration_prefix": "SP-",
+      "aircraft": [
+        {
+          "registration": "SP-ENG",
+          "type": "B738"
+        },
+        {
+          "registration": "SP-ENL",
+          "type": "B738"
+        },
+        {
+          "registration": "SP-ENM",
+          "type": "B738"
+        },
+        {
+          "registration": "SP-ENN",
+          "type": "B738"
+        },
+        {
+          "registration": "SP-ENO",
+          "type": "B738"
+        },
+        {
+          "registration": "SP-ENP",
+          "type": "B738"
+        },
+        {
+          "registration": "SP-ENQ",
+          "type": "B738"
+        },
+        {
+          "registration": "SP-ENR",
+          "type": "B738"
+        },
+        {
+          "registration": "SP-ENT",
+          "type": "B738"
+        },
+        {
+          "registration": "SP-ENU",
+          "type": "B738"
+        },
+        {
+          "registration": "SP-ENV",
+          "type": "B738"
+        },
+        {
+          "registration": "SP-ENW",
+          "type": "B738"
+        },
+        {
+          "registration": "SP-ENX",
+          "type": "B738"
+        },
+        {
+          "registration": "SP-ENY",
+          "type": "B738"
+        },
+        {
+          "registration": "SP-ENZ",
+          "type": "B738"
+        },
+        {
+          "registration": "SP-ESA",
+          "type": "B738"
+        },
+        {
+          "registration": "SP-ESB",
+          "type": "B738"
+        },
+        {
+          "registration": "SP-ESC",
+          "type": "B738"
+        },
+        {
+          "registration": "SP-ESD",
+          "type": "B738"
+        },
+        {
+          "registration": "SP-ESE",
+          "type": "B738"
+        },
+        {
+          "registration": "SP-ESF",
+          "type": "B738"
+        },
+        {
+          "registration": "SP-ESG",
+          "type": "B738"
+        },
+        {
+          "registration": "SP-ESH",
+          "type": "B738"
+        },
+        {
+          "registration": "SP-ESI",
+          "type": "B738"
+        },
+        {
+          "registration": "SP-ESK",
+          "type": "B738"
+        },
+        {
+          "registration": "SP-ESQ",
+          "type": "B738"
+        },
+        {
+          "registration": "SP-EXA",
+          "type": "B38M"
+        },
+        {
+          "registration": "SP-EXB",
+          "type": "B38M"
+        },
+        {
+          "registration": "SP-EXC",
+          "type": "B38M"
+        },
+        {
+          "registration": "SP-EXD",
+          "type": "B38M"
+        },
+        {
+          "registration": "SP-EXE",
+          "type": "B38M"
+        },
+        {
+          "registration": "SP-EXF",
+          "type": "B38M"
+        },
+        {
+          "registration": "SP-EXG",
+          "type": "B38M"
+        },
+        {
+          "registration": "SP-EXH",
+          "type": "B38M"
+        },
+        {
+          "registration": "SP-EXI",
+          "type": "B38M"
+        },
+        {
+          "registration": "SP-EXJ",
+          "type": "B38M"
+        },
+        {
+          "registration": "SP-EXK",
+          "type": "B38M"
+        },
+        {
+          "registration": "SP-EXM",
+          "type": "B38M"
+        }
+      ],
+      "note": "26x B738 + 12x MAX 8 = 38 aircraft as of June 2026. SP-ESQ added 8 June 2026 per news. Fleet total now 38."
+    },
+    {
+      "icao": "TVS",
+      "iata": "QS",
+      "name": "Smartwings",
+      "group": "Smartwings",
+      "country": "CZ",
+      "base": "Prague",
+      "fleet_type": "B737-800 / B737 MAX 8 / A320",
+      "registration_prefix": "OK-",
+      "aircraft": [
+        {
+          "registration": "OK-SWA",
+          "type": "B38M"
+        },
+        {
+          "registration": "OK-SWB",
+          "type": "B38M"
+        },
+        {
+          "registration": "OK-SWC",
+          "type": "B38M"
+        },
+        {
+          "registration": "OK-SWD",
+          "type": "B38M"
+        },
+        {
+          "registration": "OK-SWE",
+          "type": "B38M"
+        },
+        {
+          "registration": "OK-SWF",
+          "type": "B38M"
+        },
+        {
+          "registration": "OK-SWG",
+          "type": "B38M"
+        },
+        {
+          "registration": "OK-SWH",
+          "type": "B38M"
+        },
+        {
+          "registration": "OK-SWI",
+          "type": "B38M"
+        },
+        {
+          "registration": "OK-SWJ",
+          "type": "B38M"
+        },
+        {
+          "registration": "OK-TSE",
+          "type": "B738"
+        },
+        {
+          "registration": "OK-TSF",
+          "type": "B738"
+        },
+        {
+          "registration": "OK-TSO",
+          "type": "B738"
+        },
+        {
+          "registration": "OK-TSU",
+          "type": "B738"
+        },
+        {
+          "registration": "OK-TSD",
+          "type": "B738"
+        },
+        {
+          "registration": "OK-TVH",
+          "type": "B738"
+        },
+        {
+          "registration": "OK-TVJ",
+          "type": "B738"
+        },
+        {
+          "registration": "OK-TVL",
+          "type": "B738"
+        },
+        {
+          "registration": "OK-TVR",
+          "type": "B738"
+        },
+        {
+          "registration": "OK-TVS",
+          "type": "B738"
+        },
+        {
+          "registration": "OK-TVT",
+          "type": "B738"
+        },
+        {
+          "registration": "OK-TVU",
+          "type": "B738"
+        },
+        {
+          "registration": "OK-TVV",
+          "type": "B738"
+        }
+      ],
+      "note": "Partial \u2014 fleet ~44 aircraft total. ACMI clients include Eurowings. Pegasus Airlines acquisition announced Dec 2025. TODO: fetch full list."
+    },
+    {
+      "icao": "SXS",
+      "iata": "XQ",
+      "name": "SunExpress",
+      "group": "SunExpress",
+      "country": "TR",
+      "base": "Antalya / Frankfurt",
+      "fleet_type": "B737-800 / B737 MAX 8",
+      "registration_prefix": "TC-",
+      "aircraft": [],
+      "note": "Seasonal ACMI provider \u2014 offers ACMI Nov\u2013Apr (winter capacity). ~89-90 B737s, all TC- prefix. 50/50 JV Turkish Airlines + Lufthansa. ACMI clients include South African Airways. TODO: fetch registrations from planespotters."
+    },
+    {
+      "icao": "HFY",
+      "iata": "A9",
+      "name": "Hi Fly",
+      "group": "Hi Fly",
+      "country": "PT",
+      "base": "Lisbon",
+      "fleet_type": "A330 / A340 / A380",
+      "registration_prefix": "CS-",
+      "aircraft": [],
+      "note": "Wide-body ACMI specialist. CS- prefix (Portugal). Hi Fly Malta sub also exists (ICAO HFM, callsign MOONRAKER). TODO: fetch registrations."
+    },
+    {
+      "icao": "AWC",
+      "iata": "ZT",
+      "name": "Titan Airways",
+      "group": "Titan Airways",
+      "country": "GB",
+      "base": "Stansted",
+      "fleet_type": "B737 / A318 / A320",
+      "registration_prefix": "G-",
+      "aircraft": [
+        {
+          "registration": "G-POWK",
+          "type": "A320"
+        },
+        {
+          "registration": "G-POWM",
+          "type": "A320"
+        },
+        {
+          "registration": "G-POWN",
+          "type": "A321"
+        },
+        {
+          "registration": "G-POWU",
+          "type": "A321"
+        },
+        {
+          "registration": "G-GBNI",
+          "type": "A321N"
+        },
+        {
+          "registration": "G-OATW",
+          "type": "A321N"
+        },
+        {
+          "registration": "G-XATW",
+          "type": "A321N"
+        },
+        {
+          "registration": "G-POWX",
+          "type": "E190"
+        }
+      ],
+      "note": "8 G- aircraft verified from planespotters Jun 2026. G-POWN/POWU leased to Jet2. G-GBNI operating for UK Government. Malta sub tracked separately (TMT). Also operates E190 \u2014 unusual for ACMI."
+    },
+    {
+      "icao": "TMT",
+      "iata": "TM",
+      "name": "Titan Airways Malta",
+      "group": "Titan Airways",
+      "country": "MT",
+      "base": "Malta",
+      "fleet_type": "A321P2F",
+      "registration_prefix": "9H-",
+      "aircraft": [
+        {
+          "registration": "9H-ZTB",
+          "type": "A321F"
+        },
+        {
+          "registration": "9H-ZTC",
+          "type": "A321F"
+        },
+        {
+          "registration": "9H-ZTD",
+          "type": "A321F"
+        }
+      ],
+      "note": "3x A321-200P2F (passenger-to-freighter converted) verified from planespotters Jun 2026. 9H-ZTD parked/maintenance. Cargo ACMI focus."
+    },
+    {
+      "icao": "TAY",
+      "iata": "3V",
+      "name": "ASL Airlines Belgium",
+      "group": "ASL Airlines",
+      "country": "BE",
+      "base": "Li\u00e8ge",
+      "fleet_type": "B737 / ATR",
+      "registration_prefix": "OO-",
+      "aircraft": [],
+      "note": "OO- prefix (Belgium). TODO: fetch registrations."
+    },
+    {
+      "icao": "FHY",
+      "iata": "FH",
+      "name": "Freebird Airlines",
+      "group": "Freebird",
+      "country": "TR",
+      "base": "Istanbul",
+      "fleet_type": "A320 family",
+      "registration_prefix": "TC-",
+      "aircraft": [],
+      "note": "TC- prefix (Turkey). Freebird Airlines Europe sub in Malta (ICAO FHM, callsign EUROBIRD). TODO: fetch registrations."
+    },
+    {
+      "icao": "CAI",
+      "iata": "XC",
+      "name": "Corendon Airlines",
+      "group": "Corendon",
+      "country": "TR",
+      "base": "Istanbul",
+      "fleet_type": "B737",
+      "registration_prefix": "TC-",
+      "aircraft": [],
+      "note": "TC- prefix (Turkey). Corendon Airlines Europe sub in Malta (ICAO CXI, callsign TOURISTIC). TODO: fetch registrations."
+    },
+    {
+      "icao": "PVG",
+      "iata": "P3",
+      "name": "Privilege Style",
+      "group": "Privilege Style",
+      "country": "ES",
+      "base": "Madrid",
+      "fleet_type": "B757 / B767",
+      "registration_prefix": "EC-",
+      "aircraft": [],
+      "note": "EC- prefix (Spain). TODO: fetch registrations."
+    },
+    {
+      "icao": "PLM",
+      "iata": "EB",
+      "name": "Wamos Air",
+      "group": "Wamos Air",
+      "country": "ES",
+      "base": "Madrid",
+      "fleet_type": "B747 / A330",
+      "registration_prefix": "EC-",
+      "aircraft": [],
+      "note": "EC- prefix (Spain). TODO: fetch registrations."
+    },
+    {
+      "icao": "SWT",
+      "iata": "SM",
+      "name": "Swiftair",
+      "group": "Swiftair",
+      "country": "ES",
+      "base": "Madrid",
+      "fleet_type": "ATR / B737",
+      "registration_prefix": "EC-",
+      "aircraft": [],
+      "note": "EC- prefix (Spain). TODO: fetch registrations."
+    },
+    {
+      "icao": "TOM",
+      "iata": "BY",
+      "name": "TUI Aviation",
+      "group": "TUI",
+      "country": "GB",
+      "base": "Various",
+      "fleet_type": "B737 MAX / B787",
+      "registration_prefix": "G-",
+      "aircraft": [],
+      "note": "Multiple AOCs: UK (TOM), Germany (TUI), Belgium, Netherlands. Mixed charter/ACMI. TODO: fetch registrations."
+    },
+    {
+      "icao": "AXQ",
+      "iata": "ED",
+      "name": "AirExplore",
+      "group": "AirExplore",
+      "country": "SK",
+      "base": "Bratislava",
+      "fleet_type": "B737-800 / B737-800F",
+      "registration_prefix": "OM-",
+      "aircraft": [
+        {
+          "registration": "OM-EDB",
+          "type": "B738F"
+        },
+        {
+          "registration": "OM-EDC",
+          "type": "B738F"
+        },
+        {
+          "registration": "OM-EDD",
+          "type": "B738F"
+        },
+        {
+          "registration": "OM-EDH",
+          "type": "B738F"
+        },
+        {
+          "registration": "OM-IEX",
+          "type": "B738"
+        },
+        {
+          "registration": "OM-JEX",
+          "type": "B738"
+        },
+        {
+          "registration": "OM-KEX",
+          "type": "B738"
+        },
+        {
+          "registration": "OM-LEX",
+          "type": "B738"
+        },
+        {
+          "registration": "OM-MEX",
+          "type": "B738"
+        },
+        {
+          "registration": "OM-NEX",
+          "type": "B738"
+        }
+      ],
+      "note": "10 aircraft verified from planespotters Jun 2026. 4x B738F cargo (OM-EDB/EDC/EDD/EDH), 6x B738 passenger. OM-JEX/MEX leased to Enter Air. OM-LEX leased to Air Peace. Part of Avia Solutions Group (same parent as Avion Express). Clients include Jet2, Pegasus, Enter Air, TUI."
+    }
+  ]
+}
