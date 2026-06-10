@@ -2,37 +2,38 @@ name: Refresh ACMI Data
 
 on:
   schedule:
-    - cron: "0 8 * * *"   # 10:00 AM Lithuania (UTC+2 year-round)
-  workflow_dispatch:        # allow manual trigger from GitHub UI
+    - cron: '0 8 * * *'   # 10:00 AM Lithuanian time (UTC+2 summer / UTC+3 winter)
+  workflow_dispatch:       # allow manual trigger
+
+permissions:
+  contents: write
 
 jobs:
   fetch:
     runs-on: ubuntu-latest
-    timeout-minutes: 120    # 2 hour timeout — Phase 1 + Phase 2 ~60min total
-    permissions:
-      contents: write
-
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install requests
+        run: pip install requests openpyxl
 
       - name: Run fetch script
         env:
           FR24_API_KEY: ${{ secrets.FR24_API_KEY }}
-        run: python3 scripts/fetch_acmi.py
+        run: python scripts/fetch_acmi.py
 
-      - name: Commit and push data files
+      - name: Export to Excel
+        run: python scripts/export_excel.py
+
+      - name: Commit & push data
         run: |
-          git config user.name "acmi-bot"
-          git config user.email "acmi-bot@users.noreply.github.com"
-          git add data/acmi_data.json data/acmi_history.json
-          git diff --staged --quiet || git commit -m "chore: refresh ACMI data $(date -u '+%Y-%m-%d %H:%M UTC')"
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/acmi_data.json data/acmi_history.json data/acmi_log.xlsx
+          git diff --cached --quiet || git commit -m "chore: daily ACMI refresh $(date -u +'%Y-%m-%d %H:%M UTC')"
           git push
