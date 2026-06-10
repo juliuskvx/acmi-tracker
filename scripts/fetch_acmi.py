@@ -31,6 +31,155 @@ HEADERS = {
     "Accept": "application/json",
 }
 
+# ── Airline name lookup ───────────────────────────────────────────────────────
+
+AIRLINE_NAMES = {
+    # Eurowings group
+    "EWG": "Eurowings",
+    "EW":  "Eurowings",
+    "EZY": "easyJet",
+    "EZS": "easyJet Switzerland",
+    # Thomas Cook / TUI group
+    "TCX": "TUI Airways",
+    "TOM": "TUI Airways",
+    "TUI": "TUI fly",
+    "TFL": "TUI fly Nordic",
+    "TBM": "TUI fly Belgium",
+    "TFD": "TUI fly Deutschland",
+    "TFN": "TUI fly Netherlands",
+    # Condor
+    "CFG": "Condor",
+    # Transavia
+    "TRA": "Transavia",
+    "HV":  "Transavia",
+    # Wizz Air
+    "WZZ": "Wizz Air",
+    "W6":  "Wizz Air",
+    # Ryanair
+    "RYR": "Ryanair",
+    "FR":  "Ryanair",
+    # Vueling
+    "VLG": "Vueling",
+    # Iberia
+    "IBE": "Iberia",
+    # Air Europa
+    "AEA": "Air Europa",
+    "AP7": "Air Europa",
+    # Volotea
+    "VOE": "Volotea",
+    # Norwegian
+    "NAX": "Norwegian",
+    "DY":  "Norwegian",
+    # SAS
+    "SAS": "SAS Scandinavian",
+    "SK":  "SAS Scandinavian",
+    # Finnair
+    "FIN": "Finnair",
+    "AY":  "Finnair",
+    # LOT Polish
+    "LOT": "LOT Polish Airlines",
+    "LO":  "LOT Polish Airlines",
+    # Corendon
+    "CAI": "Corendon Airlines",
+    "XC":  "Corendon Airlines",
+    # SunExpress
+    "SXS": "SunExpress",
+    "XQ":  "SunExpress",
+    # Pegasus
+    "PGT": "Pegasus Airlines",
+    "PC":  "Pegasus Airlines",
+    # Turkish Airlines
+    "THY": "Turkish Airlines",
+    "TK":  "Turkish Airlines",
+    # Azerbaijan Airlines
+    "AHY": "Azerbaijan Airlines",
+    "J2":  "Azerbaijan Airlines",
+    # Tunisair
+    "TAR": "Tunisair",
+    "TU":  "Tunisair",
+    # Air Algérie
+    "DAH": "Air Algérie",
+    "AH":  "Air Algérie",
+    # Nouvelair
+    "LBT": "Nouvelair",
+    # Tunisair Express
+    "TAR": "Tunisair",
+    # Air Arabia
+    "ABY": "Air Arabia",
+    "G9":  "Air Arabia",
+    # Arkia
+    "AIZ": "Arkia Israeli Airlines",
+    "IZ":  "Arkia Israeli Airlines",
+    # Israir
+    "ISR": "Israir",
+    # Novair
+    "NVD": "Novair",
+    # Neos
+    "NOS": "Neos",
+    # Blue Panorama
+    "BPA": "Blue Panorama",
+    # Privilege Style
+    "PVG": "Privilege Style",
+    # Freebird
+    "FHY": "Freebird Airlines",
+    # Jet2
+    "EXS": "Jet2",
+    "LS":  "Jet2",
+    # Aer Lingus
+    "EIN": "Aer Lingus",
+    "EI":  "Aer Lingus",
+    # Icelandair
+    "ICE": "Icelandair",
+    "FI":  "Icelandair",
+    # Air Portugal / TAP
+    "TAP": "TAP Air Portugal",
+    "TP":  "TAP Air Portugal",
+    # SATA / Azores Airlines
+    "SAT": "Azores Airlines",
+    "APO": "Azores Airlines",
+    # Pobeda
+    "PBD": "Pobeda",
+    # S7 Airlines
+    "SBI": "S7 Airlines",
+    # Ural Airlines
+    "SVR": "Ural Airlines",
+    # Air Malta
+    "AMC": "Air Malta",
+    "KM":  "Air Malta",
+    # Malta Air (Ryanair subsidiary)
+    "MAT": "Malta Air",
+    # KLM
+    "KLM": "KLM",
+    "KL":  "KLM",
+    # Air France
+    "AFR": "Air France",
+    "AF":  "Air France",
+    # Lufthansa
+    "DLH": "Lufthansa",
+    "LH":  "Lufthansa",
+    # Swiss
+    "SWR": "Swiss",
+    "LX":  "Swiss",
+    # Austrian
+    "AUA": "Austrian Airlines",
+    "OS":  "Austrian Airlines",
+    # Brussels Airlines
+    "BEL": "Brussels Airlines",
+    "SN":  "Brussels Airlines",
+    # Eurowings Discover
+    "EWD": "Eurowings Discover",
+    # Smartwings
+    "TVS": "Smartwings",
+    "QS":  "Smartwings",
+    # Sunclass Airlines (formerly Thomas Cook Scandinavia)
+    "SCC": "Sunclass Airlines",
+    # Aruba Airlines
+    "ARU": "Aruba Airlines",
+    # Other common codes
+    "MLH": "Air Alsace",
+    "NVR": "Novair",
+}
+
 # ── API helper ──────────────────────────────────────────────────────────────
 
 def api_get(url, params, label=""):
@@ -94,19 +243,36 @@ def detect_operator(callsign, owner_icao):
     op_icao = callsign[:3].upper()
     return op_icao, op_icao != owner_icao.upper()
 
+def resolve_airline_name(icao_code):
+    """Resolve a 3-letter ICAO operator code to a full airline name."""
+    if not icao_code:
+        return icao_code
+    return AIRLINE_NAMES.get(icao_code.upper(), icao_code)
+
 def calc_block_hours(dep_time, arr_time):
-    """Calculate block hours to nearest 0.1h from ISO timestamp strings."""
+    """Calculate block hours to nearest 0.1h.
+    Handles both Unix epoch (int/float) and ISO string timestamps.
+    """
     if not dep_time or not arr_time:
         return 0.0
     try:
-        fmt = "%Y-%m-%dT%H:%M:%SZ"
-        dep = datetime.strptime(dep_time, fmt)
-        arr = datetime.strptime(arr_time, fmt)
+        # FR24 flight-summary/light returns Unix epoch integers
+        if isinstance(dep_time, (int, float)):
+            dep = datetime.fromtimestamp(dep_time, tz=timezone.utc)
+        else:
+            dep = datetime.strptime(dep_time, "%Y-%m-%dT%H:%M:%SZ")
+
+        if isinstance(arr_time, (int, float)):
+            arr = datetime.fromtimestamp(arr_time, tz=timezone.utc)
+        else:
+            arr = datetime.strptime(arr_time, "%Y-%m-%dT%H:%M:%SZ")
+
         diff_minutes = (arr - dep).total_seconds() / 60
         if diff_minutes <= 0:
             return 0.0
         return round(diff_minutes / 60, 1)
-    except Exception:
+    except Exception as e:
+        print(f"  BH calc error: {e} | dep={dep_time} arr={arr_time}")
         return 0.0
 
 def lt_day_window(offset_days=0):
@@ -161,6 +327,7 @@ def run_snapshot(registry):
                 "status": "unknown",
                 "callsign": None,
                 "current_operator_icao": None,
+                "current_operator_name": None,
                 "last_flight": None,
                 "last_route": None,
                 "last_seen": None,
@@ -177,6 +344,7 @@ def run_snapshot(registry):
                 entry.update({
                     "callsign": callsign,
                     "current_operator_icao": op_icao,
+                    "current_operator_name": resolve_airline_name(op_icao),
                     "last_seen": now_utc.isoformat(),
                     "latitude": live.get("lat"),
                     "longitude": live.get("lon"),
@@ -192,7 +360,7 @@ def run_snapshot(registry):
                     entry["last_route"] = f"{orig}-{dest}"
                 if is_acmi:
                     acmi_count += 1
-                    print(f"ACMI → {op_icao} ({callsign})")
+                    print(f"ACMI → {op_icao} / {resolve_airline_name(op_icao)} ({callsign})")
                 else:
                     own_count += 1
                     print(f"own ops ({callsign})")
@@ -254,7 +422,7 @@ def run_history(registry):
     results = []
     queried = 0
 
-    # client_map[client_icao][owner_group] = {flights, bh, routes}
+    # client_map[client_icao][owner_group] = {flights, bh, routes, aircraft}
     client_map = {}
 
     for op in registry["operators"]:
@@ -288,8 +456,8 @@ def run_history(registry):
                 })
                 continue
 
-            total_bh    = 0.0
-            acmi_bh     = 0.0
+            total_bh     = 0.0
+            acmi_bh      = 0.0
             acmi_flights = 0
             clients_seen = {}
             routes       = []
@@ -312,6 +480,7 @@ def run_history(registry):
                 flight_log.append({
                     "callsign": callsign,
                     "operator_icao": op_icao,
+                    "operator_name": resolve_airline_name(op_icao),
                     "is_acmi": is_acmi,
                     "route": route,
                     "dep_time": dep_time,
@@ -338,7 +507,12 @@ def run_history(registry):
                     client_map[op_icao][group]["aircraft"].add(reg)
 
             clients_list = [
-                {"icao": k, "flights": v["flights"], "bh": round(v["bh"], 1)}
+                {
+                    "icao": k,
+                    "name": resolve_airline_name(k),
+                    "flights": v["flights"],
+                    "bh": round(v["bh"], 1),
+                }
                 for k, v in sorted(clients_seen.items(), key=lambda x: -x[1]["bh"])
             ]
 
@@ -365,12 +539,15 @@ def run_history(registry):
                 "flight_log": flight_log,
             })
 
-    # Serialize client_map sets to lists
+    # Serialize client_map sets to lists, add full names
     client_map_serializable = {}
     for client_icao, providers in client_map.items():
-        client_map_serializable[client_icao] = {}
+        client_map_serializable[client_icao] = {
+            "name": resolve_airline_name(client_icao),
+            "providers": {},
+        }
         for group, data in providers.items():
-            client_map_serializable[client_icao][group] = {
+            client_map_serializable[client_icao]["providers"][group] = {
                 "flights": data["flights"],
                 "bh": data["bh"],
                 "aircraft_count": len(data["aircraft"]),
