@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-10T08:30:35.117598+00:00",
+  "last_updated": "2026-06-10T09:41:27.770356+00:00",
   "report_date": "2026-06-09",
   "interval_from": "2026-06-09 00:01",
   "interval_to": "2026-06-09 23:59",
@@ -56,272 +56,335 @@
   },
   "client_map": {
     "APO": {
-      "Avion Express": {
-        "flights": 12,
-        "bh": 0.0,
-        "aircraft_count": 2,
-        "aircraft": [
-          "LY-MLF",
-          "LY-NVN"
-        ]
-      },
-      "AirExplore": {
-        "flights": 8,
-        "bh": 0.0,
-        "aircraft_count": 1,
-        "aircraft": [
-          "OM-NEX"
-        ]
+      "name": "Azores Airlines",
+      "providers": {
+        "Avion Express": {
+          "flights": 12,
+          "bh": 0.0,
+          "aircraft_count": 2,
+          "aircraft": [
+            "LY-MLF",
+            "LY-NVN"
+          ]
+        },
+        "AirExplore": {
+          "flights": 8,
+          "bh": 0.0,
+          "aircraft_count": 1,
+          "aircraft": [
+            "OM-NEX"
+          ]
+        }
       }
     },
     "TRA": {
-      "Avion Express": {
-        "flights": 6,
-        "bh": 0.0,
-        "aircraft_count": 3,
-        "aircraft": [
-          "9H-AMI",
-          "9H-SWJ",
-          "LY-MLI"
-        ]
+      "name": "Transavia",
+      "providers": {
+        "Avion Express": {
+          "flights": 6,
+          "bh": 0.0,
+          "aircraft_count": 3,
+          "aircraft": [
+            "9H-AMI",
+            "9H-SWJ",
+            "LY-MLI"
+          ]
+        }
       }
     },
     "MLH": {
-      "Avion Express": {
-        "flights": 2,
-        "bh": 0.0,
-        "aircraft_count": 1,
-        "aircraft": [
-          "LY-NVE"
-        ]
+      "name": "Air Alsace",
+      "providers": {
+        "Avion Express": {
+          "flights": 2,
+          "bh": 0.0,
+          "aircraft_count": 1,
+          "aircraft": [
+            "LY-NVE"
+          ]
+        }
       }
     },
     "NVD": {
-      "Avion Express": {
-        "flights": 2,
-        "bh": 0.0,
-        "aircraft_count": 1,
-        "aircraft": [
-          "LY-NVE"
-        ]
+      "name": "Novair",
+      "providers": {
+        "Avion Express": {
+          "flights": 2,
+          "bh": 0.0,
+          "aircraft_count": 1,
+          "aircraft": [
+            "LY-NVE"
+          ]
+        }
       }
     },
     "AP7": {
-      "Avion Express": {
-        "flights": 1,
-        "bh": 0.0,
-        "aircraft_count": 1,
-        "aircraft": [
-          "LY-NVN"
-        ]
+      "name": "Air Europa",
+      "providers": {
+        "Avion Express": {
+          "flights": 1,
+          "bh": 0.0,
+          "aircraft_count": 1,
+          "aircraft": [
+            "LY-NVN"
+          ]
+        }
       }
     },
     "DAH": {
-      "Avion Express": {
-        "flights": 30,
-        "bh": 0.0,
-        "aircraft_count": 5,
-        "aircraft": [
-          "9H-AMJ",
-          "9H-AMK",
-          "9H-MLE",
-          "9H-SWG",
-          "9H-SWN"
-        ]
+      "name": "Air Alg\u00e9rie",
+      "providers": {
+        "Avion Express": {
+          "flights": 30,
+          "bh": 0.0,
+          "aircraft_count": 5,
+          "aircraft": [
+            "9H-AMJ",
+            "9H-AMK",
+            "9H-MLE",
+            "9H-SWG",
+            "9H-SWN"
+          ]
+        }
       }
     },
     "EWG": {
-      "Avion Express": {
-        "flights": 43,
-        "bh": 0.0,
-        "aircraft_count": 8,
-        "aircraft": [
-          "9H-AML",
-          "9H-AMV",
-          "9H-GKK",
-          "9H-MLB",
-          "9H-MLU",
-          "9H-SWA",
-          "9H-SWD",
-          "9H-SWE"
-        ]
-      },
-      "GetJet": {
-        "flights": 28,
-        "bh": 0.0,
-        "aircraft_count": 7,
-        "aircraft": [
-          "LY-CAP",
-          "LY-DAE",
-          "LY-EKB",
-          "LY-FAS",
-          "LY-GYM",
-          "LY-WIL",
-          "LY-WIZ"
-        ]
-      },
-      "Smartwings": {
-        "flights": 12,
-        "bh": 0.0,
-        "aircraft_count": 4,
-        "aircraft": [
-          "OK-TSU",
-          "OK-TVL",
-          "OK-TVT",
-          "OK-TVV"
-        ]
+      "name": "Eurowings",
+      "providers": {
+        "Avion Express": {
+          "flights": 43,
+          "bh": 0.0,
+          "aircraft_count": 8,
+          "aircraft": [
+            "9H-AML",
+            "9H-AMV",
+            "9H-GKK",
+            "9H-MLB",
+            "9H-MLU",
+            "9H-SWA",
+            "9H-SWD",
+            "9H-SWE"
+          ]
+        },
+        "GetJet": {
+          "flights": 28,
+          "bh": 0.0,
+          "aircraft_count": 7,
+          "aircraft": [
+            "LY-CAP",
+            "LY-DAE",
+            "LY-EKB",
+            "LY-FAS",
+            "LY-GYM",
+            "LY-WIL",
+            "LY-WIZ"
+          ]
+        },
+        "Smartwings": {
+          "flights": 12,
+          "bh": 0.0,
+          "aircraft_count": 4,
+          "aircraft": [
+            "OK-TSU",
+            "OK-TVL",
+            "OK-TVT",
+            "OK-TVV"
+          ]
+        }
       }
     },
     "TAR": {
-      "Avion Express": {
-        "flights": 4,
-        "bh": 0.0,
-        "aircraft_count": 1,
-        "aircraft": [
-          "9H-AMM"
-        ]
+      "name": "Tunisair",
+      "providers": {
+        "Avion Express": {
+          "flights": 4,
+          "bh": 0.0,
+          "aircraft_count": 1,
+          "aircraft": [
+            "9H-AMM"
+          ]
+        }
       }
     },
     "AHY": {
-      "Heston": {
-        "flights": 18,
-        "bh": 0.0,
-        "aircraft_count": 5,
-        "aircraft": [
-          "9H-SEY",
-          "LY-JAM",
-          "LY-MAD",
-          "LY-MHL",
-          "LY-PNG"
-        ]
+      "name": "Azerbaijan Airlines",
+      "providers": {
+        "Heston": {
+          "flights": 18,
+          "bh": 0.0,
+          "aircraft_count": 5,
+          "aircraft": [
+            "9H-SEY",
+            "LY-JAM",
+            "LY-MAD",
+            "LY-MHL",
+            "LY-PNG"
+          ]
+        }
       }
     },
     "CFG": {
-      "Heston": {
-        "flights": 6,
-        "bh": 0.0,
-        "aircraft_count": 2,
-        "aircraft": [
-          "LY-NRU",
-          "LY-VUT"
-        ]
+      "name": "Condor",
+      "providers": {
+        "Heston": {
+          "flights": 6,
+          "bh": 0.0,
+          "aircraft_count": 2,
+          "aircraft": [
+            "LY-NRU",
+            "LY-VUT"
+          ]
+        }
       }
     },
     "AIZ": {
-      "Heston": {
-        "flights": 4,
-        "bh": 0.0,
-        "aircraft_count": 1,
-        "aircraft": [
-          "9H-BRB"
-        ]
+      "name": "Arkia Israeli Airlines",
+      "providers": {
+        "Heston": {
+          "flights": 4,
+          "bh": 0.0,
+          "aircraft_count": 1,
+          "aircraft": [
+            "9H-BRB"
+          ]
+        }
       }
     },
     "ARU": {
-      "Heston": {
-        "flights": 2,
-        "bh": 0.0,
-        "aircraft_count": 1,
-        "aircraft": [
-          "9H-REU"
-        ]
+      "name": "Aruba Airlines",
+      "providers": {
+        "Heston": {
+          "flights": 2,
+          "bh": 0.0,
+          "aircraft_count": 1,
+          "aircraft": [
+            "9H-REU"
+          ]
+        }
       }
     },
     "GJM": {
-      "GetJet": {
-        "flights": 2,
-        "bh": 0.0,
-        "aircraft_count": 1,
-        "aircraft": [
-          "LY-CIN"
-        ]
+      "name": "GJM",
+      "providers": {
+        "GetJet": {
+          "flights": 2,
+          "bh": 0.0,
+          "aircraft_count": 1,
+          "aircraft": [
+            "LY-CIN"
+          ]
+        }
       }
     },
     "SZN": {
-      "GetJet": {
-        "flights": 3,
-        "bh": 0.0,
-        "aircraft_count": 1,
-        "aircraft": [
-          "LY-UNO"
-        ]
+      "name": "SZN",
+      "providers": {
+        "GetJet": {
+          "flights": 3,
+          "bh": 0.0,
+          "aircraft_count": 1,
+          "aircraft": [
+            "LY-UNO"
+          ]
+        }
       }
     },
     "CSW": {
-      "GetJet": {
-        "flights": 1,
-        "bh": 0.0,
-        "aircraft_count": 1,
-        "aircraft": [
-          "9H-GTS"
-        ]
+      "name": "CSW",
+      "providers": {
+        "GetJet": {
+          "flights": 1,
+          "bh": 0.0,
+          "aircraft_count": 1,
+          "aircraft": [
+            "9H-GTS"
+          ]
+        }
       }
     },
     "TVL": {
-      "Smartwings": {
-        "flights": 7,
-        "bh": 0.0,
-        "aircraft_count": 2,
-        "aircraft": [
-          "OK-SWB",
-          "OK-TVS"
-        ]
+      "name": "TVL",
+      "providers": {
+        "Smartwings": {
+          "flights": 7,
+          "bh": 0.0,
+          "aircraft_count": 2,
+          "aircraft": [
+            "OK-SWB",
+            "OK-TVS"
+          ]
+        }
       }
     },
     "TVP": {
-      "Smartwings": {
-        "flights": 15,
-        "bh": 0.0,
-        "aircraft_count": 4,
-        "aircraft": [
-          "OK-SWD",
-          "OK-SWI",
-          "OK-TVJ",
-          "OK-TVR"
-        ]
+      "name": "TVP",
+      "providers": {
+        "Smartwings": {
+          "flights": 15,
+          "bh": 0.0,
+          "aircraft_count": 4,
+          "aircraft": [
+            "OK-SWD",
+            "OK-SWI",
+            "OK-TVJ",
+            "OK-TVR"
+          ]
+        }
       }
     },
     "ISR": {
-      "Smartwings": {
-        "flights": 4,
-        "bh": 0.0,
-        "aircraft_count": 1,
-        "aircraft": [
-          "OK-TSF"
-        ]
+      "name": "Israir",
+      "providers": {
+        "Smartwings": {
+          "flights": 4,
+          "bh": 0.0,
+          "aircraft_count": 1,
+          "aircraft": [
+            "OK-TSF"
+          ]
+        }
       }
     },
     "EXS": {
-      "Titan Airways": {
-        "flights": 4,
-        "bh": 0.0,
-        "aircraft_count": 2,
-        "aircraft": [
-          "G-POWN",
-          "G-POWU"
-        ]
+      "name": "Jet2",
+      "providers": {
+        "Titan Airways": {
+          "flights": 4,
+          "bh": 0.0,
+          "aircraft_count": 2,
+          "aircraft": [
+            "G-POWN",
+            "G-POWU"
+          ]
+        }
       }
     },
     "BCS": {
-      "Titan Airways": {
-        "flights": 4,
-        "bh": 0.0,
-        "aircraft_count": 2,
-        "aircraft": [
-          "9H-ZTB",
-          "9H-ZTC"
-        ]
+      "name": "BCS",
+      "providers": {
+        "Titan Airways": {
+          "flights": 4,
+          "bh": 0.0,
+          "aircraft_count": 2,
+          "aircraft": [
+            "9H-ZTB",
+            "9H-ZTC"
+          ]
+        }
       }
     },
     "ENT": {
-      "AirExplore": {
-        "flights": 6,
-        "bh": 0.0,
-        "aircraft_count": 2,
-        "aircraft": [
-          "OM-JEX",
-          "OM-MEX"
-        ]
+      "name": "ENT",
+      "providers": {
+        "AirExplore": {
+          "flights": 6,
+          "bh": 0.0,
+          "aircraft_count": 2,
+          "aircraft": [
+            "OM-JEX",
+            "OM-MEX"
+          ]
+        }
       }
     }
   },
@@ -339,6 +402,7 @@
       "clients": [
         {
           "icao": "APO",
+          "name": "Azores Airlines",
           "flights": 7,
           "bh": 0.0
         }
@@ -348,6 +412,7 @@
         {
           "callsign": "APO7120",
           "operator_icao": "APO",
+          "operator_name": "Azores Airlines",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -357,6 +422,7 @@
         {
           "callsign": "APO7121",
           "operator_icao": "APO",
+          "operator_name": "Azores Airlines",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -366,6 +432,7 @@
         {
           "callsign": "APO7190",
           "operator_icao": "APO",
+          "operator_name": "Azores Airlines",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -375,6 +442,7 @@
         {
           "callsign": "APO7191",
           "operator_icao": "APO",
+          "operator_name": "Azores Airlines",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -384,6 +452,7 @@
         {
           "callsign": "APO7123",
           "operator_icao": "APO",
+          "operator_name": "Azores Airlines",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -393,6 +462,7 @@
         {
           "callsign": "APO7154",
           "operator_icao": "APO",
+          "operator_name": "Azores Airlines",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -402,6 +472,7 @@
         {
           "callsign": "APO7157",
           "operator_icao": "APO",
+          "operator_name": "Azores Airlines",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -437,6 +508,7 @@
       "clients": [
         {
           "icao": "TRA",
+          "name": "Transavia",
           "flights": 1,
           "bh": 0.0
         }
@@ -446,6 +518,7 @@
         {
           "callsign": "TRA079",
           "operator_icao": "TRA",
+          "operator_name": "Transavia",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -467,11 +540,13 @@
       "clients": [
         {
           "icao": "MLH",
+          "name": "Air Alsace",
           "flights": 2,
           "bh": 0.0
         },
         {
           "icao": "NVD",
+          "name": "Novair",
           "flights": 2,
           "bh": 0.0
         }
@@ -481,6 +556,7 @@
         {
           "callsign": "MLH8321",
           "operator_icao": "MLH",
+          "operator_name": "Air Alsace",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -490,6 +566,7 @@
         {
           "callsign": "MLH8322",
           "operator_icao": "MLH",
+          "operator_name": "Air Alsace",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -499,6 +576,7 @@
         {
           "callsign": "NVD8529",
           "operator_icao": "NVD",
+          "operator_name": "Novair",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -508,6 +586,7 @@
         {
           "callsign": "NVD8530",
           "operator_icao": "NVD",
+          "operator_name": "Novair",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -599,11 +678,13 @@
       "clients": [
         {
           "icao": "APO",
+          "name": "Azores Airlines",
           "flights": 5,
           "bh": 0.0
         },
         {
           "icao": "AP7",
+          "name": "Air Europa",
           "flights": 1,
           "bh": 0.0
         }
@@ -613,6 +694,7 @@
         {
           "callsign": "APO7150",
           "operator_icao": "APO",
+          "operator_name": "Azores Airlines",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -622,6 +704,7 @@
         {
           "callsign": "APO7151",
           "operator_icao": "APO",
+          "operator_name": "Azores Airlines",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -631,6 +714,7 @@
         {
           "callsign": "APO7152",
           "operator_icao": "APO",
+          "operator_name": "Azores Airlines",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -640,6 +724,7 @@
         {
           "callsign": "APO7153",
           "operator_icao": "APO",
+          "operator_name": "Azores Airlines",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -649,6 +734,7 @@
         {
           "callsign": "APO7864",
           "operator_icao": "APO",
+          "operator_name": "Azores Airlines",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -658,6 +744,7 @@
         {
           "callsign": "AP7867",
           "operator_icao": "AP7",
+          "operator_name": "Air Europa",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -693,6 +780,7 @@
       "clients": [
         {
           "icao": "TRA",
+          "name": "Transavia",
           "flights": 4,
           "bh": 0.0
         }
@@ -702,6 +790,7 @@
         {
           "callsign": "TRA7N",
           "operator_icao": "TRA",
+          "operator_name": "Transavia",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -711,6 +800,7 @@
         {
           "callsign": "TRA91T",
           "operator_icao": "TRA",
+          "operator_name": "Transavia",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -720,6 +810,7 @@
         {
           "callsign": "TRA93E",
           "operator_icao": "TRA",
+          "operator_name": "Transavia",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -729,6 +820,7 @@
         {
           "callsign": "TRA16N",
           "operator_icao": "TRA",
+          "operator_name": "Transavia",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -750,6 +842,7 @@
       "clients": [
         {
           "icao": "DAH",
+          "name": "Air Alg\u00e9rie",
           "flights": 4,
           "bh": 0.0
         }
@@ -759,6 +852,7 @@
         {
           "callsign": "DAH1002",
           "operator_icao": "DAH",
+          "operator_name": "Air Alg\u00e9rie",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -768,6 +862,7 @@
         {
           "callsign": "DAH1003",
           "operator_icao": "DAH",
+          "operator_name": "Air Alg\u00e9rie",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -777,6 +872,7 @@
         {
           "callsign": "DAH4002",
           "operator_icao": "DAH",
+          "operator_name": "Air Alg\u00e9rie",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -786,6 +882,7 @@
         {
           "callsign": "DAH4003",
           "operator_icao": "DAH",
+          "operator_name": "Air Alg\u00e9rie",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -807,6 +904,7 @@
       "clients": [
         {
           "icao": "DAH",
+          "name": "Air Alg\u00e9rie",
           "flights": 7,
           "bh": 0.0
         }
@@ -816,6 +914,7 @@
         {
           "callsign": "DAH6230",
           "operator_icao": "DAH",
+          "operator_name": "Air Alg\u00e9rie",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -825,6 +924,7 @@
         {
           "callsign": "DAH6231",
           "operator_icao": "DAH",
+          "operator_name": "Air Alg\u00e9rie",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -834,6 +934,7 @@
         {
           "callsign": "DAH6040",
           "operator_icao": "DAH",
+          "operator_name": "Air Alg\u00e9rie",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -843,6 +944,7 @@
         {
           "callsign": "DAH1128",
           "operator_icao": "DAH",
+          "operator_name": "Air Alg\u00e9rie",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -852,6 +954,7 @@
         {
           "callsign": "DAH1129",
           "operator_icao": "DAH",
+          "operator_name": "Air Alg\u00e9rie",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -861,6 +964,7 @@
         {
           "callsign": "DAH6041",
           "operator_icao": "DAH",
+          "operator_name": "Air Alg\u00e9rie",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -870,6 +974,7 @@
         {
           "callsign": "DAH6236",
           "operator_icao": "DAH",
+          "operator_name": "Air Alg\u00e9rie",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -891,6 +996,7 @@
       "clients": [
         {
           "icao": "EWG",
+          "name": "Eurowings",
           "flights": 6,
           "bh": 0.0
         }
@@ -900,6 +1006,7 @@
         {
           "callsign": "EWG7J",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -909,6 +1016,7 @@
         {
           "callsign": "EWG23Y",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -918,6 +1026,7 @@
         {
           "callsign": "EWG2HA",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -927,6 +1036,7 @@
         {
           "callsign": "EWG8YX",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -936,6 +1046,7 @@
         {
           "callsign": "EWG1UZ",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -945,6 +1056,7 @@
         {
           "callsign": "EWG1UZ",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -966,6 +1078,7 @@
       "clients": [
         {
           "icao": "TAR",
+          "name": "Tunisair",
           "flights": 4,
           "bh": 0.0
         }
@@ -975,6 +1088,7 @@
         {
           "callsign": "TAR756",
           "operator_icao": "TAR",
+          "operator_name": "Tunisair",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -984,6 +1098,7 @@
         {
           "callsign": "TAR757",
           "operator_icao": "TAR",
+          "operator_name": "Tunisair",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -993,6 +1108,7 @@
         {
           "callsign": "TAR628",
           "operator_icao": "TAR",
+          "operator_name": "Tunisair",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1002,6 +1118,7 @@
         {
           "callsign": "TAR629",
           "operator_icao": "TAR",
+          "operator_name": "Tunisair",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1037,6 +1154,7 @@
       "clients": [
         {
           "icao": "EWG",
+          "name": "Eurowings",
           "flights": 6,
           "bh": 0.0
         }
@@ -1046,6 +1164,7 @@
         {
           "callsign": "EWG7NY",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1055,6 +1174,7 @@
         {
           "callsign": "EWG7NY",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1064,6 +1184,7 @@
         {
           "callsign": "EWG02JB",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1073,6 +1194,7 @@
         {
           "callsign": "EWG8UC",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1082,6 +1204,7 @@
         {
           "callsign": "EWG66L",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1091,6 +1214,7 @@
         {
           "callsign": "EWG66L",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1126,6 +1250,7 @@
       "clients": [
         {
           "icao": "EWG",
+          "name": "Eurowings",
           "flights": 4,
           "bh": 0.0
         }
@@ -1135,6 +1260,7 @@
         {
           "callsign": "EWG55CU",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1144,6 +1270,7 @@
         {
           "callsign": "EWG55CU",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1153,6 +1280,7 @@
         {
           "callsign": "EWG12JK",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1162,6 +1290,7 @@
         {
           "callsign": "EWG12JK",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1183,6 +1312,7 @@
       "clients": [
         {
           "icao": "EWG",
+          "name": "Eurowings",
           "flights": 6,
           "bh": 0.0
         }
@@ -1192,6 +1322,7 @@
         {
           "callsign": "EWG15HR",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1201,6 +1332,7 @@
         {
           "callsign": "EWG15HR",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1210,6 +1342,7 @@
         {
           "callsign": "EWG71LA",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1219,6 +1352,7 @@
         {
           "callsign": "EWG71LA",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1228,6 +1362,7 @@
         {
           "callsign": "EWG2852",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1237,6 +1372,7 @@
         {
           "callsign": "EWG2853",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1258,6 +1394,7 @@
       "clients": [
         {
           "icao": "DAH",
+          "name": "Air Alg\u00e9rie",
           "flights": 5,
           "bh": 0.0
         }
@@ -1267,6 +1404,7 @@
         {
           "callsign": "DAH3015",
           "operator_icao": "DAH",
+          "operator_name": "Air Alg\u00e9rie",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1276,6 +1414,7 @@
         {
           "callsign": "DAH1036",
           "operator_icao": "DAH",
+          "operator_name": "Air Alg\u00e9rie",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1285,6 +1424,7 @@
         {
           "callsign": "DAH1081",
           "operator_icao": "DAH",
+          "operator_name": "Air Alg\u00e9rie",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1294,6 +1434,7 @@
         {
           "callsign": "DAH1080",
           "operator_icao": "DAH",
+          "operator_name": "Air Alg\u00e9rie",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1303,6 +1444,7 @@
         {
           "callsign": "DAH1037",
           "operator_icao": "DAH",
+          "operator_name": "Air Alg\u00e9rie",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1352,6 +1494,7 @@
       "clients": [
         {
           "icao": "EWG",
+          "name": "Eurowings",
           "flights": 6,
           "bh": 0.0
         }
@@ -1361,6 +1504,7 @@
         {
           "callsign": "EWG8ET",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1370,6 +1514,7 @@
         {
           "callsign": "EWG9HK",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1379,6 +1524,7 @@
         {
           "callsign": "EWG59H",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1388,6 +1534,7 @@
         {
           "callsign": "EWG6SW",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1397,6 +1544,7 @@
         {
           "callsign": "EWG4XC",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1406,6 +1554,7 @@
         {
           "callsign": "EWG1DP",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1455,6 +1604,7 @@
       "clients": [
         {
           "icao": "EWG",
+          "name": "Eurowings",
           "flights": 6,
           "bh": 0.0
         }
@@ -1464,6 +1614,7 @@
         {
           "callsign": "EWG3Y",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1473,6 +1624,7 @@
         {
           "callsign": "EWG7U",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1482,6 +1634,7 @@
         {
           "callsign": "EWG4UY",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1491,6 +1644,7 @@
         {
           "callsign": "EWG6DM",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1500,6 +1654,7 @@
         {
           "callsign": "EWG18C",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1509,6 +1664,7 @@
         {
           "callsign": "EWG1U",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1558,6 +1714,7 @@
       "clients": [
         {
           "icao": "EWG",
+          "name": "Eurowings",
           "flights": 5,
           "bh": 0.0
         }
@@ -1567,6 +1724,7 @@
         {
           "callsign": "EWG2FC",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1576,6 +1734,7 @@
         {
           "callsign": "EWG38E",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1585,6 +1744,7 @@
         {
           "callsign": "EWG3X",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1594,6 +1754,7 @@
         {
           "callsign": "EWG9835",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1603,6 +1764,7 @@
         {
           "callsign": "EWG62K",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1624,6 +1786,7 @@
       "clients": [
         {
           "icao": "EWG",
+          "name": "Eurowings",
           "flights": 4,
           "bh": 0.0
         }
@@ -1633,6 +1796,7 @@
         {
           "callsign": "EWG8VB",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1642,6 +1806,7 @@
         {
           "callsign": "EWG21F",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1651,6 +1816,7 @@
         {
           "callsign": "EWG3TM",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1660,6 +1826,7 @@
         {
           "callsign": "EWG9DB",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1695,6 +1862,7 @@
       "clients": [
         {
           "icao": "DAH",
+          "name": "Air Alg\u00e9rie",
           "flights": 7,
           "bh": 0.0
         }
@@ -1704,6 +1872,7 @@
         {
           "callsign": "DAH6340",
           "operator_icao": "DAH",
+          "operator_name": "Air Alg\u00e9rie",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1713,6 +1882,7 @@
         {
           "callsign": "DAH6341",
           "operator_icao": "DAH",
+          "operator_name": "Air Alg\u00e9rie",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1722,6 +1892,7 @@
         {
           "callsign": "DAH6012",
           "operator_icao": "DAH",
+          "operator_name": "Air Alg\u00e9rie",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1731,6 +1902,7 @@
         {
           "callsign": "DAH1170",
           "operator_icao": "DAH",
+          "operator_name": "Air Alg\u00e9rie",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1740,6 +1912,7 @@
         {
           "callsign": "DAH1171",
           "operator_icao": "DAH",
+          "operator_name": "Air Alg\u00e9rie",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1749,6 +1922,7 @@
         {
           "callsign": "DAH6013",
           "operator_icao": "DAH",
+          "operator_name": "Air Alg\u00e9rie",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1758,6 +1932,7 @@
         {
           "callsign": "DAH3014",
           "operator_icao": "DAH",
+          "operator_name": "Air Alg\u00e9rie",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1779,6 +1954,7 @@
       "clients": [
         {
           "icao": "TRA",
+          "name": "Transavia",
           "flights": 1,
           "bh": 0.0
         }
@@ -1788,6 +1964,7 @@
         {
           "callsign": "TRA077",
           "operator_icao": "TRA",
+          "operator_name": "Transavia",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1809,6 +1986,7 @@
       "clients": [
         {
           "icao": "DAH",
+          "name": "Air Alg\u00e9rie",
           "flights": 7,
           "bh": 0.0
         }
@@ -1818,6 +1996,7 @@
         {
           "callsign": "DAH6294",
           "operator_icao": "DAH",
+          "operator_name": "Air Alg\u00e9rie",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1827,6 +2006,7 @@
         {
           "callsign": "DAH6295",
           "operator_icao": "DAH",
+          "operator_name": "Air Alg\u00e9rie",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1836,6 +2016,7 @@
         {
           "callsign": "DAH1022",
           "operator_icao": "DAH",
+          "operator_name": "Air Alg\u00e9rie",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1845,6 +2026,7 @@
         {
           "callsign": "DAH1023",
           "operator_icao": "DAH",
+          "operator_name": "Air Alg\u00e9rie",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1854,6 +2036,7 @@
         {
           "callsign": "DAH1020",
           "operator_icao": "DAH",
+          "operator_name": "Air Alg\u00e9rie",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1863,6 +2046,7 @@
         {
           "callsign": "DAH1021",
           "operator_icao": "DAH",
+          "operator_name": "Air Alg\u00e9rie",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1872,6 +2056,7 @@
         {
           "callsign": "DAH6238",
           "operator_icao": "DAH",
+          "operator_name": "Air Alg\u00e9rie",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1907,6 +2092,7 @@
       "clients": [
         {
           "icao": "AHY",
+          "name": "Azerbaijan Airlines",
           "flights": 3,
           "bh": 0.0
         }
@@ -1916,6 +2102,7 @@
         {
           "callsign": "AHY033",
           "operator_icao": "AHY",
+          "operator_name": "Azerbaijan Airlines",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1925,6 +2112,7 @@
         {
           "callsign": "AHY034",
           "operator_icao": "AHY",
+          "operator_name": "Azerbaijan Airlines",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1934,6 +2122,7 @@
         {
           "callsign": "AHY531",
           "operator_icao": "AHY",
+          "operator_name": "Azerbaijan Airlines",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1955,6 +2144,7 @@
       "clients": [
         {
           "icao": "AHY",
+          "name": "Azerbaijan Airlines",
           "flights": 4,
           "bh": 0.0
         }
@@ -1964,6 +2154,7 @@
         {
           "callsign": "AHY063",
           "operator_icao": "AHY",
+          "operator_name": "Azerbaijan Airlines",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1973,6 +2164,7 @@
         {
           "callsign": "AHY064",
           "operator_icao": "AHY",
+          "operator_name": "Azerbaijan Airlines",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1982,6 +2174,7 @@
         {
           "callsign": "AHY077",
           "operator_icao": "AHY",
+          "operator_name": "Azerbaijan Airlines",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -1991,6 +2184,7 @@
         {
           "callsign": "AHY078",
           "operator_icao": "AHY",
+          "operator_name": "Azerbaijan Airlines",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -2029,6 +2223,7 @@
         {
           "callsign": "HST2321",
           "operator_icao": "HST",
+          "operator_name": "HST",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -2038,6 +2233,7 @@
         {
           "callsign": "HST2322",
           "operator_icao": "HST",
+          "operator_name": "HST",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -2047,6 +2243,7 @@
         {
           "callsign": "HST2353",
           "operator_icao": "HST",
+          "operator_name": "HST",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -2056,6 +2253,7 @@
         {
           "callsign": "HST2354",
           "operator_icao": "HST",
+          "operator_name": "HST",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -2077,6 +2275,7 @@
       "clients": [
         {
           "icao": "AHY",
+          "name": "Azerbaijan Airlines",
           "flights": 3,
           "bh": 0.0
         }
@@ -2086,6 +2285,7 @@
         {
           "callsign": "AHY073",
           "operator_icao": "AHY",
+          "operator_name": "Azerbaijan Airlines",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -2095,6 +2295,7 @@
         {
           "callsign": "AHY074",
           "operator_icao": "AHY",
+          "operator_name": "Azerbaijan Airlines",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -2104,6 +2305,7 @@
         {
           "callsign": "AHY8049",
           "operator_icao": "AHY",
+          "operator_name": "Azerbaijan Airlines",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -2125,6 +2327,7 @@
       "clients": [
         {
           "icao": "CFG",
+          "name": "Condor",
           "flights": 1,
           "bh": 0.0
         }
@@ -2134,6 +2337,7 @@
         {
           "callsign": "CFG2TU",
           "operator_icao": "CFG",
+          "operator_name": "Condor",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -2155,6 +2359,7 @@
       "clients": [
         {
           "icao": "AHY",
+          "name": "Azerbaijan Airlines",
           "flights": 4,
           "bh": 0.0
         }
@@ -2164,6 +2369,7 @@
         {
           "callsign": "AHY054",
           "operator_icao": "AHY",
+          "operator_name": "Azerbaijan Airlines",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -2173,6 +2379,7 @@
         {
           "callsign": "AHY8105",
           "operator_icao": "AHY",
+          "operator_name": "Azerbaijan Airlines",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -2182,6 +2389,7 @@
         {
           "callsign": "AHY8106",
           "operator_icao": "AHY",
+          "operator_name": "Azerbaijan Airlines",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -2191,6 +2399,7 @@
         {
           "callsign": "AHY053",
           "operator_icao": "AHY",
+          "operator_name": "Azerbaijan Airlines",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -2212,6 +2421,7 @@
       "clients": [
         {
           "icao": "CFG",
+          "name": "Condor",
           "flights": 5,
           "bh": 0.0
         }
@@ -2221,6 +2431,7 @@
         {
           "callsign": "CFG1RF",
           "operator_icao": "CFG",
+          "operator_name": "Condor",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -2230,6 +2441,7 @@
         {
           "callsign": "CFG2LD",
           "operator_icao": "CFG",
+          "operator_name": "Condor",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -2239,6 +2451,7 @@
         {
           "callsign": "CFG2EU",
           "operator_icao": "CFG",
+          "operator_name": "Condor",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -2248,6 +2461,7 @@
         {
           "callsign": "CFG1JW",
           "operator_icao": "CFG",
+          "operator_name": "Condor",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -2257,6 +2471,7 @@
         {
           "callsign": "CFG5ED",
           "operator_icao": "CFG",
+          "operator_name": "Condor",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -2292,6 +2507,7 @@
       "clients": [
         {
           "icao": "AIZ",
+          "name": "Arkia Israeli Airlines",
           "flights": 4,
           "bh": 0.0
         }
@@ -2301,6 +2517,7 @@
         {
           "callsign": "AIZ211",
           "operator_icao": "AIZ",
+          "operator_name": "Arkia Israeli Airlines",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -2310,6 +2527,7 @@
         {
           "callsign": "AIZ212",
           "operator_icao": "AIZ",
+          "operator_name": "Arkia Israeli Airlines",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -2319,6 +2537,7 @@
         {
           "callsign": "AIZ1213",
           "operator_icao": "AIZ",
+          "operator_name": "Arkia Israeli Airlines",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -2328,6 +2547,7 @@
         {
           "callsign": "AIZ214",
           "operator_icao": "AIZ",
+          "operator_name": "Arkia Israeli Airlines",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -2377,6 +2597,7 @@
       "clients": [
         {
           "icao": "ARU",
+          "name": "Aruba Airlines",
           "flights": 2,
           "bh": 0.0
         }
@@ -2386,6 +2607,7 @@
         {
           "callsign": "ARU907",
           "operator_icao": "ARU",
+          "operator_name": "Aruba Airlines",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -2395,6 +2617,7 @@
         {
           "callsign": "ARU100",
           "operator_icao": "ARU",
+          "operator_name": "Aruba Airlines",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -2416,6 +2639,7 @@
       "clients": [
         {
           "icao": "AHY",
+          "name": "Azerbaijan Airlines",
           "flights": 4,
           "bh": 0.0
         }
@@ -2425,6 +2649,7 @@
         {
           "callsign": "AHY035",
           "operator_icao": "AHY",
+          "operator_name": "Azerbaijan Airlines",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -2434,6 +2659,7 @@
         {
           "callsign": "AHY036",
           "operator_icao": "AHY",
+          "operator_name": "Azerbaijan Airlines",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -2443,6 +2669,7 @@
         {
           "callsign": "AHY8003",
           "operator_icao": "AHY",
+          "operator_name": "Azerbaijan Airlines",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -2452,6 +2679,7 @@
         {
           "callsign": "AHY8004",
           "operator_icao": "AHY",
+          "operator_name": "Azerbaijan Airlines",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -2476,6 +2704,7 @@
         {
           "callsign": "HOT3471",
           "operator_icao": "HOT",
+          "operator_name": "HOT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -2485,6 +2714,7 @@
         {
           "callsign": "HOT3472",
           "operator_icao": "HOT",
+          "operator_name": "HOT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -2506,6 +2736,7 @@
       "clients": [
         {
           "icao": "EWG",
+          "name": "Eurowings",
           "flights": 4,
           "bh": 0.0
         }
@@ -2515,6 +2746,7 @@
         {
           "callsign": "EWG36AZ",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -2524,6 +2756,7 @@
         {
           "callsign": "EWG36AZ",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -2533,6 +2766,7 @@
         {
           "callsign": "EWG5AB",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -2542,6 +2776,7 @@
         {
           "callsign": "EWG5AB",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -2563,6 +2798,7 @@
       "clients": [
         {
           "icao": "EWG",
+          "name": "Eurowings",
           "flights": 2,
           "bh": 0.0
         }
@@ -2572,6 +2808,7 @@
         {
           "callsign": "EWG7060",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -2581,6 +2818,7 @@
         {
           "callsign": "EWG76U",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -2602,6 +2840,7 @@
       "clients": [
         {
           "icao": "EWG",
+          "name": "Eurowings",
           "flights": 6,
           "bh": 0.0
         }
@@ -2611,6 +2850,7 @@
         {
           "callsign": "EWG84T",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -2620,6 +2860,7 @@
         {
           "callsign": "EWG84T",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -2629,6 +2870,7 @@
         {
           "callsign": "EWG48K",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -2638,6 +2880,7 @@
         {
           "callsign": "EWG48K",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -2647,6 +2890,7 @@
         {
           "callsign": "EWG2R",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -2656,6 +2900,7 @@
         {
           "callsign": "EWG2R",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -2677,6 +2922,7 @@
       "clients": [
         {
           "icao": "EWG",
+          "name": "Eurowings",
           "flights": 4,
           "bh": 0.0
         }
@@ -2686,6 +2932,7 @@
         {
           "callsign": "EWG1GC",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -2695,6 +2942,7 @@
         {
           "callsign": "EWG1GC",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -2704,6 +2952,7 @@
         {
           "callsign": "EWG95P",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -2713,6 +2962,7 @@
         {
           "callsign": "EWG95P",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -2748,6 +2998,7 @@
       "clients": [
         {
           "icao": "EWG",
+          "name": "Eurowings",
           "flights": 4,
           "bh": 0.0
         }
@@ -2757,6 +3008,7 @@
         {
           "callsign": "EWG5SK",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -2766,6 +3018,7 @@
         {
           "callsign": "EWG5SK",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -2775,6 +3028,7 @@
         {
           "callsign": "EWG98Q",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -2784,6 +3038,7 @@
         {
           "callsign": "EWG98Q",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -2861,6 +3116,7 @@
       "clients": [
         {
           "icao": "EWG",
+          "name": "Eurowings",
           "flights": 4,
           "bh": 0.0
         }
@@ -2870,6 +3126,7 @@
         {
           "callsign": "EWG7SV",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -2879,6 +3136,7 @@
         {
           "callsign": "EWG6ND",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -2888,6 +3146,7 @@
         {
           "callsign": "EWG90Y",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -2897,6 +3156,7 @@
         {
           "callsign": "EWG90Y",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -2918,6 +3178,7 @@
       "clients": [
         {
           "icao": "EWG",
+          "name": "Eurowings",
           "flights": 4,
           "bh": 0.0
         }
@@ -2927,6 +3188,7 @@
         {
           "callsign": "EWG5PD",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -2936,6 +3198,7 @@
         {
           "callsign": "EWG60H",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -2945,6 +3208,7 @@
         {
           "callsign": "EWG7VN",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -2954,6 +3218,7 @@
         {
           "callsign": "EWG7VN",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -2989,6 +3254,7 @@
       "clients": [
         {
           "icao": "GJM",
+          "name": "GJM",
           "flights": 2,
           "bh": 0.0
         }
@@ -2998,6 +3264,7 @@
         {
           "callsign": "GJM3327",
           "operator_icao": "GJM",
+          "operator_name": "GJM",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -3007,6 +3274,7 @@
         {
           "callsign": "GJM3328",
           "operator_icao": "GJM",
+          "operator_name": "GJM",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -3016,6 +3284,7 @@
         {
           "callsign": "GJT46R",
           "operator_icao": "GJT",
+          "operator_name": "GJT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3025,6 +3294,7 @@
         {
           "callsign": "GJT7PN",
           "operator_icao": "GJT",
+          "operator_name": "GJT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3091,6 +3361,7 @@
         {
           "callsign": "GJT25H",
           "operator_icao": "GJT",
+          "operator_name": "GJT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3100,6 +3371,7 @@
         {
           "callsign": "GJT9NV",
           "operator_icao": "GJT",
+          "operator_name": "GJT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3121,6 +3393,7 @@
       "clients": [
         {
           "icao": "SZN",
+          "name": "SZN",
           "flights": 3,
           "bh": 0.0
         }
@@ -3130,6 +3403,7 @@
         {
           "callsign": "SZN215",
           "operator_icao": "SZN",
+          "operator_name": "SZN",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -3139,6 +3413,7 @@
         {
           "callsign": "SZN215",
           "operator_icao": "SZN",
+          "operator_name": "SZN",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -3148,6 +3423,7 @@
         {
           "callsign": "SZN216",
           "operator_icao": "SZN",
+          "operator_name": "SZN",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -3169,6 +3445,7 @@
       "clients": [
         {
           "icao": "CSW",
+          "name": "CSW",
           "flights": 1,
           "bh": 0.0
         }
@@ -3178,6 +3455,7 @@
         {
           "callsign": "CSW5801",
           "operator_icao": "CSW",
+          "operator_name": "CSW",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -3216,6 +3494,7 @@
         {
           "callsign": "ENT7KW",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3225,6 +3504,7 @@
         {
           "callsign": "ENT1LY",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3234,6 +3514,7 @@
         {
           "callsign": "ENT1LY",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3243,6 +3524,7 @@
         {
           "callsign": "ENT1LY",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3252,6 +3534,7 @@
         {
           "callsign": "ENT4ZG",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3261,6 +3544,7 @@
         {
           "callsign": "ENT4ZG",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3270,6 +3554,7 @@
         {
           "callsign": "ENT4ZG",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3279,6 +3564,7 @@
         {
           "callsign": "ENT3UG",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3303,6 +3589,7 @@
         {
           "callsign": "ENT7339",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3312,6 +3599,7 @@
         {
           "callsign": "ENT7340",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3336,6 +3624,7 @@
         {
           "callsign": "ENT403",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3345,6 +3634,7 @@
         {
           "callsign": "ENT404",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3397,6 +3687,7 @@
         {
           "callsign": "ENT9YS",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3435,6 +3726,7 @@
         {
           "callsign": "ENT4EU",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3444,6 +3736,7 @@
         {
           "callsign": "ENT8RE",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3453,6 +3746,7 @@
         {
           "callsign": "ENT7ZM",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3462,6 +3756,7 @@
         {
           "callsign": "ENT8UW",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3500,6 +3795,7 @@
         {
           "callsign": "ENT1155",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3509,6 +3805,7 @@
         {
           "callsign": "ENT4866",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3518,6 +3815,7 @@
         {
           "callsign": "ENT4865",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3542,6 +3840,7 @@
         {
           "callsign": "ENT4337",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3551,6 +3850,7 @@
         {
           "callsign": "ENT4338",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3560,6 +3860,7 @@
         {
           "callsign": "ENT5159",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3569,6 +3870,7 @@
         {
           "callsign": "ENT5160",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3593,6 +3895,7 @@
         {
           "callsign": "ENT4995",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3602,6 +3905,7 @@
         {
           "callsign": "ENT4996",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3611,6 +3915,7 @@
         {
           "callsign": "ENT3PM",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3620,6 +3925,7 @@
         {
           "callsign": "ENT7YT",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3629,6 +3935,7 @@
         {
           "callsign": "ENT5HP",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3638,6 +3945,7 @@
         {
           "callsign": "ENT7PC",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3690,6 +3998,7 @@
         {
           "callsign": "ENT3EF",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3699,6 +4008,7 @@
         {
           "callsign": "ENT3NZ",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3708,6 +4018,7 @@
         {
           "callsign": "ENT5TK",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3717,6 +4028,7 @@
         {
           "callsign": "ENT9HC",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3726,6 +4038,7 @@
         {
           "callsign": "ENT5WH",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3735,6 +4048,7 @@
         {
           "callsign": "ENT1GN",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3759,6 +4073,7 @@
         {
           "callsign": "ENT7332",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3768,6 +4083,7 @@
         {
           "callsign": "ENT1183",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3777,6 +4093,7 @@
         {
           "callsign": "ENT1183",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3786,6 +4103,7 @@
         {
           "callsign": "ENT1184",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3795,6 +4113,7 @@
         {
           "callsign": "ENT1184",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3819,6 +4138,7 @@
         {
           "callsign": "ENT7319",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3828,6 +4148,7 @@
         {
           "callsign": "ENT7320",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3852,6 +4173,7 @@
         {
           "callsign": "ENT571D",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3861,6 +4183,7 @@
         {
           "callsign": "ENT571D",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3885,6 +4208,7 @@
         {
           "callsign": "ENT1WP",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3894,6 +4218,7 @@
         {
           "callsign": "ENT9XA",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3918,6 +4243,7 @@
         {
           "callsign": "ENT771",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3927,6 +4253,7 @@
         {
           "callsign": "ENT772P",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3965,6 +4292,7 @@
         {
           "callsign": "ENT4SH",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3974,6 +4302,7 @@
         {
           "callsign": "ENT4WT",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -3998,6 +4327,7 @@
         {
           "callsign": "ENT7031",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4007,6 +4337,7 @@
         {
           "callsign": "ENT7032",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4031,6 +4362,7 @@
         {
           "callsign": "ENT4359",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4040,6 +4372,7 @@
         {
           "callsign": "ENT4360",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4064,6 +4397,7 @@
         {
           "callsign": "ENT995",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4088,6 +4422,7 @@
         {
           "callsign": "ENT5CU",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4097,6 +4432,7 @@
         {
           "callsign": "ENT7SK",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4121,6 +4457,7 @@
         {
           "callsign": "ENT1RG",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4130,6 +4467,7 @@
         {
           "callsign": "ENT2PT",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4139,6 +4477,7 @@
         {
           "callsign": "ENT4XZ",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4148,6 +4487,7 @@
         {
           "callsign": "ENT1UB",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4157,6 +4497,7 @@
         {
           "callsign": "ENT5MT",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4181,6 +4522,7 @@
         {
           "callsign": "ENT2NE",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4190,6 +4532,7 @@
         {
           "callsign": "ENT8KD",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4199,6 +4542,7 @@
         {
           "callsign": "ENT8PN",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4208,6 +4552,7 @@
         {
           "callsign": "ENT2AF",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4232,6 +4577,7 @@
         {
           "callsign": "ENT9DP",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4241,6 +4587,7 @@
         {
           "callsign": "ENT5EZ",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4250,6 +4597,7 @@
         {
           "callsign": "ENT1TZ",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4259,6 +4607,7 @@
         {
           "callsign": "ENT8BT",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4283,6 +4632,7 @@
         {
           "callsign": "ENT7004",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4292,6 +4642,7 @@
         {
           "callsign": "ENT4KP",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4301,6 +4652,7 @@
         {
           "callsign": "ENT4RK",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4325,6 +4677,7 @@
         {
           "callsign": "ENT5PW",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4334,6 +4687,7 @@
         {
           "callsign": "ENT4039",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4343,6 +4697,7 @@
         {
           "callsign": "ENT4040",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4352,6 +4707,7 @@
         {
           "callsign": "ENT9JY",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4361,6 +4717,7 @@
         {
           "callsign": "ENT4MN",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4385,6 +4742,7 @@
         {
           "callsign": "ENT4201",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4394,6 +4752,7 @@
         {
           "callsign": "ENT4202",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4403,6 +4762,7 @@
         {
           "callsign": "ENT4361",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4412,6 +4772,7 @@
         {
           "callsign": "ENT7988",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4436,6 +4797,7 @@
         {
           "callsign": "ENT5577",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4445,6 +4807,7 @@
         {
           "callsign": "ENT5578",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4469,6 +4832,7 @@
         {
           "callsign": "ENT4203",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4478,6 +4842,7 @@
         {
           "callsign": "ENT4204",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4487,6 +4852,7 @@
         {
           "callsign": "ENT4DY",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4496,6 +4862,7 @@
         {
           "callsign": "ENT5US",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4505,6 +4872,7 @@
         {
           "callsign": "ENT6MY",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4514,6 +4882,7 @@
         {
           "callsign": "ENT4JA",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4552,6 +4921,7 @@
         {
           "callsign": "ENT6JP",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4561,6 +4931,7 @@
         {
           "callsign": "ENT2UA",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4585,6 +4956,7 @@
         {
           "callsign": "ENT2LB",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4594,6 +4966,7 @@
         {
           "callsign": "ENT1CW",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4603,6 +4976,7 @@
         {
           "callsign": "ENT3LX",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4612,6 +4986,7 @@
         {
           "callsign": "ENT9FB",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4636,6 +5011,7 @@
         {
           "callsign": "TVS2131",
           "operator_icao": "TVS",
+          "operator_name": "Smartwings",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4645,6 +5021,7 @@
         {
           "callsign": "TVS4104",
           "operator_icao": "TVS",
+          "operator_name": "Smartwings",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4654,6 +5031,7 @@
         {
           "callsign": "TVS4104",
           "operator_icao": "TVS",
+          "operator_name": "Smartwings",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4663,6 +5041,7 @@
         {
           "callsign": "TVS4104",
           "operator_icao": "TVS",
+          "operator_name": "Smartwings",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4684,6 +5063,7 @@
       "clients": [
         {
           "icao": "TVL",
+          "name": "TVL",
           "flights": 2,
           "bh": 0.0
         }
@@ -4693,6 +5073,7 @@
         {
           "callsign": "TVL5328",
           "operator_icao": "TVL",
+          "operator_name": "TVL",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -4702,6 +5083,7 @@
         {
           "callsign": "TVL5329",
           "operator_icao": "TVL",
+          "operator_name": "TVL",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -4711,6 +5093,7 @@
         {
           "callsign": "TVS1DE",
           "operator_icao": "TVS",
+          "operator_name": "Smartwings",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4720,6 +5103,7 @@
         {
           "callsign": "TVS2DE",
           "operator_icao": "TVS",
+          "operator_name": "Smartwings",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4729,6 +5113,7 @@
         {
           "callsign": "TVS52A",
           "operator_icao": "TVS",
+          "operator_name": "Smartwings",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4738,6 +5123,7 @@
         {
           "callsign": "TVS53B",
           "operator_icao": "TVS",
+          "operator_name": "Smartwings",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4762,6 +5148,7 @@
         {
           "callsign": "TVS22H",
           "operator_icao": "TVS",
+          "operator_name": "Smartwings",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4771,6 +5158,7 @@
         {
           "callsign": "TVS23K",
           "operator_icao": "TVS",
+          "operator_name": "Smartwings",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4780,6 +5168,7 @@
         {
           "callsign": "TVS26M",
           "operator_icao": "TVS",
+          "operator_name": "Smartwings",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4789,6 +5178,7 @@
         {
           "callsign": "TVS27N",
           "operator_icao": "TVS",
+          "operator_name": "Smartwings",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4810,6 +5200,7 @@
       "clients": [
         {
           "icao": "TVP",
+          "name": "TVP",
           "flights": 5,
           "bh": 0.0
         }
@@ -4819,6 +5210,7 @@
         {
           "callsign": "TVP7775",
           "operator_icao": "TVP",
+          "operator_name": "TVP",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -4828,6 +5220,7 @@
         {
           "callsign": "TVP7776",
           "operator_icao": "TVP",
+          "operator_name": "TVP",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -4837,6 +5230,7 @@
         {
           "callsign": "TVP7471",
           "operator_icao": "TVP",
+          "operator_name": "TVP",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -4846,6 +5240,7 @@
         {
           "callsign": "TVP7470",
           "operator_icao": "TVP",
+          "operator_name": "TVP",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -4855,6 +5250,7 @@
         {
           "callsign": "TVP7777",
           "operator_icao": "TVP",
+          "operator_name": "TVP",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -4879,6 +5275,7 @@
         {
           "callsign": "TVS3KM",
           "operator_icao": "TVS",
+          "operator_name": "Smartwings",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4888,6 +5285,7 @@
         {
           "callsign": "TVS4KM",
           "operator_icao": "TVS",
+          "operator_name": "Smartwings",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4897,6 +5295,7 @@
         {
           "callsign": "TVS2206",
           "operator_icao": "TVS",
+          "operator_name": "Smartwings",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4906,6 +5305,7 @@
         {
           "callsign": "TVS2207",
           "operator_icao": "TVS",
+          "operator_name": "Smartwings",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4915,6 +5315,7 @@
         {
           "callsign": "TVS4BD",
           "operator_icao": "TVS",
+          "operator_name": "Smartwings",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4924,6 +5325,7 @@
         {
           "callsign": "TVS3BD",
           "operator_icao": "TVS",
+          "operator_name": "Smartwings",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4948,6 +5350,7 @@
         {
           "callsign": "TVS2721",
           "operator_icao": "TVS",
+          "operator_name": "Smartwings",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4957,6 +5360,7 @@
         {
           "callsign": "TVS2284",
           "operator_icao": "TVS",
+          "operator_name": "Smartwings",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4966,6 +5370,7 @@
         {
           "callsign": "TVS2285",
           "operator_icao": "TVS",
+          "operator_name": "Smartwings",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4975,6 +5380,7 @@
         {
           "callsign": "TVS2QZ",
           "operator_icao": "TVS",
+          "operator_name": "Smartwings",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4984,6 +5390,7 @@
         {
           "callsign": "TVS4ZA",
           "operator_icao": "TVS",
+          "operator_name": "Smartwings",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -4993,6 +5400,7 @@
         {
           "callsign": "TVS1MN",
           "operator_icao": "TVS",
+          "operator_name": "Smartwings",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -5002,6 +5410,7 @@
         {
           "callsign": "TVS2MN",
           "operator_icao": "TVS",
+          "operator_name": "Smartwings",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -5040,6 +5449,7 @@
         {
           "callsign": "TVS2854",
           "operator_icao": "TVS",
+          "operator_name": "Smartwings",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -5049,6 +5459,7 @@
         {
           "callsign": "TVS2875",
           "operator_icao": "TVS",
+          "operator_name": "Smartwings",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -5058,6 +5469,7 @@
         {
           "callsign": "TVS2874",
           "operator_icao": "TVS",
+          "operator_name": "Smartwings",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -5067,6 +5479,7 @@
         {
           "callsign": "TVS2789",
           "operator_icao": "TVS",
+          "operator_name": "Smartwings",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -5076,6 +5489,7 @@
         {
           "callsign": "TVS2788",
           "operator_icao": "TVS",
+          "operator_name": "Smartwings",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -5097,6 +5511,7 @@
       "clients": [
         {
           "icao": "TVP",
+          "name": "TVP",
           "flights": 4,
           "bh": 0.0
         }
@@ -5106,6 +5521,7 @@
         {
           "callsign": "TVP7605",
           "operator_icao": "TVP",
+          "operator_name": "TVP",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -5115,6 +5531,7 @@
         {
           "callsign": "TVP7306",
           "operator_icao": "TVP",
+          "operator_name": "TVP",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -5124,6 +5541,7 @@
         {
           "callsign": "TVP7307",
           "operator_icao": "TVP",
+          "operator_name": "TVP",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -5133,6 +5551,7 @@
         {
           "callsign": "TVP7200",
           "operator_icao": "TVP",
+          "operator_name": "TVP",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -5157,6 +5576,7 @@
         {
           "callsign": "TVS3PR",
           "operator_icao": "TVS",
+          "operator_name": "Smartwings",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -5166,6 +5586,7 @@
         {
           "callsign": "TVS4PR",
           "operator_icao": "TVS",
+          "operator_name": "Smartwings",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -5201,6 +5622,7 @@
       "clients": [
         {
           "icao": "ISR",
+          "name": "Israir",
           "flights": 4,
           "bh": 0.0
         }
@@ -5210,6 +5632,7 @@
         {
           "callsign": "ISR344",
           "operator_icao": "ISR",
+          "operator_name": "Israir",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -5219,6 +5642,7 @@
         {
           "callsign": "ISR727",
           "operator_icao": "ISR",
+          "operator_name": "Israir",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -5228,6 +5652,7 @@
         {
           "callsign": "ISR728",
           "operator_icao": "ISR",
+          "operator_name": "Israir",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -5237,6 +5662,7 @@
         {
           "callsign": "ISR347",
           "operator_icao": "ISR",
+          "operator_name": "Israir",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -5272,6 +5698,7 @@
       "clients": [
         {
           "icao": "EWG",
+          "name": "Eurowings",
           "flights": 3,
           "bh": 0.0
         }
@@ -5281,6 +5708,7 @@
         {
           "callsign": "EWG4TW",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -5290,6 +5718,7 @@
         {
           "callsign": "EWG545",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -5299,6 +5728,7 @@
         {
           "callsign": "EWG24Y",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -5323,6 +5753,7 @@
         {
           "callsign": "TVS2148",
           "operator_icao": "TVS",
+          "operator_name": "Smartwings",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -5332,6 +5763,7 @@
         {
           "callsign": "TVS2149",
           "operator_icao": "TVS",
+          "operator_name": "Smartwings",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -5341,6 +5773,7 @@
         {
           "callsign": "TVS23C",
           "operator_icao": "TVS",
+          "operator_name": "Smartwings",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -5350,6 +5783,7 @@
         {
           "callsign": "TVS23D",
           "operator_icao": "TVS",
+          "operator_name": "Smartwings",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -5359,6 +5793,7 @@
         {
           "callsign": "TVS7RW",
           "operator_icao": "TVS",
+          "operator_name": "Smartwings",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -5368,6 +5803,7 @@
         {
           "callsign": "TVS8RW",
           "operator_icao": "TVS",
+          "operator_name": "Smartwings",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -5403,6 +5839,7 @@
       "clients": [
         {
           "icao": "TVP",
+          "name": "TVP",
           "flights": 2,
           "bh": 0.0
         }
@@ -5412,6 +5849,7 @@
         {
           "callsign": "TVS2000",
           "operator_icao": "TVS",
+          "operator_name": "Smartwings",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -5421,6 +5859,7 @@
         {
           "callsign": "TVS2001",
           "operator_icao": "TVS",
+          "operator_name": "Smartwings",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -5430,6 +5869,7 @@
         {
           "callsign": "TVP7772",
           "operator_icao": "TVP",
+          "operator_name": "TVP",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -5439,6 +5879,7 @@
         {
           "callsign": "TVP7773",
           "operator_icao": "TVP",
+          "operator_name": "TVP",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -5460,6 +5901,7 @@
       "clients": [
         {
           "icao": "EWG",
+          "name": "Eurowings",
           "flights": 4,
           "bh": 0.0
         }
@@ -5469,6 +5911,7 @@
         {
           "callsign": "EWG60T",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -5478,6 +5921,7 @@
         {
           "callsign": "EWG10L",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -5487,6 +5931,7 @@
         {
           "callsign": "EWG2B",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -5496,6 +5941,7 @@
         {
           "callsign": "EWG5K",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -5517,6 +5963,7 @@
       "clients": [
         {
           "icao": "TVP",
+          "name": "TVP",
           "flights": 4,
           "bh": 0.0
         }
@@ -5526,6 +5973,7 @@
         {
           "callsign": "TVP7786",
           "operator_icao": "TVP",
+          "operator_name": "TVP",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -5535,6 +5983,7 @@
         {
           "callsign": "TVP7787",
           "operator_icao": "TVP",
+          "operator_name": "TVP",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -5544,6 +5993,7 @@
         {
           "callsign": "TVP7730",
           "operator_icao": "TVP",
+          "operator_name": "TVP",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -5553,6 +6003,7 @@
         {
           "callsign": "TVP7731",
           "operator_icao": "TVP",
+          "operator_name": "TVP",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -5574,6 +6025,7 @@
       "clients": [
         {
           "icao": "TVL",
+          "name": "TVL",
           "flights": 5,
           "bh": 0.0
         }
@@ -5583,6 +6035,7 @@
         {
           "callsign": "TVL5434",
           "operator_icao": "TVL",
+          "operator_name": "TVL",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -5592,6 +6045,7 @@
         {
           "callsign": "TVL5434",
           "operator_icao": "TVL",
+          "operator_name": "TVL",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -5601,6 +6055,7 @@
         {
           "callsign": "TVL5363",
           "operator_icao": "TVL",
+          "operator_name": "TVL",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -5610,6 +6065,7 @@
         {
           "callsign": "TVL5362",
           "operator_icao": "TVL",
+          "operator_name": "TVL",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -5619,6 +6075,7 @@
         {
           "callsign": "TVL5435",
           "operator_icao": "TVL",
+          "operator_name": "TVL",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -5640,6 +6097,7 @@
       "clients": [
         {
           "icao": "EWG",
+          "name": "Eurowings",
           "flights": 2,
           "bh": 0.0
         }
@@ -5649,6 +6107,7 @@
         {
           "callsign": "EWG4LQ",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -5658,6 +6117,7 @@
         {
           "callsign": "EWG86P",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -5682,6 +6142,7 @@
         {
           "callsign": "TVS89Q",
           "operator_icao": "TVS",
+          "operator_name": "Smartwings",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -5691,6 +6152,7 @@
         {
           "callsign": "TVS89R",
           "operator_icao": "TVS",
+          "operator_name": "Smartwings",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -5712,6 +6174,7 @@
       "clients": [
         {
           "icao": "EWG",
+          "name": "Eurowings",
           "flights": 3,
           "bh": 0.0
         }
@@ -5721,6 +6184,7 @@
         {
           "callsign": "EWG09NC",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -5730,6 +6194,7 @@
         {
           "callsign": "EWG37V",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -5739,6 +6204,7 @@
         {
           "callsign": "EWG58E",
           "operator_icao": "EWG",
+          "operator_name": "Eurowings",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -5777,6 +6243,7 @@
         {
           "callsign": "AWC621",
           "operator_icao": "AWC",
+          "operator_name": "AWC",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -5786,6 +6253,7 @@
         {
           "callsign": "AWC622",
           "operator_icao": "AWC",
+          "operator_name": "AWC",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -5795,6 +6263,7 @@
         {
           "callsign": "AWC962W",
           "operator_icao": "AWC",
+          "operator_name": "AWC",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -5816,6 +6285,7 @@
       "clients": [
         {
           "icao": "EXS",
+          "name": "Jet2",
           "flights": 2,
           "bh": 0.0
         }
@@ -5825,6 +6295,7 @@
         {
           "callsign": "EXS65DP",
           "operator_icao": "EXS",
+          "operator_name": "Jet2",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -5834,6 +6305,7 @@
         {
           "callsign": "EXS78GT",
           "operator_icao": "EXS",
+          "operator_name": "Jet2",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -5855,6 +6327,7 @@
       "clients": [
         {
           "icao": "EXS",
+          "name": "Jet2",
           "flights": 2,
           "bh": 0.0
         }
@@ -5864,6 +6337,7 @@
         {
           "callsign": "EXS48DQ",
           "operator_icao": "EXS",
+          "operator_name": "Jet2",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -5873,6 +6347,7 @@
         {
           "callsign": "EXS94Y",
           "operator_icao": "EXS",
+          "operator_name": "Jet2",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -5925,6 +6400,7 @@
         {
           "callsign": "AWC667",
           "operator_icao": "AWC",
+          "operator_name": "AWC",
           "is_acmi": false,
           "route": null,
           "dep_time": null,
@@ -5960,6 +6436,7 @@
       "clients": [
         {
           "icao": "BCS",
+          "name": "BCS",
           "flights": 2,
           "bh": 0.0
         }
@@ -5969,6 +6446,7 @@
         {
           "callsign": "BCS2882",
           "operator_icao": "BCS",
+          "operator_name": "BCS",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -5978,6 +6456,7 @@
         {
           "callsign": "BCS1RF",
           "operator_icao": "BCS",
+          "operator_name": "BCS",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -5999,6 +6478,7 @@
       "clients": [
         {
           "icao": "BCS",
+          "name": "BCS",
           "flights": 2,
           "bh": 0.0
         }
@@ -6008,6 +6488,7 @@
         {
           "callsign": "BCS7DP",
           "operator_icao": "BCS",
+          "operator_name": "BCS",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -6017,6 +6498,7 @@
         {
           "callsign": "BCS43A",
           "operator_icao": "BCS",
+          "operator_name": "BCS",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -6122,6 +6604,7 @@
       "clients": [
         {
           "icao": "ENT",
+          "name": "ENT",
           "flights": 2,
           "bh": 0.0
         }
@@ -6131,6 +6614,7 @@
         {
           "callsign": "ENT7987",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -6140,6 +6624,7 @@
         {
           "callsign": "ENT4362",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -6189,6 +6674,7 @@
       "clients": [
         {
           "icao": "ENT",
+          "name": "ENT",
           "flights": 4,
           "bh": 0.0
         }
@@ -6198,6 +6684,7 @@
         {
           "callsign": "ENT4901",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -6207,6 +6694,7 @@
         {
           "callsign": "ENT4902",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -6216,6 +6704,7 @@
         {
           "callsign": "ENT8SZ",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -6225,6 +6714,7 @@
         {
           "callsign": "ENT8HK",
           "operator_icao": "ENT",
+          "operator_name": "ENT",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -6246,6 +6736,7 @@
       "clients": [
         {
           "icao": "APO",
+          "name": "Azores Airlines",
           "flights": 8,
           "bh": 0.0
         }
@@ -6255,6 +6746,7 @@
         {
           "callsign": "APO7100",
           "operator_icao": "APO",
+          "operator_name": "Azores Airlines",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -6264,6 +6756,7 @@
         {
           "callsign": "APO7101",
           "operator_icao": "APO",
+          "operator_name": "Azores Airlines",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -6273,6 +6766,7 @@
         {
           "callsign": "APO7102",
           "operator_icao": "APO",
+          "operator_name": "Azores Airlines",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -6282,6 +6776,7 @@
         {
           "callsign": "APO7103",
           "operator_icao": "APO",
+          "operator_name": "Azores Airlines",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -6291,6 +6786,7 @@
         {
           "callsign": "APO7126",
           "operator_icao": "APO",
+          "operator_name": "Azores Airlines",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -6300,6 +6796,7 @@
         {
           "callsign": "APO7127",
           "operator_icao": "APO",
+          "operator_name": "Azores Airlines",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -6309,6 +6806,7 @@
         {
           "callsign": "APO7424",
           "operator_icao": "APO",
+          "operator_name": "Azores Airlines",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
@@ -6318,6 +6816,7 @@
         {
           "callsign": "APO7427",
           "operator_icao": "APO",
+          "operator_name": "Azores Airlines",
           "is_acmi": true,
           "route": null,
           "dep_time": null,
