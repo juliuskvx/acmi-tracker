@@ -13,6 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -34,6 +36,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git pull origin main --rebase
           git add data/acmi_data.json data/acmi_history.json data/acmi_log.xlsx
           git diff --cached --quiet || git commit -m "chore: daily ACMI refresh $(date -u +'%Y-%m-%d %H:%M UTC')"
-          git push
+          git push origin main
