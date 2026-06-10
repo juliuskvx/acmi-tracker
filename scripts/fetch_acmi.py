@@ -2,6 +2,10 @@
 """
 fetch_acmi.py — ACMI Tracker FR24 data fetcher
 Runs daily at 10:00 AM Lithuanian time (08:00 UTC)
+
+Does two things:
+1. Live snapshot — current positions of all tracked aircraft → acmi_data.json
+2. Daily report — yesterday's full flight activity (BH, flights, routes, clients) → acmi_history.json
 """
 
 import json
@@ -26,6 +30,8 @@ HEADERS = {
     "Accept-Version": "v1",
     "Accept": "application/json",
 }
+
+# ── Airline name lookup ───────────────────────────────────────────────────────
 
 AIRLINE_NAMES = {
     "EWG": "Eurowings",
@@ -119,7 +125,19 @@ AIRLINE_NAMES = {
     "ARU": "Aruba Airlines",
     "MLH": "Air Alsace",
     "NVR": "Novair",
+    "ENT": "Enter Air",
+    "AXQ": "AirExplore",
+    "HST": "Heston Airlines",
+    "HOT": "Valletta Airlines",
+    "GJT": "GetJet Airlines",
+    "GJM": "GetJet Airlines Malta",
+    "AWC": "Titan Airways",
+    "TMT": "Titan Airways Malta",
+    "AVE": "Avion Express",
+    "MLT": "Avion Express Malta",
 }
+
+# ── API helper ────────────────────────────────────────────────────────────────
 
 def api_get(url, params, label=""):
     for attempt in range(MAX_RETRIES):
@@ -144,6 +162,8 @@ def api_get(url, params, label=""):
             print(f"  ERROR {label}: {e}")
             return None
     return None
+
+# ── FR24 queries ──────────────────────────────────────────────────────────────
 
 def get_live_position(registration):
     result = api_get(
@@ -171,6 +191,8 @@ def get_day_flights(registration, date_from_utc, date_to_utc):
         return result.get("data", [])
     return []
 
+# ── Helpers ───────────────────────────────────────────────────────────────────
+
 def detect_operator(callsign, owner_icao):
     if not callsign or len(callsign) < 3:
         return None, False
@@ -183,17 +205,19 @@ def resolve_airline_name(icao_code):
     return AIRLINE_NAMES.get(icao_code.upper(), icao_code)
 
 def calc_block_hours(dep_time, arr_time):
+    """Calculate block hours to nearest 0.1h from ISO timestamp strings."""
     if not dep_time or not arr_time:
         return 0.0
     try:
+        fmt = "%Y-%m-%dT%H:%M:%SZ"
         if isinstance(dep_time, (int, float)):
             dep = datetime.fromtimestamp(dep_time, tz=timezone.utc)
         else:
-            dep = datetime.strptime(dep_time, "%Y-%m-%dT%H:%M:%SZ")
+            dep = datetime.strptime(dep_time, fmt)
         if isinstance(arr_time, (int, float)):
             arr = datetime.fromtimestamp(arr_time, tz=timezone.utc)
         else:
-            arr = datetime.strptime(arr_time, "%Y-%m-%dT%H:%M:%SZ")
+            arr = datetime.strptime(arr_time, fmt)
         diff_minutes = (arr - dep).total_seconds() / 60
         if diff_minutes <= 0:
             return 0.0
@@ -212,17 +236,17 @@ def lt_day_window(offset_days=0):
     utc_to    = (end_lt - lt_offset).strftime("%Y-%m-%dT%H:%M:%SZ")
     return now_lt.strftime("%Y-%m-%d"), utc_from, utc_to
 
+# ── Phase 1: Live Snapshot ────────────────────────────────────────────────────
+
 def run_snapshot(registry):
     print("\n" + "="*60)
     print("PHASE 1 — Live Snapshot")
     print("="*60)
 
-    now_utc   = datetime.now(timezone.utc)
-    lt_offset = timedelta(hours=3)
-    now_lt    = now_utc + lt_offset
+    now_utc     = datetime.now(timezone.utc)
+    lt_offset   = timedelta(hours=3)
+    now_lt      = now_utc + lt_offset
     report_date = now_lt.strftime("%Y-%m-%d")
-    interval_from = f"{report_date} 00:01"
-    interval_to   = f"{report_date} 23:59"
 
     total   = sum(len(op["aircraft"]) for op in registry["operators"])
     fleet   = []
@@ -278,8 +302,8 @@ def run_snapshot(registry):
                     "last_flight": callsign,
                     "status": "acmi_active" if is_acmi else "own_ops",
                 })
-                orig = live.get("orig_iata", "")
-                dest = live.get("dest_iata", "")
+                orig = live.get("orig_iata") or live.get("orig_icao", "")
+                dest = live.get("dest_iata") or live.get("dest_icao_actual") or live.get("dest_icao", "")
                 if orig and dest:
                     entry["last_route"] = f"{orig}-{dest}"
                 if is_acmi:
@@ -289,15 +313,16 @@ def run_snapshot(registry):
                     own_count += 1
                     print(f"own ops ({callsign})")
             else:
+                # Fallback: today's flight summary
                 _, utc_from, utc_to = lt_day_window(0)
                 summary = get_day_flights(reg, utc_from, utc_to)
                 time.sleep(DELAY)
                 if summary:
                     last = summary[0]
                     entry["last_flight"] = last.get("callsign")
-                    entry["last_seen"]   = last.get("actual_arr_time") or last.get("actual_dep_time")
-                    orig = last.get("orig_iata", "")
-                    dest = last.get("dest_iata", "")
+                    entry["last_seen"]   = last.get("datetime_landed") or last.get("datetime_takeoff")
+                    orig = last.get("orig_iata") or last.get("orig_icao", "")
+                    dest = last.get("dest_iata") or last.get("dest_icao_actual") or last.get("dest_icao", "")
                     if orig and dest:
                         entry["last_route"] = f"{orig}-{dest}"
                     entry["status"] = "on_ground"
@@ -312,13 +337,13 @@ def run_snapshot(registry):
     output = {
         "last_updated": now_utc.isoformat(),
         "report_date": report_date,
-        "interval_from": interval_from,
-        "interval_to": interval_to,
+        "interval_from": f"{report_date} 00:01",
+        "interval_to":   f"{report_date} 23:59",
         "summary": {
             "total_aircraft": queried,
-            "acmi_active": acmi_count,
-            "own_ops": own_count,
-            "on_ground": ground_count,
+            "acmi_active":    acmi_count,
+            "own_ops":        own_count,
+            "on_ground":      ground_count,
         },
         "fleet": fleet,
     }
@@ -330,6 +355,8 @@ def run_snapshot(registry):
     print(f"\nSnapshot done — {acmi_count} ACMI active, {own_count} own ops, {ground_count} on ground")
     return output
 
+# ── Phase 2: Daily History Report ─────────────────────────────────────────────
+
 def run_history(registry):
     print("\n" + "="*60)
     print("PHASE 2 — Daily History Report (yesterday)")
@@ -339,9 +366,9 @@ def run_history(registry):
     print(f"Reporting period: {report_date} 00:01 → 23:59 LT")
     print(f"UTC window: {utc_from} → {utc_to}\n")
 
-    total   = sum(len(op["aircraft"]) for op in registry["operators"])
-    results = []
-    queried = 0
+    total      = sum(len(op["aircraft"]) for op in registry["operators"])
+    results    = []
+    queried    = 0
     client_map = {}
 
     for op in registry["operators"]:
@@ -357,28 +384,21 @@ def run_history(registry):
             flights = get_day_flights(reg, utc_from, utc_to)
             time.sleep(DELAY)
 
-            # ── TEMPORARY DEBUG — shows raw FR24 response for first aircraft with flights
-            if flights:
-                print(f"\n  DEBUG {reg} first flight raw data:")
-                print(json.dumps(flights[0], indent=2))
-                import sys; sys.exit(0)
-            # ── END DEBUG
-
             if not flights:
                 print("no flights")
                 results.append({
                     "registration": reg,
-                    "type": ac["type"],
-                    "owner_icao": op["icao"],
-                    "owner_name": op["name"],
-                    "group": op.get("group", op["name"]),
+                    "type":         ac["type"],
+                    "owner_icao":   op["icao"],
+                    "owner_name":   op["name"],
+                    "group":        op.get("group", op["name"]),
                     "total_flights": 0,
-                    "total_bh": 0.0,
+                    "total_bh":     0.0,
                     "acmi_flights": 0,
-                    "acmi_bh": 0.0,
-                    "clients": [],
-                    "routes": [],
-                    "flight_log": [],
+                    "acmi_bh":      0.0,
+                    "clients":      [],
+                    "routes":       [],
+                    "flight_log":   [],
                 })
                 continue
 
@@ -390,12 +410,13 @@ def run_history(registry):
             flight_log   = []
 
             for fl in flights:
-                callsign  = fl.get("callsign", "")
-                dep_time  = fl.get("actual_dep_time") or fl.get("scheduled_dep_time")
-                arr_time  = fl.get("actual_arr_time") or fl.get("scheduled_arr_time")
-                orig      = fl.get("orig_iata", "")
-                dest      = fl.get("dest_iata", "")
-                bh        = calc_block_hours(dep_time, arr_time)
+                callsign = fl.get("callsign", "")
+                # Correct FR24 field names from flight-summary/light
+                dep_time = fl.get("datetime_takeoff")
+                arr_time = fl.get("datetime_landed")
+                orig     = fl.get("orig_iata") or fl.get("orig_icao", "")
+                dest     = fl.get("dest_iata") or fl.get("dest_icao_actual") or fl.get("dest_icao", "")
+                bh       = calc_block_hours(dep_time, arr_time)
                 op_icao, is_acmi = detect_operator(callsign, op["icao"])
 
                 total_bh += bh
@@ -404,23 +425,23 @@ def run_history(registry):
                     routes.append(route)
 
                 flight_log.append({
-                    "callsign": callsign,
+                    "callsign":      callsign,
                     "operator_icao": op_icao,
                     "operator_name": resolve_airline_name(op_icao),
-                    "is_acmi": is_acmi,
-                    "route": route,
-                    "dep_time": dep_time,
-                    "arr_time": arr_time,
-                    "bh": bh,
+                    "is_acmi":       is_acmi,
+                    "route":         route,
+                    "dep_time":      dep_time,
+                    "arr_time":      arr_time,
+                    "bh":            bh,
                 })
 
                 if is_acmi and op_icao:
-                    acmi_bh += bh
+                    acmi_bh      += bh
                     acmi_flights += 1
                     if op_icao not in clients_seen:
                         clients_seen[op_icao] = {"flights": 0, "bh": 0.0}
                     clients_seen[op_icao]["flights"] += 1
-                    clients_seen[op_icao]["bh"] += bh
+                    clients_seen[op_icao]["bh"]      += bh
 
                     group = op.get("group", op["name"])
                     if op_icao not in client_map:
@@ -428,21 +449,21 @@ def run_history(registry):
                     if group not in client_map[op_icao]:
                         client_map[op_icao][group] = {"flights": 0, "bh": 0.0, "aircraft": set()}
                     client_map[op_icao][group]["flights"] += 1
-                    client_map[op_icao][group]["bh"] = round(client_map[op_icao][group]["bh"] + bh, 1)
+                    client_map[op_icao][group]["bh"]       = round(client_map[op_icao][group]["bh"] + bh, 1)
                     client_map[op_icao][group]["aircraft"].add(reg)
 
             clients_list = [
                 {
-                    "icao": k,
-                    "name": resolve_airline_name(k),
+                    "icao":    k,
+                    "name":    resolve_airline_name(k),
                     "flights": v["flights"],
-                    "bh": round(v["bh"], 1),
+                    "bh":      round(v["bh"], 1),
                 }
                 for k, v in sorted(clients_seen.items(), key=lambda x: -x[1]["bh"])
             ]
 
             total_bh = round(total_bh, 1)
-            acmi_bh  = round(acmi_bh, 1)
+            acmi_bh  = round(acmi_bh,  1)
 
             summary_str = f"{len(flights)} flights / {total_bh} BH"
             if acmi_flights:
@@ -450,63 +471,67 @@ def run_history(registry):
             print(summary_str)
 
             results.append({
-                "registration": reg,
-                "type": ac["type"],
-                "owner_icao": op["icao"],
-                "owner_name": op["name"],
-                "group": op.get("group", op["name"]),
+                "registration":  reg,
+                "type":          ac["type"],
+                "owner_icao":    op["icao"],
+                "owner_name":    op["name"],
+                "group":         op.get("group", op["name"]),
                 "total_flights": len(flights),
-                "total_bh": total_bh,
-                "acmi_flights": acmi_flights,
-                "acmi_bh": acmi_bh,
-                "clients": clients_list,
-                "routes": routes,
-                "flight_log": flight_log,
+                "total_bh":      total_bh,
+                "acmi_flights":  acmi_flights,
+                "acmi_bh":       acmi_bh,
+                "clients":       clients_list,
+                "routes":        routes,
+                "flight_log":    flight_log,
             })
 
+    # Serialize client_map
     client_map_serializable = {}
     for client_icao, providers in client_map.items():
         client_map_serializable[client_icao] = {
-            "name": resolve_airline_name(client_icao),
+            "name":      resolve_airline_name(client_icao),
             "providers": {},
         }
         for group, data in providers.items():
             client_map_serializable[client_icao]["providers"][group] = {
-                "flights": data["flights"],
-                "bh": data["bh"],
+                "flights":       data["flights"],
+                "bh":            data["bh"],
                 "aircraft_count": len(data["aircraft"]),
-                "aircraft": sorted(list(data["aircraft"])),
+                "aircraft":      sorted(list(data["aircraft"])),
             }
 
+    # Operator summaries
     op_summaries = {}
     for r in results:
         g = r["group"]
         if g not in op_summaries:
             op_summaries[g] = {"total_flights": 0, "total_bh": 0.0, "acmi_flights": 0, "acmi_bh": 0.0, "active_aircraft": 0}
-        op_summaries[g]["total_flights"]  += r["total_flights"]
-        op_summaries[g]["total_bh"]        = round(op_summaries[g]["total_bh"] + r["total_bh"], 1)
-        op_summaries[g]["acmi_flights"]   += r["acmi_flights"]
-        op_summaries[g]["acmi_bh"]         = round(op_summaries[g]["acmi_bh"] + r["acmi_bh"], 1)
+        op_summaries[g]["total_flights"] += r["total_flights"]
+        op_summaries[g]["total_bh"]       = round(op_summaries[g]["total_bh"] + r["total_bh"], 1)
+        op_summaries[g]["acmi_flights"]  += r["acmi_flights"]
+        op_summaries[g]["acmi_bh"]        = round(op_summaries[g]["acmi_bh"]  + r["acmi_bh"],  1)
         if r["total_flights"] > 0:
             op_summaries[g]["active_aircraft"] += 1
 
     output = {
-        "last_updated": datetime.now(timezone.utc).isoformat(),
-        "report_date": report_date,
-        "interval_from": f"{report_date} 00:01",
-        "interval_to": f"{report_date} 23:59",
+        "last_updated":       datetime.now(timezone.utc).isoformat(),
+        "report_date":        report_date,
+        "interval_from":      f"{report_date} 00:01",
+        "interval_to":        f"{report_date} 23:59",
         "operator_summaries": op_summaries,
-        "client_map": client_map_serializable,
-        "fleet": results,
+        "client_map":         client_map_serializable,
+        "fleet":              results,
     }
 
     with open(HISTORY, "w") as f:
         json.dump(output, f, indent=2)
 
-    total_bh_all  = round(sum(r["total_bh"] for r in results), 1)
-    total_acmi_bh = round(sum(r["acmi_bh"] for r in results), 1)
-    total_flights = sum(r["total_flights"] for r in results)
+    total_bh_all  = round(sum(r["total_bh"]  for r in results), 1)
+    total_acmi_bh = round(sum(r["acmi_bh"]   for r in results), 1)
+    total_flights = sum(r["total_flights"]    for r in results)
     print(f"\nHistory done — {total_flights} flights / {total_bh_all} BH total / {total_acmi_bh} BH on ACMI")
+
+# ── Main ──────────────────────────────────────────────────────────────────────
 
 def main():
     if not FR24_TOKEN:
