@@ -26,7 +26,6 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { background: var(--bg); color: var(--text); font-family: var(--ui); font-size: 14px; min-height: 100vh; }
 
-  /* Header */
   .header {
     border-bottom: 1px solid var(--border);
     padding: 0 24px; height: 56px;
@@ -44,10 +43,8 @@
   @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
   .interval-badge { font-size: 11px; color: var(--accent); background: rgba(0,212,255,.08); border: 1px solid rgba(0,212,255,.2); border-radius: 4px; padding: 3px 10px; }
 
-  /* Layout */
   .main { max-width: 1400px; margin: 0 auto; padding: 24px; }
 
-  /* Stat bar */
   .stat-bar { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin-bottom: 24px; }
   .stat-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 16px 20px; position: relative; overflow: hidden; }
   .stat-card::before { content:''; position:absolute; top:0;left:0;right:0; height:2px; }
@@ -63,7 +60,6 @@
   .stat-card.c-muted  .stat-value { color: var(--text); }
   .stat-sub { font-size: 11px; color: var(--muted); margin-top: 4px; font-family: var(--mono); }
 
-  /* Charts */
   .charts-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-bottom: 24px; }
   .chart-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 16px 20px; }
   .chart-title { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: 14px; }
@@ -74,7 +70,9 @@
   .legend-label { color: var(--muted); flex: 1; }
   .legend-value { font-family: var(--mono); font-size: 12px; font-weight: 500; color: var(--text); }
 
-  /* Tabs */
+  /* Chart mode label */
+  .chart-mode-label { font-size: 10px; color: var(--purple); font-family: var(--mono); margin-bottom: 14px; margin-top: -10px; }
+
   .tabs { display: flex; border-bottom: 1px solid var(--border); margin-bottom: 24px; }
   .tab { padding: 12px 20px; font-size: 13px; font-weight: 500; color: var(--muted); cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -1px; transition: all .15s; }
   .tab:hover { color: var(--text); }
@@ -82,11 +80,9 @@
   .tab-content { display: none; }
   .tab-content.active { display: block; }
 
-  /* Section header */
   .section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
   .section-title { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
 
-  /* Table base */
   .data-table { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-bottom: 24px; }
   .t-row { display: grid; align-items: center; padding: 11px 20px; border-bottom: 1px solid var(--border); gap: 12px; font-size: 12px; transition: background .15s; }
   .t-row:hover { background: var(--bg3); }
@@ -94,55 +90,30 @@
   .t-row.t-head { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); background: var(--bg3); cursor: default; }
   .t-row.t-head:hover { background: var(--bg3); }
 
-  /* ACMI active table */
-  .acmi-cols { grid-template-columns: 100px 1fr 130px 160px 140px 90px; }
-
-  /* Fleet table */
-  .fleet-cols { grid-template-columns: 100px 1fr 90px 130px 150px 100px 90px; }
-
-  /* Daily report table */
+  .acmi-cols   { grid-template-columns: 100px 1fr 130px 160px 140px 90px; }
+  .fleet-cols  { grid-template-columns: 100px 1fr 90px 130px 150px 100px 90px; }
   .report-cols { grid-template-columns: 100px 1fr 70px 70px 70px 70px 1fr; }
-
-  /* Client map table */
   .client-cols { grid-template-columns: 120px 1fr 80px 80px 80px; }
 
-  /* Reg */
   .reg { font-family: var(--mono); font-size: 13px; font-weight: 500; color: var(--accent); }
-
-  /* Owner */
   .owner { display: flex; flex-direction: column; gap: 2px; }
   .owner-name { font-size: 13px; font-weight: 500; }
   .owner-sub  { font-size: 11px; color: var(--muted); }
-
-  /* Operator badge */
   .op-badge { display: inline-flex; align-items: center; background: rgba(0,212,255,.1); border: 1px solid rgba(0,212,255,.2); border-radius: 4px; padding: 3px 9px; font-family: var(--mono); font-size: 12px; font-weight: 500; color: var(--accent); }
-
-  /* Client badge */
   .client-badge { display: inline-flex; align-items: center; background: rgba(167,139,250,.1); border: 1px solid rgba(167,139,250,.2); border-radius: 4px; padding: 3px 9px; font-family: var(--mono); font-size: 12px; font-weight: 500; color: var(--purple); margin-right: 4px; margin-bottom: 2px; }
-
-  /* Route */
   .route { font-family: var(--mono); font-size: 12px; color: var(--text); display: flex; align-items: center; gap: 4px; }
   .route-arrow { color: var(--muted); }
-
-  /* Status pill */
   .pill { display: inline-flex; align-items: center; gap: 4px; border-radius: 99px; padding: 3px 9px; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; white-space: nowrap; }
   .pill.acmi    { background: rgba(0,212,255,.12); color: var(--accent); border: 1px solid rgba(0,212,255,.25); }
   .pill.own     { background: rgba(0,255,136,.08);  color: var(--green);  border: 1px solid rgba(0,255,136,.2); }
   .pill.ground  { background: rgba(100,116,139,.12); color: var(--muted); border: 1px solid rgba(100,116,139,.2); }
   .pill.unknown { background: rgba(255,170,0,.08);  color: var(--amber);  border: 1px solid rgba(255,170,0,.2); }
-
-  /* Type badge */
   .type-badge { font-family: var(--mono); font-size: 11px; color: var(--muted); background: var(--bg3); border: 1px solid var(--border); border-radius: 3px; padding: 2px 7px; display: inline-block; }
-
-  /* BH value */
   .bh-value { font-family: var(--mono); font-size: 13px; font-weight: 500; color: var(--green); }
   .bh-zero  { color: var(--muted); }
-
-  /* Mono small */
   .mono-sm { font-family: var(--mono); font-size: 11px; color: var(--muted); }
   .mono-md { font-family: var(--mono); font-size: 12px; color: var(--text); }
 
-  /* Operator cards */
   .operator-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap: 12px; margin-bottom: 24px; }
   .op-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 16px; transition: border-color .15s; }
   .op-card:hover { border-color: rgba(0,212,255,.3); }
@@ -154,7 +125,6 @@
   .op-stat-val { font-family: var(--mono); font-size: 18px; font-weight: 600; line-height: 1; }
   .op-stat-lbl { font-size: 10px; color: var(--muted); margin-top: 3px; text-transform: uppercase; letter-spacing: .06em; }
 
-  /* Client map cards */
   .client-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px,1fr)); gap: 12px; margin-bottom: 24px; }
   .client-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 16px; }
   .client-card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
@@ -166,7 +136,6 @@
   .provider-stats { display: flex; gap: 12px; font-family: var(--mono); font-size: 11px; color: var(--muted); }
   .provider-stats span { color: var(--text); }
 
-  /* Filter bar */
   .filter-bar { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; align-items: center; }
   .filter-btn { background: var(--bg2); border: 1px solid var(--border); border-radius: 4px; padding: 5px 12px; font-size: 11px; font-weight: 500; color: var(--muted); cursor: pointer; transition: all .15s; font-family: var(--ui); }
   .filter-btn:hover, .filter-btn.active { border-color: var(--accent); color: var(--accent); background: rgba(0,212,255,.05); }
@@ -174,21 +143,17 @@
   .search-input::placeholder { color: var(--muted); }
   .search-input:focus { border-color: var(--accent); }
 
-  /* Empty / Loading */
   .empty { padding: 40px; text-align: center; color: var(--muted); font-size: 13px; }
   .loading { display: flex; align-items: center; justify-content: center; padding: 60px; gap: 12px; color: var(--muted); font-family: var(--mono); font-size: 13px; }
   .spinner { width: 16px; height: 16px; border: 2px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin .8s linear infinite; }
   @keyframes spin { to { transform: rotate(360deg); } }
 
-  /* Report interval banner */
   .interval-banner { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 12px 20px; margin-bottom: 16px; display: flex; align-items: center; gap: 16px; font-size: 12px; }
   .interval-banner .lbl { color: var(--muted); text-transform: uppercase; letter-spacing: .08em; font-size: 10px; font-weight: 600; }
   .interval-banner .val { font-family: var(--mono); color: var(--accent); font-size: 13px; }
 
-  /* Footer */
   .footer { border-top: 1px solid var(--border); padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; font-size: 11px; color: var(--muted); font-family: var(--mono); }
 
-  /* Responsive */
   @media (max-width: 900px) {
     .stat-bar { grid-template-columns: repeat(2,1fr); }
     .charts-row { grid-template-columns: 1fr; }
@@ -216,7 +181,6 @@
 
 <main class="main">
 
-  <!-- Stats -->
   <div class="stat-bar">
     <div class="stat-card c-accent">
       <div class="stat-label">ACMI Active</div>
@@ -244,6 +208,7 @@
   <div class="charts-row">
     <div class="chart-card">
       <div class="chart-title">Fleet Status Distribution</div>
+      <div id="chart-mode-status" class="chart-mode-label" style="display:none">▸ Daily Report view</div>
       <div class="chart-wrap">
         <canvas id="chart-status" width="160" height="160"></canvas>
         <div class="chart-legend" id="legend-status"></div>
@@ -251,6 +216,7 @@
     </div>
     <div class="chart-card">
       <div class="chart-title">ACMI Activity by Group</div>
+      <div id="chart-mode-groups" class="chart-mode-label" style="display:none">▸ Daily Report view</div>
       <div class="chart-wrap">
         <canvas id="chart-groups" width="160" height="160"></canvas>
         <div class="chart-legend" id="legend-groups"></div>
@@ -258,6 +224,7 @@
     </div>
     <div class="chart-card">
       <div class="chart-title">Fleet Type Mix</div>
+      <div id="chart-mode-types" class="chart-mode-label" style="display:none">▸ Daily Report view</div>
       <div class="chart-wrap">
         <canvas id="chart-types" width="160" height="160"></canvas>
         <div class="chart-legend" id="legend-types"></div>
@@ -341,6 +308,7 @@
 let snapData = null;
 let histData = null;
 let fleetFilter = 'all';
+let currentTab = 'acmi';
 
 // ── Load
 async function loadAll() {
@@ -388,7 +356,7 @@ function render() {
   document.getElementById('footer-txt').textContent =
     `Interval: ${snapData.interval_from||'—'} → ${snapData.interval_to||'—'} LT · Updated: ${lu?lu.toLocaleString():'—'}`;
 
-  renderCharts(fleet);
+  renderChartsForTab(currentTab);
   renderAcmi(fleet);
   renderFleet();
   renderOperators(fleet);
@@ -398,7 +366,23 @@ function render() {
   }
 }
 
-// ── Charts
+// ── Charts — switch data source based on active tab
+function renderChartsForTab(tab) {
+  const isReport = tab === 'report';
+  const modeLabel = isReport ? '▸ Daily Report view' : '';
+
+  ['status','groups','types'].forEach(id => {
+    const el = document.getElementById(`chart-mode-${id}`);
+    if (el) { el.textContent = modeLabel; el.style.display = isReport ? 'block' : 'none'; }
+  });
+
+  if (isReport && histData) {
+    renderChartsFromHistory(histData);
+  } else if (snapData) {
+    renderChartsFromSnap(snapData.fleet || []);
+  }
+}
+
 function drawDonut(id, legendId, segs) {
   const c = document.getElementById(id);
   if (!c) return;
@@ -425,7 +409,8 @@ function drawDonut(id, legendId, segs) {
     </div>`).join('');
 }
 
-function renderCharts(fleet) {
+// Charts from live snapshot data
+function renderChartsFromSnap(fleet) {
   const acmi  = fleet.filter(a=>a.status==='acmi_active').length;
   const own   = fleet.filter(a=>a.status==='own_ops').length;
   const gnd   = fleet.filter(a=>a.status==='on_ground').length;
@@ -453,6 +438,58 @@ function renderCharts(fleet) {
   drawDonut('chart-types','legend-types',tSegs);
 }
 
+// Charts from daily history data — shows BH instead of aircraft counts
+function renderChartsFromHistory(hist) {
+  const fleet = hist.fleet || [];
+  const ops   = hist.operator_summaries || {};
+
+  // Status: active vs no flights
+  const withFlights  = fleet.filter(r=>r.total_flights>0).length;
+  const acmiFlights  = fleet.filter(r=>r.acmi_flights>0).length;
+  const ownFlights   = fleet.filter(r=>r.total_flights>0 && r.acmi_flights===0).length;
+  const noFlights    = fleet.filter(r=>r.total_flights===0).length;
+  drawDonut('chart-status','legend-status',[
+    {l:'ACMI Flights',  v:acmiFlights, c:'#00d4ff'},
+    {l:'Own Ops Flights',v:ownFlights, c:'#00ff88'},
+    {l:'No Flights',    v:noFlights,  c:'#334155'},
+  ].filter(s=>s.v>0));
+
+  // Groups: by ACMI block hours
+  const gc = ['#00d4ff','#00ff88','#ffaa00','#ff6b6b','#a78bfa','#34d399','#f472b6','#60a5fa'];
+  const gSegs = Object.entries(ops)
+    .filter(([,v])=>v.acmi_bh>0)
+    .sort((a,b)=>b[1].acmi_bh-a[1].acmi_bh)
+    .slice(0,8)
+    .map(([l,v],i)=>({l, v: parseFloat(v.acmi_bh.toFixed(1)), c:gc[i%gc.length]}));
+  // Override legend to show BH label
+  drawDonut('chart-groups','legend-groups', gSegs.length ? gSegs : [{l:'No ACMI',v:1,c:'#1e2d42'}]);
+  if (gSegs.length) {
+    document.getElementById('legend-groups').innerHTML = gSegs.map(s=>`
+      <div class="legend-item">
+        <div class="legend-dot" style="background:${s.c}"></div>
+        <span class="legend-label">${s.l}</span>
+        <span class="legend-value">${s.v} BH</span>
+      </div>`).join('');
+  } else {
+    document.getElementById('legend-groups').innerHTML='<div style="color:var(--muted);font-size:12px">No ACMI activity</div>';
+  }
+
+  // Types: by total flights yesterday
+  const byType = {};
+  fleet.forEach(r=>{ if(r.total_flights>0){ const t=r.type||'?'; byType[t]=(byType[t]||0)+r.total_flights; }});
+  const tc = ['#00d4ff','#00ff88','#ffaa00','#ff6b6b','#a78bfa','#34d399'];
+  const tSegs = Object.entries(byType).sort((a,b)=>b[1]-a[1]).slice(0,6).map(([l,v],i)=>({l,v,c:tc[i%tc.length]}));
+  drawDonut('chart-types','legend-types', tSegs.length ? tSegs : [{l:'No data',v:1,c:'#1e2d42'}]);
+  if (tSegs.length) {
+    document.getElementById('legend-types').innerHTML = tSegs.map(s=>`
+      <div class="legend-item">
+        <div class="legend-dot" style="background:${s.c}"></div>
+        <span class="legend-label">${s.l}</span>
+        <span class="legend-value">${s.v} flt</span>
+      </div>`).join('');
+  }
+}
+
 // ── Tab 1: ACMI Active
 function renderAcmi(fleet) {
   const acmi = fleet.filter(a=>a.status==='acmi_active');
@@ -468,7 +505,7 @@ function renderAcmi(fleet) {
     <div class="t-row acmi-cols">
       <span class="reg">${a.registration}</span>
       <div class="owner"><span class="owner-name">${a.owner_name}</span><span class="owner-sub">${a.group!==a.owner_name?a.group:a.owner_icao}</span></div>
-      <span><div class="op-badge">${a.current_operator_icao||'—'}</div></span>
+      <span><div class="op-badge" title="${a.current_operator_icao||''}">${a.current_operator_name||a.current_operator_icao||'—'}</div></span>
       <span class="route">${fmtRoute(a.last_route)}</span>
       <span class="mono-sm">${a.callsign||'—'}</span>
       <span><span class="type-badge">${a.type}</span></span>
@@ -483,7 +520,8 @@ function renderFleet() {
     const ms = fleetFilter==='all' || a.status===fleetFilter;
     const mq = !search || a.registration.toLowerCase().includes(search) ||
       (a.owner_name||'').toLowerCase().includes(search) ||
-      (a.current_operator_icao||'').toLowerCase().includes(search);
+      (a.current_operator_icao||'').toLowerCase().includes(search) ||
+      (a.current_operator_name||'').toLowerCase().includes(search);
     return ms && mq;
   });
   const el = document.getElementById('fleet-list');
@@ -494,7 +532,7 @@ function renderFleet() {
       <span class="reg">${a.registration}</span>
       <div class="owner"><span class="owner-name">${a.owner_name}</span><span class="owner-sub">${a.group!==a.owner_name?a.group:''}</span></div>
       <span><span class="type-badge">${a.type}</span></span>
-      <span class="mono-sm">${a.current_operator_icao||(a.status==='own_ops'?a.owner_icao:'—')}</span>
+      <span class="mono-sm">${a.current_operator_name||a.current_operator_icao||(a.status==='own_ops'?a.owner_icao:'—')}</span>
       <span class="route">${fmtRoute(a.last_route)}</span>
       <span class="mono-sm">${fmtTime(a.last_seen)}</span>
       <span>${statusPill(a.status)}</span>
@@ -534,9 +572,7 @@ function renderOperators(fleet) {
 // ── Tab 4: Daily Report
 function renderReport(hist) {
   const fleet = hist.fleet || [];
-  const ops   = hist.operator_summaries || {};
 
-  // Banner
   document.getElementById('report-banner').style.display = 'flex';
   document.getElementById('report-period').textContent   = `${hist.interval_from||'—'} → ${hist.interval_to||'—'} LT`;
   const totFlights = fleet.reduce((s,r)=>s+r.total_flights,0);
@@ -557,7 +593,8 @@ function renderReport(hist) {
   el.innerHTML =
     `<div class="t-row t-head report-cols"><span>Reg</span><span>Owner</span><span>Flights</span><span>Total BH</span><span>ACMI BH</span><span>ACMI Flt</span><span>Clients / Routes</span></div>` +
     active.map(r=>{
-      const clients = (r.clients||[]).map(c=>`<span class="client-badge">${c.icao} ${c.bh}h</span>`).join('');
+      // Support both old format (flat icao) and new format (with name field)
+      const clients = (r.clients||[]).map(c=>`<span class="client-badge" title="${c.icao}">${c.name||c.icao} ${c.bh}h</span>`).join('');
       const routes  = (r.routes||[]).slice(0,4).map(rt=>`<span class="mono-sm" style="margin-right:6px">${rt}</span>`).join('');
       return `
     <div class="t-row report-cols">
@@ -579,9 +616,19 @@ function renderClients(hist) {
     el.innerHTML = `<div class="empty">No ACMI activity recorded yet.</div>`;
     return;
   }
+
+  // Support both old format (flat providers) and new format (with name + providers keys)
+  const getProviders = (val) => val.providers || val;
+  const getTotalBH   = (val) => {
+    const providers = getProviders(val);
+    return Object.values(providers).reduce((s,x)=>s+x.bh,0);
+  };
+
   el.innerHTML = Object.entries(cm)
-    .sort((a,b)=>Object.values(b[1]).reduce((s,x)=>s+x.bh,0)-Object.values(a[1]).reduce((s,x)=>s+x.bh,0))
-    .map(([clientIcao, providers])=>{
+    .sort((a,b)=>getTotalBH(b[1])-getTotalBH(a[1]))
+    .map(([clientIcao, val])=>{
+      const clientName = val.name || clientIcao;
+      const providers  = getProviders(val);
       const provRows = Object.entries(providers)
         .sort((a,b)=>b[1].bh-a[1].bh)
         .map(([prov,data])=>`
@@ -593,12 +640,12 @@ function renderClients(hist) {
               <span style="color:var(--green)">${data.bh} BH</span>
             </div>
           </div>`).join('');
-      const totalBH = Object.values(providers).reduce((s,x)=>s+x.bh,0).toFixed(1);
+      const totalBH = getTotalBH(val).toFixed(1);
       return `
     <div class="client-card">
       <div class="client-card-header">
         <div class="client-icao">${clientIcao}</div>
-        <div class="client-name">${totalBH} BH received</div>
+        <div class="client-name">${clientName !== clientIcao ? clientName + ' · ' : ''}${totalBH} BH received</div>
       </div>
       ${provRows}
     </div>`;
@@ -608,9 +655,12 @@ function renderClients(hist) {
 // ── Tabs
 function switchTab(name) {
   const names = ['acmi','fleet','operators','report','clients'];
+  currentTab = name;
   document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('active',names[i]===name));
   document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));
   document.getElementById(`tab-${name}`).classList.add('active');
+  // Update charts to reflect current tab context
+  renderChartsForTab(name);
 }
 
 // ── Helpers
