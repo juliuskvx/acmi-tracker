@@ -2,10 +2,6 @@
 """
 fetch_acmi.py — ACMI Tracker FR24 data fetcher
 Runs daily at 10:00 AM Lithuanian time (08:00 UTC)
-
-Does two things:
-1. Live snapshot — current positions of all tracked aircraft → acmi_data.json
-2. Daily report — yesterday's full flight activity (BH, flights, routes, clients) → acmi_history.json
 """
 
 import json
@@ -31,15 +27,11 @@ HEADERS = {
     "Accept": "application/json",
 }
 
-# ── Airline name lookup ───────────────────────────────────────────────────────
-
 AIRLINE_NAMES = {
-    # Eurowings group
     "EWG": "Eurowings",
     "EW":  "Eurowings",
     "EZY": "easyJet",
     "EZS": "easyJet Switzerland",
-    # Thomas Cook / TUI group
     "TCX": "TUI Airways",
     "TOM": "TUI Airways",
     "TUI": "TUI fly",
@@ -47,140 +39,87 @@ AIRLINE_NAMES = {
     "TBM": "TUI fly Belgium",
     "TFD": "TUI fly Deutschland",
     "TFN": "TUI fly Netherlands",
-    # Condor
     "CFG": "Condor",
-    # Transavia
     "TRA": "Transavia",
     "HV":  "Transavia",
-    # Wizz Air
     "WZZ": "Wizz Air",
     "W6":  "Wizz Air",
-    # Ryanair
     "RYR": "Ryanair",
     "FR":  "Ryanair",
-    # Vueling
     "VLG": "Vueling",
-    # Iberia
     "IBE": "Iberia",
-    # Air Europa
     "AEA": "Air Europa",
     "AP7": "Air Europa",
-    # Volotea
     "VOE": "Volotea",
-    # Norwegian
     "NAX": "Norwegian",
     "DY":  "Norwegian",
-    # SAS
     "SAS": "SAS Scandinavian",
     "SK":  "SAS Scandinavian",
-    # Finnair
     "FIN": "Finnair",
     "AY":  "Finnair",
-    # LOT Polish
     "LOT": "LOT Polish Airlines",
     "LO":  "LOT Polish Airlines",
-    # Corendon
     "CAI": "Corendon Airlines",
     "XC":  "Corendon Airlines",
-    # SunExpress
     "SXS": "SunExpress",
     "XQ":  "SunExpress",
-    # Pegasus
     "PGT": "Pegasus Airlines",
     "PC":  "Pegasus Airlines",
-    # Turkish Airlines
     "THY": "Turkish Airlines",
     "TK":  "Turkish Airlines",
-    # Azerbaijan Airlines
     "AHY": "Azerbaijan Airlines",
     "J2":  "Azerbaijan Airlines",
-    # Tunisair
     "TAR": "Tunisair",
     "TU":  "Tunisair",
-    # Air Algérie
     "DAH": "Air Algérie",
     "AH":  "Air Algérie",
-    # Nouvelair
     "LBT": "Nouvelair",
-    # Tunisair Express
-    "TAR": "Tunisair",
-    # Air Arabia
     "ABY": "Air Arabia",
     "G9":  "Air Arabia",
-    # Arkia
     "AIZ": "Arkia Israeli Airlines",
     "IZ":  "Arkia Israeli Airlines",
-    # Israir
     "ISR": "Israir",
-    # Novair
     "NVD": "Novair",
-    # Neos
     "NOS": "Neos",
-    # Blue Panorama
     "BPA": "Blue Panorama",
-    # Privilege Style
     "PVG": "Privilege Style",
-    # Freebird
     "FHY": "Freebird Airlines",
-    # Jet2
     "EXS": "Jet2",
     "LS":  "Jet2",
-    # Aer Lingus
     "EIN": "Aer Lingus",
     "EI":  "Aer Lingus",
-    # Icelandair
     "ICE": "Icelandair",
     "FI":  "Icelandair",
-    # Air Portugal / TAP
     "TAP": "TAP Air Portugal",
     "TP":  "TAP Air Portugal",
-    # SATA / Azores Airlines
     "SAT": "Azores Airlines",
     "APO": "Azores Airlines",
-    # Pobeda
     "PBD": "Pobeda",
-    # S7 Airlines
     "SBI": "S7 Airlines",
-    # Ural Airlines
     "SVR": "Ural Airlines",
-    # Air Malta
     "AMC": "Air Malta",
     "KM":  "Air Malta",
-    # Malta Air (Ryanair subsidiary)
     "MAT": "Malta Air",
-    # KLM
     "KLM": "KLM",
     "KL":  "KLM",
-    # Air France
     "AFR": "Air France",
     "AF":  "Air France",
-    # Lufthansa
     "DLH": "Lufthansa",
     "LH":  "Lufthansa",
-    # Swiss
     "SWR": "Swiss",
     "LX":  "Swiss",
-    # Austrian
     "AUA": "Austrian Airlines",
     "OS":  "Austrian Airlines",
-    # Brussels Airlines
     "BEL": "Brussels Airlines",
     "SN":  "Brussels Airlines",
-    # Eurowings Discover
     "EWD": "Eurowings Discover",
-    # Smartwings
     "TVS": "Smartwings",
     "QS":  "Smartwings",
-    # Sunclass Airlines (formerly Thomas Cook Scandinavia)
     "SCC": "Sunclass Airlines",
-    # Aruba Airlines
     "ARU": "Aruba Airlines",
-    # Other common codes
     "MLH": "Air Alsace",
     "NVR": "Novair",
 }
-
-# ── API helper ──────────────────────────────────────────────────────────────
 
 def api_get(url, params, label=""):
     for attempt in range(MAX_RETRIES):
@@ -206,8 +145,6 @@ def api_get(url, params, label=""):
             return None
     return None
 
-# ── FR24 queries ─────────────────────────────────────────────────────────────
-
 def get_live_position(registration):
     result = api_get(
         f"{FR24_BASE}/api/live/flight-positions/full",
@@ -220,7 +157,6 @@ def get_live_position(registration):
     return None
 
 def get_day_flights(registration, date_from_utc, date_to_utc):
-    """Get all flights for an aircraft within a UTC time window."""
     result = api_get(
         f"{FR24_BASE}/api/flight-summary/light",
         {
@@ -235,8 +171,6 @@ def get_day_flights(registration, date_from_utc, date_to_utc):
         return result.get("data", [])
     return []
 
-# ── Helpers ──────────────────────────────────────────────────────────────────
-
 def detect_operator(callsign, owner_icao):
     if not callsign or len(callsign) < 3:
         return None, False
@@ -244,29 +178,22 @@ def detect_operator(callsign, owner_icao):
     return op_icao, op_icao != owner_icao.upper()
 
 def resolve_airline_name(icao_code):
-    """Resolve a 3-letter ICAO operator code to a full airline name."""
     if not icao_code:
         return icao_code
     return AIRLINE_NAMES.get(icao_code.upper(), icao_code)
 
 def calc_block_hours(dep_time, arr_time):
-    """Calculate block hours to nearest 0.1h.
-    Handles both Unix epoch (int/float) and ISO string timestamps.
-    """
     if not dep_time or not arr_time:
         return 0.0
     try:
-        # FR24 flight-summary/light returns Unix epoch integers
         if isinstance(dep_time, (int, float)):
             dep = datetime.fromtimestamp(dep_time, tz=timezone.utc)
         else:
             dep = datetime.strptime(dep_time, "%Y-%m-%dT%H:%M:%SZ")
-
         if isinstance(arr_time, (int, float)):
             arr = datetime.fromtimestamp(arr_time, tz=timezone.utc)
         else:
             arr = datetime.strptime(arr_time, "%Y-%m-%dT%H:%M:%SZ")
-
         diff_minutes = (arr - dep).total_seconds() / 60
         if diff_minutes <= 0:
             return 0.0
@@ -276,7 +203,6 @@ def calc_block_hours(dep_time, arr_time):
         return 0.0
 
 def lt_day_window(offset_days=0):
-    """Return (date_str, utc_from, utc_to) for a day in Lithuanian time (UTC+3)."""
     lt_offset = timedelta(hours=3)
     now_utc   = datetime.now(timezone.utc)
     now_lt    = now_utc + lt_offset + timedelta(days=offset_days)
@@ -285,8 +211,6 @@ def lt_day_window(offset_days=0):
     utc_from  = (day_lt - lt_offset).strftime("%Y-%m-%dT%H:%M:%SZ")
     utc_to    = (end_lt - lt_offset).strftime("%Y-%m-%dT%H:%M:%SZ")
     return now_lt.strftime("%Y-%m-%d"), utc_from, utc_to
-
-# ── Phase 1: Live Snapshot ───────────────────────────────────────────────────
 
 def run_snapshot(registry):
     print("\n" + "="*60)
@@ -339,7 +263,7 @@ def run_snapshot(registry):
             }
 
             if live:
-                callsign        = live.get("callsign", "")
+                callsign         = live.get("callsign", "")
                 op_icao, is_acmi = detect_operator(callsign, op["icao"])
                 entry.update({
                     "callsign": callsign,
@@ -365,7 +289,6 @@ def run_snapshot(registry):
                     own_count += 1
                     print(f"own ops ({callsign})")
             else:
-                # Fallback: today's last flight
                 _, utc_from, utc_to = lt_day_window(0)
                 summary = get_day_flights(reg, utc_from, utc_to)
                 time.sleep(DELAY)
@@ -407,8 +330,6 @@ def run_snapshot(registry):
     print(f"\nSnapshot done — {acmi_count} ACMI active, {own_count} own ops, {ground_count} on ground")
     return output
 
-# ── Phase 2: Daily History Report ────────────────────────────────────────────
-
 def run_history(registry):
     print("\n" + "="*60)
     print("PHASE 2 — Daily History Report (yesterday)")
@@ -421,8 +342,6 @@ def run_history(registry):
     total   = sum(len(op["aircraft"]) for op in registry["operators"])
     results = []
     queried = 0
-
-    # client_map[client_icao][owner_group] = {flights, bh, routes, aircraft}
     client_map = {}
 
     for op in registry["operators"]:
@@ -437,6 +356,13 @@ def run_history(registry):
 
             flights = get_day_flights(reg, utc_from, utc_to)
             time.sleep(DELAY)
+
+            # ── TEMPORARY DEBUG — shows raw FR24 response for first aircraft with flights
+            if flights:
+                print(f"\n  DEBUG {reg} first flight raw data:")
+                print(json.dumps(flights[0], indent=2))
+                import sys; sys.exit(0)
+            # ── END DEBUG
 
             if not flights:
                 print("no flights")
@@ -496,7 +422,6 @@ def run_history(registry):
                     clients_seen[op_icao]["flights"] += 1
                     clients_seen[op_icao]["bh"] += bh
 
-                    # Build client map
                     group = op.get("group", op["name"])
                     if op_icao not in client_map:
                         client_map[op_icao] = {}
@@ -539,7 +464,6 @@ def run_history(registry):
                 "flight_log": flight_log,
             })
 
-    # Serialize client_map sets to lists, add full names
     client_map_serializable = {}
     for client_icao, providers in client_map.items():
         client_map_serializable[client_icao] = {
@@ -554,7 +478,6 @@ def run_history(registry):
                 "aircraft": sorted(list(data["aircraft"])),
             }
 
-    # Operator summaries
     op_summaries = {}
     for r in results:
         g = r["group"]
@@ -580,12 +503,10 @@ def run_history(registry):
     with open(HISTORY, "w") as f:
         json.dump(output, f, indent=2)
 
-    total_bh_all   = round(sum(r["total_bh"] for r in results), 1)
-    total_acmi_bh  = round(sum(r["acmi_bh"] for r in results), 1)
-    total_flights  = sum(r["total_flights"] for r in results)
+    total_bh_all  = round(sum(r["total_bh"] for r in results), 1)
+    total_acmi_bh = round(sum(r["acmi_bh"] for r in results), 1)
+    total_flights = sum(r["total_flights"] for r in results)
     print(f"\nHistory done — {total_flights} flights / {total_bh_all} BH total / {total_acmi_bh} BH on ACMI")
-
-# ── Main ─────────────────────────────────────────────────────────────────────
 
 def main():
     if not FR24_TOKEN:
