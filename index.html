@@ -5,728 +5,261 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ACMI Intel — European Wet Lease Tracker</title>
 <style>
-  /* ── Tokens ── */
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
   :root {
-    --bg:        #060910;
-    --bg2:       #0d1320;
-    --bg3:       #111827;
-    --border:    #1e2d42;
-    --accent:    #00d4ff;
-    --green:     #00ff88;
-    --red:       #ff4444;
-    --amber:     #ffaa00;
-    --text:      #e2e8f0;
-    --muted:     #64748b;
-    --font-mono: 'JetBrains Mono', 'Fira Mono', monospace;
-    --font-ui:   'Inter', system-ui, sans-serif;
+    --bg:     #060910;
+    --bg2:    #0d1320;
+    --bg3:    #111827;
+    --border: #1e2d42;
+    --accent: #00d4ff;
+    --green:  #00ff88;
+    --red:    #ff4444;
+    --amber:  #ffaa00;
+    --purple: #a78bfa;
+    --text:   #e2e8f0;
+    --muted:  #64748b;
+    --mono:   'JetBrains Mono', monospace;
+    --ui:     'Inter', system-ui, sans-serif;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: var(--ui); font-size: 14px; min-height: 100vh; }
 
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: var(--font-ui);
-    font-size: 14px;
-    min-height: 100vh;
-  }
-
-  /* ── Google Fonts ── */
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
-
-  /* ── Header ── */
+  /* Header */
   .header {
     border-bottom: 1px solid var(--border);
-    padding: 0 24px;
-    height: 56px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: var(--bg);
+    padding: 0 24px; height: 56px;
+    display: flex; align-items: center; justify-content: space-between;
+    position: sticky; top: 0; z-index: 100; background: var(--bg);
   }
-
-  .header-left {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .logo-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--accent);
-    animation: pulse 2s ease-in-out infinite;
-  }
-
-  @keyframes pulse {
-    0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(0,212,255,0.4); }
-    50% { opacity: 0.8; box-shadow: 0 0 0 6px rgba(0,212,255,0); }
-  }
-
-  .logo-text {
-    font-size: 15px;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-    color: var(--text);
-  }
-
-  .logo-text span {
-    color: var(--accent);
-  }
-
-  .header-meta {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    font-size: 12px;
-    color: var(--muted);
-    font-family: var(--font-mono);
-  }
-
-  .live-badge {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    color: var(--green);
-  }
-
-  .live-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--green);
-    animation: pulse-green 2s ease-in-out infinite;
-  }
-
-  @keyframes pulse-green {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.4; }
-  }
-
-  /* ── Layout ── */
-  .main {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 24px;
-  }
-
-  /* ── Stat Bar ── */
-  .stat-bar {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
-    margin-bottom: 24px;
-  }
-
-  .stat-card {
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 16px 20px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .stat-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 2px;
-  }
-
-  .stat-card.accent::before { background: var(--accent); }
-  .stat-card.green::before  { background: var(--green); }
-  .stat-card.amber::before  { background: var(--amber); }
-  .stat-card.muted::before  { background: var(--muted); }
-
-  .stat-label {
-    font-size: 11px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--muted);
-    margin-bottom: 8px;
-  }
-
-  .stat-value {
-    font-size: 32px;
-    font-weight: 600;
-    font-family: var(--font-mono);
-    line-height: 1;
-  }
-
-  .stat-card.accent .stat-value { color: var(--accent); }
-  .stat-card.green .stat-value  { color: var(--green); }
-  .stat-card.amber .stat-value  { color: var(--amber); }
-  .stat-card.muted .stat-value  { color: var(--text); }
-
-  .stat-sub {
-    font-size: 11px;
-    color: var(--muted);
-    margin-top: 4px;
-    font-family: var(--font-mono);
-  }
-
-  /* ── Section header ── */
-  .section-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 12px;
-  }
-
-  .section-title {
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--muted);
-  }
-
-  .section-count {
-    font-size: 11px;
-    font-family: var(--font-mono);
-    color: var(--muted);
-  }
-
-  /* ── ACMI Active Feed ── */
-  .acmi-feed {
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    margin-bottom: 24px;
-    overflow: hidden;
-  }
-
-  .feed-header {
-    padding: 14px 20px;
-    border-bottom: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .feed-title {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--text);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .feed-title .dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--accent);
-    animation: pulse-green 1.5s ease-in-out infinite;
-  }
-
-  .feed-empty {
-    padding: 40px;
-    text-align: center;
-    color: var(--muted);
-    font-size: 13px;
-  }
-
-  /* ── ACMI Row ── */
-  .acmi-row {
-    display: grid;
-    grid-template-columns: 100px 1fr 180px 160px 140px 120px;
-    align-items: center;
-    padding: 12px 20px;
-    border-bottom: 1px solid var(--border);
-    gap: 16px;
-    transition: background 0.15s;
-  }
-
-  .acmi-row:hover { background: var(--bg3); }
-  .acmi-row:last-child { border-bottom: none; }
-
-  .acmi-row.header-row {
-    font-size: 10px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--muted);
-    padding: 10px 20px;
-    background: var(--bg3);
-    border-bottom: 1px solid var(--border);
-  }
-
-  .acmi-row.header-row:hover { background: var(--bg3); }
-
-  .reg {
-    font-family: var(--font-mono);
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--accent);
-  }
-
-  .owner-info { display: flex; flex-direction: column; gap: 2px; }
-  .owner-name { font-size: 13px; font-weight: 500; }
-  .owner-sub  { font-size: 11px; color: var(--muted); }
-
-  .operator-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: rgba(0,212,255,0.1);
-    border: 1px solid rgba(0,212,255,0.2);
-    border-radius: 4px;
-    padding: 4px 10px;
-    font-family: var(--font-mono);
-    font-size: 12px;
-    font-weight: 500;
-    color: var(--accent);
-  }
-
-  .route {
-    font-family: var(--font-mono);
-    font-size: 12px;
-    color: var(--text);
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-
-  .route-arrow { color: var(--muted); }
-
-  .callsign {
-    font-family: var(--font-mono);
-    font-size: 12px;
-    color: var(--muted);
-  }
-
-  .type-badge {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--muted);
-    background: var(--bg3);
-    border: 1px solid var(--border);
-    border-radius: 3px;
-    padding: 2px 7px;
-    display: inline-block;
-  }
-
-  /* ── Fleet Table ── */
-  .fleet-table {
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    overflow: hidden;
-    margin-bottom: 24px;
-  }
-
-  .fleet-row {
-    display: grid;
-    grid-template-columns: 100px 1fr 140px 180px 160px 100px 90px;
-    align-items: center;
-    padding: 10px 20px;
-    border-bottom: 1px solid var(--border);
-    gap: 12px;
-    font-size: 12px;
-    transition: background 0.15s;
-  }
-
-  .fleet-row:hover { background: var(--bg3); }
-  .fleet-row:last-child { border-bottom: none; }
-
-  .fleet-row.header-row {
-    font-size: 10px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--muted);
-    padding: 10px 20px;
-    background: var(--bg3);
-    cursor: default;
-  }
-
-  .fleet-row.header-row:hover { background: var(--bg3); }
-
-  /* ── Status pill ── */
-  .status-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    border-radius: 99px;
-    padding: 3px 9px;
-    font-size: 10px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    white-space: nowrap;
-  }
-
-  .status-pill.acmi {
-    background: rgba(0,212,255,0.12);
-    color: var(--accent);
-    border: 1px solid rgba(0,212,255,0.25);
-  }
-
-  .status-pill.own {
-    background: rgba(0,255,136,0.08);
-    color: var(--green);
-    border: 1px solid rgba(0,255,136,0.2);
-  }
-
-  .status-pill.ground {
-    background: rgba(100,116,139,0.12);
-    color: var(--muted);
-    border: 1px solid rgba(100,116,139,0.2);
-  }
-
-  .status-pill.unknown {
-    background: rgba(255,170,0,0.08);
-    color: var(--amber);
-    border: 1px solid rgba(255,170,0,0.2);
-  }
-
-  .status-dot {
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background: currentColor;
-  }
-
-  /* ── Operator Cards ── */
-  .operator-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 12px;
-    margin-bottom: 24px;
-  }
-
-  .operator-card {
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 16px;
-    transition: border-color 0.15s;
-  }
-
-  .operator-card:hover { border-color: rgba(0,212,255,0.3); }
-
-  .op-header {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    margin-bottom: 12px;
-  }
-
-  .op-name {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--text);
-  }
-
-  .op-icao {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--muted);
-    margin-top: 2px;
-  }
-
-  .op-country {
-    font-size: 11px;
-    color: var(--muted);
-    background: var(--bg3);
-    border: 1px solid var(--border);
-    border-radius: 3px;
-    padding: 2px 7px;
-    font-family: var(--font-mono);
-  }
-
-  .op-stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-  }
-
-  .op-stat {
-    text-align: center;
-    padding: 8px;
-    background: var(--bg3);
-    border-radius: 4px;
-  }
-
-  .op-stat-value {
-    font-family: var(--font-mono);
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 1;
-  }
-
-  .op-stat-label {
-    font-size: 10px;
-    color: var(--muted);
-    margin-top: 3px;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-  }
-
-  /* ── Filter bar ── */
-  .filter-bar {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 12px;
-    flex-wrap: wrap;
-  }
-
-  .filter-btn {
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 5px 12px;
-    font-size: 11px;
-    font-weight: 500;
-    color: var(--muted);
-    cursor: pointer;
-    transition: all 0.15s;
-    font-family: var(--font-ui);
-  }
-
-  .filter-btn:hover, .filter-btn.active {
-    border-color: var(--accent);
-    color: var(--accent);
-    background: rgba(0,212,255,0.05);
-  }
-
-  .search-input {
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 5px 12px;
-    font-size: 12px;
-    color: var(--text);
-    font-family: var(--font-mono);
-    outline: none;
-    width: 200px;
-    margin-left: auto;
-  }
-
-  .search-input::placeholder { color: var(--muted); }
-  .search-input:focus { border-color: var(--accent); }
-
-  /* ── Charts ── */
-  .charts-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    margin-bottom: 24px;
-  }
-
-  .chart-card {
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 16px 20px;
-  }
-
-  .chart-title {
-    font-size: 11px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--muted);
-    margin-bottom: 14px;
-  }
-
-  .chart-wrap {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .chart-legend {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 7px;
-  }
-
-  .legend-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 12px;
-  }
-
-  .legend-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 2px;
-    flex-shrink: 0;
-  }
-
+  .header-left { display: flex; align-items: center; gap: 12px; }
+  .logo-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); animation: pulse 2s ease-in-out infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(0,212,255,.4)} 50%{opacity:.8;box-shadow:0 0 0 6px rgba(0,212,255,0)} }
+  .logo-text { font-size: 15px; font-weight: 600; letter-spacing: .02em; }
+  .logo-text span { color: var(--accent); }
+  .header-meta { display: flex; align-items: center; gap: 12px; font-size: 12px; color: var(--muted); font-family: var(--mono); flex-wrap: wrap; }
+  .live-badge { display: flex; align-items: center; gap: 6px; color: var(--green); }
+  .live-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); animation: blink 2s ease-in-out infinite; }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+  .interval-badge { font-size: 11px; color: var(--accent); background: rgba(0,212,255,.08); border: 1px solid rgba(0,212,255,.2); border-radius: 4px; padding: 3px 10px; }
+
+  /* Layout */
+  .main { max-width: 1400px; margin: 0 auto; padding: 24px; }
+
+  /* Stat bar */
+  .stat-bar { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin-bottom: 24px; }
+  .stat-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 16px 20px; position: relative; overflow: hidden; }
+  .stat-card::before { content:''; position:absolute; top:0;left:0;right:0; height:2px; }
+  .stat-card.c-accent::before { background: var(--accent); }
+  .stat-card.c-green::before  { background: var(--green); }
+  .stat-card.c-amber::before  { background: var(--amber); }
+  .stat-card.c-muted::before  { background: var(--muted); }
+  .stat-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: 8px; }
+  .stat-value { font-size: 32px; font-weight: 600; font-family: var(--mono); line-height: 1; }
+  .stat-card.c-accent .stat-value { color: var(--accent); }
+  .stat-card.c-green  .stat-value { color: var(--green); }
+  .stat-card.c-amber  .stat-value { color: var(--amber); }
+  .stat-card.c-muted  .stat-value { color: var(--text); }
+  .stat-sub { font-size: 11px; color: var(--muted); margin-top: 4px; font-family: var(--mono); }
+
+  /* Charts */
+  .charts-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-bottom: 24px; }
+  .chart-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 16px 20px; }
+  .chart-title { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: 14px; }
+  .chart-wrap { display: flex; align-items: center; gap: 20px; }
+  .chart-legend { flex: 1; display: flex; flex-direction: column; gap: 7px; }
+  .legend-item { display: flex; align-items: center; gap: 8px; font-size: 12px; }
+  .legend-dot { width: 8px; height: 8px; border-radius: 2px; flex-shrink: 0; }
   .legend-label { color: var(--muted); flex: 1; }
-  .legend-value {
-    font-family: var(--font-mono);
-    font-size: 12px;
-    font-weight: 500;
-    color: var(--text);
-  }
+  .legend-value { font-family: var(--mono); font-size: 12px; font-weight: 500; color: var(--text); }
 
-  @media (max-width: 900px) {
-    .charts-row { grid-template-columns: 1fr; }
-  }
-
-  /* ── Footer ── */
-  .footer {
-    border-top: 1px solid var(--border);
-    padding: 16px 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 11px;
-    color: var(--muted);
-    font-family: var(--font-mono);
-  }
-
-  /* ── Loading state ── */
-  .loading {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 60px;
-    gap: 12px;
-    color: var(--muted);
-    font-family: var(--font-mono);
-    font-size: 13px;
-  }
-
-  .spinner {
-    width: 16px;
-    height: 16px;
-    border: 2px solid var(--border);
-    border-top-color: var(--accent);
-    border-radius: 50%;
-    animation: spin 0.8s linear infinite;
-  }
-
-  @keyframes spin { to { transform: rotate(360deg); } }
-
-  /* ── Error state ── */
-  .error-state {
-    padding: 40px;
-    text-align: center;
-    color: var(--muted);
-  }
-
-  .error-state .error-title {
-    color: var(--red);
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 8px;
-  }
-
-  /* ── Tabs ── */
-  .tabs {
-    display: flex;
-    gap: 0;
-    border-bottom: 1px solid var(--border);
-    margin-bottom: 24px;
-  }
-
-  .tab {
-    padding: 12px 20px;
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--muted);
-    cursor: pointer;
-    border-bottom: 2px solid transparent;
-    margin-bottom: -1px;
-    transition: all 0.15s;
-  }
-
+  /* Tabs */
+  .tabs { display: flex; border-bottom: 1px solid var(--border); margin-bottom: 24px; }
+  .tab { padding: 12px 20px; font-size: 13px; font-weight: 500; color: var(--muted); cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -1px; transition: all .15s; }
   .tab:hover { color: var(--text); }
   .tab.active { color: var(--accent); border-bottom-color: var(--accent); }
-
   .tab-content { display: none; }
   .tab-content.active { display: block; }
 
-  /* ── Responsive ── */
+  /* Section header */
+  .section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+  .section-title { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
+
+  /* Table base */
+  .data-table { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-bottom: 24px; }
+  .t-row { display: grid; align-items: center; padding: 11px 20px; border-bottom: 1px solid var(--border); gap: 12px; font-size: 12px; transition: background .15s; }
+  .t-row:hover { background: var(--bg3); }
+  .t-row:last-child { border-bottom: none; }
+  .t-row.t-head { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); background: var(--bg3); cursor: default; }
+  .t-row.t-head:hover { background: var(--bg3); }
+
+  /* ACMI active table */
+  .acmi-cols { grid-template-columns: 100px 1fr 130px 160px 140px 90px; }
+
+  /* Fleet table */
+  .fleet-cols { grid-template-columns: 100px 1fr 90px 130px 150px 100px 90px; }
+
+  /* Daily report table */
+  .report-cols { grid-template-columns: 100px 1fr 70px 70px 70px 70px 1fr; }
+
+  /* Client map table */
+  .client-cols { grid-template-columns: 120px 1fr 80px 80px 80px; }
+
+  /* Reg */
+  .reg { font-family: var(--mono); font-size: 13px; font-weight: 500; color: var(--accent); }
+
+  /* Owner */
+  .owner { display: flex; flex-direction: column; gap: 2px; }
+  .owner-name { font-size: 13px; font-weight: 500; }
+  .owner-sub  { font-size: 11px; color: var(--muted); }
+
+  /* Operator badge */
+  .op-badge { display: inline-flex; align-items: center; background: rgba(0,212,255,.1); border: 1px solid rgba(0,212,255,.2); border-radius: 4px; padding: 3px 9px; font-family: var(--mono); font-size: 12px; font-weight: 500; color: var(--accent); }
+
+  /* Client badge */
+  .client-badge { display: inline-flex; align-items: center; background: rgba(167,139,250,.1); border: 1px solid rgba(167,139,250,.2); border-radius: 4px; padding: 3px 9px; font-family: var(--mono); font-size: 12px; font-weight: 500; color: var(--purple); margin-right: 4px; margin-bottom: 2px; }
+
+  /* Route */
+  .route { font-family: var(--mono); font-size: 12px; color: var(--text); display: flex; align-items: center; gap: 4px; }
+  .route-arrow { color: var(--muted); }
+
+  /* Status pill */
+  .pill { display: inline-flex; align-items: center; gap: 4px; border-radius: 99px; padding: 3px 9px; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; white-space: nowrap; }
+  .pill.acmi    { background: rgba(0,212,255,.12); color: var(--accent); border: 1px solid rgba(0,212,255,.25); }
+  .pill.own     { background: rgba(0,255,136,.08);  color: var(--green);  border: 1px solid rgba(0,255,136,.2); }
+  .pill.ground  { background: rgba(100,116,139,.12); color: var(--muted); border: 1px solid rgba(100,116,139,.2); }
+  .pill.unknown { background: rgba(255,170,0,.08);  color: var(--amber);  border: 1px solid rgba(255,170,0,.2); }
+
+  /* Type badge */
+  .type-badge { font-family: var(--mono); font-size: 11px; color: var(--muted); background: var(--bg3); border: 1px solid var(--border); border-radius: 3px; padding: 2px 7px; display: inline-block; }
+
+  /* BH value */
+  .bh-value { font-family: var(--mono); font-size: 13px; font-weight: 500; color: var(--green); }
+  .bh-zero  { color: var(--muted); }
+
+  /* Mono small */
+  .mono-sm { font-family: var(--mono); font-size: 11px; color: var(--muted); }
+  .mono-md { font-family: var(--mono); font-size: 12px; color: var(--text); }
+
+  /* Operator cards */
+  .operator-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap: 12px; margin-bottom: 24px; }
+  .op-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 16px; transition: border-color .15s; }
+  .op-card:hover { border-color: rgba(0,212,255,.3); }
+  .op-card-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 12px; }
+  .op-card-name { font-size: 14px; font-weight: 600; }
+  .op-card-sub  { font-size: 11px; color: var(--muted); margin-top: 2px; font-family: var(--mono); }
+  .op-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; }
+  .op-stat { text-align: center; padding: 8px; background: var(--bg3); border-radius: 4px; }
+  .op-stat-val { font-family: var(--mono); font-size: 18px; font-weight: 600; line-height: 1; }
+  .op-stat-lbl { font-size: 10px; color: var(--muted); margin-top: 3px; text-transform: uppercase; letter-spacing: .06em; }
+
+  /* Client map cards */
+  .client-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px,1fr)); gap: 12px; margin-bottom: 24px; }
+  .client-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 16px; }
+  .client-card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+  .client-icao { font-family: var(--mono); font-size: 16px; font-weight: 600; color: var(--purple); }
+  .client-name { font-size: 13px; color: var(--muted); }
+  .provider-row { display: flex; align-items: center; justify-content: space-between; padding: 8px 10px; background: var(--bg3); border-radius: 4px; margin-bottom: 6px; font-size: 12px; }
+  .provider-row:last-child { margin-bottom: 0; }
+  .provider-name { font-weight: 500; }
+  .provider-stats { display: flex; gap: 12px; font-family: var(--mono); font-size: 11px; color: var(--muted); }
+  .provider-stats span { color: var(--text); }
+
+  /* Filter bar */
+  .filter-bar { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; align-items: center; }
+  .filter-btn { background: var(--bg2); border: 1px solid var(--border); border-radius: 4px; padding: 5px 12px; font-size: 11px; font-weight: 500; color: var(--muted); cursor: pointer; transition: all .15s; font-family: var(--ui); }
+  .filter-btn:hover, .filter-btn.active { border-color: var(--accent); color: var(--accent); background: rgba(0,212,255,.05); }
+  .search-input { background: var(--bg2); border: 1px solid var(--border); border-radius: 4px; padding: 5px 12px; font-size: 12px; color: var(--text); font-family: var(--mono); outline: none; width: 200px; margin-left: auto; }
+  .search-input::placeholder { color: var(--muted); }
+  .search-input:focus { border-color: var(--accent); }
+
+  /* Empty / Loading */
+  .empty { padding: 40px; text-align: center; color: var(--muted); font-size: 13px; }
+  .loading { display: flex; align-items: center; justify-content: center; padding: 60px; gap: 12px; color: var(--muted); font-family: var(--mono); font-size: 13px; }
+  .spinner { width: 16px; height: 16px; border: 2px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin .8s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* Report interval banner */
+  .interval-banner { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 12px 20px; margin-bottom: 16px; display: flex; align-items: center; gap: 16px; font-size: 12px; }
+  .interval-banner .lbl { color: var(--muted); text-transform: uppercase; letter-spacing: .08em; font-size: 10px; font-weight: 600; }
+  .interval-banner .val { font-family: var(--mono); color: var(--accent); font-size: 13px; }
+
+  /* Footer */
+  .footer { border-top: 1px solid var(--border); padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; font-size: 11px; color: var(--muted); font-family: var(--mono); }
+
+  /* Responsive */
   @media (max-width: 900px) {
-    .stat-bar { grid-template-columns: repeat(2, 1fr); }
-    .acmi-row { grid-template-columns: 90px 1fr 140px; }
-    .acmi-row > *:nth-child(n+4) { display: none; }
-    .fleet-row { grid-template-columns: 90px 1fr 120px 80px; }
-    .fleet-row > *:nth-child(n+5) { display: none; }
+    .stat-bar { grid-template-columns: repeat(2,1fr); }
+    .charts-row { grid-template-columns: 1fr; }
+    .acmi-cols  { grid-template-columns: 90px 1fr 120px; }
+    .acmi-cols > *:nth-child(n+4) { display: none; }
+    .fleet-cols { grid-template-columns: 90px 1fr 80px; }
+    .fleet-cols > *:nth-child(n+4) { display: none; }
   }
 </style>
 </head>
 <body>
 
-<!-- Header -->
 <header class="header">
   <div class="header-left">
     <div class="logo-dot"></div>
     <div class="logo-text">ACMI <span>Intel</span></div>
   </div>
   <div class="header-meta">
-    <div class="live-badge">
-      <div class="live-dot"></div>
-      <span id="live-status">loading...</span>
-    </div>
-    <div id="report-interval" style="font-size:12px;color:var(--accent);font-family:var(--font-mono);background:rgba(0,212,255,0.08);border:1px solid rgba(0,212,255,0.2);border-radius:4px;padding:3px 10px;">—</div>
+    <div class="live-badge"><div class="live-dot"></div><span id="live-status">loading...</span></div>
+    <div class="interval-badge" id="report-interval">—</div>
     <span id="last-updated">—</span>
-    <span id="aircraft-count">— aircraft</span>
+    <span id="aircraft-count">—</span>
   </div>
 </header>
 
-<!-- Main -->
 <main class="main">
 
-  <!-- Stat Bar -->
+  <!-- Stats -->
   <div class="stat-bar">
-    <div class="stat-card accent">
+    <div class="stat-card c-accent">
       <div class="stat-label">ACMI Active</div>
       <div class="stat-value" id="stat-acmi">—</div>
       <div class="stat-sub">currently wet-leased</div>
     </div>
-    <div class="stat-card green">
+    <div class="stat-card c-green">
       <div class="stat-label">Own Operations</div>
       <div class="stat-value" id="stat-own">—</div>
       <div class="stat-sub">flying own callsign</div>
     </div>
-    <div class="stat-card amber">
+    <div class="stat-card c-amber">
       <div class="stat-label">On Ground</div>
       <div class="stat-value" id="stat-ground">—</div>
       <div class="stat-sub">parked / maintenance</div>
     </div>
-    <div class="stat-card muted">
+    <div class="stat-card c-muted">
       <div class="stat-label">Fleet Tracked</div>
       <div class="stat-value" id="stat-total">—</div>
-      <div class="stat-sub">across <span id="stat-operators">—</span> operators</div>
+      <div class="stat-sub">across <span id="stat-ops">—</span> operators</div>
     </div>
   </div>
 
-  <!-- Charts Row -->
+  <!-- Charts -->
   <div class="charts-row">
     <div class="chart-card">
       <div class="chart-title">Fleet Status Distribution</div>
       <div class="chart-wrap">
-        <canvas id="chart-status" width="180" height="180"></canvas>
+        <canvas id="chart-status" width="160" height="160"></canvas>
         <div class="chart-legend" id="legend-status"></div>
       </div>
     </div>
     <div class="chart-card">
-      <div class="chart-title">ACMI Activity by Operator</div>
+      <div class="chart-title">ACMI Activity by Group</div>
       <div class="chart-wrap">
-        <canvas id="chart-operators" width="180" height="180"></canvas>
-        <div class="chart-legend" id="legend-operators"></div>
+        <canvas id="chart-groups" width="160" height="160"></canvas>
+        <div class="chart-legend" id="legend-groups"></div>
       </div>
     </div>
     <div class="chart-card">
       <div class="chart-title">Fleet Type Mix</div>
       <div class="chart-wrap">
-        <canvas id="chart-types" width="180" height="180"></canvas>
+        <canvas id="chart-types" width="160" height="160"></canvas>
         <div class="chart-legend" id="legend-types"></div>
       </div>
     </div>
@@ -734,419 +267,374 @@
 
   <!-- Tabs -->
   <div class="tabs">
-    <div class="tab active" onclick="switchTab('acmi')">ACMI Active</div>
-    <div class="tab" onclick="switchTab('fleet')">Fleet Status</div>
-    <div class="tab" onclick="switchTab('operators')">Operators</div>
+    <div class="tab active"   onclick="switchTab('acmi')">ACMI Active</div>
+    <div class="tab"          onclick="switchTab('fleet')">Fleet Status</div>
+    <div class="tab"          onclick="switchTab('operators')">Operators</div>
+    <div class="tab"          onclick="switchTab('report')">Daily Report</div>
+    <div class="tab"          onclick="switchTab('clients')">Client Map</div>
   </div>
 
-  <!-- Tab: ACMI Active -->
+  <!-- Tab 1: ACMI Active -->
   <div class="tab-content active" id="tab-acmi">
-    <div class="acmi-feed">
-      <div class="feed-header">
-        <div class="feed-title">
-          <div class="dot"></div>
+    <div class="data-table">
+      <div class="feed-header" style="padding:14px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;">
+        <div style="font-size:13px;font-weight:600;display:flex;align-items:center;gap:8px;">
+          <div class="live-dot"></div>
           Aircraft currently operating under a different airline's callsign
         </div>
-        <div id="acmi-count-badge" style="font-size:12px;color:var(--muted);font-family:var(--font-mono);">—</div>
+        <div id="acmi-count" class="mono-sm">—</div>
       </div>
-      <div id="acmi-list">
-        <div class="loading"><div class="spinner"></div>Loading fleet data...</div>
-      </div>
+      <div id="acmi-list"><div class="loading"><div class="spinner"></div>Loading...</div></div>
     </div>
   </div>
 
-  <!-- Tab: Fleet Status -->
+  <!-- Tab 2: Fleet Status -->
   <div class="tab-content" id="tab-fleet">
     <div class="filter-bar">
-      <button class="filter-btn active" onclick="filterFleet('all', this)">All</button>
-      <button class="filter-btn" onclick="filterFleet('acmi_active', this)">ACMI Active</button>
-      <button class="filter-btn" onclick="filterFleet('own_ops', this)">Own Ops</button>
-      <button class="filter-btn" onclick="filterFleet('on_ground', this)">On Ground</button>
+      <button class="filter-btn active" onclick="filterFleet('all',this)">All</button>
+      <button class="filter-btn" onclick="filterFleet('acmi_active',this)">ACMI Active</button>
+      <button class="filter-btn" onclick="filterFleet('own_ops',this)">Own Ops</button>
+      <button class="filter-btn" onclick="filterFleet('on_ground',this)">On Ground</button>
       <input class="search-input" id="fleet-search" placeholder="Search reg, operator..." oninput="renderFleet()">
     </div>
-    <div class="fleet-table">
-      <div id="fleet-list">
-        <div class="loading"><div class="spinner"></div>Loading fleet data...</div>
-      </div>
+    <div class="data-table">
+      <div id="fleet-list"><div class="loading"><div class="spinner"></div>Loading...</div></div>
     </div>
   </div>
 
-  <!-- Tab: Operators -->
+  <!-- Tab 3: Operators -->
   <div class="tab-content" id="tab-operators">
-    <div class="operator-grid" id="operator-grid">
-      <div class="loading"><div class="spinner"></div>Loading operator data...</div>
+    <div class="operator-grid" id="op-grid">
+      <div class="loading"><div class="spinner"></div>Loading...</div>
+    </div>
+  </div>
+
+  <!-- Tab 4: Daily Report -->
+  <div class="tab-content" id="tab-report">
+    <div id="report-banner" class="interval-banner" style="display:none;">
+      <div><div class="lbl">Reporting Period</div><div class="val" id="report-period">—</div></div>
+      <div><div class="lbl">Total Flights</div><div class="val" id="report-total-flights">—</div></div>
+      <div><div class="lbl">Total Block Hours</div><div class="val" id="report-total-bh">—</div></div>
+      <div><div class="lbl">ACMI Block Hours</div><div class="val" id="report-acmi-bh">—</div></div>
+    </div>
+    <div class="data-table">
+      <div id="report-list"><div class="empty">Daily report loads after the first overnight run.<br><span style="font-size:11px;margin-top:4px;display:block;">Check back tomorrow at 10:00 AM Lithuanian time.</span></div></div>
+    </div>
+  </div>
+
+  <!-- Tab 5: Client Map -->
+  <div class="tab-content" id="tab-clients">
+    <div class="client-grid" id="client-grid">
+      <div class="empty">Client map loads after the first overnight run.<br><span style="font-size:11px;margin-top:4px;display:block;">Check back tomorrow at 10:00 AM Lithuanian time.</span></div>
     </div>
   </div>
 
 </main>
 
-<!-- Footer -->
 <footer class="footer">
-  <span>ACMI Intel — European Wet Lease Tracker</span>
-  <span id="footer-updated">Data refreshed daily at 10:00 Lithuanian time</span>
+  <span>ACMI Intel — European Wet Lease Tracker · juliuskvx</span>
+  <span id="footer-txt">Refreshes daily at 10:00 AM Lithuanian time</span>
 </footer>
 
 <script>
-// ── State ──
-let fleetData = null;
-let currentFilter = 'all';
+// ── State
+let snapData = null;
+let histData = null;
+let fleetFilter = 'all';
 
-// ── Load Data ──
-async function loadData() {
+// ── Load
+async function loadAll() {
   try {
-    const res = await fetch('data/acmi_data.json');
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    fleetData = await res.json();
-    render();
-  } catch (e) {
-    showError(e.message);
-  }
+    const r1 = await fetch('data/acmi_data.json');
+    if (r1.ok) snapData = await r1.json();
+  } catch(e) {}
+
+  try {
+    const r2 = await fetch('data/acmi_history.json');
+    if (r2.ok) histData = await r2.json();
+  } catch(e) {}
+
+  if (!snapData) { showGlobalError(); return; }
+  render();
 }
 
-function showError(msg) {
-  const errHtml = `
-    <div class="error-state">
-      <div class="error-title">No data available</div>
-      <div>${msg}</div>
-      <div style="margin-top:8px;font-size:11px;">Run the fetch script to generate acmi_data.json</div>
-    </div>`;
-  document.getElementById('acmi-list').innerHTML = errHtml;
-  document.getElementById('fleet-list').innerHTML = errHtml;
-  document.getElementById('operator-grid').innerHTML = errHtml;
+function showGlobalError() {
+  ['acmi-list','fleet-list','op-grid','report-list','client-grid'].forEach(id => {
+    document.getElementById(id).innerHTML = `<div class="empty" style="color:var(--red)">No data — run the fetch script first.</div>`;
+  });
   document.getElementById('live-status').textContent = 'no data';
 }
 
-// ── Render All ──
+// ── Main render
 function render() {
-  if (!fleetData) return;
+  const fleet = snapData.fleet || [];
+  const sum   = snapData.summary || {};
+  const lu    = snapData.last_updated ? new Date(snapData.last_updated) : null;
 
-  const fleet = fleetData.fleet || [];
-  const summary = fleetData.summary || {};
-  const lastUpdated = fleetData.last_updated ? new Date(fleetData.last_updated) : null;
-
-  // Header
-  document.getElementById('live-status').textContent = 'data loaded';
+  document.getElementById('live-status').textContent   = 'data loaded';
   document.getElementById('aircraft-count').textContent = `${fleet.length} aircraft`;
-  document.getElementById('last-updated').textContent = lastUpdated
-    ? lastUpdated.toUTCString().replace(' GMT', ' UTC')
-    : '—';
-
-  // Reporting interval
-  const intervalFrom = fleetData.interval_from || '—';
-  const intervalTo   = fleetData.interval_to   || '—';
-  const reportDate   = fleetData.report_date    || '—';
+  document.getElementById('last-updated').textContent   = lu ? lu.toUTCString().replace(' GMT',' UTC') : '—';
   document.getElementById('report-interval').textContent =
-    `${reportDate}  ${intervalFrom.split(' ')[1]} → ${intervalTo.split(' ')[1]} LT`;
-  document.getElementById('footer-updated').textContent =
-    `Reporting interval: ${intervalFrom} → ${intervalTo} Lithuanian time · Refreshed: ${lastUpdated ? lastUpdated.toLocaleString() : '—'}`;
+    snapData.report_date
+      ? `${snapData.report_date}  ${(snapData.interval_from||'').split(' ')[1]||''} → ${(snapData.interval_to||'').split(' ')[1]||''} LT`
+      : '—';
 
-  // Stats
-  document.getElementById('stat-acmi').textContent = summary.acmi_active ?? '—';
-  document.getElementById('stat-own').textContent = summary.own_ops ?? '—';
-  document.getElementById('stat-ground').textContent = summary.on_ground ?? '—';
-  document.getElementById('stat-total').textContent = summary.total_aircraft ?? fleet.length;
+  document.getElementById('stat-acmi').textContent   = sum.acmi_active   ?? '—';
+  document.getElementById('stat-own').textContent    = sum.own_ops        ?? '—';
+  document.getElementById('stat-ground').textContent = sum.on_ground      ?? '—';
+  document.getElementById('stat-total').textContent  = sum.total_aircraft ?? fleet.length;
+  document.getElementById('stat-ops').textContent    = [...new Set(fleet.map(a=>a.owner_icao))].length;
 
-  // Count unique operators
-  const ops = [...new Set(fleet.map(a => a.owner_icao))];
-  document.getElementById('stat-operators').textContent = ops.length;
+  document.getElementById('footer-txt').textContent =
+    `Interval: ${snapData.interval_from||'—'} → ${snapData.interval_to||'—'} LT · Updated: ${lu?lu.toLocaleString():'—'}`;
 
-  renderAcmi(fleet);
-  renderFleet(fleet);
-  renderOperators(fleet);
   renderCharts(fleet);
-}
-
-// ── ACMI Active Tab ──
-function renderAcmi(fleet) {
-  const acmi = fleet.filter(a => a.status === 'acmi_active');
-  const container = document.getElementById('acmi-list');
-  document.getElementById('acmi-count-badge').textContent = `${acmi.length} aircraft`;
-
-  if (acmi.length === 0) {
-    container.innerHTML = `<div class="feed-empty">No aircraft currently detected on ACMI operations.<br><span style="font-size:11px;margin-top:4px;display:block;">This may mean all tracked aircraft are on the ground or flying their own callsigns.</span></div>`;
-    return;
-  }
-
-  const header = `
-    <div class="acmi-row header-row">
-      <span>Reg</span>
-      <span>Owner</span>
-      <span>Operating As</span>
-      <span>Route</span>
-      <span>Callsign</span>
-      <span>Type</span>
-    </div>`;
-
-  const rows = acmi.map(a => `
-    <div class="acmi-row">
-      <span class="reg">${a.registration}</span>
-      <div class="owner-info">
-        <span class="owner-name">${a.owner_name}</span>
-        <span class="owner-sub">${a.group !== a.owner_name ? a.group : a.owner_icao}</span>
-      </div>
-      <span>
-        <div class="operator-badge">${a.current_operator_icao || '—'}</div>
-      </span>
-      <span class="route">${formatRoute(a.last_route)}</span>
-      <span class="callsign">${a.callsign || '—'}</span>
-      <span><span class="type-badge">${a.type}</span></span>
-    </div>`).join('');
-
-  container.innerHTML = header + rows;
-}
-
-// ── Fleet Status Tab ──
-function renderFleet(fleet) {
-  fleet = fleet || (fleetData ? fleetData.fleet : []);
-  if (!fleet) return;
-
-  const search = document.getElementById('fleet-search')?.value?.toLowerCase() || '';
-
-  let filtered = fleet.filter(a => {
-    const matchFilter = currentFilter === 'all' || a.status === currentFilter;
-    const matchSearch = !search ||
-      a.registration.toLowerCase().includes(search) ||
-      (a.owner_name || '').toLowerCase().includes(search) ||
-      (a.current_operator_icao || '').toLowerCase().includes(search) ||
-      (a.callsign || '').toLowerCase().includes(search);
-    return matchFilter && matchSearch;
-  });
-
-  const container = document.getElementById('fleet-list');
-
-  const header = `
-    <div class="fleet-row header-row">
-      <span>Reg</span>
-      <span>Owner</span>
-      <span>Type</span>
-      <span>Current Operator</span>
-      <span>Last Route</span>
-      <span>Last Seen</span>
-      <span>Status</span>
-    </div>`;
-
-  if (filtered.length === 0) {
-    container.innerHTML = header + `<div style="padding:30px;text-align:center;color:var(--muted);">No aircraft match this filter.</div>`;
-    return;
-  }
-
-  const rows = filtered.map(a => `
-    <div class="fleet-row">
-      <span class="reg">${a.registration}</span>
-      <div class="owner-info">
-        <span class="owner-name">${a.owner_name}</span>
-        <span class="owner-sub">${a.group !== a.owner_name ? a.group : ''}</span>
-      </div>
-      <span><span class="type-badge">${a.type}</span></span>
-      <span class="callsign">${a.current_operator_icao || (a.status === 'own_ops' ? a.owner_icao : '—')}</span>
-      <span class="route">${formatRoute(a.last_route)}</span>
-      <span style="color:var(--muted);font-family:var(--font-mono);font-size:11px;">${formatTime(a.last_seen)}</span>
-      <span>${statusPill(a.status)}</span>
-    </div>`).join('');
-
-  container.innerHTML = header + rows;
-}
-
-// ── Operators Tab ──
-function renderOperators(fleet) {
-  // Group by operator
-  const ops = {};
-  fleet.forEach(a => {
-    if (!ops[a.owner_icao]) {
-      ops[a.owner_icao] = {
-        icao: a.owner_icao,
-        name: a.owner_name,
-        group: a.group,
-        total: 0, acmi: 0, own: 0, ground: 0, unknown: 0,
-      };
-    }
-    ops[a.owner_icao].total++;
-    if (a.status === 'acmi_active') ops[a.owner_icao].acmi++;
-    else if (a.status === 'own_ops') ops[a.owner_icao].own++;
-    else if (a.status === 'on_ground') ops[a.owner_icao].ground++;
-    else ops[a.owner_icao].unknown++;
-  });
-
-  // Sort by ACMI count desc
-  const sorted = Object.values(ops).sort((a, b) => b.acmi - a.acmi);
-
-  const container = document.getElementById('operator-grid');
-  container.innerHTML = sorted.map(op => `
-    <div class="operator-card">
-      <div class="op-header">
-        <div>
-          <div class="op-name">${op.name}</div>
-          <div class="op-icao">${op.icao}${op.group !== op.name ? ` · ${op.group}` : ''}</div>
-        </div>
-      </div>
-      <div class="op-stats">
-        <div class="op-stat">
-          <div class="op-stat-value" style="color:var(--accent)">${op.acmi}</div>
-          <div class="op-stat-label">ACMI Out</div>
-        </div>
-        <div class="op-stat">
-          <div class="op-stat-value" style="color:var(--green)">${op.own}</div>
-          <div class="op-stat-label">Own Ops</div>
-        </div>
-        <div class="op-stat">
-          <div class="op-stat-value" style="color:var(--muted)">${op.ground + op.unknown}</div>
-          <div class="op-stat-label">On Ground</div>
-        </div>
-      </div>
-    </div>`).join('');
-}
-
-// ── Filter ──
-function filterFleet(filter, btn) {
-  currentFilter = filter;
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
+  renderAcmi(fleet);
   renderFleet();
-}
-
-// ── Tabs ──
-function switchTab(name) {
-  document.querySelectorAll('.tab').forEach((t, i) => {
-    const names = ['acmi', 'fleet', 'operators'];
-    t.classList.toggle('active', names[i] === name);
-  });
-  document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-  document.getElementById(`tab-${name}`).classList.add('active');
-}
-
-// ── Helpers ──
-function formatRoute(route) {
-  if (!route) return '<span style="color:var(--muted)">—</span>';
-  const [orig, dest] = route.split('-');
-  return `${orig} <span class="route-arrow">→</span> ${dest}`;
-}
-
-function formatTime(iso) {
-  if (!iso) return '—';
-  const d = new Date(iso);
-  const now = new Date();
-  const diff = Math.floor((now - d) / 1000 / 60);
-  if (diff < 60) return `${diff}m ago`;
-  if (diff < 1440) return `${Math.floor(diff/60)}h ago`;
-  return `${Math.floor(diff/1440)}d ago`;
-}
-
-function statusPill(status) {
-  const map = {
-    acmi_active: ['acmi', '● ACMI'],
-    own_ops:     ['own',   '● Own Ops'],
-    on_ground:   ['ground','● Ground'],
-    unknown:     ['unknown','● Unknown'],
-  };
-  const [cls, label] = map[status] || ['unknown', '● Unknown'];
-  return `<span class="status-pill ${cls}">${label}</span>`;
-}
-
-// ── Charts ──
-function drawPie(canvasId, legendId, segments) {
-  const canvas = document.getElementById(canvasId);
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  const cx = canvas.width / 2;
-  const cy = canvas.height / 2;
-  const r = Math.min(cx, cy) - 10;
-  const total = segments.reduce((s, seg) => s + seg.value, 0);
-
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-  if (total === 0) {
-    ctx.fillStyle = '#1e2d42';
-    ctx.beginPath();
-    ctx.arc(cx, cy, r, 0, Math.PI * 2);
-    ctx.fill();
-    return;
+  renderOperators(fleet);
+  if (histData) {
+    renderReport(histData);
+    renderClients(histData);
   }
+}
 
-  let startAngle = -Math.PI / 2;
-  segments.forEach(seg => {
-    const slice = (seg.value / total) * Math.PI * 2;
-    ctx.beginPath();
-    ctx.moveTo(cx, cy);
-    ctx.arc(cx, cy, r, startAngle, startAngle + slice);
-    ctx.closePath();
-    ctx.fillStyle = seg.color;
-    ctx.fill();
-    // thin gap between slices
-    ctx.strokeStyle = '#060910';
-    ctx.lineWidth = 2;
-    ctx.stroke();
-    startAngle += slice;
+// ── Charts
+function drawDonut(id, legendId, segs) {
+  const c = document.getElementById(id);
+  if (!c) return;
+  const ctx = c.getContext('2d');
+  const cx = c.width/2, cy = c.height/2, r = Math.min(cx,cy)-8;
+  const total = segs.reduce((s,x)=>s+x.v,0);
+  ctx.clearRect(0,0,c.width,c.height);
+  if (!total) { ctx.fillStyle='#1e2d42'; ctx.beginPath(); ctx.arc(cx,cy,r,0,Math.PI*2); ctx.fill(); return; }
+  let a = -Math.PI/2;
+  segs.forEach(s => {
+    const slice = (s.v/total)*Math.PI*2;
+    ctx.beginPath(); ctx.moveTo(cx,cy); ctx.arc(cx,cy,r,a,a+slice); ctx.closePath();
+    ctx.fillStyle = s.c; ctx.fill();
+    ctx.strokeStyle = '#060910'; ctx.lineWidth = 2; ctx.stroke();
+    a += slice;
   });
-
-  // Donut hole
-  ctx.beginPath();
-  ctx.arc(cx, cy, r * 0.55, 0, Math.PI * 2);
-  ctx.fillStyle = '#0d1320';
-  ctx.fill();
-
-  // Legend
-  const legend = document.getElementById(legendId);
-  if (!legend) return;
-  legend.innerHTML = segments.map(seg => `
+  ctx.beginPath(); ctx.arc(cx,cy,r*.55,0,Math.PI*2); ctx.fillStyle='#0d1320'; ctx.fill();
+  const lg = document.getElementById(legendId);
+  if (lg) lg.innerHTML = segs.map(s=>`
     <div class="legend-item">
-      <div class="legend-dot" style="background:${seg.color}"></div>
-      <span class="legend-label">${seg.label}</span>
-      <span class="legend-value">${seg.value}</span>
+      <div class="legend-dot" style="background:${s.c}"></div>
+      <span class="legend-label">${s.l}</span>
+      <span class="legend-value">${s.v}</span>
     </div>`).join('');
 }
 
 function renderCharts(fleet) {
-  if (!fleet || fleet.length === 0) return;
+  const acmi  = fleet.filter(a=>a.status==='acmi_active').length;
+  const own   = fleet.filter(a=>a.status==='own_ops').length;
+  const gnd   = fleet.filter(a=>a.status==='on_ground').length;
+  const unk   = fleet.filter(a=>a.status==='unknown').length;
+  drawDonut('chart-status','legend-status',[
+    {l:'ACMI Active',v:acmi,c:'#00d4ff'},
+    {l:'Own Ops',    v:own, c:'#00ff88'},
+    {l:'On Ground',  v:gnd, c:'#334155'},
+    {l:'No Data',    v:unk, c:'#1e2d42'},
+  ].filter(s=>s.v>0));
 
-  // Chart 1: Status distribution
-  const acmiCount  = fleet.filter(a => a.status === 'acmi_active').length;
-  const ownCount   = fleet.filter(a => a.status === 'own_ops').length;
-  const gndCount   = fleet.filter(a => a.status === 'on_ground').length;
-  const unkCount   = fleet.filter(a => a.status === 'unknown').length;
-
-  drawPie('chart-status', 'legend-status', [
-    { label: 'ACMI Active', value: acmiCount, color: '#00d4ff' },
-    { label: 'Own Ops',     value: ownCount,  color: '#00ff88' },
-    { label: 'On Ground',   value: gndCount,  color: '#334155' },
-    { label: 'No Data',     value: unkCount,  color: '#1e2d42' },
-  ].filter(s => s.value > 0));
-
-  // Chart 2: ACMI active by operator group
   const byGroup = {};
-  fleet.filter(a => a.status === 'acmi_active').forEach(a => {
-    const g = a.group || a.owner_name;
-    byGroup[g] = (byGroup[g] || 0) + 1;
+  fleet.filter(a=>a.status==='acmi_active').forEach(a=>{
+    const g=a.group||a.owner_name; byGroup[g]=(byGroup[g]||0)+1;
   });
-  const groupColors = ['#00d4ff','#00ff88','#ffaa00','#ff6b6b','#a78bfa','#34d399','#f472b6','#60a5fa'];
-  const groupSegs = Object.entries(byGroup)
-    .sort((a, b) => b[1] - a[1])
-    .slice(0, 8)
-    .map(([label, value], i) => ({ label, value, color: groupColors[i % groupColors.length] }));
+  const gc = ['#00d4ff','#00ff88','#ffaa00','#ff6b6b','#a78bfa','#34d399','#f472b6','#60a5fa'];
+  const gSegs = Object.entries(byGroup).sort((a,b)=>b[1]-a[1]).slice(0,8).map(([l,v],i)=>({l,v,c:gc[i%gc.length]}));
+  drawDonut('chart-groups','legend-groups', gSegs.length ? gSegs : [{l:'No ACMI',v:1,c:'#1e2d42'}]);
+  if (!gSegs.length) document.getElementById('legend-groups').innerHTML='<div style="color:var(--muted);font-size:12px">No ACMI detected</div>';
 
-  if (groupSegs.length === 0) {
-    drawPie('chart-operators', 'legend-operators', [{ label: 'No ACMI', value: 1, color: '#1e2d42' }]);
-    document.getElementById('legend-operators').innerHTML = '<div style="color:var(--muted);font-size:12px;">No ACMI activity detected</div>';
-  } else {
-    drawPie('chart-operators', 'legend-operators', groupSegs);
-  }
-
-  // Chart 3: Fleet type mix
   const byType = {};
-  fleet.forEach(a => {
-    const t = a.type || 'Unknown';
-    byType[t] = (byType[t] || 0) + 1;
-  });
-  const typeColors = ['#00d4ff','#00ff88','#ffaa00','#ff6b6b','#a78bfa','#34d399'];
-  const typeSegs = Object.entries(byType)
-    .sort((a, b) => b[1] - a[1])
-    .slice(0, 6)
-    .map(([label, value], i) => ({ label, value, color: typeColors[i % typeColors.length] }));
-
-  drawPie('chart-types', 'legend-types', typeSegs);
+  fleet.forEach(a=>{ const t=a.type||'?'; byType[t]=(byType[t]||0)+1; });
+  const tc = ['#00d4ff','#00ff88','#ffaa00','#ff6b6b','#a78bfa','#34d399'];
+  const tSegs = Object.entries(byType).sort((a,b)=>b[1]-a[1]).slice(0,6).map(([l,v],i)=>({l,v,c:tc[i%tc.length]}));
+  drawDonut('chart-types','legend-types',tSegs);
 }
 
-// ── Init ──
-loadData();
+// ── Tab 1: ACMI Active
+function renderAcmi(fleet) {
+  const acmi = fleet.filter(a=>a.status==='acmi_active');
+  document.getElementById('acmi-count').textContent = `${acmi.length} aircraft`;
+  const el = document.getElementById('acmi-list');
+  if (!acmi.length) {
+    el.innerHTML = `<div class="empty">No aircraft currently detected on ACMI operations.</div>`;
+    return;
+  }
+  el.innerHTML =
+    `<div class="t-row t-head acmi-cols"><span>Reg</span><span>Owner</span><span>Operating As</span><span>Route</span><span>Callsign</span><span>Type</span></div>` +
+    acmi.map(a=>`
+    <div class="t-row acmi-cols">
+      <span class="reg">${a.registration}</span>
+      <div class="owner"><span class="owner-name">${a.owner_name}</span><span class="owner-sub">${a.group!==a.owner_name?a.group:a.owner_icao}</span></div>
+      <span><div class="op-badge">${a.current_operator_icao||'—'}</div></span>
+      <span class="route">${fmtRoute(a.last_route)}</span>
+      <span class="mono-sm">${a.callsign||'—'}</span>
+      <span><span class="type-badge">${a.type}</span></span>
+    </div>`).join('');
+}
+
+// ── Tab 2: Fleet Status
+function renderFleet() {
+  const fleet = snapData?.fleet || [];
+  const search = (document.getElementById('fleet-search')?.value||'').toLowerCase();
+  const filtered = fleet.filter(a=>{
+    const ms = fleetFilter==='all' || a.status===fleetFilter;
+    const mq = !search || a.registration.toLowerCase().includes(search) ||
+      (a.owner_name||'').toLowerCase().includes(search) ||
+      (a.current_operator_icao||'').toLowerCase().includes(search);
+    return ms && mq;
+  });
+  const el = document.getElementById('fleet-list');
+  el.innerHTML =
+    `<div class="t-row t-head fleet-cols"><span>Reg</span><span>Owner</span><span>Type</span><span>Operator</span><span>Last Route</span><span>Last Seen</span><span>Status</span></div>` +
+    (filtered.length ? filtered.map(a=>`
+    <div class="t-row fleet-cols">
+      <span class="reg">${a.registration}</span>
+      <div class="owner"><span class="owner-name">${a.owner_name}</span><span class="owner-sub">${a.group!==a.owner_name?a.group:''}</span></div>
+      <span><span class="type-badge">${a.type}</span></span>
+      <span class="mono-sm">${a.current_operator_icao||(a.status==='own_ops'?a.owner_icao:'—')}</span>
+      <span class="route">${fmtRoute(a.last_route)}</span>
+      <span class="mono-sm">${fmtTime(a.last_seen)}</span>
+      <span>${statusPill(a.status)}</span>
+    </div>`).join('') : `<div class="empty">No aircraft match this filter.</div>`);
+}
+
+function filterFleet(f, btn) {
+  fleetFilter = f;
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderFleet();
+}
+
+// ── Tab 3: Operators
+function renderOperators(fleet) {
+  const ops = {};
+  fleet.forEach(a=>{
+    if (!ops[a.owner_icao]) ops[a.owner_icao]={icao:a.owner_icao,name:a.owner_name,group:a.group,total:0,acmi:0,own:0,gnd:0};
+    ops[a.owner_icao].total++;
+    if (a.status==='acmi_active') ops[a.owner_icao].acmi++;
+    else if (a.status==='own_ops') ops[a.owner_icao].own++;
+    else ops[a.owner_icao].gnd++;
+  });
+  document.getElementById('op-grid').innerHTML = Object.values(ops).sort((a,b)=>b.acmi-a.acmi).map(op=>`
+    <div class="op-card">
+      <div class="op-card-header">
+        <div><div class="op-card-name">${op.name}</div><div class="op-card-sub">${op.icao}${op.group!==op.name?' · '+op.group:''}</div></div>
+      </div>
+      <div class="op-stats">
+        <div class="op-stat"><div class="op-stat-val" style="color:var(--accent)">${op.acmi}</div><div class="op-stat-lbl">ACMI Out</div></div>
+        <div class="op-stat"><div class="op-stat-val" style="color:var(--green)">${op.own}</div><div class="op-stat-lbl">Own Ops</div></div>
+        <div class="op-stat"><div class="op-stat-val" style="color:var(--muted)">${op.gnd}</div><div class="op-stat-lbl">Ground</div></div>
+      </div>
+    </div>`).join('');
+}
+
+// ── Tab 4: Daily Report
+function renderReport(hist) {
+  const fleet = hist.fleet || [];
+  const ops   = hist.operator_summaries || {};
+
+  // Banner
+  document.getElementById('report-banner').style.display = 'flex';
+  document.getElementById('report-period').textContent   = `${hist.interval_from||'—'} → ${hist.interval_to||'—'} LT`;
+  const totFlights = fleet.reduce((s,r)=>s+r.total_flights,0);
+  const totBH      = fleet.reduce((s,r)=>s+r.total_bh,0).toFixed(1);
+  const acmiBH     = fleet.reduce((s,r)=>s+r.acmi_bh,0).toFixed(1);
+  document.getElementById('report-total-flights').textContent = totFlights;
+  document.getElementById('report-total-bh').textContent     = `${totBH} BH`;
+  document.getElementById('report-acmi-bh').textContent      = `${acmiBH} BH`;
+
+  const active = fleet.filter(r=>r.total_flights>0).sort((a,b)=>b.total_bh-a.total_bh);
+  const el = document.getElementById('report-list');
+
+  if (!active.length) {
+    el.innerHTML = `<div class="empty">No flight activity recorded for this period.</div>`;
+    return;
+  }
+
+  el.innerHTML =
+    `<div class="t-row t-head report-cols"><span>Reg</span><span>Owner</span><span>Flights</span><span>Total BH</span><span>ACMI BH</span><span>ACMI Flt</span><span>Clients / Routes</span></div>` +
+    active.map(r=>{
+      const clients = (r.clients||[]).map(c=>`<span class="client-badge">${c.icao} ${c.bh}h</span>`).join('');
+      const routes  = (r.routes||[]).slice(0,4).map(rt=>`<span class="mono-sm" style="margin-right:6px">${rt}</span>`).join('');
+      return `
+    <div class="t-row report-cols">
+      <span class="reg">${r.registration}</span>
+      <div class="owner"><span class="owner-name">${r.owner_name}</span><span class="owner-sub">${r.group!==r.owner_name?r.group:''}</span></div>
+      <span class="mono-md">${r.total_flights}</span>
+      <span class="${r.total_bh>0?'bh-value':'bh-zero'}">${r.total_bh}</span>
+      <span class="${r.acmi_bh>0?'bh-value':'bh-zero'}">${r.acmi_bh||'—'}</span>
+      <span class="mono-md">${r.acmi_flights||'—'}</span>
+      <div>${clients||'—'}${routes?'<div style="margin-top:4px">'+routes+'</div>':''}</div>
+    </div>`}).join('');
+}
+
+// ── Tab 5: Client Map
+function renderClients(hist) {
+  const cm = hist.client_map || {};
+  const el = document.getElementById('client-grid');
+  if (!Object.keys(cm).length) {
+    el.innerHTML = `<div class="empty">No ACMI activity recorded yet.</div>`;
+    return;
+  }
+  el.innerHTML = Object.entries(cm)
+    .sort((a,b)=>Object.values(b[1]).reduce((s,x)=>s+x.bh,0)-Object.values(a[1]).reduce((s,x)=>s+x.bh,0))
+    .map(([clientIcao, providers])=>{
+      const provRows = Object.entries(providers)
+        .sort((a,b)=>b[1].bh-a[1].bh)
+        .map(([prov,data])=>`
+          <div class="provider-row">
+            <span class="provider-name">${prov}</span>
+            <div class="provider-stats">
+              <span>${data.aircraft_count} ac</span>
+              <span>${data.flights} flt</span>
+              <span style="color:var(--green)">${data.bh} BH</span>
+            </div>
+          </div>`).join('');
+      const totalBH = Object.values(providers).reduce((s,x)=>s+x.bh,0).toFixed(1);
+      return `
+    <div class="client-card">
+      <div class="client-card-header">
+        <div class="client-icao">${clientIcao}</div>
+        <div class="client-name">${totalBH} BH received</div>
+      </div>
+      ${provRows}
+    </div>`;
+    }).join('');
+}
+
+// ── Tabs
+function switchTab(name) {
+  const names = ['acmi','fleet','operators','report','clients'];
+  document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('active',names[i]===name));
+  document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));
+  document.getElementById(`tab-${name}`).classList.add('active');
+}
+
+// ── Helpers
+function fmtRoute(r) {
+  if (!r) return '<span style="color:var(--muted)">—</span>';
+  const [o,d] = r.split('-');
+  return `${o} <span class="route-arrow">→</span> ${d}`;
+}
+function fmtTime(iso) {
+  if (!iso) return '—';
+  const d = new Date(iso), now = new Date();
+  const m = Math.floor((now-d)/60000);
+  if (m < 60)   return `${m}m ago`;
+  if (m < 1440) return `${Math.floor(m/60)}h ago`;
+  return `${Math.floor(m/1440)}d ago`;
+}
+function statusPill(s) {
+  const map = {acmi_active:['acmi','● ACMI'],own_ops:['own','● Own Ops'],on_ground:['ground','● Ground'],unknown:['unknown','● Unknown']};
+  const [cls,lbl] = map[s]||['unknown','● Unknown'];
+  return `<span class="pill ${cls}">${lbl}</span>`;
+}
+
+// ── Init
+loadAll();
 </script>
 </body>
 </html>
