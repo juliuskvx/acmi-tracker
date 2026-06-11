@@ -247,6 +247,7 @@ def run_snapshot(registry):
     lt_offset   = timedelta(hours=3)
     now_lt      = now_utc + lt_offset
     report_date = now_lt.strftime("%Y-%m-%d")
+    yesterday   = (now_lt - timedelta(days=1)).strftime("%Y-%m-%d")
 
     total   = sum(len(op["aircraft"]) for op in registry["operators"])
     fleet   = []
@@ -337,8 +338,8 @@ def run_snapshot(registry):
     output = {
         "last_updated": now_utc.isoformat(),
         "report_date": report_date,
-        "interval_from": f"{report_date} 00:01",
-        "interval_to":   f"{report_date} 23:59",
+        "interval_from": f"{yesterday} 00:01",
+        "interval_to":   f"{yesterday} 23:59",
         "summary": {
             "total_aircraft": queried,
             "acmi_active":    acmi_count,
@@ -411,7 +412,6 @@ def run_history(registry):
 
             for fl in flights:
                 callsign = fl.get("callsign", "")
-                # Correct FR24 field names from flight-summary/light
                 dep_time = fl.get("datetime_takeoff")
                 arr_time = fl.get("datetime_landed")
                 orig     = fl.get("orig_iata") or fl.get("orig_icao", "")
@@ -494,10 +494,10 @@ def run_history(registry):
         }
         for group, data in providers.items():
             client_map_serializable[client_icao]["providers"][group] = {
-                "flights":       data["flights"],
-                "bh":            data["bh"],
+                "flights":        data["flights"],
+                "bh":             data["bh"],
                 "aircraft_count": len(data["aircraft"]),
-                "aircraft":      sorted(list(data["aircraft"])),
+                "aircraft":       sorted(list(data["aircraft"])),
             }
 
     # Operator summaries
