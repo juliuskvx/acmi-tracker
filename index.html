@@ -1,616 +1,690 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Julius — Health Dashboard</title>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ACMI Intel — European Wet Lease Tracker</title>
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
   :root {
-    --bg:       #0f1117;
-    --bg2:      #161b27;
-    --bg3:      #1c2333;
-    --border:   rgba(255,255,255,0.07);
-    --text:     #e2e8f0;
-    --muted:    #64748b;
-    --subtle:   #94a3b8;
-    --green:    #5DCAA5;
-    --green-d:  #0F6E56;
-    --green-bg: #0d2018;
-    --blue:     #85B7EB;
-    --blue-d:   #185FA5;
-    --blue-bg:  #0d1a2e;
-    --amber:    #EF9F27;
-    --amber-d:  #854F0B;
-    --amber-bg: #1e1508;
-    --red:      #F09595;
-    --red-bg:   #1e0d0d;
-    --radius:   10px;
-    --radius-sm: 6px;
+    --bg:     #060910;
+    --bg2:    #0d1320;
+    --bg3:    #111827;
+    --border: #1e2d42;
+    --accent: #00d4ff;
+    --green:  #00ff88;
+    --red:    #ff4444;
+    --amber:  #ffaa00;
+    --purple: #a78bfa;
+    --text:   #e2e8f0;
+    --muted:  #64748b;
+    --mono:   'JetBrains Mono', monospace;
+    --ui:     'Inter', system-ui, sans-serif;
   }
-  html, body { height: 100%; background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 14px; line-height: 1.5; }
 
-  .topbar { background: var(--bg2); border-bottom: 0.5px solid var(--border); padding: 0 24px; height: 56px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 10; }
-  .topbar-left { display: flex; align-items: center; gap: 12px; }
-  .avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--green-bg); border: 1px solid var(--green-d); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; color: var(--green); flex-shrink: 0; }
-  .topbar-name { font-size: 14px; font-weight: 600; }
-  .topbar-sub  { font-size: 11px; color: var(--muted); }
-  .sync-pill { display: flex; align-items: center; gap: 6px; background: var(--green-bg); border: 0.5px solid var(--green-d); border-radius: 20px; padding: 4px 12px; font-size: 11px; color: var(--green); }
-  .sync-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); animation: pulse 2s infinite; }
-  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
-  .copy-btn { background: var(--green); color: #fff; border: none; border-radius: var(--radius-sm); padding: 8px 16px; font-size: 13px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: background .15s; }
-  .copy-btn:hover { background: var(--green-d); }
-  .copy-btn.copied { background: var(--green-d); }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: var(--ui); font-size: 14px; min-height: 100vh; }
 
-  .main { max-width: 1100px; margin: 0 auto; padding: 24px; }
+  .header {
+    border-bottom: 1px solid var(--border);
+    padding: 0 24px; height: 56px;
+    display: flex; align-items: center; justify-content: space-between;
+    position: sticky; top: 0; z-index: 100; background: var(--bg);
+  }
+  .header-left { display: flex; align-items: center; gap: 12px; }
+  .logo-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); animation: pulse 2s ease-in-out infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(0,212,255,.4)} 50%{opacity:.8;box-shadow:0 0 0 6px rgba(0,212,255,0)} }
+  .logo-text { font-size: 15px; font-weight: 600; letter-spacing: .02em; }
+  .logo-text span { color: var(--accent); }
+  .header-meta { display: flex; align-items: center; gap: 12px; font-size: 12px; color: var(--muted); font-family: var(--mono); flex-wrap: wrap; }
+  .live-badge { display: flex; align-items: center; gap: 6px; color: var(--green); }
+  .live-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); animation: blink 2s ease-in-out infinite; }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+  .interval-badge { font-size: 11px; color: var(--accent); background: rgba(0,212,255,.08); border: 1px solid rgba(0,212,255,.2); border-radius: 4px; padding: 3px 10px; }
 
-  .status-bar { background: var(--green-bg); border: 0.5px solid var(--green-d); border-radius: var(--radius); padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
-  .status-label { font-size: 10px; color: var(--green); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 4px; }
-  .status-text  { font-size: 15px; font-weight: 600; }
-  .readiness-score { font-size: 42px; font-weight: 700; color: var(--green); line-height: 1; }
-  .readiness-label { font-size: 11px; color: var(--muted); }
+  .main { max-width: 1400px; margin: 0 auto; padding: 24px; }
 
-  .metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 20px; }
-  .metric { background: var(--bg2); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 14px 16px; }
-  .metric-label { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: .07em; margin-bottom: 6px; }
-  .metric-value { font-size: 28px; font-weight: 700; line-height: 1; margin-bottom: 4px; }
-  .metric-sub   { font-size: 11px; color: var(--muted); }
-  .metric-trend { font-size: 11px; margin-top: 2px; }
-  .up   { color: var(--green); }
-  .down { color: var(--red); }
-  .flat { color: var(--muted); }
-  .warn { color: var(--amber); }
+  .stat-bar { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin-bottom: 24px; }
+  .stat-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 16px 20px; position: relative; overflow: hidden; }
+  .stat-card::before { content:''; position:absolute; top:0;left:0;right:0; height:2px; }
+  .stat-card.c-accent::before { background: var(--accent); }
+  .stat-card.c-green::before  { background: var(--green); }
+  .stat-card.c-amber::before  { background: var(--amber); }
+  .stat-card.c-muted::before  { background: var(--muted); }
+  .stat-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: 8px; }
+  .stat-value { font-size: 32px; font-weight: 600; font-family: var(--mono); line-height: 1; }
+  .stat-card.c-accent .stat-value { color: var(--accent); }
+  .stat-card.c-green  .stat-value { color: var(--green); }
+  .stat-card.c-amber  .stat-value { color: var(--amber); }
+  .stat-card.c-muted  .stat-value { color: var(--text); }
+  .stat-sub { font-size: 11px; color: var(--muted); margin-top: 4px; font-family: var(--mono); }
 
-  .charts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 20px; }
-  .chart-card { background: var(--bg2); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 16px; }
-  .chart-title { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 14px; }
-  .chart-wrap  { height: 120px; position: relative; }
+  .charts-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-bottom: 24px; }
+  .chart-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 16px 20px; }
+  .chart-title { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: 14px; }
+  .chart-wrap { display: flex; align-items: center; gap: 20px; }
+  .chart-legend { flex: 1; display: flex; flex-direction: column; gap: 7px; }
+  .legend-item { display: flex; align-items: center; gap: 8px; font-size: 12px; }
+  .legend-dot { width: 8px; height: 8px; border-radius: 2px; flex-shrink: 0; }
+  .legend-label { color: var(--muted); flex: 1; }
+  .legend-value { font-family: var(--mono); font-size: 12px; font-weight: 500; color: var(--text); }
 
-  .stages-bar { height: 14px; border-radius: 4px; overflow: hidden; display: flex; margin-bottom: 10px; }
-  .stage-seg  { height: 100%; transition: flex .3s; }
-  .stage-legend { display: flex; gap: 14px; flex-wrap: wrap; }
-  .stage-item   { display: flex; align-items: center; gap: 5px; font-size: 11px; color: var(--muted); }
-  .stage-dot    { width: 8px; height: 8px; border-radius: 2px; flex-shrink: 0; }
+  /* Chart mode label */
+  .chart-mode-label { font-size: 10px; color: var(--purple); font-family: var(--mono); margin-bottom: 14px; margin-top: -10px; }
 
-  .bottom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 20px; }
-  .info-card { background: var(--bg2); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 16px; }
-  .card-title { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 12px; }
-  .data-row { display: flex; justify-content: space-between; align-items: center; padding: 7px 0; border-bottom: 0.5px solid var(--border); font-size: 13px; }
-  .data-row:last-child { border-bottom: none; }
-  .data-label { color: var(--muted); }
-  .data-val   { font-weight: 500; }
+  .tabs { display: flex; border-bottom: 1px solid var(--border); margin-bottom: 24px; }
+  .tab { padding: 12px 20px; font-size: 13px; font-weight: 500; color: var(--muted); cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -1px; transition: all .15s; }
+  .tab:hover { color: var(--text); }
+  .tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
 
-  /* Activity block — one per session */
-  .activity-block { border-bottom: 1px solid var(--border); padding-bottom: 10px; margin-bottom: 10px; }
-  .activity-block:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-  .activity-name { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
-  .activity-type-pill { font-size: 10px; font-weight: 500; background: var(--bg3); border: 0.5px solid var(--border); border-radius: 20px; padding: 2px 8px; color: var(--subtle); text-transform: uppercase; letter-spacing: .05em; }
+  .section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+  .section-title { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
 
-  .flag { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; border-bottom: 0.5px solid var(--border); font-size: 12px; color: var(--subtle); line-height: 1.5; }
-  .flag:last-child { border-bottom: none; }
-  .flag-icon { width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; flex-shrink: 0; margin-top: 1px; }
-  .flag-ok   { background: var(--green-bg); color: var(--green); border: 0.5px solid var(--green-d); }
-  .flag-warn { background: var(--amber-bg); color: var(--amber); border: 0.5px solid var(--amber-d); }
-  .flag-bad  { background: var(--red-bg);   color: var(--red); }
+  .data-table { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-bottom: 24px; }
+  .t-row { display: grid; align-items: center; padding: 11px 20px; border-bottom: 1px solid var(--border); gap: 12px; font-size: 12px; transition: background .15s; }
+  .t-row:hover { background: var(--bg3); }
+  .t-row:last-child { border-bottom: none; }
+  .t-row.t-head { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); background: var(--bg3); cursor: default; }
+  .t-row.t-head:hover { background: var(--bg3); }
 
-  .loading { text-align: center; padding: 60px; color: var(--muted); }
-  .error-box { background: var(--red-bg); border: 0.5px solid var(--red); border-radius: var(--radius); padding: 16px; color: var(--red); margin-bottom: 20px; font-size: 13px; }
+  .acmi-cols   { grid-template-columns: 100px 1fr 130px 160px 140px 90px; }
+  .fleet-cols  { grid-template-columns: 100px 1fr 90px 130px 150px 100px 90px; }
+  .report-cols { grid-template-columns: 100px 1fr 70px 70px 70px 70px 1fr; }
+  .client-cols { grid-template-columns: 120px 1fr 80px 80px 80px; }
 
-  @media (max-width: 700px) {
-    .metrics-grid { grid-template-columns: repeat(2, 1fr); }
-    .charts-grid  { grid-template-columns: 1fr; }
-    .bottom-grid  { grid-template-columns: 1fr; }
-    .status-bar   { flex-direction: column; gap: 12px; align-items: flex-start; }
-    .topbar       { flex-wrap: wrap; height: auto; padding: 10px 16px; gap: 8px; }
-    .main         { padding: 16px; }
+  .reg { font-family: var(--mono); font-size: 13px; font-weight: 500; color: var(--accent); }
+  .owner { display: flex; flex-direction: column; gap: 2px; }
+  .owner-name { font-size: 13px; font-weight: 500; }
+  .owner-sub  { font-size: 11px; color: var(--muted); }
+  .op-badge { display: inline-flex; align-items: center; background: rgba(0,212,255,.1); border: 1px solid rgba(0,212,255,.2); border-radius: 4px; padding: 3px 9px; font-family: var(--mono); font-size: 12px; font-weight: 500; color: var(--accent); }
+  .client-badge { display: inline-flex; align-items: center; background: rgba(167,139,250,.1); border: 1px solid rgba(167,139,250,.2); border-radius: 4px; padding: 3px 9px; font-family: var(--mono); font-size: 12px; font-weight: 500; color: var(--purple); margin-right: 4px; margin-bottom: 2px; }
+  .route { font-family: var(--mono); font-size: 12px; color: var(--text); display: flex; align-items: center; gap: 4px; }
+  .route-arrow { color: var(--muted); }
+  .pill { display: inline-flex; align-items: center; gap: 4px; border-radius: 99px; padding: 3px 9px; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; white-space: nowrap; }
+  .pill.acmi    { background: rgba(0,212,255,.12); color: var(--accent); border: 1px solid rgba(0,212,255,.25); }
+  .pill.own     { background: rgba(0,255,136,.08);  color: var(--green);  border: 1px solid rgba(0,255,136,.2); }
+  .pill.ground  { background: rgba(100,116,139,.12); color: var(--muted); border: 1px solid rgba(100,116,139,.2); }
+  .pill.unknown { background: rgba(255,170,0,.08);  color: var(--amber);  border: 1px solid rgba(255,170,0,.2); }
+  .type-badge { font-family: var(--mono); font-size: 11px; color: var(--muted); background: var(--bg3); border: 1px solid var(--border); border-radius: 3px; padding: 2px 7px; display: inline-block; }
+  .bh-value { font-family: var(--mono); font-size: 13px; font-weight: 500; color: var(--green); }
+  .bh-zero  { color: var(--muted); }
+  .mono-sm { font-family: var(--mono); font-size: 11px; color: var(--muted); }
+  .mono-md { font-family: var(--mono); font-size: 12px; color: var(--text); }
+
+  .operator-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap: 12px; margin-bottom: 24px; }
+  .op-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 16px; transition: border-color .15s; }
+  .op-card:hover { border-color: rgba(0,212,255,.3); }
+  .op-card-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 12px; }
+  .op-card-name { font-size: 14px; font-weight: 600; }
+  .op-card-sub  { font-size: 11px; color: var(--muted); margin-top: 2px; font-family: var(--mono); }
+  .op-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; }
+  .op-stat { text-align: center; padding: 8px; background: var(--bg3); border-radius: 4px; }
+  .op-stat-val { font-family: var(--mono); font-size: 18px; font-weight: 600; line-height: 1; }
+  .op-stat-lbl { font-size: 10px; color: var(--muted); margin-top: 3px; text-transform: uppercase; letter-spacing: .06em; }
+
+  .client-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px,1fr)); gap: 12px; margin-bottom: 24px; }
+  .client-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 16px; }
+  .client-card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+  .client-icao { font-family: var(--mono); font-size: 16px; font-weight: 600; color: var(--purple); }
+  .client-name { font-size: 13px; color: var(--muted); }
+  .provider-row { display: flex; align-items: center; justify-content: space-between; padding: 8px 10px; background: var(--bg3); border-radius: 4px; margin-bottom: 6px; font-size: 12px; }
+  .provider-row:last-child { margin-bottom: 0; }
+  .provider-name { font-weight: 500; }
+  .provider-stats { display: flex; gap: 12px; font-family: var(--mono); font-size: 11px; color: var(--muted); }
+  .provider-stats span { color: var(--text); }
+
+  .filter-bar { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; align-items: center; }
+  .filter-btn { background: var(--bg2); border: 1px solid var(--border); border-radius: 4px; padding: 5px 12px; font-size: 11px; font-weight: 500; color: var(--muted); cursor: pointer; transition: all .15s; font-family: var(--ui); }
+  .filter-btn:hover, .filter-btn.active { border-color: var(--accent); color: var(--accent); background: rgba(0,212,255,.05); }
+  .search-input { background: var(--bg2); border: 1px solid var(--border); border-radius: 4px; padding: 5px 12px; font-size: 12px; color: var(--text); font-family: var(--mono); outline: none; width: 200px; margin-left: auto; }
+  .search-input::placeholder { color: var(--muted); }
+  .search-input:focus { border-color: var(--accent); }
+
+  .empty { padding: 40px; text-align: center; color: var(--muted); font-size: 13px; }
+  .loading { display: flex; align-items: center; justify-content: center; padding: 60px; gap: 12px; color: var(--muted); font-family: var(--mono); font-size: 13px; }
+  .spinner { width: 16px; height: 16px; border: 2px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin .8s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .interval-banner { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 12px 20px; margin-bottom: 16px; display: flex; align-items: center; gap: 16px; font-size: 12px; }
+  .interval-banner .lbl { color: var(--muted); text-transform: uppercase; letter-spacing: .08em; font-size: 10px; font-weight: 600; }
+  .interval-banner .val { font-family: var(--mono); color: var(--accent); font-size: 13px; }
+
+  .footer { border-top: 1px solid var(--border); padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; font-size: 11px; color: var(--muted); font-family: var(--mono); }
+
+  @media (max-width: 900px) {
+    .stat-bar { grid-template-columns: repeat(2,1fr); }
+    .charts-row { grid-template-columns: 1fr; }
+    .acmi-cols  { grid-template-columns: 90px 1fr 120px; }
+    .acmi-cols > *:nth-child(n+4) { display: none; }
+    .fleet-cols { grid-template-columns: 90px 1fr 80px; }
+    .fleet-cols > *:nth-child(n+4) { display: none; }
   }
 </style>
 </head>
 <body>
 
-<div class="topbar">
-  <div class="topbar-left">
-    <div class="avatar">J</div>
-    <div>
-      <div class="topbar-name">Julius — Health Dashboard</div>
-      <div class="topbar-sub" id="topbar-date">Loading...</div>
+<header class="header">
+  <div class="header-left">
+    <div class="logo-dot"></div>
+    <div class="logo-text">ACMI <span>Intel</span></div>
+  </div>
+  <div class="header-meta">
+    <div class="live-badge"><div class="live-dot"></div><span id="live-status">loading...</span></div>
+    <div class="interval-badge" id="report-interval">—</div>
+    <span id="last-updated">—</span>
+    <span id="aircraft-count">—</span>
+  </div>
+</header>
+
+<main class="main">
+
+  <div class="stat-bar">
+    <div class="stat-card c-accent">
+      <div class="stat-label">ACMI Active</div>
+      <div class="stat-value" id="stat-acmi">—</div>
+      <div class="stat-sub">currently wet-leased</div>
+    </div>
+    <div class="stat-card c-green">
+      <div class="stat-label">Own Operations</div>
+      <div class="stat-value" id="stat-own">—</div>
+      <div class="stat-sub">flying own callsign</div>
+    </div>
+    <div class="stat-card c-amber">
+      <div class="stat-label">On Ground</div>
+      <div class="stat-value" id="stat-ground">—</div>
+      <div class="stat-sub">parked / maintenance</div>
+    </div>
+    <div class="stat-card c-muted">
+      <div class="stat-label">Fleet Tracked</div>
+      <div class="stat-value" id="stat-total">—</div>
+      <div class="stat-sub">across <span id="stat-ops">—</span> operators</div>
     </div>
   </div>
-  <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
-    <div class="sync-pill"><div class="sync-dot"></div><span id="sync-time">Syncing...</span></div>
-    <a id="csv-btn" href="data/history.csv" download="julius-health-history.csv"
-       style="background:var(--bg3);color:var(--subtle);border:0.5px solid var(--border);border-radius:var(--radius-sm);padding:8px 14px;font-size:13px;font-weight:500;cursor:pointer;display:flex;align-items:center;gap:6px;text-decoration:none;transition:border-color .15s;"
-       onmouseover="this.style.borderColor='var(--green-d)'" onmouseout="this.style.borderColor='var(--border)'">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-      Export CSV
-    </a>
-    <button class="copy-btn" id="copy-btn" onclick="copyForClaude()">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-      Copy for Claude
-    </button>
+
+  <!-- Charts -->
+  <div class="charts-row">
+    <div class="chart-card">
+      <div class="chart-title">Fleet Status Distribution</div>
+      <div id="chart-mode-status" class="chart-mode-label" style="display:none">▸ Daily Report view</div>
+      <div class="chart-wrap">
+        <canvas id="chart-status" width="160" height="160"></canvas>
+        <div class="chart-legend" id="legend-status"></div>
+      </div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">ACMI Activity by Group</div>
+      <div id="chart-mode-groups" class="chart-mode-label" style="display:none">▸ Daily Report view</div>
+      <div class="chart-wrap">
+        <canvas id="chart-groups" width="160" height="160"></canvas>
+        <div class="chart-legend" id="legend-groups"></div>
+      </div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">Fleet Type Mix</div>
+      <div id="chart-mode-types" class="chart-mode-label" style="display:none">▸ Daily Report view</div>
+      <div class="chart-wrap">
+        <canvas id="chart-types" width="160" height="160"></canvas>
+        <div class="chart-legend" id="legend-types"></div>
+      </div>
+    </div>
   </div>
-</div>
 
-<div class="main">
-  <div id="error-area"></div>
-  <div id="loading" class="loading">Loading your health data...</div>
-  <div id="dashboard" style="display:none">
+  <!-- Tabs -->
+  <div class="tabs">
+    <div class="tab active"   onclick="switchTab('acmi')">ACMI Active</div>
+    <div class="tab"          onclick="switchTab('fleet')">Fleet Status</div>
+    <div class="tab"          onclick="switchTab('operators')">Operators</div>
+    <div class="tab"          onclick="switchTab('report')">Daily Report</div>
+    <div class="tab"          onclick="switchTab('clients')">Client Map</div>
+  </div>
 
-    <div class="status-bar">
-      <div>
-        <div class="status-label">Recovery status</div>
-        <div class="status-text" id="status-text">—</div>
-      </div>
-      <div style="text-align:right">
-        <div class="readiness-score" id="readiness-score">—</div>
-        <div class="readiness-label" id="readiness-label-text">readiness</div>
-      </div>
-    </div>
-
-    <div class="metrics-grid">
-      <div class="metric">
-        <div class="metric-label">HRV</div>
-        <div class="metric-value up" id="m-hrv">—</div>
-        <div class="metric-sub">ms overnight avg</div>
-        <div class="metric-trend" id="m-hrv-trend"></div>
-      </div>
-      <div class="metric">
-        <div class="metric-label">Body Battery</div>
-        <div class="metric-value" id="m-bb" style="color:var(--blue)">—</div>
-        <div class="metric-sub">morning level</div>
-        <div class="metric-trend" id="m-bb-trend"></div>
-      </div>
-      <div class="metric">
-        <div class="metric-label">Resting HR</div>
-        <div class="metric-value" id="m-rhr" style="color:var(--text)">—</div>
-        <div class="metric-sub">bpm</div>
-        <div class="metric-trend" id="m-rhr-trend"></div>
-      </div>
-      <div class="metric">
-        <div class="metric-label">VO2 Max</div>
-        <div class="metric-value up" id="m-vo2">—</div>
-        <div class="metric-sub">ml/kg/min</div>
-        <div class="metric-trend" id="m-vo2-trend"></div>
-      </div>
-    </div>
-
-    <div class="charts-grid">
-      <div class="chart-card">
-        <div class="chart-title">HRV — 7 day trend</div>
-        <div class="chart-wrap"><canvas id="chart-hrv"></canvas></div>
-      </div>
-      <div class="chart-card">
-        <div class="chart-title">Sleep duration — 7 days (hours)</div>
-        <div class="chart-wrap"><canvas id="chart-sleep"></canvas></div>
-      </div>
-    </div>
-
-    <div class="charts-grid">
-      <div class="chart-card">
-        <div class="chart-title">Last night — sleep stages</div>
-        <div class="stages-bar" id="stages-bar"></div>
-        <div class="stage-legend">
-          <div class="stage-item"><div class="stage-dot" style="background:#1a4a3a"></div>Awake</div>
-          <div class="stage-item"><div class="stage-dot" style="background:#85B7EB"></div>REM <span id="rem-pct"></span></div>
-          <div class="stage-item"><div class="stage-dot" style="background:#378ADD"></div>Light <span id="light-pct"></span></div>
-          <div class="stage-item"><div class="stage-dot" style="background:#0C447C"></div>Deep <span id="deep-pct"></span></div>
+  <!-- Tab 1: ACMI Active -->
+  <div class="tab-content active" id="tab-acmi">
+    <div class="data-table">
+      <div class="feed-header" style="padding:14px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;">
+        <div style="font-size:13px;font-weight:600;display:flex;align-items:center;gap:8px;">
+          <div class="live-dot"></div>
+          Aircraft currently operating under a different airline's callsign
         </div>
-        <div style="margin-top:12px;font-size:13px;color:var(--subtle)">Total: <span id="sleep-total" style="color:var(--text);font-weight:500"></span> &nbsp;·&nbsp; Score: <span id="sleep-score" style="color:var(--text);font-weight:500"></span></div>
+        <div id="acmi-count" class="mono-sm">—</div>
       </div>
-      <div class="chart-card">
-        <div class="chart-title">Body Battery — 7 days</div>
-        <div class="chart-wrap"><canvas id="chart-bb"></canvas></div>
-      </div>
+      <div id="acmi-list"><div class="loading"><div class="spinner"></div>Loading...</div></div>
     </div>
-
-    <div class="bottom-grid">
-      <div class="info-card">
-        <div class="card-title">Yesterday's activities</div>
-        <div id="activity-rows"></div>
-      </div>
-      <div class="info-card">
-        <div class="card-title">Flags</div>
-        <div id="flags-list"></div>
-      </div>
-    </div>
-
-    <div class="bottom-grid">
-      <div class="info-card">
-        <div class="card-title">Daily stats</div>
-        <div class="data-row"><span class="data-label">Steps</span><span class="data-val" id="stat-steps">—</span></div>
-        <div class="data-row"><span class="data-label">Active calories</span><span class="data-val" id="stat-cals">—</span></div>
-        <div class="data-row"><span class="data-label">Avg stress</span><span class="data-val" id="stat-stress">—</span></div>
-        <div class="data-row"><span class="data-label">SpO2</span><span class="data-val" id="stat-spo2">—</span></div>
-      </div>
-      <div class="info-card">
-        <div class="card-title">Fitness snapshot</div>
-        <div class="data-row"><span class="data-label">VO2 Max</span><span class="data-val" id="snap-vo2">—</span></div>
-        <div class="data-row"><span class="data-label">Resting HR</span><span class="data-val" id="snap-rhr">—</span></div>
-        <div class="data-row"><span class="data-label">HRV status</span><span class="data-val" id="snap-hrv-status">—</span></div>
-        <div class="data-row"><span class="data-label">Data date</span><span class="data-val" id="snap-date">—</span></div>
-      </div>
-    </div>
-
   </div>
-</div>
+
+  <!-- Tab 2: Fleet Status -->
+  <div class="tab-content" id="tab-fleet">
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterFleet('all',this)">All</button>
+      <button class="filter-btn" onclick="filterFleet('acmi_active',this)">ACMI Active</button>
+      <button class="filter-btn" onclick="filterFleet('own_ops',this)">Own Ops</button>
+      <button class="filter-btn" onclick="filterFleet('on_ground',this)">On Ground</button>
+      <input class="search-input" id="fleet-search" placeholder="Search reg, operator..." oninput="renderFleet()">
+    </div>
+    <div class="data-table">
+      <div id="fleet-list"><div class="loading"><div class="spinner"></div>Loading...</div></div>
+    </div>
+  </div>
+
+  <!-- Tab 3: Operators -->
+  <div class="tab-content" id="tab-operators">
+    <div class="operator-grid" id="op-grid">
+      <div class="loading"><div class="spinner"></div>Loading...</div>
+    </div>
+  </div>
+
+  <!-- Tab 4: Daily Report -->
+  <div class="tab-content" id="tab-report">
+    <div id="report-banner" class="interval-banner" style="display:none;">
+      <div><div class="lbl">Reporting Period</div><div class="val" id="report-period">—</div></div>
+      <div><div class="lbl">Total Flights</div><div class="val" id="report-total-flights">—</div></div>
+      <div><div class="lbl">Total Block Hours</div><div class="val" id="report-total-bh">—</div></div>
+      <div><div class="lbl">ACMI Block Hours</div><div class="val" id="report-acmi-bh">—</div></div>
+    </div>
+    <div class="data-table">
+      <div id="report-list"><div class="empty">Daily report loads after the first overnight run.<br><span style="font-size:11px;margin-top:4px;display:block;">Check back tomorrow at 10:00 AM Lithuanian time.</span></div></div>
+    </div>
+  </div>
+
+  <!-- Tab 5: Client Map -->
+  <div class="tab-content" id="tab-clients">
+    <div class="client-grid" id="client-grid">
+      <div class="empty">Client map loads after the first overnight run.<br><span style="font-size:11px;margin-top:4px;display:block;">Check back tomorrow at 10:00 AM Lithuanian time.</span></div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <span>ACMI Intel — European Wet Lease Tracker · juliuskvx</span>
+  <span id="footer-txt">Refreshes daily at 10:00 AM Lithuanian time</span>
+</footer>
 
 <script>
-const $ = id => document.getElementById(id);
-const fmt = (v, unit='') => v != null ? `${Math.round(v)}${unit}` : '—';
-const fmtDec = (v, d=1) => v != null ? Number(v).toFixed(d) : '—';
+// ── State
+let snapData = null;
+let histData = null;
+let fleetFilter = 'all';
+let currentTab = 'acmi';
 
-function secsToHM(s) {
-  if (!s) return '—';
-  const h = Math.floor(s/3600), m = Math.floor((s%3600)/60);
-  return `${h}h ${m}m`;
+// ── Load
+async function loadAll() {
+  try {
+    const r1 = await fetch('data/acmi_data.json');
+    if (r1.ok) snapData = await r1.json();
+  } catch(e) {}
+
+  try {
+    const r2 = await fetch('data/acmi_history.json');
+    if (r2.ok) histData = await r2.json();
+  } catch(e) {}
+
+  if (!snapData) { showGlobalError(); return; }
+  render();
 }
 
-function activityTypeLabel(type) {
-  const map = {
-    'cycling': '🚴 Cycling', 'road_biking': '🚴 Cycling', 'mountain_biking': '🚵 MTB',
-    'running': '🏃 Running', 'trail_running': '🏃 Trail Run',
-    'swimming': '🏊 Swimming', 'pool_swimming': '🏊 Pool Swim', 'open_water_swimming': '🏊 Open Water',
-    'strength_training': '🏋️ Strength', 'yoga': '🧘 Yoga',
-    'walking': '🚶 Walking', 'hiking': '🥾 Hiking',
-  };
-  return map[type] || (type ? type.replace(/_/g,' ') : 'Activity');
-}
-
-function readiness(data) {
-  const tr = data.training_readiness;
-  if (tr && tr.score != null) {
-    const score = Math.round(tr.score);
-    let label = tr.feedback_long || tr.level || '';
-    label = label.replace(/_/g, ' ').toLowerCase();
-    label = label.charAt(0).toUpperCase() + label.slice(1);
-    if (!label) {
-      if (score >= 70) label = 'High training readiness';
-      else if (score >= 40) label = 'Moderate training readiness';
-      else label = 'Low training readiness';
-    }
-    return { score, label, source: 'garmin' };
-  }
-  // Fallback: simple estimate if Garmin Training Readiness unavailable
-  let score = 70;
-  const hrv = data.hrv?.last_night;
-  const bb  = data.body_battery?.morning;
-  const sl  = data.sleep?.score;
-  if (hrv) score += Math.min(15, Math.max(-15, (hrv-50)*0.5));
-  if (bb)  score += Math.min(10, Math.max(-10, (bb-60)*0.3));
-  if (sl)  score += Math.min(10, Math.max(-10, (sl-70)*0.3));
-  score = Math.round(Math.min(100, Math.max(0, score)));
-  let label = 'Poor recovery (estimate)';
-  if (score >= 80) label = 'Excellent (estimate) — ready for hard training';
-  else if (score >= 65) label = 'Good (estimate) — ready for moderate training';
-  else if (score >= 50) label = 'Moderate (estimate) — keep it easy today';
-  return { score, label, source: 'estimate' };
-}
-
-function makeChart(id, labels, values, color, type='bar') {
-  const ctx = $(id)?.getContext('2d');
-  if (!ctx) return;
-  const lastIdx = values.length - 1;
-  new Chart(ctx, {
-    type,
-    data: {
-      labels,
-      datasets: [{
-        data: values,
-        backgroundColor: values.map((_, i) => i === lastIdx ? color : color+'44'),
-        borderColor: values.map((_, i) => i === lastIdx ? color : color+'66'),
-        borderWidth: type==='line'?2:0,
-        borderRadius: 4,
-        tension: 0.4,
-        fill: type==='line',
-        pointRadius: 3,
-        pointBackgroundColor: color,
-      }]
-    },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      plugins: { legend: { display: false }, tooltip: {
-        backgroundColor: '#1c2333', titleColor: '#94a3b8',
-        bodyColor: '#e2e8f0', borderColor: 'rgba(255,255,255,0.1)', borderWidth: 1,
-      }},
-      scales: {
-        x: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: (ctx2) => ctx2.index === lastIdx ? color : '#64748b', font: { size: 10 }}},
-        y: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#64748b', font: { size: 10 }}, beginAtZero: true },
-      }
-    }
+function showGlobalError() {
+  ['acmi-list','fleet-list','op-grid','report-list','client-grid'].forEach(id => {
+    document.getElementById(id).innerHTML = `<div class="empty" style="color:var(--red)">No data — run the fetch script first.</div>`;
   });
+  document.getElementById('live-status').textContent = 'no data';
 }
 
-function addFlag(text, type='ok') {
-  const d = document.createElement('div');
-  d.className = 'flag';
-  const icon = type==='ok' ? '✓' : type==='warn' ? '!' : '✕';
-  const cls  = type==='ok' ? 'flag-ok' : type==='warn' ? 'flag-warn' : 'flag-bad';
-  d.innerHTML = `<div class="flag-icon ${cls}">${icon}</div><span>${text}</span>`;
-  $('flags-list').appendChild(d);
+// ── Main render
+function render() {
+  const fleet = snapData.fleet || [];
+  const sum   = snapData.summary || {};
+  const lu    = snapData.last_updated ? new Date(snapData.last_updated) : null;
+
+  document.getElementById('live-status').textContent   = 'data loaded';
+  document.getElementById('aircraft-count').textContent = `${fleet.length} aircraft`;
+  document.getElementById('last-updated').textContent   = lu ? lu.toUTCString().replace(' GMT',' UTC') : '—';
+  document.getElementById('report-interval').textContent =
+    snapData.report_date
+      ? `${snapData.report_date}  ${(snapData.interval_from||'').split(' ')[1]||''} → ${(snapData.interval_to||'').split(' ')[1]||''} LT`
+      : '—';
+
+  document.getElementById('stat-acmi').textContent   = sum.acmi_active   ?? '—';
+  document.getElementById('stat-own').textContent    = sum.own_ops        ?? '—';
+  document.getElementById('stat-ground').textContent = sum.on_ground      ?? '—';
+  document.getElementById('stat-total').textContent  = sum.total_aircraft ?? fleet.length;
+  document.getElementById('stat-ops').textContent    = [...new Set(fleet.map(a=>a.owner_icao))].length;
+
+  document.getElementById('footer-txt').textContent =
+    `Interval: ${snapData.interval_from||'—'} → ${snapData.interval_to||'—'} LT · Updated: ${lu?lu.toLocaleString():'—'}`;
+
+  renderChartsForTab(currentTab);
+  renderAcmi(fleet);
+  renderFleet();
+  renderOperators(fleet);
+  if (histData) {
+    renderReport(histData);
+    renderClients(histData);
+  }
 }
 
-function renderActivities(activities) {
-  const container = $('activity-rows');
-  if (!activities || activities.length === 0) {
-    container.innerHTML = '<div style="color:var(--muted);font-size:13px;padding:8px 0">No activity recorded yesterday</div>';
+// ── Charts — switch data source based on active tab
+function renderChartsForTab(tab) {
+  const isReport = tab === 'report';
+  const modeLabel = isReport ? '▸ Daily Report view' : '';
+
+  ['status','groups','types'].forEach(id => {
+    const el = document.getElementById(`chart-mode-${id}`);
+    if (el) { el.textContent = modeLabel; el.style.display = isReport ? 'block' : 'none'; }
+  });
+
+  if (isReport && histData) {
+    renderChartsFromHistory(histData);
+  } else if (snapData) {
+    renderChartsFromSnap(snapData.fleet || []);
+  }
+}
+
+function drawDonut(id, legendId, segs) {
+  const c = document.getElementById(id);
+  if (!c) return;
+  const ctx = c.getContext('2d');
+  const cx = c.width/2, cy = c.height/2, r = Math.min(cx,cy)-8;
+  const total = segs.reduce((s,x)=>s+x.v,0);
+  ctx.clearRect(0,0,c.width,c.height);
+  if (!total) { ctx.fillStyle='#1e2d42'; ctx.beginPath(); ctx.arc(cx,cy,r,0,Math.PI*2); ctx.fill(); return; }
+  let a = -Math.PI/2;
+  segs.forEach(s => {
+    const slice = (s.v/total)*Math.PI*2;
+    ctx.beginPath(); ctx.moveTo(cx,cy); ctx.arc(cx,cy,r,a,a+slice); ctx.closePath();
+    ctx.fillStyle = s.c; ctx.fill();
+    ctx.strokeStyle = '#060910'; ctx.lineWidth = 2; ctx.stroke();
+    a += slice;
+  });
+  ctx.beginPath(); ctx.arc(cx,cy,r*.55,0,Math.PI*2); ctx.fillStyle='#0d1320'; ctx.fill();
+  const lg = document.getElementById(legendId);
+  if (lg) lg.innerHTML = segs.map(s=>`
+    <div class="legend-item">
+      <div class="legend-dot" style="background:${s.c}"></div>
+      <span class="legend-label">${s.l}</span>
+      <span class="legend-value">${s.v}</span>
+    </div>`).join('');
+}
+
+// Charts from live snapshot data
+function renderChartsFromSnap(fleet) {
+  const acmi  = fleet.filter(a=>a.status==='acmi_active').length;
+  const own   = fleet.filter(a=>a.status==='own_ops').length;
+  const gnd   = fleet.filter(a=>a.status==='on_ground').length;
+  const unk   = fleet.filter(a=>a.status==='unknown').length;
+  drawDonut('chart-status','legend-status',[
+    {l:'ACMI Active',v:acmi,c:'#00d4ff'},
+    {l:'Own Ops',    v:own, c:'#00ff88'},
+    {l:'On Ground',  v:gnd, c:'#334155'},
+    {l:'No Data',    v:unk, c:'#1e2d42'},
+  ].filter(s=>s.v>0));
+
+  const byGroup = {};
+  fleet.filter(a=>a.status==='acmi_active').forEach(a=>{
+    const g=a.group||a.owner_name; byGroup[g]=(byGroup[g]||0)+1;
+  });
+  const gc = ['#00d4ff','#00ff88','#ffaa00','#ff6b6b','#a78bfa','#34d399','#f472b6','#60a5fa'];
+  const gSegs = Object.entries(byGroup).sort((a,b)=>b[1]-a[1]).slice(0,8).map(([l,v],i)=>({l,v,c:gc[i%gc.length]}));
+  drawDonut('chart-groups','legend-groups', gSegs.length ? gSegs : [{l:'No ACMI',v:1,c:'#1e2d42'}]);
+  if (!gSegs.length) document.getElementById('legend-groups').innerHTML='<div style="color:var(--muted);font-size:12px">No ACMI detected</div>';
+
+  const byType = {};
+  fleet.forEach(a=>{ const t=a.type||'?'; byType[t]=(byType[t]||0)+1; });
+  const tc = ['#00d4ff','#00ff88','#ffaa00','#ff6b6b','#a78bfa','#34d399'];
+  const tSegs = Object.entries(byType).sort((a,b)=>b[1]-a[1]).slice(0,6).map(([l,v],i)=>({l,v,c:tc[i%tc.length]}));
+  drawDonut('chart-types','legend-types',tSegs);
+}
+
+// Charts from daily history data — shows BH instead of aircraft counts
+function renderChartsFromHistory(hist) {
+  const fleet = hist.fleet || [];
+  const ops   = hist.operator_summaries || {};
+
+  // Status: active vs no flights
+  const withFlights  = fleet.filter(r=>r.total_flights>0).length;
+  const acmiFlights  = fleet.filter(r=>r.acmi_flights>0).length;
+  const ownFlights   = fleet.filter(r=>r.total_flights>0 && r.acmi_flights===0).length;
+  const noFlights    = fleet.filter(r=>r.total_flights===0).length;
+  drawDonut('chart-status','legend-status',[
+    {l:'ACMI Flights',  v:acmiFlights, c:'#00d4ff'},
+    {l:'Own Ops Flights',v:ownFlights, c:'#00ff88'},
+    {l:'No Flights',    v:noFlights,  c:'#334155'},
+  ].filter(s=>s.v>0));
+
+  // Groups: by ACMI block hours
+  const gc = ['#00d4ff','#00ff88','#ffaa00','#ff6b6b','#a78bfa','#34d399','#f472b6','#60a5fa'];
+  const gSegs = Object.entries(ops)
+    .filter(([,v])=>v.acmi_bh>0)
+    .sort((a,b)=>b[1].acmi_bh-a[1].acmi_bh)
+    .slice(0,8)
+    .map(([l,v],i)=>({l, v: parseFloat(v.acmi_bh.toFixed(1)), c:gc[i%gc.length]}));
+  // Override legend to show BH label
+  drawDonut('chart-groups','legend-groups', gSegs.length ? gSegs : [{l:'No ACMI',v:1,c:'#1e2d42'}]);
+  if (gSegs.length) {
+    document.getElementById('legend-groups').innerHTML = gSegs.map(s=>`
+      <div class="legend-item">
+        <div class="legend-dot" style="background:${s.c}"></div>
+        <span class="legend-label">${s.l}</span>
+        <span class="legend-value">${s.v} BH</span>
+      </div>`).join('');
+  } else {
+    document.getElementById('legend-groups').innerHTML='<div style="color:var(--muted);font-size:12px">No ACMI activity</div>';
+  }
+
+  // Types: by total flights yesterday
+  const byType = {};
+  fleet.forEach(r=>{ if(r.total_flights>0){ const t=r.type||'?'; byType[t]=(byType[t]||0)+r.total_flights; }});
+  const tc = ['#00d4ff','#00ff88','#ffaa00','#ff6b6b','#a78bfa','#34d399'];
+  const tSegs = Object.entries(byType).sort((a,b)=>b[1]-a[1]).slice(0,6).map(([l,v],i)=>({l,v,c:tc[i%tc.length]}));
+  drawDonut('chart-types','legend-types', tSegs.length ? tSegs : [{l:'No data',v:1,c:'#1e2d42'}]);
+  if (tSegs.length) {
+    document.getElementById('legend-types').innerHTML = tSegs.map(s=>`
+      <div class="legend-item">
+        <div class="legend-dot" style="background:${s.c}"></div>
+        <span class="legend-label">${s.l}</span>
+        <span class="legend-value">${s.v} flt</span>
+      </div>`).join('');
+  }
+}
+
+// ── Tab 1: ACMI Active
+function renderAcmi(fleet) {
+  const acmi = fleet.filter(a=>a.status==='acmi_active');
+  document.getElementById('acmi-count').textContent = `${acmi.length} aircraft`;
+  const el = document.getElementById('acmi-list');
+  if (!acmi.length) {
+    el.innerHTML = `<div class="empty">No aircraft currently detected on ACMI operations.</div>`;
+    return;
+  }
+  el.innerHTML =
+    `<div class="t-row t-head acmi-cols"><span>Reg</span><span>Owner</span><span>Operating As</span><span>Route</span><span>Callsign</span><span>Type</span></div>` +
+    acmi.map(a=>`
+    <div class="t-row acmi-cols">
+      <span class="reg">${a.registration}</span>
+      <div class="owner"><span class="owner-name">${a.owner_name}</span><span class="owner-sub">${a.group!==a.owner_name?a.group:a.owner_icao}</span></div>
+      <span><div class="op-badge" title="${a.current_operator_icao||''}">${a.current_operator_name||a.current_operator_icao||'—'}</div></span>
+      <span class="route">${fmtRoute(a.last_route)}</span>
+      <span class="mono-sm">${a.callsign||'—'}</span>
+      <span><span class="type-badge">${a.type}</span></span>
+    </div>`).join('');
+}
+
+// ── Tab 2: Fleet Status
+function renderFleet() {
+  const fleet = snapData?.fleet || [];
+  const search = (document.getElementById('fleet-search')?.value||'').toLowerCase();
+  const filtered = fleet.filter(a=>{
+    const ms = fleetFilter==='all' || a.status===fleetFilter;
+    const mq = !search || a.registration.toLowerCase().includes(search) ||
+      (a.owner_name||'').toLowerCase().includes(search) ||
+      (a.current_operator_icao||'').toLowerCase().includes(search) ||
+      (a.current_operator_name||'').toLowerCase().includes(search);
+    return ms && mq;
+  });
+  const el = document.getElementById('fleet-list');
+  el.innerHTML =
+    `<div class="t-row t-head fleet-cols"><span>Reg</span><span>Owner</span><span>Type</span><span>Operator</span><span>Last Route</span><span>Last Seen</span><span>Status</span></div>` +
+    (filtered.length ? filtered.map(a=>`
+    <div class="t-row fleet-cols">
+      <span class="reg">${a.registration}</span>
+      <div class="owner"><span class="owner-name">${a.owner_name}</span><span class="owner-sub">${a.group!==a.owner_name?a.group:''}</span></div>
+      <span><span class="type-badge">${a.type}</span></span>
+      <span class="mono-sm">${a.current_operator_name||a.current_operator_icao||(a.status==='own_ops'?a.owner_icao:'—')}</span>
+      <span class="route">${fmtRoute(a.last_route)}</span>
+      <span class="mono-sm">${fmtTime(a.last_seen)}</span>
+      <span>${statusPill(a.status)}</span>
+    </div>`).join('') : `<div class="empty">No aircraft match this filter.</div>`);
+}
+
+function filterFleet(f, btn) {
+  fleetFilter = f;
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderFleet();
+}
+
+// ── Tab 3: Operators
+function renderOperators(fleet) {
+  const ops = {};
+  fleet.forEach(a=>{
+    if (!ops[a.owner_icao]) ops[a.owner_icao]={icao:a.owner_icao,name:a.owner_name,group:a.group,total:0,acmi:0,own:0,gnd:0};
+    ops[a.owner_icao].total++;
+    if (a.status==='acmi_active') ops[a.owner_icao].acmi++;
+    else if (a.status==='own_ops') ops[a.owner_icao].own++;
+    else ops[a.owner_icao].gnd++;
+  });
+  document.getElementById('op-grid').innerHTML = Object.values(ops).sort((a,b)=>b.acmi-a.acmi).map(op=>`
+    <div class="op-card">
+      <div class="op-card-header">
+        <div><div class="op-card-name">${op.name}</div><div class="op-card-sub">${op.icao}${op.group!==op.name?' · '+op.group:''}</div></div>
+      </div>
+      <div class="op-stats">
+        <div class="op-stat"><div class="op-stat-val" style="color:var(--accent)">${op.acmi}</div><div class="op-stat-lbl">ACMI Out</div></div>
+        <div class="op-stat"><div class="op-stat-val" style="color:var(--green)">${op.own}</div><div class="op-stat-lbl">Own Ops</div></div>
+        <div class="op-stat"><div class="op-stat-val" style="color:var(--muted)">${op.gnd}</div><div class="op-stat-lbl">Ground</div></div>
+      </div>
+    </div>`).join('');
+}
+
+// ── Tab 4: Daily Report
+function renderReport(hist) {
+  const fleet = hist.fleet || [];
+
+  document.getElementById('report-banner').style.display = 'flex';
+  document.getElementById('report-period').textContent   = `${hist.interval_from||'—'} → ${hist.interval_to||'—'} LT`;
+  const totFlights = fleet.reduce((s,r)=>s+r.total_flights,0);
+  const totBH      = fleet.reduce((s,r)=>s+r.total_bh,0).toFixed(1);
+  const acmiBH     = fleet.reduce((s,r)=>s+r.acmi_bh,0).toFixed(1);
+  document.getElementById('report-total-flights').textContent = totFlights;
+  document.getElementById('report-total-bh').textContent     = `${totBH} BH`;
+  document.getElementById('report-acmi-bh').textContent      = `${acmiBH} BH`;
+
+  const active = fleet.filter(r=>r.total_flights>0).sort((a,b)=>b.total_bh-a.total_bh);
+  const el = document.getElementById('report-list');
+
+  if (!active.length) {
+    el.innerHTML = `<div class="empty">No flight activity recorded for this period.</div>`;
     return;
   }
 
-  activities.forEach((act, idx) => {
-    const block = document.createElement('div');
-    block.className = 'activity-block';
-
-    const rows = [];
-    if (act.distance_meters) rows.push(['Distance', `${(act.distance_meters/1000).toFixed(1)} km`]);
-    if (act.duration_seconds) rows.push(['Duration', secsToHM(act.duration_seconds)]);
-    if (act.avg_hr) rows.push(['Avg HR', `${Math.round(act.avg_hr)} bpm`]);
-    if (act.calories) rows.push(['Calories', `${Math.round(act.calories)} kcal`]);
-    if (act.training_load) rows.push(['Training load', Math.round(act.training_load)]);
-
-    block.innerHTML = `
-      <div class="activity-name">
-        ${act.name || activityTypeLabel(act.type)}
-        <span class="activity-type-pill">${activityTypeLabel(act.type)}</span>
-      </div>
-      ${rows.map(([label, val]) => `
-        <div class="data-row">
-          <span class="data-label">${label}</span>
-          <span class="data-val">${val}</span>
-        </div>`).join('')}
-    `;
-    container.appendChild(block);
-  });
+  el.innerHTML =
+    `<div class="t-row t-head report-cols"><span>Reg</span><span>Owner</span><span>Flights</span><span>Total BH</span><span>ACMI BH</span><span>ACMI Flt</span><span>Clients / Routes</span></div>` +
+    active.map(r=>{
+      // Support both old format (flat icao) and new format (with name field)
+      const clients = (r.clients||[]).map(c=>`<span class="client-badge" title="${c.icao}">${c.name||c.icao} ${c.bh}h</span>`).join('');
+      const routes  = (r.routes||[]).slice(0,4).map(rt=>`<span class="mono-sm" style="margin-right:6px">${rt}</span>`).join('');
+      return `
+    <div class="t-row report-cols">
+      <span class="reg">${r.registration}</span>
+      <div class="owner"><span class="owner-name">${r.owner_name}</span><span class="owner-sub">${r.group!==r.owner_name?r.group:''}</span></div>
+      <span class="mono-md">${r.total_flights}</span>
+      <span class="${r.total_bh>0?'bh-value':'bh-zero'}">${r.total_bh}</span>
+      <span class="${r.acmi_bh>0?'bh-value':'bh-zero'}">${r.acmi_bh||'—'}</span>
+      <span class="mono-md">${r.acmi_flights||'—'}</span>
+      <div>${clients||'—'}${routes?'<div style="margin-top:4px">'+routes+'</div>':''}</div>
+    </div>`}).join('');
 }
 
-async function loadData() {
-  const base = window.location.origin + window.location.pathname.replace('index.html','');
-  const url  = `${base}data/latest.json?t=${Date.now()}`;
-  let data;
-  try {
-    const res = await fetch(url);
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    data = await res.json();
-  } catch(e) {
-    $('loading').style.display = 'none';
-    $('error-area').innerHTML = `<div class="error-box">No data found yet. Run the sync script or trigger GitHub Actions manually.</div>`;
-    data = getDemoData();
-  }
-  renderDashboard(data);
-}
-
-async function renderDashboard(data) {
-  $('loading').style.display = 'none';
-  $('dashboard').style.display = 'block';
-
-  $('topbar-date').textContent = `${data.data_date || 'yesterday'} · Garmin Fenix 7 + HRM-Pro`;
-  $('sync-time').textContent = data.sync_date ? `Synced ${data.sync_date}` : 'Demo data';
-
-  const { score, label, source } = readiness(data);
-  $('readiness-score').textContent = score;
-  $('status-text').textContent = label;
-  const rlabel = $('readiness-label-text');
-  if (rlabel) rlabel.textContent = source === 'garmin' ? 'training readiness' : 'readiness (est.)';
-
-  const hrv = data.hrv?.last_night;
-  const bb  = data.body_battery?.morning;
-  const rhr = data.resting_hr;
-  const vo2 = data.vo2_max;
-
-  $('m-hrv').textContent  = fmt(hrv, ' ms');
-  $('m-bb').textContent   = fmt(bb);
-  $('m-rhr').textContent  = fmt(rhr, ' bpm');
-  $('m-vo2').textContent  = vo2 ? fmtDec(vo2) : '—';
-
-  const sleep = data.sleep || {};
-  const totalSecs = sleep.duration_seconds || 0;
-  const deepSecs  = sleep.deep_seconds  || 0;
-  const lightSecs = sleep.light_seconds || 0;
-  const remSecs   = sleep.rem_seconds   || 0;
-  const awakeSecs = sleep.awake_seconds || 0;
-  const sleepTotal = deepSecs+lightSecs+remSecs+awakeSecs || 1;
-
-  $('sleep-total').textContent = secsToHM(totalSecs);
-  $('sleep-score').textContent = sleep.score ? `${sleep.score}/100` : '—';
-
-  const stages = [
-    { color:'#1a4a3a', secs: awakeSecs },
-    { color:'#85B7EB', secs: remSecs   },
-    { color:'#378ADD', secs: lightSecs },
-    { color:'#0C447C', secs: deepSecs  },
-  ];
-  $('stages-bar').innerHTML = stages.map(s =>
-    `<div class="stage-seg" style="flex:${s.secs};background:${s.color}"></div>`
-  ).join('');
-
-  $('rem-pct').textContent   = remSecs   ? `${Math.round(remSecs/sleepTotal*100)}%`   : '';
-  $('light-pct').textContent = lightSecs ? `${Math.round(lightSecs/sleepTotal*100)}%` : '';
-  $('deep-pct').textContent  = deepSecs  ? `${Math.round(deepSecs/sleepTotal*100)}%`  : '';
-
-  $('stat-steps').textContent  = data.steps ? Number(data.steps).toLocaleString() : '—';
-  $('stat-cals').textContent   = fmt(data.active_calories, ' kcal');
-  $('stat-stress').textContent = data.stress?.avg ? `${Math.round(data.stress.avg)} / 100` : '—';
-  $('stat-spo2').textContent   = data.spo2_avg ? `${Math.round(data.spo2_avg)}%` : '—';
-
-  $('snap-vo2').textContent        = vo2 ? `${fmtDec(vo2)} ml/kg/min` : '—';
-  $('snap-rhr').textContent        = fmt(rhr, ' bpm');
-  $('snap-hrv-status').textContent = data.hrv?.status || '—';
-  $('snap-date').textContent       = data.data_date || '—';
-
-  // Render all activities (use activities[] array, fall back to last_activity for old data)
-  const activities = data.activities && data.activities.length > 0
-    ? data.activities
-    : (data.last_activity?.type ? [data.last_activity] : []);
-  renderActivities(activities);
-
-  // Flags
-  if (hrv && hrv > 55) addFlag('HRV above 55ms — nervous system well recovered', 'ok');
-  else if (hrv && hrv < 45) addFlag('HRV below 45ms — consider easy day', 'warn');
-  if (bb && bb >= 70) addFlag(`Body Battery at ${Math.round(bb)} — fully charged`, 'ok');
-  else if (bb && bb < 50) addFlag(`Body Battery at ${Math.round(bb)} — incomplete recovery`, 'warn');
-  if (deepSecs && deepSecs < 3600) addFlag(`Deep sleep ${secsToHM(deepSecs)} — below 1hr target`, 'warn');
-  else if (deepSecs >= 3600) addFlag(`Deep sleep ${secsToHM(deepSecs)} — solid`, 'ok');
-  if (sleep.score && sleep.score < 60) addFlag(`Sleep score ${sleep.score}/100 — needs attention`, 'bad');
-
-  // Charts
-  const DAY_NAMES = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-  const base2 = window.location.origin + window.location.pathname.replace('index.html','');
-  // Parse date as local noon to avoid UTC timezone shift causing wrong day
-  const today = data.data_date ? new Date(data.data_date + 'T12:00:00') : new Date();
-
-  // Build last 7 dates oldest to newest
-  const dateList = [];
-  for (let i = 6; i >= 0; i--) {
-    const d2 = new Date(today);
-    d2.setDate(today.getDate() - i);
-    dateList.push(d2.toISOString().slice(0, 10));
-  }
-  const realToday = new Date().toISOString().slice(0, 10);
-  const dayLabels = dateList.map((iso, i) => {
-    const d2 = new Date(iso + 'T00:00:00');
-    const name = DAY_NAMES[d2.getDay()];
-    return (i === 6 && iso === realToday) ? name + ' ✦' : name;
-  });
-
-  // Load history.csv for real historical data
-  const csvByDate = {};
-  try {
-    const csvRes = await fetch(`${base2}data/history.csv?t=${Date.now()}`);
-    if (csvRes.ok) {
-      const csvText = await csvRes.text();
-      const lines = csvText.trim().split('\n');
-      const sep = lines[0].includes('\t') ? '\t' : ',';
-      const headers = lines[0].split(sep);
-      const idx = {
-        date:  headers.indexOf('date'),
-        hrv:   headers.indexOf('hrv_last_night'),
-        sleep: headers.indexOf('sleep_hours'),
-        bb:    headers.indexOf('body_battery_morning'),
-      };
-      for (let i = 1; i < lines.length; i++) {
-        const cols = lines[i].split(sep);
-        const d = cols[idx.date] && cols[idx.date].trim();
-        if (d) csvByDate[d] = {
-          hrv:   cols[idx.hrv]   && cols[idx.hrv].trim()   ? +cols[idx.hrv]   : null,
-          sleep: cols[idx.sleep] && cols[idx.sleep].trim() ? +cols[idx.sleep] : null,
-          bb:    cols[idx.bb]    && cols[idx.bb].trim()    ? +cols[idx.bb]    : null,
-        };
-      }
-    }
-  } catch(e) { console.warn('CSV load failed', e); }
-  // Each CSV row date = the morning after the sleep, which is correct for display
-  // No shifting needed - row dated Thu = Thu morning data = Wed night sleep
-  const hrvVals   = dateList.map(iso => csvByDate[iso]?.hrv   ?? null);
-  const sleepVals = dateList.map(iso => csvByDate[iso]?.sleep ?? null);
-  const bbVals    = dateList.map(iso => csvByDate[iso]?.bb    ?? null);
-  makeChart('chart-hrv',   dayLabels, hrvVals,   '#5DCAA5');
-  makeChart('chart-sleep', dayLabels, sleepVals, '#85B7EB');
-  makeChart('chart-bb',    dayLabels, bbVals,    '#378ADD');
-
-  window._healthData = data;
-}
-
-// ── Copy for Claude ──────────────────────────────────────────────────────────
-function copyForClaude() {
-  const d = window._healthData;
-  if (!d) return;
-
-  const sleep = d.sleep || {};
-  const totalH = sleep.duration_seconds ? (sleep.duration_seconds/3600).toFixed(1) : '—';
-
-  // Build activities section — all sessions
-  const activities = d.activities && d.activities.length > 0
-    ? d.activities
-    : (d.last_activity?.type ? [d.last_activity] : []);
-
-  let activitiesText = '';
-  if (activities.length === 0) {
-    activitiesText = '- No activity recorded yesterday';
-  } else {
-    activities.forEach((act, i) => {
-      activitiesText += `\n### Session ${i+1}: ${act.name || activityTypeLabel(act.type)}`;
-      activitiesText += `\n- Type: ${activityTypeLabel(act.type)}`;
-      if (act.distance_meters) activitiesText += `\n- Distance: ${(act.distance_meters/1000).toFixed(1)} km`;
-      if (act.duration_seconds) activitiesText += `\n- Duration: ${secsToHM(act.duration_seconds)}`;
-      if (act.avg_hr) activitiesText += `\n- Avg HR: ${Math.round(act.avg_hr)} bpm`;
-      if (act.max_hr) activitiesText += `\n- Max HR: ${Math.round(act.max_hr)} bpm`;
-      if (act.calories) activitiesText += `\n- Calories: ${Math.round(act.calories)} kcal`;
-      if (act.training_load) activitiesText += `\n- Training load: ${Math.round(act.training_load)}`;
-      activitiesText += '\n';
-    });
+// ── Tab 5: Client Map
+function renderClients(hist) {
+  const cm = hist.client_map || {};
+  const el = document.getElementById('client-grid');
+  if (!Object.keys(cm).length) {
+    el.innerHTML = `<div class="empty">No ACMI activity recorded yet.</div>`;
+    return;
   }
 
-  function activityTypeLabel(type) {
-    const map = {
-      'cycling':'Cycling','road_biking':'Cycling','swimming':'Swimming',
-      'pool_swimming':'Pool Swim','open_water_swimming':'Open Water Swim',
-      'running':'Running','trail_running':'Trail Run','strength_training':'Strength',
-    };
-    return map[type] || (type ? type.replace(/_/g,' ') : 'Activity');
-  }
-
-  const text = `# Julius — Daily Health Data
-Date: ${d.data_date || 'yesterday'} | Synced: ${d.sync_date || 'today'}
-Device: Garmin Fenix 7 + HRM-Pro belt
-
-## Sleep
-- Duration: ${totalH} hours
-- Score: ${sleep.score ?? '—'}/100
-- Deep sleep: ${secsToHM(sleep.deep_seconds)}
-- REM sleep: ${secsToHM(sleep.rem_seconds)}
-- Light sleep: ${secsToHM(sleep.light_seconds)}
-- Awake: ${secsToHM(sleep.awake_seconds)}
-
-## HRV & Recovery
-- HRV last night: ${d.hrv?.last_night ?? '—'} ms
-- HRV weekly avg: ${d.hrv?.weekly_avg ?? '—'} ms
-- HRV status: ${d.hrv?.status ?? '—'}
-- Resting HR: ${d.resting_hr ?? '—'} bpm
-- Body Battery (morning): ${d.body_battery?.morning ?? '—'}
-- Avg stress yesterday: ${d.stress?.avg ?? '—'}
-- Garmin Training Readiness: ${d.training_readiness?.score ?? '—'} (${d.training_readiness?.level ?? '—'})
-
-## Fitness
-- VO2 Max: ${d.vo2_max ? Number(d.vo2_max).toFixed(1) : '—'} ml/kg/min
-- SpO2: ${d.spo2_avg ? Math.round(d.spo2_avg)+'%' : '—'}
-
-## Activities yesterday (${activities.length} session${activities.length !== 1 ? 's' : ''})
-${activitiesText}
-## Daily Stats
-- Steps: ${d.steps ? Number(d.steps).toLocaleString() : '—'}
-- Active calories: ${d.active_calories ? Math.round(d.active_calories) : '—'} kcal
-
-Please give me my full morning health report and coaching analysis.`;
-
-  navigator.clipboard.writeText(text).then(() => {
-    const btn = $('copy-btn');
-    btn.textContent = '✓ Copied!';
-    btn.classList.add('copied');
-    setTimeout(() => {
-      btn.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy for Claude`;
-      btn.classList.remove('copied');
-    }, 2000);
-  });
-}
-
-function getDemoData() {
-  return {
-    sync_date: 'demo', data_date: new Date().toISOString().slice(0,10),
-    sleep: { score:74, duration_seconds:26640, deep_seconds:3480, light_seconds:12600, rem_seconds:6120, awake_seconds:1200 },
-    hrv: { last_night:58, weekly_avg:54, status:'BALANCED' },
-    body_battery: { morning:71 },
-    resting_hr: 52, vo2_max: 51.2,
-    stress: { avg:28 }, spo2_avg: 97,
-    steps: 9840, active_calories: 520, total_calories: 2340,
-    last_activity: { type:'running', name:'Morning Run', distance_meters:8400, duration_seconds:2880, avg_hr:148, calories:620, training_load:62 },
-    activities: [
-      { type:'cycling', name:'Zone 2 Bike', distance_meters:30000, duration_seconds:5400, avg_hr:133, calories:620, training_load:45 },
-      { type:'pool_swimming', name:'Pool Swim', distance_meters:1600, duration_seconds:1980, avg_hr:139, calories:431, training_load:63 },
-    ]
+  // Support both old format (flat providers) and new format (with name + providers keys)
+  const getProviders = (val) => val.providers || val;
+  const getTotalBH   = (val) => {
+    const providers = getProviders(val);
+    return Object.values(providers).reduce((s,x)=>s+x.bh,0);
   };
+
+  el.innerHTML = Object.entries(cm)
+    .sort((a,b)=>getTotalBH(b[1])-getTotalBH(a[1]))
+    .map(([clientIcao, val])=>{
+      const clientName = val.name || clientIcao;
+      const providers  = getProviders(val);
+      const provRows = Object.entries(providers)
+        .sort((a,b)=>b[1].bh-a[1].bh)
+        .map(([prov,data])=>`
+          <div class="provider-row">
+            <span class="provider-name">${prov}</span>
+            <div class="provider-stats">
+              <span>${data.aircraft_count} ac</span>
+              <span>${data.flights} flt</span>
+              <span style="color:var(--green)">${data.bh} BH</span>
+            </div>
+          </div>`).join('');
+      const totalBH = getTotalBH(val).toFixed(1);
+      return `
+    <div class="client-card">
+      <div class="client-card-header">
+        <div class="client-icao">${clientIcao}</div>
+        <div class="client-name">${clientName !== clientIcao ? clientName + ' · ' : ''}${totalBH} BH received</div>
+      </div>
+      ${provRows}
+    </div>`;
+    }).join('');
 }
 
-loadData();
+// ── Tabs
+function switchTab(name) {
+  const names = ['acmi','fleet','operators','report','clients'];
+  currentTab = name;
+  document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('active',names[i]===name));
+  document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));
+  document.getElementById(`tab-${name}`).classList.add('active');
+  // Update charts to reflect current tab context
+  renderChartsForTab(name);
+}
+
+// ── Helpers
+function fmtRoute(r) {
+  if (!r) return '<span style="color:var(--muted)">—</span>';
+  const [o,d] = r.split('-');
+  return `${o} <span class="route-arrow">→</span> ${d}`;
+}
+function fmtTime(iso) {
+  if (!iso) return '—';
+  const d = new Date(iso), now = new Date();
+  const m = Math.floor((now-d)/60000);
+  if (m < 60)   return `${m}m ago`;
+  if (m < 1440) return `${Math.floor(m/60)}h ago`;
+  return `${Math.floor(m/1440)}d ago`;
+}
+function statusPill(s) {
+  const map = {acmi_active:['acmi','● ACMI'],own_ops:['own','● Own Ops'],on_ground:['ground','● Ground'],unknown:['unknown','● Unknown']};
+  const [cls,lbl] = map[s]||['unknown','● Unknown'];
+  return `<span class="pill ${cls}">${lbl}</span>`;
+}
+
+// ── Init
+loadAll();
 </script>
 </body>
 </html>
