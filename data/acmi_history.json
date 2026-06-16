@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-16T07:43:48.593519+00:00",
+  "last_updated": "2026-06-16T20:44:15.251890+00:00",
   "report_date": "2026-06-15",
   "interval_from": "2026-06-15 00:01",
   "interval_to": "2026-06-15 23:59",
@@ -274,7 +274,7 @@
       }
     },
     "ETD": {
-      "name": "ETD",
+      "name": "Etihad Airways",
       "providers": {
         "GetJet": {
           "flights": 7,
@@ -288,7 +288,7 @@
       }
     },
     "SZN": {
-      "name": "SZN",
+      "name": "Air Senegal",
       "providers": {
         "GetJet": {
           "flights": 8,
@@ -303,7 +303,7 @@
       }
     },
     "ASL": {
-      "name": "ASL",
+      "name": "ASL Airlines",
       "providers": {
         "GetJet": {
           "flights": 1,
@@ -329,7 +329,7 @@
       }
     },
     "TVL": {
-      "name": "TVL",
+      "name": "Travel Service",
       "providers": {
         "Smartwings": {
           "flights": 13,
@@ -360,7 +360,7 @@
       }
     },
     "CRC": {
-      "name": "CRC",
+      "name": "Camair-Co",
       "providers": {
         "Smartwings": {
           "flights": 2,
@@ -413,7 +413,7 @@
       }
     },
     "KRH": {
-      "name": "KRH",
+      "name": "UK Royal Flight",
       "providers": {
         "Titan Airways": {
           "flights": 1,
@@ -426,7 +426,7 @@
       }
     },
     "EFW": {
-      "name": "EFW",
+      "name": "BA Euroflyer",
       "providers": {
         "Titan Airways": {
           "flights": 1,
@@ -439,7 +439,7 @@
       }
     },
     "BCS": {
-      "name": "BCS",
+      "name": "EAT Leipzig",
       "providers": {
         "Titan Airways": {
           "flights": 3,
@@ -3513,7 +3513,7 @@
       "clients": [
         {
           "icao": "ETD",
-          "name": "ETD",
+          "name": "Etihad Airways",
           "flights": 5,
           "bh": 3.8
         }
@@ -3526,7 +3526,7 @@
         {
           "callsign": "ETD5KY",
           "operator_icao": "ETD",
-          "operator_name": "ETD",
+          "operator_name": "Etihad Airways",
           "is_acmi": true,
           "route": "OMAA-OPKC",
           "dep_time": "2026-06-15T04:23:15Z",
@@ -3536,7 +3536,7 @@
         {
           "callsign": "ETD9YP",
           "operator_icao": "ETD",
-          "operator_name": "ETD",
+          "operator_name": "Etihad Airways",
           "is_acmi": true,
           "route": "OPKC-OMAA",
           "dep_time": "2026-06-15T07:36:56Z",
@@ -3546,7 +3546,7 @@
         {
           "callsign": "ETD5LZ",
           "operator_icao": "ETD",
-          "operator_name": "ETD",
+          "operator_name": "Etihad Airways",
           "is_acmi": true,
           "route": "OMAA-OPKC",
           "dep_time": "2026-06-15T11:16:08Z",
@@ -3556,7 +3556,7 @@
         {
           "callsign": "ETD6QA",
           "operator_icao": "ETD",
-          "operator_name": "ETD",
+          "operator_name": "Etihad Airways",
           "is_acmi": true,
           "route": "OPKC-OMAA",
           "dep_time": "2026-06-15T17:03:41Z",
@@ -3566,7 +3566,7 @@
         {
           "callsign": "ETD5FJ",
           "operator_icao": "ETD",
-          "operator_name": "ETD",
+          "operator_name": "Etihad Airways",
           "is_acmi": true,
           "route": "OMAA-OPKC",
           "dep_time": null,
@@ -3602,7 +3602,7 @@
       "clients": [
         {
           "icao": "SZN",
-          "name": "SZN",
+          "name": "Air Senegal",
           "flights": 2,
           "bh": 2.2
         }
@@ -3615,7 +3615,7 @@
         {
           "callsign": "SZN209",
           "operator_icao": "SZN",
-          "operator_name": "SZN",
+          "operator_name": "Air Senegal",
           "is_acmi": true,
           "route": "GOBD-GUCY",
           "dep_time": "2026-06-15T17:34:33Z",
@@ -3625,7 +3625,7 @@
         {
           "callsign": "SZN210",
           "operator_icao": "SZN",
-          "operator_name": "SZN",
+          "operator_name": "Air Senegal",
           "is_acmi": true,
           "route": "GUCY-GOBD",
           "dep_time": "2026-06-15T19:54:47Z",
@@ -3647,7 +3647,7 @@
       "clients": [
         {
           "icao": "ASL",
-          "name": "ASL",
+          "name": "ASL Airlines",
           "flights": 1,
           "bh": 0.0
         }
@@ -3659,7 +3659,7 @@
         {
           "callsign": "ASL380",
           "operator_icao": "ASL",
-          "operator_name": "ASL",
+          "operator_name": "ASL Airlines",
           "is_acmi": true,
           "route": "LYBE-ESSA",
           "dep_time": null,
@@ -3897,7 +3897,7 @@
       "clients": [
         {
           "icao": "SZN",
-          "name": "SZN",
+          "name": "Air Senegal",
           "flights": 2,
           "bh": 6.2
         }
@@ -3910,7 +3910,7 @@
         {
           "callsign": "SZN331",
           "operator_icao": "SZN",
-          "operator_name": "SZN",
+          "operator_name": "Air Senegal",
           "is_acmi": true,
           "route": "GOBD-GMMN",
           "dep_time": "2026-06-15T04:53:19Z",
@@ -3920,7 +3920,7 @@
         {
           "callsign": "SZN332",
           "operator_icao": "SZN",
-          "operator_name": "SZN",
+          "operator_name": "Air Senegal",
           "is_acmi": true,
           "route": "GMMN-GOBD",
           "dep_time": "2026-06-15T09:31:11Z",
@@ -4009,7 +4009,7 @@
       "clients": [
         {
           "icao": "SZN",
-          "name": "SZN",
+          "name": "Air Senegal",
           "flights": 4,
           "bh": 7.0
         }
@@ -4024,7 +4024,7 @@
         {
           "callsign": "SZN305",
           "operator_icao": "SZN",
-          "operator_name": "SZN",
+          "operator_name": "Air Senegal",
           "is_acmi": true,
           "route": "GOBD-DIAP",
           "dep_time": "2026-06-15T08:31:28Z",
@@ -4034,7 +4034,7 @@
         {
           "callsign": "SZN305",
           "operator_icao": "SZN",
-          "operator_name": "SZN",
+          "operator_name": "Air Senegal",
           "is_acmi": true,
           "route": "DIAP-DBBB",
           "dep_time": "2026-06-15T12:53:07Z",
@@ -4044,7 +4044,7 @@
         {
           "callsign": "SZN306",
           "operator_icao": "SZN",
-          "operator_name": "SZN",
+          "operator_name": "Air Senegal",
           "is_acmi": true,
           "route": "DBBB-DIAP",
           "dep_time": "2026-06-15T15:21:12Z",
@@ -4054,7 +4054,7 @@
         {
           "callsign": "SZN306",
           "operator_icao": "SZN",
-          "operator_name": "SZN",
+          "operator_name": "Air Senegal",
           "is_acmi": true,
           "route": "DIAP-GOBD",
           "dep_time": "2026-06-15T17:55:36Z",
@@ -4076,7 +4076,7 @@
       "clients": [
         {
           "icao": "ETD",
-          "name": "ETD",
+          "name": "Etihad Airways",
           "flights": 2,
           "bh": 5.7
         }
@@ -4089,7 +4089,7 @@
         {
           "callsign": "ETD3LD",
           "operator_icao": "ETD",
-          "operator_name": "ETD",
+          "operator_name": "Etihad Airways",
           "is_acmi": true,
           "route": "OMAA-OJAI",
           "dep_time": "2026-06-15T05:28:51Z",
@@ -4099,7 +4099,7 @@
         {
           "callsign": "ETD2AU",
           "operator_icao": "ETD",
-          "operator_name": "ETD",
+          "operator_name": "Etihad Airways",
           "is_acmi": true,
           "route": "OJAI-OMAA",
           "dep_time": "2026-06-15T13:16:20Z",
@@ -5872,7 +5872,7 @@
       "clients": [
         {
           "icao": "TVL",
-          "name": "TVL",
+          "name": "Travel Service",
           "flights": 7,
           "bh": 8.3
         }
@@ -5901,7 +5901,7 @@
         {
           "callsign": "TVL5704",
           "operator_icao": "TVL",
-          "operator_name": "TVL",
+          "operator_name": "Travel Service",
           "is_acmi": true,
           "route": "LHBP-LATI",
           "dep_time": "2026-06-15T05:03:16Z",
@@ -5911,7 +5911,7 @@
         {
           "callsign": "TVL5707",
           "operator_icao": "TVL",
-          "operator_name": "TVL",
+          "operator_name": "Travel Service",
           "is_acmi": true,
           "route": "LATI-LHDC",
           "dep_time": "2026-06-15T07:23:04Z",
@@ -5921,7 +5921,7 @@
         {
           "callsign": "TVL5706",
           "operator_icao": "TVL",
-          "operator_name": "TVL",
+          "operator_name": "Travel Service",
           "is_acmi": true,
           "route": "LHDC-LATI",
           "dep_time": "2026-06-15T10:12:27Z",
@@ -5931,7 +5931,7 @@
         {
           "callsign": "TVL5705",
           "operator_icao": "TVL",
-          "operator_name": "TVL",
+          "operator_name": "Travel Service",
           "is_acmi": true,
           "route": "LATI-LHBP",
           "dep_time": "2026-06-15T12:31:21Z",
@@ -5941,7 +5941,7 @@
         {
           "callsign": "TVL5008",
           "operator_icao": "TVL",
-          "operator_name": "TVL",
+          "operator_name": "Travel Service",
           "is_acmi": true,
           "route": "LHBP-LGIR",
           "dep_time": "2026-06-15T15:07:39Z",
@@ -5951,7 +5951,7 @@
         {
           "callsign": "TVL5008",
           "operator_icao": "TVL",
-          "operator_name": "TVL",
+          "operator_name": "Travel Service",
           "is_acmi": true,
           "route": "LGIR-LGSA",
           "dep_time": "2026-06-15T18:01:12Z",
@@ -5961,7 +5961,7 @@
         {
           "callsign": "TVL5008",
           "operator_icao": "TVL",
-          "operator_name": "TVL",
+          "operator_name": "Travel Service",
           "is_acmi": true,
           "route": "LGSA-LHBP",
           "dep_time": "2026-06-15T19:28:16Z",
@@ -6072,7 +6072,7 @@
       "clients": [
         {
           "icao": "TVL",
-          "name": "TVL",
+          "name": "Travel Service",
           "flights": 6,
           "bh": 11.9
         }
@@ -6089,7 +6089,7 @@
         {
           "callsign": "TVL5006",
           "operator_icao": "TVL",
-          "operator_name": "TVL",
+          "operator_name": "Travel Service",
           "is_acmi": true,
           "route": "LHBP-LGZA",
           "dep_time": "2026-06-15T02:10:30Z",
@@ -6099,7 +6099,7 @@
         {
           "callsign": "TVL5007",
           "operator_icao": "TVL",
-          "operator_name": "TVL",
+          "operator_name": "Travel Service",
           "is_acmi": true,
           "route": "LGZA-LHBP",
           "dep_time": "2026-06-15T04:58:56Z",
@@ -6109,7 +6109,7 @@
         {
           "callsign": "TVL5380",
           "operator_icao": "TVL",
-          "operator_name": "TVL",
+          "operator_name": "Travel Service",
           "is_acmi": true,
           "route": "LHBP-LTAI",
           "dep_time": "2026-06-15T07:40:31Z",
@@ -6119,7 +6119,7 @@
         {
           "callsign": "TVL5381",
           "operator_icao": "TVL",
-          "operator_name": "TVL",
+          "operator_name": "Travel Service",
           "is_acmi": true,
           "route": "LTAI-LHBP",
           "dep_time": "2026-06-15T11:09:22Z",
@@ -6129,7 +6129,7 @@
         {
           "callsign": "TVL5012",
           "operator_icao": "TVL",
-          "operator_name": "TVL",
+          "operator_name": "Travel Service",
           "is_acmi": true,
           "route": "LHBP-LGRP",
           "dep_time": "2026-06-15T17:38:40Z",
@@ -6139,7 +6139,7 @@
         {
           "callsign": "TVL5013",
           "operator_icao": "TVL",
-          "operator_name": "TVL",
+          "operator_name": "Travel Service",
           "is_acmi": true,
           "route": "LGRP-LHBP",
           "dep_time": "2026-06-15T20:46:14Z",
@@ -6466,7 +6466,7 @@
       "clients": [
         {
           "icao": "CRC",
-          "name": "CRC",
+          "name": "Camair-Co",
           "flights": 2,
           "bh": 1.5
         }
@@ -6479,7 +6479,7 @@
         {
           "callsign": "CRC306",
           "operator_icao": "CRC",
-          "operator_name": "CRC",
+          "operator_name": "Camair-Co",
           "is_acmi": true,
           "route": "FKKD-FOOL",
           "dep_time": "2026-06-15T16:35:36Z",
@@ -6489,7 +6489,7 @@
         {
           "callsign": "CRC306",
           "operator_icao": "CRC",
-          "operator_name": "CRC",
+          "operator_name": "Camair-Co",
           "is_acmi": true,
           "route": "FOOL-DBBB",
           "dep_time": "2026-06-15T18:32:40Z",
@@ -7517,7 +7517,7 @@
       "clients": [
         {
           "icao": "KRH",
-          "name": "KRH",
+          "name": "UK Royal Flight",
           "flights": 1,
           "bh": 1.3
         }
@@ -7529,7 +7529,7 @@
         {
           "callsign": "KRH645",
           "operator_icao": "KRH",
-          "operator_name": "KRH",
+          "operator_name": "UK Royal Flight",
           "is_acmi": true,
           "route": "EGSS-LSGG",
           "dep_time": "2026-06-15T11:15:52Z",
@@ -7551,7 +7551,7 @@
       "clients": [
         {
           "icao": "EFW",
-          "name": "EFW",
+          "name": "BA Euroflyer",
           "flights": 1,
           "bh": 0.4
         }
@@ -7563,7 +7563,7 @@
         {
           "callsign": "EFW9751",
           "operator_icao": "EFW",
-          "operator_name": "EFW",
+          "operator_name": "BA Euroflyer",
           "is_acmi": true,
           "route": "EGKK-EGSS",
           "dep_time": "2026-06-15T07:36:50Z",
@@ -7613,7 +7613,7 @@
       "clients": [
         {
           "icao": "BCS",
-          "name": "BCS",
+          "name": "EAT Leipzig",
           "flights": 2,
           "bh": 3.8
         }
@@ -7626,7 +7626,7 @@
         {
           "callsign": "BCS5QC",
           "operator_icao": "BCS",
-          "operator_name": "BCS",
+          "operator_name": "EAT Leipzig",
           "is_acmi": true,
           "route": "EDDP-EIDW",
           "dep_time": "2026-06-14T22:53:54Z",
@@ -7636,7 +7636,7 @@
         {
           "callsign": "BCS1RF",
           "operator_icao": "BCS",
-          "operator_name": "BCS",
+          "operator_name": "EAT Leipzig",
           "is_acmi": true,
           "route": "EIDW-EDDP",
           "dep_time": "2026-06-15T20:00:14Z",
@@ -7658,7 +7658,7 @@
       "clients": [
         {
           "icao": "BCS",
-          "name": "BCS",
+          "name": "EAT Leipzig",
           "flights": 1,
           "bh": 0.8
         }
@@ -7670,7 +7670,7 @@
         {
           "callsign": "BCS4127",
           "operator_icao": "BCS",
-          "operator_name": "BCS",
+          "operator_name": "EAT Leipzig",
           "is_acmi": true,
           "route": "LOWL-EDDP",
           "dep_time": "2026-06-15T19:46:05Z",
