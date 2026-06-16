@@ -1,49 +1,49 @@
 {
-  "last_updated": "2026-06-15T21:20:21.309680+00:00",
+  "last_updated": "2026-06-16T07:43:48.593519+00:00",
   "report_date": "2026-06-15",
   "interval_from": "2026-06-15 00:01",
   "interval_to": "2026-06-15 23:59",
   "operator_summaries": {
     "Avion Express": {
       "total_flights": 106,
-      "total_bh": 169.3,
+      "total_bh": 176.3,
       "acmi_flights": 106,
-      "acmi_bh": 169.3,
+      "acmi_bh": 176.3,
       "active_aircraft": 21
     },
     "Heston": {
-      "total_flights": 38,
-      "total_bh": 102.2,
-      "acmi_flights": 36,
-      "acmi_bh": 96.0,
+      "total_flights": 39,
+      "total_bh": 108.8,
+      "acmi_flights": 37,
+      "acmi_bh": 102.6,
       "active_aircraft": 13
     },
     "GetJet": {
       "total_flights": 56,
-      "total_bh": 108.7,
+      "total_bh": 113.9,
       "acmi_flights": 50,
       "acmi_bh": 92.2,
       "active_aircraft": 16
     },
     "Enter Air": {
       "total_flights": 96,
-      "total_bh": 271.6,
+      "total_bh": 307.0,
       "acmi_flights": 0,
       "acmi_bh": 0.0,
       "active_aircraft": 29
     },
     "Smartwings": {
       "total_flights": 101,
-      "total_bh": 195.6,
+      "total_bh": 217.8,
       "acmi_flights": 63,
-      "acmi_bh": 127.2,
+      "acmi_bh": 142.2,
       "active_aircraft": 19
     },
     "Titan Airways": {
       "total_flights": 15,
-      "total_bh": 25.4,
+      "total_bh": 34.8,
       "acmi_flights": 15,
-      "acmi_bh": 25.4,
+      "acmi_bh": 34.8,
       "active_aircraft": 7
     },
     "AirExplore": {
@@ -91,7 +91,7 @@
         },
         "Heston": {
           "flights": 3,
-          "bh": 4.1,
+          "bh": 6.0,
           "aircraft_count": 1,
           "aircraft": [
             "LY-MAF"
@@ -132,7 +132,7 @@
       "providers": {
         "Avion Express": {
           "flights": 25,
-          "bh": 42.9,
+          "bh": 46.5,
           "aircraft_count": 5,
           "aircraft": [
             "9H-AMJ",
@@ -149,7 +149,7 @@
       "providers": {
         "Avion Express": {
           "flights": 46,
-          "bh": 71.7,
+          "bh": 75.1,
           "aircraft_count": 8,
           "aircraft": [
             "9H-AML",
@@ -178,7 +178,7 @@
         },
         "Smartwings": {
           "flights": 21,
-          "bh": 41.0,
+          "bh": 46.0,
           "aircraft_count": 4,
           "aircraft": [
             "OK-TSU",
@@ -206,8 +206,8 @@
       "name": "Azerbaijan Airlines",
       "providers": {
         "Heston": {
-          "flights": 14,
-          "bh": 40.8,
+          "flights": 15,
+          "bh": 43.2,
           "aircraft_count": 5,
           "aircraft": [
             "9H-SEY",
@@ -224,7 +224,7 @@
       "providers": {
         "Heston": {
           "flights": 8,
-          "bh": 24.9,
+          "bh": 27.2,
           "aircraft_count": 2,
           "aircraft": [
             "LY-MAU",
@@ -333,7 +333,7 @@
       "providers": {
         "Smartwings": {
           "flights": 13,
-          "bh": 16.2,
+          "bh": 20.2,
           "aircraft_count": 2,
           "aircraft": [
             "OK-SWC",
@@ -347,7 +347,7 @@
       "providers": {
         "Smartwings": {
           "flights": 23,
-          "bh": 56.3,
+          "bh": 62.3,
           "aircraft_count": 5,
           "aircraft": [
             "OK-SWD",
@@ -403,7 +403,7 @@
       "providers": {
         "Titan Airways": {
           "flights": 8,
-          "bh": 16.1,
+          "bh": 23.7,
           "aircraft_count": 2,
           "aircraft": [
             "G-POWN",
@@ -443,7 +443,7 @@
       "providers": {
         "Titan Airways": {
           "flights": 3,
-          "bh": 2.8,
+          "bh": 4.6,
           "aircraft_count": 2,
           "aircraft": [
             "9H-ZTB",
@@ -1401,15 +1401,15 @@
       "owner_name": "Avion Express Malta",
       "group": "Avion Express",
       "total_flights": 6,
-      "total_bh": 7.2,
+      "total_bh": 8.8,
       "acmi_flights": 6,
-      "acmi_bh": 7.2,
+      "acmi_bh": 8.8,
       "clients": [
         {
           "icao": "EWG",
           "name": "Eurowings",
           "flights": 6,
-          "bh": 7.2
+          "bh": 8.8
         }
       ],
       "routes": [
@@ -1478,8 +1478,8 @@
           "is_acmi": true,
           "route": "LEBL-EDDS",
           "dep_time": "2026-06-15T19:58:09Z",
-          "arr_time": null,
-          "bh": 0.0
+          "arr_time": "2026-06-15T21:35:07Z",
+          "bh": 1.6
         }
       ]
     },
@@ -1579,15 +1579,15 @@
       "owner_name": "Avion Express Malta",
       "group": "Avion Express",
       "total_flights": 3,
-      "total_bh": 6.2,
+      "total_bh": 9.8,
       "acmi_flights": 3,
-      "acmi_bh": 6.2,
+      "acmi_bh": 9.8,
       "clients": [
         {
           "icao": "DAH",
           "name": "Air Alg\u00e9rie",
           "flights": 3,
-          "bh": 6.2
+          "bh": 9.8
         }
       ],
       "routes": [
@@ -1623,8 +1623,8 @@
           "is_acmi": true,
           "route": "DAAG-HECA",
           "dep_time": "2026-06-15T20:21:31Z",
-          "arr_time": null,
-          "bh": 0.0
+          "arr_time": "2026-06-15T23:56:23Z",
+          "bh": 3.6
         }
       ]
     },
@@ -1828,15 +1828,15 @@
       "owner_name": "Avion Express Malta",
       "group": "Avion Express",
       "total_flights": 6,
-      "total_bh": 8.7,
+      "total_bh": 10.5,
       "acmi_flights": 6,
-      "acmi_bh": 8.7,
+      "acmi_bh": 10.5,
       "clients": [
         {
           "icao": "EWG",
           "name": "Eurowings",
           "flights": 6,
-          "bh": 8.7
+          "bh": 10.5
         }
       ],
       "routes": [
@@ -1905,8 +1905,8 @@
           "is_acmi": true,
           "route": "LEPA-EDDS",
           "dep_time": "2026-06-15T19:34:27Z",
-          "arr_time": null,
-          "bh": 0.0
+          "arr_time": "2026-06-15T21:25:11Z",
+          "bh": 1.8
         }
       ]
     },
@@ -2376,23 +2376,24 @@
       "owner_icao": "HST",
       "owner_name": "Heston Airlines",
       "group": "Heston",
-      "total_flights": 4,
-      "total_bh": 8.0,
-      "acmi_flights": 4,
-      "acmi_bh": 8.0,
+      "total_flights": 5,
+      "total_bh": 10.4,
+      "acmi_flights": 5,
+      "acmi_bh": 10.4,
       "clients": [
         {
           "icao": "AHY",
           "name": "Azerbaijan Airlines",
-          "flights": 4,
-          "bh": 8.0
+          "flights": 5,
+          "bh": 10.4
         }
       ],
       "routes": [
         "UGTB-UBBB",
         "UBBB-LTFJ",
         "LTFJ-UBBB",
-        "UBBB-UZTT"
+        "UBBB-UZTT",
+        "UZTT-UBBB"
       ],
       "flight_log": [
         {
@@ -2434,6 +2435,16 @@
           "dep_time": "2026-06-15T17:46:02Z",
           "arr_time": "2026-06-15T19:55:30Z",
           "bh": 2.2
+        },
+        {
+          "callsign": "AHY532",
+          "operator_icao": "AHY",
+          "operator_name": "Azerbaijan Airlines",
+          "is_acmi": true,
+          "route": "UZTT-UBBB",
+          "dep_time": "2026-06-15T21:34:21Z",
+          "arr_time": "2026-06-15T23:59:02Z",
+          "bh": 2.4
         }
       ]
     },
@@ -2444,15 +2455,15 @@
       "owner_name": "Heston Airlines",
       "group": "Heston",
       "total_flights": 3,
-      "total_bh": 4.1,
+      "total_bh": 6.0,
       "acmi_flights": 3,
-      "acmi_bh": 4.1,
+      "acmi_bh": 6.0,
       "clients": [
         {
           "icao": "TRA",
           "name": "Transavia",
           "flights": 3,
-          "bh": 4.1
+          "bh": 6.0
         }
       ],
       "routes": [
@@ -2488,8 +2499,8 @@
           "is_acmi": true,
           "route": "EHAM-LEPA",
           "dep_time": "2026-06-15T20:45:07Z",
-          "arr_time": null,
-          "bh": 0.0
+          "arr_time": "2026-06-15T22:41:18Z",
+          "bh": 1.9
         }
       ]
     },
@@ -2500,15 +2511,15 @@
       "owner_name": "Heston Airlines",
       "group": "Heston",
       "total_flights": 4,
-      "total_bh": 11.6,
+      "total_bh": 13.9,
       "acmi_flights": 4,
-      "acmi_bh": 11.6,
+      "acmi_bh": 13.9,
       "clients": [
         {
           "icao": "CFG",
           "name": "Condor",
           "flights": 4,
-          "bh": 11.6
+          "bh": 13.9
         }
       ],
       "routes": [
@@ -2555,8 +2566,8 @@
           "is_acmi": true,
           "route": "LEPA-EDDG",
           "dep_time": "2026-06-15T21:02:43Z",
-          "arr_time": null,
-          "bh": 0.0
+          "arr_time": "2026-06-15T23:17:56Z",
+          "bh": 2.3
         }
       ]
     },
@@ -3559,7 +3570,7 @@
           "is_acmi": true,
           "route": "OMAA-OPKC",
           "dep_time": null,
-          "arr_time": null,
+          "arr_time": "2026-06-15T22:14:37Z",
           "bh": 0.0
         }
       ]
@@ -3925,7 +3936,7 @@
       "owner_name": "GetJet Airlines",
       "group": "GetJet",
       "total_flights": 4,
-      "total_bh": 11.4,
+      "total_bh": 16.6,
       "acmi_flights": 2,
       "acmi_bh": 6.1,
       "clients": [
@@ -3980,8 +3991,8 @@
           "is_acmi": false,
           "route": "LPMA-EYVI",
           "dep_time": "2026-06-15T18:17:40Z",
-          "arr_time": null,
-          "bh": 0.0
+          "arr_time": "2026-06-15T23:30:35Z",
+          "bh": 5.2
         }
       ]
     },
@@ -4306,7 +4317,7 @@
       "owner_name": "Enter Air",
       "group": "Enter Air",
       "total_flights": 4,
-      "total_bh": 8.5,
+      "total_bh": 11.5,
       "acmi_flights": 0,
       "acmi_bh": 0.0,
       "clients": [],
@@ -4354,8 +4365,8 @@
           "is_acmi": false,
           "route": "LEAM-EPKT",
           "dep_time": "2026-06-15T20:39:46Z",
-          "arr_time": null,
-          "bh": 0.0
+          "arr_time": "2026-06-15T23:42:36Z",
+          "bh": 3.0
         }
       ]
     },
@@ -4552,7 +4563,7 @@
       "owner_name": "Enter Air",
       "group": "Enter Air",
       "total_flights": 4,
-      "total_bh": 11.9,
+      "total_bh": 17.0,
       "acmi_flights": 0,
       "acmi_bh": 0.0,
       "clients": [],
@@ -4599,8 +4610,8 @@
           "is_acmi": false,
           "route": null,
           "dep_time": "2026-06-15T18:04:07Z",
-          "arr_time": null,
-          "bh": 0.0
+          "arr_time": "2026-06-15T23:07:43Z",
+          "bh": 5.1
         }
       ]
     },
@@ -4677,7 +4688,7 @@
       "owner_name": "Enter Air",
       "group": "Enter Air",
       "total_flights": 4,
-      "total_bh": 9.4,
+      "total_bh": 14.2,
       "acmi_flights": 0,
       "acmi_bh": 0.0,
       "clients": [],
@@ -4725,8 +4736,8 @@
           "is_acmi": false,
           "route": "GCFV-EPWR",
           "dep_time": "2026-06-15T19:58:31Z",
-          "arr_time": null,
-          "bh": 0.0
+          "arr_time": "2026-06-16T00:48:09Z",
+          "bh": 4.8
         }
       ]
     },
@@ -4797,7 +4808,7 @@
       "owner_name": "Enter Air",
       "group": "Enter Air",
       "total_flights": 3,
-      "total_bh": 6.5,
+      "total_bh": 9.5,
       "acmi_flights": 0,
       "acmi_bh": 0.0,
       "clients": [],
@@ -4834,8 +4845,8 @@
           "is_acmi": false,
           "route": "EPWA-DTTJ",
           "dep_time": "2026-06-15T19:41:37Z",
-          "arr_time": null,
-          "bh": 0.0
+          "arr_time": "2026-06-15T22:44:23Z",
+          "bh": 3.0
         }
       ]
     },
@@ -4966,7 +4977,7 @@
       "owner_name": "Enter Air",
       "group": "Enter Air",
       "total_flights": 3,
-      "total_bh": 8.8,
+      "total_bh": 13.7,
       "acmi_flights": 0,
       "acmi_bh": 0.0,
       "clients": [],
@@ -5002,8 +5013,8 @@
           "is_acmi": false,
           "route": null,
           "dep_time": "2026-06-15T20:52:59Z",
-          "arr_time": null,
-          "bh": 0.0
+          "arr_time": "2026-06-16T01:48:29Z",
+          "bh": 4.9
         }
       ]
     },
@@ -5257,7 +5268,7 @@
       "owner_name": "Enter Air",
       "group": "Enter Air",
       "total_flights": 4,
-      "total_bh": 8.0,
+      "total_bh": 11.0,
       "acmi_flights": 0,
       "acmi_bh": 0.0,
       "clients": [],
@@ -5305,8 +5316,8 @@
           "is_acmi": false,
           "route": "LGRP-EDSB",
           "dep_time": "2026-06-15T18:45:45Z",
-          "arr_time": null,
-          "bh": 0.0
+          "arr_time": "2026-06-15T21:45:03Z",
+          "bh": 3.0
         }
       ]
     },
@@ -5491,7 +5502,7 @@
       "owner_name": "Enter Air",
       "group": "Enter Air",
       "total_flights": 5,
-      "total_bh": 10.3,
+      "total_bh": 12.6,
       "acmi_flights": 0,
       "acmi_bh": 0.0,
       "clients": [],
@@ -5550,8 +5561,8 @@
           "is_acmi": false,
           "route": "EPKK-LGRP",
           "dep_time": "2026-06-15T21:01:03Z",
-          "arr_time": null,
-          "bh": 0.0
+          "arr_time": "2026-06-15T23:17:44Z",
+          "bh": 2.3
         }
       ]
     },
@@ -5576,7 +5587,7 @@
       "owner_name": "Enter Air",
       "group": "Enter Air",
       "total_flights": 3,
-      "total_bh": 7.2,
+      "total_bh": 11.8,
       "acmi_flights": 0,
       "acmi_bh": 0.0,
       "clients": [],
@@ -5613,8 +5624,8 @@
           "is_acmi": false,
           "route": "GCFV-EPKT",
           "dep_time": "2026-06-15T17:21:06Z",
-          "arr_time": null,
-          "bh": 0.0
+          "arr_time": "2026-06-15T21:54:16Z",
+          "bh": 4.6
         }
       ]
     },
@@ -5639,7 +5650,7 @@
       "owner_name": "Enter Air",
       "group": "Enter Air",
       "total_flights": 3,
-      "total_bh": 7.4,
+      "total_bh": 12.1,
       "acmi_flights": 0,
       "acmi_bh": 0.0,
       "clients": [],
@@ -5676,8 +5687,8 @@
           "is_acmi": false,
           "route": "GCFV-EPWR",
           "dep_time": "2026-06-15T17:59:50Z",
-          "arr_time": null,
-          "bh": 0.0
+          "arr_time": "2026-06-15T22:42:43Z",
+          "bh": 4.7
         }
       ]
     },
@@ -5748,7 +5759,7 @@
       "owner_name": "Smartwings",
       "group": "Smartwings",
       "total_flights": 7,
-      "total_bh": 8.0,
+      "total_bh": 9.8,
       "acmi_flights": 0,
       "acmi_bh": 0.0,
       "clients": [],
@@ -5829,8 +5840,8 @@
           "is_acmi": false,
           "route": "LGKR-LKPR",
           "dep_time": "2026-06-15T19:50:21Z",
-          "arr_time": null,
-          "bh": 0.0
+          "arr_time": "2026-06-15T21:40:09Z",
+          "bh": 1.8
         }
       ]
     },
@@ -5855,15 +5866,15 @@
       "owner_name": "Smartwings",
       "group": "Smartwings",
       "total_flights": 8,
-      "total_bh": 8.2,
+      "total_bh": 10.1,
       "acmi_flights": 7,
-      "acmi_bh": 6.4,
+      "acmi_bh": 8.3,
       "clients": [
         {
           "icao": "TVL",
           "name": "TVL",
           "flights": 7,
-          "bh": 6.4
+          "bh": 8.3
         }
       ],
       "routes": [
@@ -5954,8 +5965,8 @@
           "is_acmi": true,
           "route": "LGSA-LHBP",
           "dep_time": "2026-06-15T19:28:16Z",
-          "arr_time": null,
-          "bh": 0.0
+          "arr_time": "2026-06-15T21:24:41Z",
+          "bh": 1.9
         }
       ]
     },
@@ -6055,15 +6066,15 @@
       "owner_name": "Smartwings",
       "group": "Smartwings",
       "total_flights": 6,
-      "total_bh": 9.8,
+      "total_bh": 11.9,
       "acmi_flights": 6,
-      "acmi_bh": 9.8,
+      "acmi_bh": 11.9,
       "clients": [
         {
           "icao": "TVL",
           "name": "TVL",
           "flights": 6,
-          "bh": 9.8
+          "bh": 11.9
         }
       ],
       "routes": [
@@ -6132,8 +6143,8 @@
           "is_acmi": true,
           "route": "LGRP-LHBP",
           "dep_time": "2026-06-15T20:46:14Z",
-          "arr_time": null,
-          "bh": 0.0
+          "arr_time": "2026-06-15T22:51:46Z",
+          "bh": 2.1
         }
       ]
     },
@@ -6144,7 +6155,7 @@
       "owner_name": "Smartwings",
       "group": "Smartwings",
       "total_flights": 7,
-      "total_bh": 13.6,
+      "total_bh": 15.2,
       "acmi_flights": 0,
       "acmi_bh": 0.0,
       "clients": [],
@@ -6225,8 +6236,8 @@
           "is_acmi": false,
           "route": "LKTB-LICA",
           "dep_time": "2026-06-15T20:06:55Z",
-          "arr_time": null,
-          "bh": 0.0
+          "arr_time": "2026-06-15T21:44:32Z",
+          "bh": 1.6
         }
       ]
     },
@@ -6664,7 +6675,7 @@
       "owner_name": "Smartwings",
       "group": "Smartwings",
       "total_flights": 7,
-      "total_bh": 9.2,
+      "total_bh": 10.8,
       "acmi_flights": 0,
       "acmi_bh": 0.0,
       "clients": [],
@@ -6744,8 +6755,8 @@
           "is_acmi": false,
           "route": "LGKR-LKTB",
           "dep_time": "2026-06-15T20:44:56Z",
-          "arr_time": null,
-          "bh": 0.0
+          "arr_time": "2026-06-15T22:20:35Z",
+          "bh": 1.6
         }
       ]
     },
@@ -6837,15 +6848,15 @@
       "owner_name": "Smartwings",
       "group": "Smartwings",
       "total_flights": 7,
-      "total_bh": 13.5,
+      "total_bh": 15.7,
       "acmi_flights": 7,
-      "acmi_bh": 13.5,
+      "acmi_bh": 15.7,
       "clients": [
         {
           "icao": "EWG",
           "name": "Eurowings",
           "flights": 7,
-          "bh": 13.5
+          "bh": 15.7
         }
       ],
       "routes": [
@@ -6922,9 +6933,9 @@
           "operator_name": "Eurowings",
           "is_acmi": true,
           "route": "LEPA-EDDK",
-          "dep_time": null,
-          "arr_time": null,
-          "bh": 0.0
+          "dep_time": "2026-06-15T21:18:45Z",
+          "arr_time": "2026-06-15T23:33:10Z",
+          "bh": 2.2
         }
       ]
     },
@@ -6935,15 +6946,15 @@
       "owner_name": "Smartwings",
       "group": "Smartwings",
       "total_flights": 5,
-      "total_bh": 9.7,
+      "total_bh": 12.2,
       "acmi_flights": 5,
-      "acmi_bh": 9.7,
+      "acmi_bh": 12.2,
       "clients": [
         {
           "icao": "TVP",
           "name": "TVP",
           "flights": 5,
-          "bh": 9.7
+          "bh": 12.2
         }
       ],
       "routes": [
@@ -7001,8 +7012,8 @@
           "is_acmi": true,
           "route": "EPWA-LTBS",
           "dep_time": "2026-06-15T19:29:56Z",
-          "arr_time": null,
-          "bh": 0.0
+          "arr_time": "2026-06-15T21:57:55Z",
+          "bh": 2.5
         }
       ]
     },
@@ -7013,7 +7024,7 @@
       "owner_name": "Smartwings",
       "group": "Smartwings",
       "total_flights": 7,
-      "total_bh": 10.1,
+      "total_bh": 12.3,
       "acmi_flights": 0,
       "acmi_bh": 0.0,
       "clients": [],
@@ -7024,7 +7035,7 @@
         "LZKZ-LGZA",
         "LGZA-LZKZ",
         "LZKZ-LGRP",
-        "LGRP-LZIB"
+        "LGRP-LZKZ"
       ],
       "flight_log": [
         {
@@ -7092,10 +7103,10 @@
           "operator_icao": "TVS",
           "operator_name": "Smartwings",
           "is_acmi": false,
-          "route": "LGRP-LZIB",
+          "route": "LGRP-LZKZ",
           "dep_time": "2026-06-15T20:43:17Z",
-          "arr_time": null,
-          "bh": 0.0
+          "arr_time": "2026-06-15T22:53:07Z",
+          "bh": 2.2
         }
       ]
     },
@@ -7106,15 +7117,15 @@
       "owner_name": "Smartwings",
       "group": "Smartwings",
       "total_flights": 4,
-      "total_bh": 11.0,
+      "total_bh": 13.8,
       "acmi_flights": 4,
-      "acmi_bh": 11.0,
+      "acmi_bh": 13.8,
       "clients": [
         {
           "icao": "EWG",
           "name": "Eurowings",
           "flights": 4,
-          "bh": 11.0
+          "bh": 13.8
         }
       ],
       "routes": [
@@ -7161,8 +7172,8 @@
           "is_acmi": true,
           "route": "LPPT-EDDK",
           "dep_time": "2026-06-15T20:51:18Z",
-          "arr_time": null,
-          "bh": 0.0
+          "arr_time": "2026-06-15T23:37:07Z",
+          "bh": 2.8
         }
       ]
     },
@@ -7173,15 +7184,15 @@
       "owner_name": "Smartwings",
       "group": "Smartwings",
       "total_flights": 4,
-      "total_bh": 8.8,
+      "total_bh": 12.3,
       "acmi_flights": 4,
-      "acmi_bh": 8.8,
+      "acmi_bh": 12.3,
       "clients": [
         {
           "icao": "TVP",
           "name": "TVP",
           "flights": 4,
-          "bh": 8.8
+          "bh": 12.3
         }
       ],
       "routes": [
@@ -7228,8 +7239,8 @@
           "is_acmi": true,
           "route": "LEMG-EPWA",
           "dep_time": "2026-06-15T18:06:06Z",
-          "arr_time": null,
-          "bh": 0.0
+          "arr_time": "2026-06-15T21:34:26Z",
+          "bh": 3.5
         }
       ]
     },
@@ -7366,15 +7377,15 @@
       "owner_name": "Titan Airways",
       "group": "Titan Airways",
       "total_flights": 4,
-      "total_bh": 7.0,
+      "total_bh": 10.6,
       "acmi_flights": 4,
-      "acmi_bh": 7.0,
+      "acmi_bh": 10.6,
       "clients": [
         {
           "icao": "EXS",
           "name": "Jet2",
           "flights": 4,
-          "bh": 7.0
+          "bh": 10.6
         }
       ],
       "routes": [
@@ -7421,8 +7432,8 @@
           "is_acmi": true,
           "route": "LBBG-EGSS",
           "dep_time": "2026-06-15T18:40:01Z",
-          "arr_time": null,
-          "bh": 0.0
+          "arr_time": "2026-06-15T22:17:07Z",
+          "bh": 3.6
         }
       ]
     },
@@ -7433,15 +7444,15 @@
       "owner_name": "Titan Airways",
       "group": "Titan Airways",
       "total_flights": 4,
-      "total_bh": 9.1,
+      "total_bh": 13.1,
       "acmi_flights": 4,
-      "acmi_bh": 9.1,
+      "acmi_bh": 13.1,
       "clients": [
         {
           "icao": "EXS",
           "name": "Jet2",
           "flights": 4,
-          "bh": 9.1
+          "bh": 13.1
         }
       ],
       "routes": [
@@ -7488,8 +7499,8 @@
           "is_acmi": true,
           "route": "GCLP-EGSS",
           "dep_time": "2026-06-15T20:55:17Z",
-          "arr_time": null,
-          "bh": 0.0
+          "arr_time": "2026-06-16T00:55:29Z",
+          "bh": 4.0
         }
       ]
     },
@@ -7596,15 +7607,15 @@
       "owner_name": "Titan Airways Malta",
       "group": "Titan Airways",
       "total_flights": 2,
-      "total_bh": 2.0,
+      "total_bh": 3.8,
       "acmi_flights": 2,
-      "acmi_bh": 2.0,
+      "acmi_bh": 3.8,
       "clients": [
         {
           "icao": "BCS",
           "name": "BCS",
           "flights": 2,
-          "bh": 2.0
+          "bh": 3.8
         }
       ],
       "routes": [
@@ -7629,8 +7640,8 @@
           "is_acmi": true,
           "route": "EIDW-EDDP",
           "dep_time": "2026-06-15T20:00:14Z",
-          "arr_time": null,
-          "bh": 0.0
+          "arr_time": "2026-06-15T21:50:16Z",
+          "bh": 1.8
         }
       ]
     },
