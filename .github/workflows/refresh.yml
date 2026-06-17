@@ -1,8 +1,6 @@
 name: Refresh ACMI Data
 on:
-  schedule:
-    - cron: '0 8 * * *'   # 10:00 AM Lithuanian time (UTC+2 summer / UTC+3 winter)
-  workflow_dispatch:       # allow manual trigger
+  workflow_dispatch:
 permissions:
   contents: write
 jobs:
