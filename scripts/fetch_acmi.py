@@ -251,6 +251,15 @@ def calc_block_hours(dep_time, arr_time):
         print(f"  BH calc error: {e} | dep={dep_time} arr={arr_time}")
         return 0.0
 
+def now_vilnius():
+    """Return current datetime in Vilnius time (UTC+3 EEST in summer)."""
+    lt_offset = timedelta(hours=3)
+    return datetime.now(timezone.utc) + lt_offset
+
+def vilnius_timestamp():
+    """Return current Vilnius time as a readable string, e.g. '2026-06-18 10:07 LT'."""
+    return now_vilnius().strftime("%Y-%m-%d %H:%M LT")
+
 def lt_day_window(offset_days=0):
     lt_offset = timedelta(hours=3)
     now_utc   = datetime.now(timezone.utc)
@@ -268,11 +277,10 @@ def run_snapshot(registry):
     print("PHASE 1 — Live Snapshot")
     print("="*60)
 
-    now_utc     = datetime.now(timezone.utc)
-    lt_offset   = timedelta(hours=3)
-    now_lt      = now_utc + lt_offset
-    report_date = now_lt.strftime("%Y-%m-%d")
-    yesterday   = (now_lt - timedelta(days=1)).strftime("%Y-%m-%d")
+    now_lt    = now_vilnius()
+    # report_date is YESTERDAY — the last completed full day
+    yesterday = (now_lt - timedelta(days=1)).strftime("%Y-%m-%d")
+    report_date = yesterday
 
     total   = sum(len(op["aircraft"]) for op in registry["operators"])
     fleet   = []
@@ -319,7 +327,7 @@ def run_snapshot(registry):
                     "callsign": callsign,
                     "current_operator_icao": op_icao,
                     "current_operator_name": resolve_airline_name(op_icao),
-                    "last_seen": now_utc.isoformat(),
+                    "last_seen": vilnius_timestamp(),
                     "latitude": live.get("lat"),
                     "longitude": live.get("lon"),
                     "altitude": live.get("alt"),
@@ -361,10 +369,10 @@ def run_snapshot(registry):
             fleet.append(entry)
 
     output = {
-        "last_updated": now_utc.isoformat(),
-        "report_date": report_date,
-        "interval_from": f"{yesterday} 00:01",
-        "interval_to":   f"{yesterday} 23:59",
+        "last_updated": vilnius_timestamp(),
+        "report_date":  report_date,
+        "interval_from": f"{report_date} 00:01",
+        "interval_to":   f"{report_date} 23:59",
         "summary": {
             "total_aircraft": queried,
             "acmi_active":    acmi_count,
@@ -539,7 +547,7 @@ def run_history(registry):
             op_summaries[g]["active_aircraft"] += 1
 
     output = {
-        "last_updated":       datetime.now(timezone.utc).isoformat(),
+        "last_updated":       vilnius_timestamp(),
         "report_date":        report_date,
         "interval_from":      f"{report_date} 00:01",
         "interval_to":        f"{report_date} 23:59",
