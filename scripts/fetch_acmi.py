@@ -546,7 +546,7 @@ def run_history(registry):
         if r["total_flights"] > 0:
             op_summaries[g]["active_aircraft"] += 1
 
-    output = {
+    today_entry = {
         "last_updated":       vilnius_timestamp(),
         "report_date":        report_date,
         "interval_from":      f"{report_date} 00:01",
@@ -556,13 +556,39 @@ def run_history(registry):
         "fleet":              results,
     }
 
+    # ── Append to multi-day history array (dedup by report_date) ──────────────
+    # File format: { "days": [ {...}, {...}, ... ] }  newest first
+    existing_days = []
+    if os.path.exists(HISTORY):
+        try:
+            with open(HISTORY) as f:
+                raw = json.load(f)
+            if isinstance(raw.get("days"), list):
+                existing_days = raw["days"]
+            elif raw.get("report_date"):
+                # Migrate old single-day format
+                existing_days = [raw]
+                print("  Migrated old single-day history format to multi-day array")
+        except Exception as e:
+            print(f"  WARNING: could not read existing history: {e}")
+
+    # Remove any entry for the same report_date (idempotent re-runs)
+    existing_days = [d for d in existing_days if d.get("report_date") != report_date]
+    existing_days.append(today_entry)
+    # Sort newest first
+    existing_days.sort(key=lambda d: d["report_date"], reverse=True)
+
+    output = {"days": existing_days}
+
     with open(HISTORY, "w") as f:
         json.dump(output, f, indent=2)
 
     total_bh_all  = round(sum(r["total_bh"]  for r in results), 1)
     total_acmi_bh = round(sum(r["acmi_bh"]   for r in results), 1)
     total_flights = sum(r["total_flights"]    for r in results)
+    n_days_total  = len(existing_days)
     print(f"\nHistory done — {total_flights} flights / {total_bh_all} BH total / {total_acmi_bh} BH on ACMI")
+    print(f"History file now contains {n_days_total} day(s)")
 
 # ── Main ──────────────────────────────────────────────────────────────────────
 
