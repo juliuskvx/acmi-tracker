@@ -6,295 +6,369 @@
 <title>ACMI Intel — European Wet Lease Tracker</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
-
   :root {
-    --bg:     #060910;
-    --bg2:    #0d1320;
-    --bg3:    #111827;
-    --border: #1e2d42;
-    --accent: #00d4ff;
-    --green:  #00ff88;
-    --red:    #ff4444;
-    --amber:  #ffaa00;
-    --purple: #a78bfa;
-    --text:   #e2e8f0;
-    --muted:  #64748b;
-    --mono:   'JetBrains Mono', monospace;
-    --ui:     'Inter', system-ui, sans-serif;
+    --bg:#060910; --bg2:#0d1320; --bg3:#111827; --bdr:#1e2d42;
+    --acc:#00d4ff; --grn:#00cc66; --amb:#ffaa00; --pur:#a78bfa;
+    --red:#ff4444; --txt:#e2e8f0; --mut:#64748b;
+    --mono:'JetBrains Mono',monospace; --ui:'Inter',system-ui,sans-serif;
   }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--txt);font-family:var(--ui);font-size:13px;min-height:100vh}
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: var(--bg); color: var(--text); font-family: var(--ui); font-size: 14px; min-height: 100vh; }
+  /* Header */
+  .header{border-bottom:1px solid var(--bdr);padding:0 24px;height:52px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;background:var(--bg)}
+  .logo{display:flex;align-items:center;gap:10px}
+  .logo-dot{width:7px;height:7px;border-radius:50%;background:var(--acc);animation:pulse 2s ease-in-out infinite}
+  @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(0,212,255,.4)}50%{box-shadow:0 0 0 5px rgba(0,212,255,0)}}
+  .logo-text{font-size:14px;font-weight:600;letter-spacing:.02em}
+  .logo-text span{color:var(--acc)}
+  .hdr-right{display:flex;align-items:center;gap:10px;font-size:11px;color:var(--mut);font-family:var(--mono);flex-wrap:wrap}
+  .live-badge{display:flex;align-items:center;gap:5px;color:var(--grn)}
+  .live-dot{width:5px;height:5px;border-radius:50%;background:var(--grn);animation:blink 2s ease-in-out infinite}
+  @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+  .ibadge{font-size:10px;color:var(--acc);background:rgba(0,212,255,.08);border:1px solid rgba(0,212,255,.2);border-radius:3px;padding:2px 8px}
 
-  .header {
-    border-bottom: 1px solid var(--border);
-    padding: 0 24px; height: 56px;
-    display: flex; align-items: center; justify-content: space-between;
-    position: sticky; top: 0; z-index: 100; background: var(--bg);
-  }
-  .header-left { display: flex; align-items: center; gap: 12px; }
-  .logo-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); animation: pulse 2s ease-in-out infinite; }
-  @keyframes pulse { 0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(0,212,255,.4)} 50%{opacity:.8;box-shadow:0 0 0 6px rgba(0,212,255,0)} }
-  .logo-text { font-size: 15px; font-weight: 600; letter-spacing: .02em; }
-  .logo-text span { color: var(--accent); }
-  .header-meta { display: flex; align-items: center; gap: 12px; font-size: 12px; color: var(--muted); font-family: var(--mono); flex-wrap: wrap; }
-  .live-badge { display: flex; align-items: center; gap: 6px; color: var(--green); }
-  .live-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); animation: blink 2s ease-in-out infinite; }
-  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
-  .interval-badge { font-size: 11px; color: var(--accent); background: rgba(0,212,255,.08); border: 1px solid rgba(0,212,255,.2); border-radius: 4px; padding: 3px 10px; }
+  .main{max-width:1400px;margin:0 auto;padding:20px 24px}
 
-  .main { max-width: 1400px; margin: 0 auto; padding: 24px; }
+  /* Filter panel */
+  .filter-panel{background:var(--bg2);border:1px solid var(--bdr);border-radius:8px;overflow:hidden;margin-bottom:16px}
+  .fp-section{padding:10px 14px;border-bottom:1px solid var(--bdr)}
+  .fp-section:last-child{border-bottom:none}
+  .fp-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .fp-lbl{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--mut);min-width:52px;flex-shrink:0}
 
-  .stat-bar { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin-bottom: 24px; }
-  .stat-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 16px 20px; position: relative; overflow: hidden; }
-  .stat-card::before { content:''; position:absolute; top:0;left:0;right:0; height:2px; }
-  .stat-card.c-accent::before { background: var(--accent); }
-  .stat-card.c-green::before  { background: var(--green); }
-  .stat-card.c-amber::before  { background: var(--amber); }
-  .stat-card.c-muted::before  { background: var(--muted); }
-  .stat-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: 8px; }
-  .stat-value { font-size: 32px; font-weight: 600; font-family: var(--mono); line-height: 1; }
-  .stat-card.c-accent .stat-value { color: var(--accent); }
-  .stat-card.c-green  .stat-value { color: var(--green); }
-  .stat-card.c-amber  .stat-value { color: var(--amber); }
-  .stat-card.c-muted  .stat-value { color: var(--text); }
-  .stat-sub { font-size: 11px; color: var(--muted); margin-top: 4px; font-family: var(--mono); }
+  .pbtn{background:var(--bg3);border:1px solid var(--bdr);border-radius:4px;padding:4px 10px;font-size:11px;font-weight:500;color:var(--mut);cursor:pointer;transition:all .15s;white-space:nowrap;font-family:var(--ui)}
+  .pbtn:hover{border-color:var(--acc);color:var(--acc)}
+  .pbtn.act{border-color:var(--acc);color:var(--acc);background:rgba(0,212,255,.08)}
 
-  .charts-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-bottom: 24px; }
-  .chart-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 16px 20px; }
-  .chart-title { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: 14px; }
-  .chart-wrap { display: flex; align-items: center; gap: 20px; }
-  .chart-legend { flex: 1; display: flex; flex-direction: column; gap: 7px; }
-  .legend-item { display: flex; align-items: center; gap: 8px; font-size: 12px; }
-  .legend-dot { width: 8px; height: 8px; border-radius: 2px; flex-shrink: 0; }
-  .legend-label { color: var(--muted); flex: 1; }
-  .legend-value { font-family: var(--mono); font-size: 12px; font-weight: 500; color: var(--text); }
+  .dsep{width:1px;height:18px;background:var(--bdr);flex-shrink:0}
+  .dinput{background:var(--bg3);border:1px solid var(--bdr);border-radius:4px;padding:4px 9px;font-size:11px;color:var(--txt);font-family:var(--mono);outline:none;width:112px}
+  .dinput:focus{border-color:var(--acc)}
+  .dinput::-webkit-calendar-picker-indicator{filter:invert(.5) sepia(1) hue-rotate(160deg);cursor:pointer}
+  .dapply{background:rgba(0,212,255,.1);border:1px solid rgba(0,212,255,.3);border-radius:4px;padding:4px 12px;font-size:11px;font-weight:600;color:var(--acc);cursor:pointer;transition:all .15s;font-family:var(--ui)}
+  .dapply:hover{background:rgba(0,212,255,.2)}
+  .dr-disp{font-size:10px;font-family:var(--mono);color:var(--mut);margin-left:4px}
+  .dr-disp strong{color:var(--acc)}
 
-  /* Chart mode label */
-  .chart-mode-label { font-size: 10px; color: var(--purple); font-family: var(--mono); margin-bottom: 14px; margin-top: -10px; }
+  /* Operator pills */
+  .op-pill{display:inline-flex;align-items:center;gap:5px;border:1px solid var(--bdr);border-radius:4px;padding:3px 9px 3px 7px;font-size:11px;font-weight:500;color:var(--mut);cursor:pointer;transition:all .15s;background:var(--bg3);white-space:nowrap;font-family:var(--ui)}
+  .op-pill:hover{border-color:rgba(0,212,255,.4);color:var(--txt)}
+  .op-pill .pill-dot{width:6px;height:6px;border-radius:50%;background:currentColor;flex-shrink:0}
+  .op-pill .pill-icao{font-family:var(--mono);font-size:9px;color:var(--mut)}
+  .op-pill.sel .pill-icao{opacity:.7}
 
-  .tabs { display: flex; border-bottom: 1px solid var(--border); margin-bottom: 24px; }
-  .tab { padding: 12px 20px; font-size: 13px; font-weight: 500; color: var(--muted); cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -1px; transition: all .15s; }
-  .tab:hover { color: var(--text); }
-  .tab.active { color: var(--accent); border-bottom-color: var(--accent); }
-  .tab-content { display: none; }
-  .tab-content.active { display: block; }
+  .op-pill.sel.c0{border-color:#00d4ff;color:#00d4ff;background:rgba(0,212,255,.08)}
+  .op-pill.sel.c0 .pill-dot{background:#00d4ff}
+  .op-pill.sel.c1{border-color:#00cc66;color:#00cc66;background:rgba(0,204,102,.08)}
+  .op-pill.sel.c1 .pill-dot{background:#00cc66}
+  .op-pill.sel.c2{border-color:#ffaa00;color:#ffaa00;background:rgba(255,170,0,.08)}
+  .op-pill.sel.c2 .pill-dot{background:#ffaa00}
+  .op-pill.sel.c3{border-color:#ff6b6b;color:#ff6b6b;background:rgba(255,107,107,.08)}
+  .op-pill.sel.c3 .pill-dot{background:#ff6b6b}
+  .op-pill.sel.c4{border-color:#a78bfa;color:#a78bfa;background:rgba(167,139,250,.08)}
+  .op-pill.sel.c4 .pill-dot{background:#a78bfa}
+  .op-pill.sel.c5{border-color:#34d399;color:#34d399;background:rgba(52,211,153,.08)}
+  .op-pill.sel.c5 .pill-dot{background:#34d399}
+  .op-pill.sel.c6{border-color:#f472b6;color:#f472b6;background:rgba(244,114,182,.08)}
+  .op-pill.sel.c6 .pill-dot{background:#f472b6}
+  .op-pill.sel.c7{border-color:#60a5fa;color:#60a5fa;background:rgba(96,165,250,.08)}
+  .op-pill.sel.c7 .pill-dot{background:#60a5fa}
 
-  .section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
-  .section-title { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
+  .fp-actions{display:flex;align-items:center;gap:6px;margin-left:auto;flex-shrink:0}
+  .sel-all{font-size:10px;color:var(--acc);cursor:pointer;background:none;border:none;font-family:var(--ui);padding:0}
+  .sel-all:hover{text-decoration:underline}
+  .clr-btn{font-size:10px;color:var(--mut);cursor:pointer;background:none;border:none;font-family:var(--ui);padding:0}
+  .clr-btn:hover{color:var(--red)}
 
-  .data-table { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-bottom: 24px; }
-  .t-row { display: grid; align-items: center; padding: 11px 20px; border-bottom: 1px solid var(--border); gap: 12px; font-size: 12px; transition: background .15s; }
-  .t-row:hover { background: var(--bg3); }
-  .t-row:last-child { border-bottom: none; }
-  .t-row.t-head { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); background: var(--bg3); cursor: default; }
-  .t-row.t-head:hover { background: var(--bg3); }
+  .active-chips{display:flex;align-items:center;gap:5px;flex-wrap:wrap;margin-top:6px;min-height:18px}
+  .sum-chip{display:inline-flex;align-items:center;gap:4px;background:rgba(0,212,255,.06);border:1px solid rgba(0,212,255,.15);border-radius:3px;padding:2px 7px;font-size:10px;font-family:var(--mono);cursor:pointer;color:var(--txt)}
+  .sum-chip:hover{background:rgba(255,68,68,.08);border-color:rgba(255,68,68,.3);color:var(--red)}
+  .sum-chip .cx{font-size:9px;opacity:.5}
+  .all-sel-note{font-size:10px;font-family:var(--mono);color:var(--mut)}
 
-  .acmi-cols   { grid-template-columns: 100px 1fr 130px 160px 140px 90px; }
-  .fleet-cols  { grid-template-columns: 100px 1fr 90px 130px 150px 100px 90px; }
-  .report-cols { grid-template-columns: 100px 1fr 70px 70px 70px 70px 1fr; }
-  .client-cols { grid-template-columns: 120px 1fr 80px 80px 80px; }
+  /* KPI row */
+  .kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px}
+  .kpi{background:var(--bg2);border:1px solid var(--bdr);border-radius:7px;padding:14px 18px;position:relative;overflow:hidden}
+  .kpi::before{content:'';position:absolute;top:0;left:0;right:0;height:2px}
+  .kpi.ka::before{background:var(--acc)} .kpi.kg::before{background:var(--grn)}
+  .kpi.kam::before{background:var(--amb)} .kpi.km::before{background:var(--mut)}
+  .kpi-lbl{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--mut);margin-bottom:6px}
+  .kpi-val{font-size:28px;font-weight:600;font-family:var(--mono);line-height:1}
+  .kpi.ka .kpi-val{color:var(--acc)} .kpi.kg .kpi-val{color:var(--grn)}
+  .kpi.kam .kpi-val{color:var(--amb)} .kpi.km .kpi-val{color:var(--txt)}
+  .kpi-sub{font-size:10px;color:var(--mut);margin-top:3px;font-family:var(--mono)}
 
-  .reg { font-family: var(--mono); font-size: 13px; font-weight: 500; color: var(--accent); }
-  .owner { display: flex; flex-direction: column; gap: 2px; }
-  .owner-name { font-size: 13px; font-weight: 500; }
-  .owner-sub  { font-size: 11px; color: var(--muted); }
-  .op-badge { display: inline-flex; align-items: center; background: rgba(0,212,255,.1); border: 1px solid rgba(0,212,255,.2); border-radius: 4px; padding: 3px 9px; font-family: var(--mono); font-size: 12px; font-weight: 500; color: var(--accent); }
-  .client-badge { display: inline-flex; align-items: center; background: rgba(167,139,250,.1); border: 1px solid rgba(167,139,250,.2); border-radius: 4px; padding: 3px 9px; font-family: var(--mono); font-size: 12px; font-weight: 500; color: var(--purple); margin-right: 4px; margin-bottom: 2px; }
-  .route { font-family: var(--mono); font-size: 12px; color: var(--text); display: flex; align-items: center; gap: 4px; }
-  .route-arrow { color: var(--muted); }
-  .pill { display: inline-flex; align-items: center; gap: 4px; border-radius: 99px; padding: 3px 9px; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; white-space: nowrap; }
-  .pill.acmi    { background: rgba(0,212,255,.12); color: var(--accent); border: 1px solid rgba(0,212,255,.25); }
-  .pill.own     { background: rgba(0,255,136,.08);  color: var(--green);  border: 1px solid rgba(0,255,136,.2); }
-  .pill.ground  { background: rgba(100,116,139,.12); color: var(--muted); border: 1px solid rgba(100,116,139,.2); }
-  .pill.unknown { background: rgba(255,170,0,.08);  color: var(--amber);  border: 1px solid rgba(255,170,0,.2); }
-  .type-badge { font-family: var(--mono); font-size: 11px; color: var(--muted); background: var(--bg3); border: 1px solid var(--border); border-radius: 3px; padding: 2px 7px; display: inline-block; }
-  .bh-value { font-family: var(--mono); font-size: 13px; font-weight: 500; color: var(--green); }
-  .bh-zero  { color: var(--muted); }
-  .mono-sm { font-family: var(--mono); font-size: 11px; color: var(--muted); }
-  .mono-md { font-family: var(--mono); font-size: 12px; color: var(--text); }
+  /* Charts */
+  .charts-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
+  .cc{background:var(--bg2);border:1px solid var(--bdr);border-radius:7px;padding:14px 18px}
+  .cc-title{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--mut);margin-bottom:10px}
+  .cc-mode{font-size:9px;color:var(--pur);font-family:var(--mono);margin-bottom:10px;margin-top:-7px;display:none}
+  .cc-wrap{display:flex;align-items:center;gap:14px}
+  .lgd{flex:1;display:flex;flex-direction:column;gap:5px}
+  .lgd-item{display:flex;align-items:center;gap:6px;font-size:11px}
+  .lgd-dot{width:7px;height:7px;border-radius:2px;flex-shrink:0}
+  .lgd-lbl{color:var(--mut);flex:1;font-size:11px}
+  .lgd-val{font-family:var(--mono);font-size:11px;font-weight:500}
 
-  .operator-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap: 12px; margin-bottom: 24px; }
-  .op-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 16px; transition: border-color .15s; }
-  .op-card:hover { border-color: rgba(0,212,255,.3); }
-  .op-card-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 12px; }
-  .op-card-name { font-size: 14px; font-weight: 600; }
-  .op-card-sub  { font-size: 11px; color: var(--muted); margin-top: 2px; font-family: var(--mono); }
-  .op-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; }
-  .op-stat { text-align: center; padding: 8px; background: var(--bg3); border-radius: 4px; }
-  .op-stat-val { font-family: var(--mono); font-size: 18px; font-weight: 600; line-height: 1; }
-  .op-stat-lbl { font-size: 10px; color: var(--muted); margin-top: 3px; text-transform: uppercase; letter-spacing: .06em; }
+  /* Trend bar chart */
+  .trend-card{background:var(--bg2);border:1px solid var(--bdr);border-radius:7px;padding:14px 18px;margin-bottom:14px;display:none}
+  .trend-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+  .trend-title{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--mut)}
+  .trend-sub{font-size:9px;color:var(--pur);font-family:var(--mono)}
+  .bar-chart{display:flex;align-items:flex-end;gap:3px;height:72px}
+  .bar-col{display:flex;flex-direction:column;align-items:center;gap:2px;flex:1;min-width:0;position:relative}
+  .bar-col:hover .btt{display:block}
+  .bseg{width:100%;border-radius:2px 2px 0 0;min-height:1px}
+  .bdate{font-family:var(--mono);font-size:8px;color:var(--mut);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;text-align:center}
+  .btt{display:none;position:absolute;bottom:calc(100% + 4px);left:50%;transform:translateX(-50%);background:var(--bg3);border:1px solid var(--bdr);border-radius:4px;padding:5px 8px;font-size:10px;font-family:var(--mono);white-space:nowrap;z-index:20;pointer-events:none}
+  .btt .ta{color:var(--acc)} .btt .to{color:var(--grn)} .btt .td{color:var(--mut);font-size:9px;margin-bottom:2px}
 
-  .client-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px,1fr)); gap: 12px; margin-bottom: 24px; }
-  .client-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 16px; }
-  .client-card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
-  .client-icao { font-family: var(--mono); font-size: 16px; font-weight: 600; color: var(--purple); }
-  .client-name { font-size: 13px; color: var(--muted); }
-  .provider-row { display: flex; align-items: center; justify-content: space-between; padding: 8px 10px; background: var(--bg3); border-radius: 4px; margin-bottom: 6px; font-size: 12px; }
-  .provider-row:last-child { margin-bottom: 0; }
-  .provider-name { font-weight: 500; }
-  .provider-stats { display: flex; gap: 12px; font-family: var(--mono); font-size: 11px; color: var(--muted); }
-  .provider-stats span { color: var(--text); }
+  /* Tabs */
+  .tabs{display:flex;border-bottom:1px solid var(--bdr);margin-bottom:18px}
+  .tab{padding:10px 18px;font-size:12px;font-weight:500;color:var(--mut);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .15s}
+  .tab:hover{color:var(--txt)}
+  .tab.active{color:var(--acc);border-bottom-color:var(--acc)}
+  .tc{display:none}
+  .tc.active{display:block}
 
-  .filter-bar { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; align-items: center; }
-  .filter-btn { background: var(--bg2); border: 1px solid var(--border); border-radius: 4px; padding: 5px 12px; font-size: 11px; font-weight: 500; color: var(--muted); cursor: pointer; transition: all .15s; font-family: var(--ui); }
-  .filter-btn:hover, .filter-btn.active { border-color: var(--accent); color: var(--accent); background: rgba(0,212,255,.05); }
-  .search-input { background: var(--bg2); border: 1px solid var(--border); border-radius: 4px; padding: 5px 12px; font-size: 12px; color: var(--text); font-family: var(--mono); outline: none; width: 200px; margin-left: auto; }
-  .search-input::placeholder { color: var(--muted); }
-  .search-input:focus { border-color: var(--accent); }
+  /* Tables */
+  .dtable{background:var(--bg2);border:1px solid var(--bdr);border-radius:7px;overflow:hidden;margin-bottom:18px}
+  .trow{display:grid;align-items:center;padding:10px 18px;border-bottom:1px solid var(--bdr);gap:10px;font-size:12px;transition:background .15s}
+  .trow:hover{background:var(--bg3)}
+  .trow:last-child{border-bottom:none}
+  .thead{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--mut);background:var(--bg3)}
+  .thead:hover{background:var(--bg3)}
 
-  .empty { padding: 40px; text-align: center; color: var(--muted); font-size: 13px; }
-  .loading { display: flex; align-items: center; justify-content: center; padding: 60px; gap: 12px; color: var(--muted); font-family: var(--mono); font-size: 13px; }
-  .spinner { width: 16px; height: 16px; border: 2px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin .8s linear infinite; }
-  @keyframes spin { to { transform: rotate(360deg); } }
+  .acols{grid-template-columns:90px 1fr 140px 80px 80px 70px}
+  .fcols{grid-template-columns:90px 1fr 70px 130px 140px 100px 80px}
+  .rcols{grid-template-columns:90px 1fr 60px 65px 65px 55px 1fr}
+  .ohcols{grid-template-columns:1fr 80px 80px 80px 70px 60px}
 
-  .interval-banner { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 12px 20px; margin-bottom: 16px; display: flex; align-items: center; gap: 16px; font-size: 12px; }
-  .interval-banner .lbl { color: var(--muted); text-transform: uppercase; letter-spacing: .08em; font-size: 10px; font-weight: 600; }
-  .interval-banner .val { font-family: var(--mono); color: var(--accent); font-size: 13px; }
+  /* Atoms */
+  .reg{font-family:var(--mono);font-size:12px;font-weight:500;color:var(--acc)}
+  .own{display:flex;flex-direction:column;gap:1px}
+  .own-n{font-size:12px;font-weight:500}
+  .own-s{font-size:10px;color:var(--mut)}
+  .obadge{display:inline-flex;background:rgba(0,212,255,.1);border:1px solid rgba(0,212,255,.2);border-radius:3px;padding:2px 8px;font-family:var(--mono);font-size:11px;font-weight:500;color:var(--acc)}
+  .cbadge{display:inline-flex;background:rgba(167,139,250,.1);border:1px solid rgba(167,139,250,.2);border-radius:3px;padding:2px 7px;font-family:var(--mono);font-size:10px;font-weight:500;color:var(--pur);margin-right:3px;margin-bottom:2px}
+  .tbadge{font-family:var(--mono);font-size:10px;color:var(--mut);background:var(--bg3);border:1px solid var(--bdr);border-radius:2px;padding:1px 6px}
+  .bh{font-family:var(--mono);font-size:12px;font-weight:500;color:var(--grn)}
+  .bh0{font-family:var(--mono);font-size:12px;color:var(--mut)}
+  .mono-sm{font-family:var(--mono);font-size:10px;color:var(--mut)}
+  .mono-md{font-family:var(--mono);font-size:12px;color:var(--txt)}
+  .pill{display:inline-flex;border-radius:99px;padding:2px 8px;font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+  .pacmi{background:rgba(0,212,255,.12);color:var(--acc);border:1px solid rgba(0,212,255,.25)}
+  .pown{background:rgba(0,204,102,.08);color:var(--grn);border:1px solid rgba(0,204,102,.2)}
+  .pgnd{background:rgba(100,116,139,.1);color:var(--mut);border:1px solid rgba(100,116,139,.2)}
+  .punk{background:rgba(255,170,0,.08);color:var(--amb);border:1px solid rgba(255,170,0,.2)}
 
-  .footer { border-top: 1px solid var(--border); padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; font-size: 11px; color: var(--muted); font-family: var(--mono); }
+  /* Operator grid */
+  .op-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:10px;margin-bottom:18px}
+  .opc{background:var(--bg2);border:1px solid var(--bdr);border-radius:7px;padding:14px;transition:border-color .15s}
+  .opc:hover{border-color:rgba(0,212,255,.3)}
+  .opc-hdr{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:10px}
+  .opc-n{font-size:13px;font-weight:600}
+  .opc-s{font-size:10px;color:var(--mut);margin-top:2px;font-family:var(--mono)}
+  .opc-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:4px}
+  .op-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:6px}
+  .ost{text-align:center;padding:7px 4px;background:var(--bg3);border-radius:3px}
+  .ost-v{font-family:var(--mono);font-size:16px;font-weight:600;line-height:1}
+  .ost-l{font-size:9px;color:var(--mut);margin-top:2px;text-transform:uppercase}
+  .op-extra{display:grid;grid-template-columns:repeat(3,1fr);gap:5px}
+  .oex{text-align:center;padding:5px 4px;background:var(--bg3);border-radius:3px;border:1px solid var(--bdr)}
+  .oex-v{font-family:var(--mono);font-size:12px;font-weight:600}
+  .oex-l{font-size:8px;color:var(--mut);text-transform:uppercase;margin-top:1px}
 
-  @media (max-width: 900px) {
-    .stat-bar { grid-template-columns: repeat(2,1fr); }
-    .charts-row { grid-template-columns: 1fr; }
-    .acmi-cols  { grid-template-columns: 90px 1fr 120px; }
-    .acmi-cols > *:nth-child(n+4) { display: none; }
-    .fleet-cols { grid-template-columns: 90px 1fr 80px; }
-    .fleet-cols > *:nth-child(n+4) { display: none; }
+  /* Client grid */
+  .cl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:10px;margin-bottom:18px}
+  .clc{background:var(--bg2);border:1px solid var(--bdr);border-radius:7px;padding:14px}
+  .clc-hdr{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+  .cl-icao{font-family:var(--mono);font-size:14px;font-weight:600;color:var(--pur)}
+  .cl-name{font-size:11px;color:var(--mut)}
+  .prov-row{display:flex;align-items:center;justify-content:space-between;padding:6px 9px;background:var(--bg3);border-radius:3px;margin-bottom:5px;font-size:11px}
+  .prov-row:last-child{margin-bottom:0}
+  .prov-stats{display:flex;gap:10px;font-family:var(--mono);font-size:10px;color:var(--mut)}
+  .prov-stats span{color:var(--txt)}
+
+  /* Filter bar for fleet tab */
+  .fleet-filters{display:flex;gap:7px;margin-bottom:10px;flex-wrap:wrap;align-items:center}
+  .fbtn{background:var(--bg2);border:1px solid var(--bdr);border-radius:4px;padding:4px 11px;font-size:11px;font-weight:500;color:var(--mut);cursor:pointer;transition:all .15s;font-family:var(--ui)}
+  .fbtn:hover,.fbtn.act{border-color:var(--acc);color:var(--acc);background:rgba(0,212,255,.05)}
+  .srch{background:var(--bg2);border:1px solid var(--bdr);border-radius:4px;padding:4px 10px;font-size:11px;color:var(--txt);font-family:var(--mono);outline:none;width:180px;margin-left:auto}
+  .srch::placeholder{color:var(--mut)}
+  .srch:focus{border-color:var(--acc)}
+
+  /* Range note */
+  .range-note{display:inline-flex;align-items:center;gap:5px;background:rgba(167,139,250,.07);border:1px solid rgba(167,139,250,.18);border-radius:3px;padding:3px 10px;font-size:10px;font-family:var(--mono);color:var(--pur);margin-bottom:12px}
+
+  /* Banner */
+  .banner{background:var(--bg2);border:1px solid var(--bdr);border-radius:7px;padding:10px 16px;margin-bottom:12px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .banner .bl{color:var(--mut);text-transform:uppercase;letter-spacing:.08em;font-size:9px;font-weight:600}
+  .banner .bv{font-family:var(--mono);color:var(--acc);font-size:12px}
+
+  .empty{padding:36px;text-align:center;color:var(--mut);font-size:12px}
+  .loading{display:flex;align-items:center;justify-content:center;padding:50px;gap:10px;color:var(--mut);font-family:var(--mono);font-size:12px}
+  .spinner{width:14px;height:14px;border:2px solid var(--bdr);border-top-color:var(--acc);border-radius:50%;animation:spin .8s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+
+  .footer{border-top:1px solid var(--bdr);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;font-size:10px;color:var(--mut);font-family:var(--mono)}
+
+  @media(max-width:900px){
+    .kpi-row{grid-template-columns:repeat(2,1fr)}
+    .charts-row{grid-template-columns:1fr}
+    .acols{grid-template-columns:80px 1fr 120px}
+    .acols>*:nth-child(n+4){display:none}
+    .fcols{grid-template-columns:80px 1fr 70px}
+    .fcols>*:nth-child(n+4){display:none}
   }
 </style>
 </head>
 <body>
 
 <header class="header">
-  <div class="header-left">
+  <div class="logo">
     <div class="logo-dot"></div>
     <div class="logo-text">ACMI <span>Intel</span></div>
   </div>
-  <div class="header-meta">
-    <div class="live-badge"><div class="live-dot"></div><span id="live-status">loading...</span></div>
-    <div class="interval-badge" id="report-interval">—</div>
-    <span id="last-updated">—</span>
-    <span id="aircraft-count">—</span>
+  <div class="hdr-right">
+    <div class="live-badge"><div class="live-dot"></div><span id="hdr-status">loading...</span></div>
+    <div class="ibadge" id="hdr-interval">—</div>
+    <span id="hdr-updated">—</span>
+    <span id="hdr-count">—</span>
   </div>
 </header>
 
 <main class="main">
 
-  <div class="stat-bar">
-    <div class="stat-card c-accent">
-      <div class="stat-label">ACMI Active</div>
-      <div class="stat-value" id="stat-acmi">—</div>
-      <div class="stat-sub">currently wet-leased</div>
-    </div>
-    <div class="stat-card c-green">
-      <div class="stat-label">Own Operations</div>
-      <div class="stat-value" id="stat-own">—</div>
-      <div class="stat-sub">flying own callsign</div>
-    </div>
-    <div class="stat-card c-amber">
-      <div class="stat-label">On Ground</div>
-      <div class="stat-value" id="stat-ground">—</div>
-      <div class="stat-sub">parked / maintenance</div>
-    </div>
-    <div class="stat-card c-muted">
-      <div class="stat-label">Fleet Tracked</div>
-      <div class="stat-value" id="stat-total">—</div>
-      <div class="stat-sub">across <span id="stat-ops">—</span> operators</div>
+<!-- ── Filter Panel ── -->
+<div class="filter-panel">
+
+  <div class="fp-section">
+    <div class="fp-row">
+      <span class="fp-lbl">Date</span>
+      <button class="pbtn act" onclick="setPre('latest',this)">Latest</button>
+      <button class="pbtn" onclick="setPre('7d',this)">Last 7 days</button>
+      <button class="pbtn" onclick="setPre('30d',this)">Last 30 days</button>
+      <button class="pbtn" onclick="setPre('all',this)">All time</button>
+      <div class="dsep"></div>
+      <input class="dinput" type="date" id="df" onchange="clearPre()">
+      <span style="color:var(--mut);font-size:11px">→</span>
+      <input class="dinput" type="date" id="dt" onchange="clearPre()">
+      <button class="dapply" onclick="applyCustom()">Apply</button>
+      <span class="dr-disp" id="dr-disp">—</span>
     </div>
   </div>
 
-  <!-- Charts -->
-  <div class="charts-row">
-    <div class="chart-card">
-      <div class="chart-title">Fleet Status Distribution</div>
-      <div id="chart-mode-status" class="chart-mode-label" style="display:none">▸ Daily Report view</div>
-      <div class="chart-wrap">
-        <canvas id="chart-status" width="160" height="160"></canvas>
-        <div class="chart-legend" id="legend-status"></div>
+  <div class="fp-section">
+    <div class="fp-row" style="align-items:flex-start">
+      <span class="fp-lbl" style="margin-top:4px">Operators</span>
+      <div id="op-pills" style="display:flex;flex-wrap:wrap;gap:6px;flex:1"></div>
+      <div class="fp-actions">
+        <button class="sel-all" onclick="selectAllOps()">Select all</button>
+        <span style="color:var(--bdr)">·</span>
+        <button class="clr-btn" onclick="clearOps()">Clear</button>
       </div>
     </div>
-    <div class="chart-card">
-      <div class="chart-title">ACMI Activity by Group</div>
-      <div id="chart-mode-groups" class="chart-mode-label" style="display:none">▸ Daily Report view</div>
-      <div class="chart-wrap">
-        <canvas id="chart-groups" width="160" height="160"></canvas>
-        <div class="chart-legend" id="legend-groups"></div>
-      </div>
-    </div>
-    <div class="chart-card">
-      <div class="chart-title">Fleet Type Mix</div>
-      <div id="chart-mode-types" class="chart-mode-label" style="display:none">▸ Daily Report view</div>
-      <div class="chart-wrap">
-        <canvas id="chart-types" width="160" height="160"></canvas>
-        <div class="chart-legend" id="legend-types"></div>
-      </div>
-    </div>
+    <div class="active-chips" id="active-chips"></div>
   </div>
 
-  <!-- Tabs -->
-  <div class="tabs">
-    <div class="tab active"   onclick="switchTab('acmi')">ACMI Active</div>
-    <div class="tab"          onclick="switchTab('fleet')">Fleet Status</div>
-    <div class="tab"          onclick="switchTab('operators')">Operators</div>
-    <div class="tab"          onclick="switchTab('report')">Daily Report</div>
-    <div class="tab"          onclick="switchTab('clients')">Client Map</div>
-  </div>
+</div>
 
-  <!-- Tab 1: ACMI Active -->
-  <div class="tab-content active" id="tab-acmi">
-    <div class="data-table">
-      <div class="feed-header" style="padding:14px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;">
-        <div style="font-size:13px;font-weight:600;display:flex;align-items:center;gap:8px;">
-          <div class="live-dot"></div>
-          Aircraft currently operating under a different airline's callsign
-        </div>
-        <div id="acmi-count" class="mono-sm">—</div>
-      </div>
-      <div id="acmi-list"><div class="loading"><div class="spinner"></div>Loading...</div></div>
-    </div>
-  </div>
+<!-- ── KPI row ── -->
+<div class="kpi-row">
+  <div class="kpi ka"><div class="kpi-lbl" id="k1l">ACMI Active</div><div class="kpi-val" id="k1">—</div><div class="kpi-sub" id="k1s">currently wet-leased</div></div>
+  <div class="kpi kg"><div class="kpi-lbl" id="k2l">Own Operations</div><div class="kpi-val" id="k2">—</div><div class="kpi-sub" id="k2s">flying own callsign</div></div>
+  <div class="kpi kam"><div class="kpi-lbl" id="k3l">On Ground</div><div class="kpi-val" id="k3">—</div><div class="kpi-sub" id="k3s">parked / maintenance</div></div>
+  <div class="kpi km"><div class="kpi-lbl">Fleet Tracked</div><div class="kpi-val" id="k4">—</div><div class="kpi-sub">across <span id="k4s">—</span> operators</div></div>
+</div>
 
-  <!-- Tab 2: Fleet Status -->
-  <div class="tab-content" id="tab-fleet">
-    <div class="filter-bar">
-      <button class="filter-btn active" onclick="filterFleet('all',this)">All</button>
-      <button class="filter-btn" onclick="filterFleet('acmi_active',this)">ACMI Active</button>
-      <button class="filter-btn" onclick="filterFleet('own_ops',this)">Own Ops</button>
-      <button class="filter-btn" onclick="filterFleet('on_ground',this)">On Ground</button>
-      <input class="search-input" id="fleet-search" placeholder="Search reg, operator..." oninput="renderFleet()">
-    </div>
-    <div class="data-table">
-      <div id="fleet-list"><div class="loading"><div class="spinner"></div>Loading...</div></div>
-    </div>
+<!-- ── Charts row ── -->
+<div class="charts-row">
+  <div class="cc">
+    <div class="cc-title">Fleet Status Distribution</div>
+    <div class="cc-mode" id="cm1"></div>
+    <div class="cc-wrap"><canvas id="cs" width="130" height="130"></canvas><div class="lgd" id="ls"></div></div>
   </div>
+  <div class="cc">
+    <div class="cc-title">ACMI Activity by Group</div>
+    <div class="cc-mode" id="cm2"></div>
+    <div class="cc-wrap"><canvas id="cg" width="130" height="130"></canvas><div class="lgd" id="lg"></div></div>
+  </div>
+  <div class="cc">
+    <div class="cc-title">Fleet Type Mix</div>
+    <div class="cc-mode" id="cm3"></div>
+    <div class="cc-wrap"><canvas id="ct" width="130" height="130"></canvas><div class="lgd" id="lt"></div></div>
+  </div>
+</div>
 
-  <!-- Tab 3: Operators -->
-  <div class="tab-content" id="tab-operators">
-    <div class="operator-grid" id="op-grid">
-      <div class="loading"><div class="spinner"></div>Loading...</div>
-    </div>
+<!-- ── Trend bar chart ── -->
+<div class="trend-card" id="trend-card">
+  <div class="trend-hdr">
+    <span class="trend-title">Daily Block Hours — ACMI vs Own Ops</span>
+    <span class="trend-sub" id="trend-sub"></span>
   </div>
+  <div class="bar-chart" id="bchart"></div>
+</div>
 
-  <!-- Tab 4: Daily Report -->
-  <div class="tab-content" id="tab-report">
-    <div id="report-banner" class="interval-banner" style="display:none;">
-      <div><div class="lbl">Reporting Period</div><div class="val" id="report-period">—</div></div>
-      <div><div class="lbl">Total Flights</div><div class="val" id="report-total-flights">—</div></div>
-      <div><div class="lbl">Total Block Hours</div><div class="val" id="report-total-bh">—</div></div>
-      <div><div class="lbl">ACMI Block Hours</div><div class="val" id="report-acmi-bh">—</div></div>
-    </div>
-    <div class="data-table">
-      <div id="report-list"><div class="empty">Daily report loads after the first overnight run.<br><span style="font-size:11px;margin-top:4px;display:block;">Check back tomorrow at 10:00 AM Lithuanian time.</span></div></div>
-    </div>
-  </div>
+<!-- ── Tabs ── -->
+<div class="tabs">
+  <div class="tab active" onclick="swTab('acmi',this)">ACMI Active</div>
+  <div class="tab"        onclick="swTab('fleet',this)">Fleet Status</div>
+  <div class="tab"        onclick="swTab('op',this)">Operators</div>
+  <div class="tab"        onclick="swTab('rep',this)">Daily Report</div>
+  <div class="tab"        onclick="swTab('cl',this)">Client Map</div>
+</div>
 
-  <!-- Tab 5: Client Map -->
-  <div class="tab-content" id="tab-clients">
-    <div class="client-grid" id="client-grid">
-      <div class="empty">Client map loads after the first overnight run.<br><span style="font-size:11px;margin-top:4px;display:block;">Check back tomorrow at 10:00 AM Lithuanian time.</span></div>
+<!-- Tab: ACMI Active -->
+<div class="tc active" id="tab-acmi">
+  <div class="dtable">
+    <div style="padding:11px 18px;border-bottom:1px solid var(--bdr);display:flex;align-items:center;justify-content:space-between">
+      <div style="font-size:12px;font-weight:600;display:flex;align-items:center;gap:7px"><div class="live-dot"></div><span id="acmi-title">Aircraft currently operating under a different airline's callsign</span></div>
+      <span class="mono-sm" id="acmi-count">—</span>
     </div>
+    <div id="acmi-list"><div class="loading"><div class="spinner"></div>Loading...</div></div>
   </div>
+</div>
+
+<!-- Tab: Fleet Status -->
+<div class="tc" id="tab-fleet">
+  <div class="fleet-filters">
+    <button class="fbtn act" onclick="setFleetF('all',this)">All</button>
+    <button class="fbtn" onclick="setFleetF('acmi_active',this)">ACMI Active</button>
+    <button class="fbtn" onclick="setFleetF('own_ops',this)">Own Ops</button>
+    <button class="fbtn" onclick="setFleetF('on_ground',this)">On Ground</button>
+    <input class="srch" id="fleet-srch" placeholder="Search reg, operator..." oninput="renderFleet()">
+  </div>
+  <div class="dtable">
+    <div id="fleet-list"><div class="loading"><div class="spinner"></div>Loading...</div></div>
+  </div>
+</div>
+
+<!-- Tab: Operators -->
+<div class="tc" id="tab-op">
+  <div class="range-note" id="op-note" style="display:none"><span>▸</span><span id="op-note-txt"></span></div>
+  <div class="op-grid" id="op-grid"><div class="loading"><div class="spinner"></div>Loading...</div></div>
+</div>
+
+<!-- Tab: Daily Report -->
+<div class="tc" id="tab-rep">
+  <div class="banner" id="rep-banner" style="display:none">
+    <div><div class="bl">Period</div><div class="bv" id="rb-period">—</div></div>
+    <div><div class="bl">Days</div><div class="bv" id="rb-days">—</div></div>
+    <div><div class="bl">Total Flights</div><div class="bv" id="rb-flt">—</div></div>
+    <div><div class="bl">Total BH</div><div class="bv" id="rb-tbh">—</div></div>
+    <div><div class="bl">ACMI BH</div><div class="bv" id="rb-abh">—</div></div>
+  </div>
+  <div class="dtable">
+    <div id="rep-list"><div class="empty">Daily report builds after the first overnight run.<br><span style="font-size:10px;margin-top:4px;display:block">Check back at 10:00 AM Lithuanian time.</span></div></div>
+  </div>
+</div>
+
+<!-- Tab: Client Map -->
+<div class="tc" id="tab-cl">
+  <div class="range-note" id="cl-note" style="display:none"><span>▸</span><span id="cl-note-txt"></span></div>
+  <div class="cl-grid" id="cl-grid"><div class="empty">Client map builds after the first overnight run.</div></div>
+</div>
 
 </main>
 
@@ -304,383 +378,672 @@
 </footer>
 
 <script>
-// ── State
-let snapData = null;
-let histData = null;
+// ═══════════════════════════════════════════════════════════════════
+// CONSTANTS
+// ═══════════════════════════════════════════════════════════════════
+const OP_COLORS = ['#00d4ff','#00cc66','#ffaa00','#ff6b6b','#a78bfa','#34d399','#f472b6','#60a5fa'];
+
+// ═══════════════════════════════════════════════════════════════════
+// STATE
+// ═══════════════════════════════════════════════════════════════════
+let snapData    = null;
+let allDays     = [];
+let opRegistry  = [];   // [{icao, name, group, colorIdx}] built from snap+history
+let selOps      = new Set();
+let filtDays    = [];
+let nDays       = 1;
+let activePreset = 'latest';
 let fleetFilter = 'all';
-let currentTab = 'acmi';
+let currentTab  = 'acmi';
 
-// ── Load
+// ═══════════════════════════════════════════════════════════════════
+// LOAD
+// ═══════════════════════════════════════════════════════════════════
 async function loadAll() {
+  try { const r = await fetch('data/acmi_data.json');   if(r.ok) snapData = await r.json(); } catch(e){}
   try {
-    const r1 = await fetch('data/acmi_data.json');
-    if (r1.ok) snapData = await r1.json();
-  } catch(e) {}
+    const r = await fetch('data/acmi_history.json');
+    if(r.ok) {
+      const raw = await r.json();
+      if(Array.isArray(raw.days))       allDays = raw.days.sort((a,b)=>b.report_date.localeCompare(a.report_date));
+      else if(raw.report_date)          allDays = [raw];
+    }
+  } catch(e){}
 
-  try {
-    const r2 = await fetch('data/acmi_history.json');
-    if (r2.ok) histData = await r2.json();
-  } catch(e) {}
+  if(!snapData && allDays.length===0) { showError(); return; }
 
-  if (!snapData) { showGlobalError(); return; }
-  render();
+  buildOpRegistry();
+  setDateBounds();
+  setPre('latest', document.querySelector('.pbtn.act'));
 }
 
-function showGlobalError() {
-  ['acmi-list','fleet-list','op-grid','report-list','client-grid'].forEach(id => {
-    document.getElementById(id).innerHTML = `<div class="empty" style="color:var(--red)">No data — run the fetch script first.</div>`;
+function showError() {
+  ['acmi-list','fleet-list','op-grid','rep-list','cl-grid'].forEach(id=>{
+    const el=document.getElementById(id);
+    if(el) el.innerHTML=`<div class="empty" style="color:var(--red)">No data — run fetch script first.</div>`;
   });
-  document.getElementById('live-status').textContent = 'no data';
+  document.getElementById('hdr-status').textContent='no data';
 }
 
-// ── Main render
-function render() {
-  const fleet = snapData.fleet || [];
-  const sum   = snapData.summary || {};
-  const lu    = snapData.last_updated ? new Date(snapData.last_updated) : null;
+// ═══════════════════════════════════════════════════════════════════
+// BUILD OPERATOR REGISTRY from snap + history
+// ═══════════════════════════════════════════════════════════════════
+function buildOpRegistry() {
+  const map = {};
+  // From snapshot
+  (snapData?.fleet||[]).forEach(a=>{
+    const key = a.group || a.owner_name;
+    if(!map[key]) map[key]={name:a.owner_name, group:key, icaos:new Set()};
+    map[key].icaos.add(a.owner_icao);
+  });
+  // From history
+  allDays.forEach(d=>{
+    Object.keys(d.operator_summaries||{}).forEach(g=>{
+      if(!map[g]) map[g]={name:g, group:g, icaos:new Set()};
+    });
+    (d.fleet||[]).forEach(a=>{
+      const key = a.group||a.owner_name;
+      if(!map[key]) map[key]={name:a.owner_name||key, group:key, icaos:new Set()};
+      map[key].icaos.add(a.owner_icao);
+    });
+  });
 
-  document.getElementById('live-status').textContent   = 'data loaded';
-  document.getElementById('aircraft-count').textContent = `${fleet.length} aircraft`;
-  document.getElementById('last-updated').textContent   = lu ? lu.toUTCString().replace(' GMT',' UTC') : '—';
-  document.getElementById('report-interval').textContent =
-    snapData.report_date
-      ? `${snapData.report_date}  ${(snapData.interval_from||'').split(' ')[1]||''} → ${(snapData.interval_to||'').split(' ')[1]||''} LT`
-      : '—';
+  opRegistry = Object.entries(map).map(([group,info],i)=>({
+    group, name:info.name, icaos:[...info.icaos], colorIdx: i % OP_COLORS.length
+  }));
 
-  document.getElementById('stat-acmi').textContent   = sum.acmi_active   ?? '—';
-  document.getElementById('stat-own').textContent    = sum.own_ops        ?? '—';
-  document.getElementById('stat-ground').textContent = sum.on_ground      ?? '—';
-  document.getElementById('stat-total').textContent  = sum.total_aircraft ?? fleet.length;
-  document.getElementById('stat-ops').textContent    = [...new Set(fleet.map(a=>a.owner_icao))].length;
+  selOps = new Set(opRegistry.map(o=>o.group));
+  buildPills();
+}
 
+// ═══════════════════════════════════════════════════════════════════
+// OPERATOR PILLS
+// ═══════════════════════════════════════════════════════════════════
+function buildPills() {
+  const el = document.getElementById('op-pills');
+  el.innerHTML = opRegistry.map(o=>`
+    <button class="op-pill sel c${o.colorIdx}" id="pill-${CSS.escape(o.group)}" onclick="toggleOp('${o.group.replace(/'/g,"\\'")}')">
+      <span class="pill-dot"></span>
+      <span>${o.name}</span>
+      <span class="pill-icao">${o.icaos.join('/')}</span>
+    </button>`).join('');
+  updateChips();
+}
+
+function toggleOp(group) {
+  if(selOps.has(group)) {
+    if(selOps.size===1) return;
+    selOps.delete(group);
+  } else {
+    selOps.add(group);
+  }
+  const o = opRegistry.find(x=>x.group===group);
+  if(o) document.getElementById('pill-'+CSS.escape(group))?.classList.toggle('sel', selOps.has(group));
+  updateChips();
+  renderAll();
+}
+
+function selectAllOps() {
+  selOps = new Set(opRegistry.map(o=>o.group));
+  opRegistry.forEach(o=>document.getElementById('pill-'+CSS.escape(o.group))?.classList.add('sel'));
+  updateChips();
+  renderAll();
+}
+
+function clearOps() {
+  const first = opRegistry[0];
+  if(!first) return;
+  selOps = new Set([first.group]);
+  opRegistry.forEach(o=>{
+    const el=document.getElementById('pill-'+CSS.escape(o.group));
+    el?.classList.toggle('sel', o.group===first.group);
+  });
+  updateChips();
+  renderAll();
+}
+
+function updateChips() {
+  const el = document.getElementById('active-chips');
+  if(selOps.size===opRegistry.length) {
+    el.innerHTML='<span class="all-sel-note">All operators selected</span>';
+    return;
+  }
+  el.innerHTML = [...selOps].map(g=>{
+    const o = opRegistry.find(x=>x.group===g);
+    if(!o) return '';
+    return `<span class="sum-chip" onclick="toggleOp('${g.replace(/'/g,"\\'")}')">
+      <span style="width:6px;height:6px;border-radius:50%;background:${OP_COLORS[o.colorIdx]};flex-shrink:0"></span>
+      ${o.name} <span class="cx">✕</span>
+    </span>`;
+  }).join('');
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// DATE LOGIC
+// ═══════════════════════════════════════════════════════════════════
+function setDateBounds() {
+  if(allDays.length===0) return;
+  const dates = allDays.map(d=>d.report_date).sort();
+  const min=dates[0], max=dates[dates.length-1];
+  ['df','dt'].forEach(id=>{
+    document.getElementById(id).min=min;
+    document.getElementById(id).max=max;
+  });
+}
+
+function setPre(p, btn) {
+  activePreset = p;
+  document.querySelectorAll('.pbtn').forEach(b=>b.classList.remove('act'));
+  if(btn) btn.classList.add('act');
+
+  const sorted = allDays.map(d=>d.report_date).sort();
+  const latest   = sorted[sorted.length-1] || today();
+  const earliest = sorted[0]               || today();
+
+  let from, to;
+  if(p==='latest')     { from=to=latest; }
+  else if(p==='7d')    { to=latest; from=offsetDate(latest,-6); }
+  else if(p==='30d')   { to=latest; from=offsetDate(latest,-29); }
+  else if(p==='all')   { from=earliest; to=latest; }
+
+  document.getElementById('df').value = from||'';
+  document.getElementById('dt').value = to||'';
+  applyRange(from, to);
+}
+
+function clearPre() {
+  activePreset='custom';
+  document.querySelectorAll('.pbtn').forEach(b=>b.classList.remove('act'));
+}
+
+function applyCustom() {
+  const f=document.getElementById('df').value, t=document.getElementById('dt').value;
+  if(!f||!t) return;
+  applyRange(f,t);
+}
+
+function applyRange(from, to) {
+  if(!from||!to) { filtDays=allDays.slice(0,1); nDays=1; }
+  else {
+    filtDays = allDays.filter(d=>d.report_date>=from && d.report_date<=to);
+    nDays    = filtDays.length;
+  }
+  const disp = nDays===0  ? 'No data in range'
+             : nDays===1  ? `<strong>${filtDays[0]?.report_date||from}</strong> · 1 day`
+             : `<strong>${from}</strong> → <strong>${to}</strong> · ${nDays} days`;
+  document.getElementById('dr-disp').innerHTML = disp;
+  renderAll();
+}
+
+function today() { return new Date().toISOString().slice(0,10); }
+function offsetDate(d,n) { const x=new Date(d); x.setDate(x.getDate()+n); return x.toISOString().slice(0,10); }
+
+// ═══════════════════════════════════════════════════════════════════
+// FILTER helpers — filter data by selOps
+// ═══════════════════════════════════════════════════════════════════
+function opSelected(group) { return selOps.has(group); }
+
+function filterSnap(fleet) {
+  return fleet.filter(a=>opSelected(a.group||a.owner_name));
+}
+
+function filterAggFleet(fleet) {
+  return fleet.filter(r=>opSelected(r.group||r.owner_name));
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// AGGREGATE filtered days → single summary
+// ═══════════════════════════════════════════════════════════════════
+function aggregateDays(days) {
+  if(!days||days.length===0) return null;
+  if(days.length===1) return days[0];
+
+  const fleetMap={}, opSum={}, clientMap={};
+
+  for(const day of days) {
+    for(const ac of (day.fleet||[])) {
+      const key=ac.registration;
+      if(!fleetMap[key]) fleetMap[key]={...ac, total_flights:0,total_bh:0,acmi_flights:0,acmi_bh:0,clients:{},routes:new Set()};
+      const e=fleetMap[key];
+      e.total_flights+=ac.total_flights||0; e.total_bh+=ac.total_bh||0;
+      e.acmi_flights+=ac.acmi_flights||0;   e.acmi_bh+=ac.acmi_bh||0;
+      (ac.routes||[]).forEach(r=>e.routes.add(r));
+      for(const c of (ac.clients||[])) {
+        if(!e.clients[c.icao]) e.clients[c.icao]={icao:c.icao,name:c.name,flights:0,bh:0};
+        e.clients[c.icao].flights+=c.flights||0; e.clients[c.icao].bh+=c.bh||0;
+      }
+    }
+    for(const [g,d] of Object.entries(day.operator_summaries||{})) {
+      if(!opSum[g]) opSum[g]={total_flights:0,total_bh:0,acmi_flights:0,acmi_bh:0,active_aircraft:0};
+      opSum[g].total_flights+=d.total_flights||0; opSum[g].total_bh+=d.total_bh||0;
+      opSum[g].acmi_flights+=d.acmi_flights||0;   opSum[g].acmi_bh+=d.acmi_bh||0;
+      opSum[g].active_aircraft=Math.max(opSum[g].active_aircraft,d.active_aircraft||0);
+    }
+    const cm=day.client_map||{};
+    for(const [icao,val] of Object.entries(cm)) {
+      const provs=val.providers||val, cname=val.name||icao;
+      if(!clientMap[icao]) clientMap[icao]={name:cname,providers:{}};
+      for(const [prov,data] of Object.entries(provs)) {
+        if(!clientMap[icao].providers[prov]) clientMap[icao].providers[prov]={flights:0,bh:0,aircraft_count:0,aircraft:new Set()};
+        const p=clientMap[icao].providers[prov];
+        p.flights+=data.flights||0; p.bh+=data.bh||0;
+        p.aircraft_count=Math.max(p.aircraft_count,data.aircraft_count||0);
+        (data.aircraft||[]).forEach(r=>p.aircraft.add(r));
+      }
+    }
+  }
+
+  const fleet=Object.values(fleetMap).map(e=>({
+    ...e, total_bh:r1(e.total_bh), acmi_bh:r1(e.acmi_bh),
+    routes:[...e.routes],
+    clients:Object.values(e.clients).sort((a,b)=>b.bh-a.bh).map(c=>({...c,bh:r1(c.bh)})),
+  }));
+
+  const cmOut={};
+  for(const [icao,val] of Object.entries(clientMap)) {
+    cmOut[icao]={name:val.name, providers:{}};
+    for(const [prov,data] of Object.entries(val.providers))
+      cmOut[icao].providers[prov]={flights:data.flights,bh:r1(data.bh),aircraft_count:data.aircraft_count,aircraft:[...data.aircraft].sort()};
+  }
+
+  const s=[...days].sort((a,b)=>a.report_date.localeCompare(b.report_date));
+  return {
+    report_date:days[0].report_date, _nDays:days.length,
+    interval_from:s[0].report_date+' 00:01', interval_to:s[s.length-1].report_date+' 23:59',
+    fleet, operator_summaries:opSum, client_map:cmOut,
+  };
+}
+
+function r1(v){ return Math.round((v||0)*10)/10; }
+
+// ═══════════════════════════════════════════════════════════════════
+// RENDER ALL
+// ═══════════════════════════════════════════════════════════════════
+function renderAll() {
+  const isLatest = (activePreset==='latest'||nDays<=1);
+  const multiDay = nDays>1;
+  const agg      = aggregateDays(filtDays);
+  const snap     = snapData?.fleet||[];
+  const snapFilt = filterSnap(snap);
+  const aggFilt  = agg ? {...agg, fleet: filterAggFleet(agg.fleet||[]), operator_summaries: filterOpSum(agg.operator_summaries||{}), client_map: filterClientMap(agg.client_map||{}) } : null;
+
+  // Header
+  document.getElementById('hdr-status').textContent  = 'data loaded';
+  document.getElementById('hdr-count').textContent   = `${snap.length} aircraft`;
+  document.getElementById('hdr-updated').textContent = snapData?.last_updated||'—';
+  document.getElementById('hdr-interval').textContent =
+    aggFilt ? (multiDay
+      ? `${aggFilt.interval_from?.split(' ')[0]} → ${aggFilt.interval_to?.split(' ')[0]} LT`
+      : `${aggFilt.report_date} · ${(aggFilt.interval_from||'').split(' ')[1]||''} → ${(aggFilt.interval_to||'').split(' ')[1]||''} LT`)
+    : (snapData?.report_date||'—');
   document.getElementById('footer-txt').textContent =
-    `Interval: ${snapData.interval_from||'—'} → ${snapData.interval_to||'—'} LT · Updated: ${lu?lu.toLocaleString():'—'}`;
+    `Updated: ${snapData?.last_updated||'—'} · Refreshes daily at 10:00 AM LT`;
 
-  renderChartsForTab(currentTab);
-  renderAcmi(fleet);
+  // KPI cards
+  if(isLatest && snapData) {
+    const sum=snapData.summary||{};
+    const acmiN = snapFilt.filter(a=>a.status==='acmi_active').length;
+    const ownN  = snapFilt.filter(a=>a.status==='own_ops').length;
+    const gndN  = snapFilt.filter(a=>a.status==='on_ground'||a.status==='unknown').length;
+    setKPI('k1','ACMI Active',acmiN,'currently wet-leased');
+    setKPI('k2','Own Operations',ownN,'flying own callsign');
+    setKPI('k3','On Ground',gndN,'parked / maintenance');
+    setKPI('k4',null,snapFilt.length,null);
+    document.getElementById('k4s').textContent = selOps.size + (selOps.size===opRegistry.length?' operators':' operator'+(selOps.size>1?'s':''));
+  } else if(aggFilt) {
+    const totBH  = r1(aggFilt.fleet.reduce((s,r)=>s+r.total_bh,0));
+    const acmiBH = r1(aggFilt.fleet.reduce((s,r)=>s+r.acmi_bh,0));
+    const totFlt = aggFilt.fleet.reduce((s,r)=>s+r.total_flights,0);
+    const acmiFlt= aggFilt.fleet.reduce((s,r)=>s+r.acmi_flights,0);
+    setKPI('k1','ACMI Block Hours',acmiBH+'h',nDays+' days aggregated');
+    setKPI('k2','Total Flights',totFlt,'all selected operators');
+    setKPI('k3','Total BH',totBH+'h','block hours in range');
+    setKPI('k4',null,snap.length,null);
+    document.getElementById('k4s').textContent = selOps.size+(selOps.size===opRegistry.length?' operators':' operator'+(selOps.size>1?'s':''));
+  }
+
+  renderTrend(filtDays, aggFilt);
+  renderCharts(currentTab, aggFilt, snapFilt);
+  renderAcmi(snapFilt, aggFilt);
   renderFleet();
-  renderOperators(fleet);
-  if (histData) {
-    renderReport(histData);
-    renderClients(histData);
-  }
+  renderOperators(snapFilt, aggFilt, multiDay);
+  if(aggFilt) { renderReport(aggFilt); renderClients(aggFilt); }
 }
 
-// ── Charts — switch data source based on active tab
-function renderChartsForTab(tab) {
-  const isReport = tab === 'report';
-  const modeLabel = isReport ? '▸ Daily Report view' : '';
-
-  ['status','groups','types'].forEach(id => {
-    const el = document.getElementById(`chart-mode-${id}`);
-    if (el) { el.textContent = modeLabel; el.style.display = isReport ? 'block' : 'none'; }
-  });
-
-  if (isReport && histData) {
-    renderChartsFromHistory(histData);
-  } else if (snapData) {
-    renderChartsFromSnap(snapData.fleet || []);
-  }
+function setKPI(id,lbl,val,sub) {
+  if(lbl) document.getElementById(id+'l').textContent=lbl;
+  document.getElementById(id).textContent=val;
+  if(sub) document.getElementById(id+'s').textContent=sub;
 }
 
-function drawDonut(id, legendId, segs) {
-  const c = document.getElementById(id);
-  if (!c) return;
-  const ctx = c.getContext('2d');
-  const cx = c.width/2, cy = c.height/2, r = Math.min(cx,cy)-8;
-  const total = segs.reduce((s,x)=>s+x.v,0);
+// Filter operator_summaries by selOps
+function filterOpSum(ops) {
+  const out={};
+  for(const [g,d] of Object.entries(ops)) { if(opSelected(g)) out[g]=d; }
+  return out;
+}
+
+// Filter client_map by provider (selOps)
+function filterClientMap(cm) {
+  const out={};
+  for(const [icao,val] of Object.entries(cm)) {
+    const provs=val.providers||val;
+    const filtP={};
+    for(const [prov,data] of Object.entries(provs)) { if(opSelected(prov)) filtP[prov]=data; }
+    if(Object.keys(filtP).length>0) out[icao]={name:val.name||icao, providers:filtP};
+  }
+  return out;
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// TREND BAR CHART
+// ═══════════════════════════════════════════════════════════════════
+function renderTrend(days, aggFilt) {
+  const card=document.getElementById('trend-card');
+  if(days.length<2) { card.style.display='none'; return; }
+  card.style.display='block';
+
+  const sorted=[...days].sort((a,b)=>a.report_date.localeCompare(b.report_date));
+  const maxBH=Math.max(...sorted.map(d=>{
+    const ops=filterOpSum(d.operator_summaries||{});
+    return Object.values(ops).reduce((s,v)=>s+v.total_bh,0);
+  }),1);
+
+  document.getElementById('trend-sub').textContent=`${sorted.length} days · max ${Math.round(maxBH)}h`;
+
+  document.getElementById('bchart').innerHTML=sorted.map(d=>{
+    const ops=filterOpSum(d.operator_summaries||{});
+    const totBH =Object.values(ops).reduce((s,v)=>s+v.total_bh,0);
+    const acmiBH=Object.values(ops).reduce((s,v)=>s+v.acmi_bh,0);
+    const ownBH =totBH-acmiBH;
+    const ah=Math.round((acmiBH/maxBH)*68), oh=Math.round((ownBH/maxBH)*68);
+    const short=d.report_date.slice(5);
+    return `<div class="bar-col">
+      <div class="btt"><div class="td">${d.report_date}</div><div class="ta">ACMI: ${r1(acmiBH)}h</div><div class="to">Own: ${r1(ownBH)}h</div></div>
+      ${ah>0?`<div class="bseg" style="height:${ah}px;background:var(--acc);opacity:.85"></div>`:''}
+      ${oh>0?`<div class="bseg" style="height:${oh}px;background:var(--grn);opacity:.7"></div>`:''}
+      ${ah===0&&oh===0?`<div class="bseg" style="height:2px;background:var(--bdr)"></div>`:''}
+      <div class="bdate">${short}</div>
+    </div>`;
+  }).join('');
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// DONUT CHARTS
+// ═══════════════════════════════════════════════════════════════════
+function drawDonut(id,lgId,segs,valSuffix='') {
+  const c=document.getElementById(id); if(!c) return;
+  const ctx=c.getContext('2d'),cx=c.width/2,cy=c.height/2,r=Math.min(cx,cy)-6;
+  const tot=segs.reduce((s,x)=>s+x.v,0);
   ctx.clearRect(0,0,c.width,c.height);
-  if (!total) { ctx.fillStyle='#1e2d42'; ctx.beginPath(); ctx.arc(cx,cy,r,0,Math.PI*2); ctx.fill(); return; }
-  let a = -Math.PI/2;
-  segs.forEach(s => {
-    const slice = (s.v/total)*Math.PI*2;
-    ctx.beginPath(); ctx.moveTo(cx,cy); ctx.arc(cx,cy,r,a,a+slice); ctx.closePath();
-    ctx.fillStyle = s.c; ctx.fill();
-    ctx.strokeStyle = '#060910'; ctx.lineWidth = 2; ctx.stroke();
-    a += slice;
-  });
-  ctx.beginPath(); ctx.arc(cx,cy,r*.55,0,Math.PI*2); ctx.fillStyle='#0d1320'; ctx.fill();
-  const lg = document.getElementById(legendId);
-  if (lg) lg.innerHTML = segs.map(s=>`
-    <div class="legend-item">
-      <div class="legend-dot" style="background:${s.c}"></div>
-      <span class="legend-label">${s.l}</span>
-      <span class="legend-value">${s.v}</span>
-    </div>`).join('');
+  if(!tot){ctx.fillStyle='#1e2d42';ctx.beginPath();ctx.arc(cx,cy,r,0,Math.PI*2);ctx.fill();return;}
+  let a=-Math.PI/2;
+  segs.forEach(s=>{const sl=(s.v/tot)*Math.PI*2;ctx.beginPath();ctx.moveTo(cx,cy);ctx.arc(cx,cy,r,a,a+sl);ctx.closePath();ctx.fillStyle=s.c;ctx.fill();ctx.strokeStyle='#060910';ctx.lineWidth=2;ctx.stroke();a+=sl;});
+  ctx.beginPath();ctx.arc(cx,cy,r*.55,0,Math.PI*2);ctx.fillStyle='#0d1320';ctx.fill();
+  const lg=document.getElementById(lgId);
+  if(lg) lg.innerHTML=segs.map(s=>`<div class="lgd-item"><div class="lgd-dot" style="background:${s.c}"></div><span class="lgd-lbl">${s.l}</span><span class="lgd-val">${s.v}${valSuffix}</span></div>`).join('');
 }
 
-// Charts from live snapshot data
-function renderChartsFromSnap(fleet) {
-  const acmi  = fleet.filter(a=>a.status==='acmi_active').length;
-  const own   = fleet.filter(a=>a.status==='own_ops').length;
-  const gnd   = fleet.filter(a=>a.status==='on_ground').length;
-  const unk   = fleet.filter(a=>a.status==='unknown').length;
-  drawDonut('chart-status','legend-status',[
-    {l:'ACMI Active',v:acmi,c:'#00d4ff'},
-    {l:'Own Ops',    v:own, c:'#00ff88'},
-    {l:'On Ground',  v:gnd, c:'#334155'},
-    {l:'No Data',    v:unk, c:'#1e2d42'},
-  ].filter(s=>s.v>0));
+function renderCharts(tab, aggFilt, snapFilt) {
+  const useHist = (tab==='rep'||tab==='cl'||tab==='op') && aggFilt;
+  const modeLabel = useHist ? (aggFilt._nDays>1?`▸ ${aggFilt._nDays}-day aggregate`:'▸ daily report') : '';
+  ['cm1','cm2','cm3'].forEach(id=>{const el=document.getElementById(id);el.textContent=modeLabel;el.style.display=(modeLabel&&useHist)?'block':'none';});
 
-  const byGroup = {};
-  fleet.filter(a=>a.status==='acmi_active').forEach(a=>{
-    const g=a.group||a.owner_name; byGroup[g]=(byGroup[g]||0)+1;
-  });
-  const gc = ['#00d4ff','#00ff88','#ffaa00','#ff6b6b','#a78bfa','#34d399','#f472b6','#60a5fa'];
-  const gSegs = Object.entries(byGroup).sort((a,b)=>b[1]-a[1]).slice(0,8).map(([l,v],i)=>({l,v,c:gc[i%gc.length]}));
-  drawDonut('chart-groups','legend-groups', gSegs.length ? gSegs : [{l:'No ACMI',v:1,c:'#1e2d42'}]);
-  if (!gSegs.length) document.getElementById('legend-groups').innerHTML='<div style="color:var(--muted);font-size:12px">No ACMI detected</div>';
+  if(useHist) {
+    const fleet=aggFilt.fleet||[], ops=aggFilt.operator_summaries||{};
+    const acmiAc=fleet.filter(r=>r.acmi_flights>0).length;
+    const ownAc =fleet.filter(r=>r.total_flights>0&&r.acmi_flights===0).length;
+    const noAc  =fleet.filter(r=>r.total_flights===0).length;
+    drawDonut('cs','ls',[{l:'ACMI Active',v:acmiAc,c:'#00d4ff'},{l:'Own Ops Only',v:ownAc,c:'#00cc66'},{l:'No Flights',v:noAc,c:'#334155'}].filter(s=>s.v>0));
 
-  const byType = {};
-  fleet.forEach(a=>{ const t=a.type||'?'; byType[t]=(byType[t]||0)+1; });
-  const tc = ['#00d4ff','#00ff88','#ffaa00','#ff6b6b','#a78bfa','#34d399'];
-  const tSegs = Object.entries(byType).sort((a,b)=>b[1]-a[1]).slice(0,6).map(([l,v],i)=>({l,v,c:tc[i%tc.length]}));
-  drawDonut('chart-types','legend-types',tSegs);
+    const gSegs=Object.entries(ops).filter(([,v])=>v.acmi_bh>0).sort((a,b)=>b[1].acmi_bh-a[1].acmi_bh).slice(0,8);
+    const gi=opRegistry.reduce((m,o)=>{m[o.group]=o.colorIdx;return m},{});
+    drawDonut('cg','lg',gSegs.map(([g,v])=>({l:g,v:r1(v.acmi_bh),c:OP_COLORS[gi[g]??0]})),'h');
+    if(!gSegs.length) document.getElementById('lg').innerHTML='<div style="color:var(--mut);font-size:11px">No ACMI activity</div>';
+
+    const byType={};
+    fleet.forEach(r=>{if(r.total_flights>0){const t=r.type||'?';byType[t]=(byType[t]||0)+r.total_flights;}});
+    drawDonut('ct','lt',Object.entries(byType).sort((a,b)=>b[1]-a[1]).slice(0,6).map(([l,v],i)=>({l,v,c:OP_COLORS[i%OP_COLORS.length]})),' flt');
+  } else {
+    const acmi=snapFilt.filter(a=>a.status==='acmi_active').length;
+    const own =snapFilt.filter(a=>a.status==='own_ops').length;
+    const gnd =snapFilt.filter(a=>a.status==='on_ground').length;
+    const unk =snapFilt.filter(a=>a.status==='unknown').length;
+    drawDonut('cs','ls',[{l:'ACMI Active',v:acmi,c:'#00d4ff'},{l:'Own Ops',v:own,c:'#00cc66'},{l:'On Ground',v:gnd,c:'#334155'},{l:'No Data',v:unk,c:'#1e2d42'}].filter(s=>s.v>0));
+
+    const byGrp={};
+    snapFilt.filter(a=>a.status==='acmi_active').forEach(a=>{const g=a.group||a.owner_name;byGrp[g]=(byGrp[g]||0)+1;});
+    const gi=opRegistry.reduce((m,o)=>{m[o.group]=o.colorIdx;return m},{});
+    const gSegs=Object.entries(byGrp).sort((a,b)=>b[1]-a[1]).slice(0,8).map(([g,v])=>({l:g,v,c:OP_COLORS[gi[g]??0]}));
+    drawDonut('cg','lg',gSegs.length?gSegs:[{l:'No ACMI',v:1,c:'#1e2d42'}]);
+    if(!gSegs.length) document.getElementById('lg').innerHTML='<div style="color:var(--mut);font-size:11px">No ACMI detected</div>';
+
+    const byType={};
+    snapFilt.forEach(a=>{const t=a.type||'?';byType[t]=(byType[t]||0)+1;});
+    drawDonut('ct','lt',Object.entries(byType).sort((a,b)=>b[1]-a[1]).slice(0,6).map(([l,v],i)=>({l,v,c:OP_COLORS[i%OP_COLORS.length]})));
+  }
 }
 
-// Charts from daily history data — shows BH instead of aircraft counts
-function renderChartsFromHistory(hist) {
-  const fleet = hist.fleet || [];
-  const ops   = hist.operator_summaries || {};
-
-  // Status: active vs no flights
-  const withFlights  = fleet.filter(r=>r.total_flights>0).length;
-  const acmiFlights  = fleet.filter(r=>r.acmi_flights>0).length;
-  const ownFlights   = fleet.filter(r=>r.total_flights>0 && r.acmi_flights===0).length;
-  const noFlights    = fleet.filter(r=>r.total_flights===0).length;
-  drawDonut('chart-status','legend-status',[
-    {l:'ACMI Flights',  v:acmiFlights, c:'#00d4ff'},
-    {l:'Own Ops Flights',v:ownFlights, c:'#00ff88'},
-    {l:'No Flights',    v:noFlights,  c:'#334155'},
-  ].filter(s=>s.v>0));
-
-  // Groups: by ACMI block hours
-  const gc = ['#00d4ff','#00ff88','#ffaa00','#ff6b6b','#a78bfa','#34d399','#f472b6','#60a5fa'];
-  const gSegs = Object.entries(ops)
-    .filter(([,v])=>v.acmi_bh>0)
-    .sort((a,b)=>b[1].acmi_bh-a[1].acmi_bh)
-    .slice(0,8)
-    .map(([l,v],i)=>({l, v: parseFloat(v.acmi_bh.toFixed(1)), c:gc[i%gc.length]}));
-  // Override legend to show BH label
-  drawDonut('chart-groups','legend-groups', gSegs.length ? gSegs : [{l:'No ACMI',v:1,c:'#1e2d42'}]);
-  if (gSegs.length) {
-    document.getElementById('legend-groups').innerHTML = gSegs.map(s=>`
-      <div class="legend-item">
-        <div class="legend-dot" style="background:${s.c}"></div>
-        <span class="legend-label">${s.l}</span>
-        <span class="legend-value">${s.v} BH</span>
+// ═══════════════════════════════════════════════════════════════════
+// TAB: ACMI ACTIVE
+// ═══════════════════════════════════════════════════════════════════
+function renderAcmi(snapFilt, aggFilt) {
+  const isLatest = activePreset==='latest'||nDays<=1;
+  const el=document.getElementById('acmi-list');
+  if(isLatest) {
+    document.getElementById('acmi-title').textContent='Aircraft currently operating under a different airline\'s callsign';
+    const acmi=snapFilt.filter(a=>a.status==='acmi_active');
+    document.getElementById('acmi-count').textContent=`${acmi.length} aircraft`;
+    if(!acmi.length){el.innerHTML=`<div class="empty">No ACMI operations detected for selected operators.</div>`;return;}
+    el.innerHTML=
+      `<div class="trow thead acols"><span>Reg</span><span>Owner</span><span>Operating as</span><span>Route</span><span>Callsign</span><span>Type</span></div>`+
+      acmi.map(a=>`<div class="trow acols">
+        <span class="reg">${a.registration}</span>
+        <div class="own"><span class="own-n">${a.owner_name}</span><span class="own-s">${a.owner_icao}</span></div>
+        <span><div class="obadge">${a.current_operator_name||a.current_operator_icao||'—'}</div></span>
+        <span class="mono-md">${fmtRoute(a.last_route)}</span>
+        <span class="mono-sm">${a.callsign||'—'}</span>
+        <span><span class="tbadge">${a.type}</span></span>
       </div>`).join('');
   } else {
-    document.getElementById('legend-groups').innerHTML='<div style="color:var(--muted);font-size:12px">No ACMI activity</div>';
-  }
-
-  // Types: by total flights yesterday
-  const byType = {};
-  fleet.forEach(r=>{ if(r.total_flights>0){ const t=r.type||'?'; byType[t]=(byType[t]||0)+r.total_flights; }});
-  const tc = ['#00d4ff','#00ff88','#ffaa00','#ff6b6b','#a78bfa','#34d399'];
-  const tSegs = Object.entries(byType).sort((a,b)=>b[1]-a[1]).slice(0,6).map(([l,v],i)=>({l,v,c:tc[i%tc.length]}));
-  drawDonut('chart-types','legend-types', tSegs.length ? tSegs : [{l:'No data',v:1,c:'#1e2d42'}]);
-  if (tSegs.length) {
-    document.getElementById('legend-types').innerHTML = tSegs.map(s=>`
-      <div class="legend-item">
-        <div class="legend-dot" style="background:${s.c}"></div>
-        <span class="legend-label">${s.l}</span>
-        <span class="legend-value">${s.v} flt</span>
+    if(!aggFilt){el.innerHTML=`<div class="empty">No history in range.</div>`;return;}
+    document.getElementById('acmi-title').textContent=`Aircraft with ACMI activity · ${nDays} days · selected operators`;
+    const acmiAc=(aggFilt.fleet||[]).filter(r=>r.acmi_flights>0).sort((a,b)=>b.acmi_bh-a.acmi_bh);
+    document.getElementById('acmi-count').textContent=`${acmiAc.length} aircraft`;
+    if(!acmiAc.length){el.innerHTML=`<div class="empty">No ACMI activity in this period for selected operators.</div>`;return;}
+    el.innerHTML=
+      `<div class="trow thead" style="grid-template-columns:90px 1fr 140px 80px 80px 70px"><span>Reg</span><span>Owner</span><span>Top Client</span><span>ACMI Flt</span><span>ACMI BH</span><span>Type</span></div>`+
+      acmiAc.map(a=>`<div class="trow" style="grid-template-columns:90px 1fr 140px 80px 80px 70px">
+        <span class="reg">${a.registration}</span>
+        <div class="own"><span class="own-n">${a.owner_name}</span><span class="own-s">${a.group!==a.owner_name?a.group:a.owner_icao}</span></div>
+        <span>${a.clients[0]?`<div class="obadge">${a.clients[0].name||a.clients[0].icao}</div>`:'—'}</span>
+        <span class="mono-md">${a.acmi_flights}</span>
+        <span class="bh">${a.acmi_bh}h</span>
+        <span><span class="tbadge">${a.type}</span></span>
       </div>`).join('');
   }
 }
 
-// ── Tab 1: ACMI Active
-function renderAcmi(fleet) {
-  const acmi = fleet.filter(a=>a.status==='acmi_active');
-  document.getElementById('acmi-count').textContent = `${acmi.length} aircraft`;
-  const el = document.getElementById('acmi-list');
-  if (!acmi.length) {
-    el.innerHTML = `<div class="empty">No aircraft currently detected on ACMI operations.</div>`;
-    return;
-  }
-  el.innerHTML =
-    `<div class="t-row t-head acmi-cols"><span>Reg</span><span>Owner</span><span>Operating As</span><span>Route</span><span>Callsign</span><span>Type</span></div>` +
-    acmi.map(a=>`
-    <div class="t-row acmi-cols">
-      <span class="reg">${a.registration}</span>
-      <div class="owner"><span class="owner-name">${a.owner_name}</span><span class="owner-sub">${a.group!==a.owner_name?a.group:a.owner_icao}</span></div>
-      <span><div class="op-badge" title="${a.current_operator_icao||''}">${a.current_operator_name||a.current_operator_icao||'—'}</div></span>
-      <span class="route">${fmtRoute(a.last_route)}</span>
-      <span class="mono-sm">${a.callsign||'—'}</span>
-      <span><span class="type-badge">${a.type}</span></span>
-    </div>`).join('');
-}
-
-// ── Tab 2: Fleet Status
+// ═══════════════════════════════════════════════════════════════════
+// TAB: FLEET STATUS (always live snapshot, filtered by selOps)
+// ═══════════════════════════════════════════════════════════════════
 function renderFleet() {
-  const fleet = snapData?.fleet || [];
-  const search = (document.getElementById('fleet-search')?.value||'').toLowerCase();
-  const filtered = fleet.filter(a=>{
-    const ms = fleetFilter==='all' || a.status===fleetFilter;
-    const mq = !search || a.registration.toLowerCase().includes(search) ||
-      (a.owner_name||'').toLowerCase().includes(search) ||
-      (a.current_operator_icao||'').toLowerCase().includes(search) ||
-      (a.current_operator_name||'').toLowerCase().includes(search);
-    return ms && mq;
+  const snap=snapData?.fleet||[];
+  const srch=(document.getElementById('fleet-srch')?.value||'').toLowerCase();
+  const filt=filterSnap(snap).filter(a=>{
+    const mf=fleetFilter==='all'||a.status===fleetFilter;
+    const mq=!srch||a.registration.toLowerCase().includes(srch)||(a.owner_name||'').toLowerCase().includes(srch)||(a.current_operator_name||'').toLowerCase().includes(srch);
+    return mf&&mq;
   });
-  const el = document.getElementById('fleet-list');
-  el.innerHTML =
-    `<div class="t-row t-head fleet-cols"><span>Reg</span><span>Owner</span><span>Type</span><span>Operator</span><span>Last Route</span><span>Last Seen</span><span>Status</span></div>` +
-    (filtered.length ? filtered.map(a=>`
-    <div class="t-row fleet-cols">
+  const el=document.getElementById('fleet-list');
+  el.innerHTML=
+    `<div class="trow thead fcols"><span>Reg</span><span>Owner</span><span>Type</span><span>Operator</span><span>Last Route</span><span>Last Seen</span><span>Status</span></div>`+
+    (filt.length?filt.map(a=>`<div class="trow fcols">
       <span class="reg">${a.registration}</span>
-      <div class="owner"><span class="owner-name">${a.owner_name}</span><span class="owner-sub">${a.group!==a.owner_name?a.group:''}</span></div>
-      <span><span class="type-badge">${a.type}</span></span>
+      <div class="own"><span class="own-n">${a.owner_name}</span><span class="own-s">${a.group!==a.owner_name?a.group:''}</span></div>
+      <span><span class="tbadge">${a.type}</span></span>
       <span class="mono-sm">${a.current_operator_name||a.current_operator_icao||(a.status==='own_ops'?a.owner_icao:'—')}</span>
-      <span class="route">${fmtRoute(a.last_route)}</span>
+      <span class="mono-md">${fmtRoute(a.last_route)}</span>
       <span class="mono-sm">${fmtTime(a.last_seen)}</span>
       <span>${statusPill(a.status)}</span>
-    </div>`).join('') : `<div class="empty">No aircraft match this filter.</div>`);
+    </div>`).join(''):`<div class="empty">No aircraft match this filter.</div>`);
 }
 
-function filterFleet(f, btn) {
-  fleetFilter = f;
-  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
+function setFleetF(f,btn){
+  fleetFilter=f;
+  document.querySelectorAll('.fbtn').forEach(b=>b.classList.remove('act'));
+  btn.classList.add('act');
   renderFleet();
 }
 
-// ── Tab 3: Operators
-function renderOperators(fleet) {
-  const ops = {};
-  fleet.forEach(a=>{
-    if (!ops[a.owner_icao]) ops[a.owner_icao]={icao:a.owner_icao,name:a.owner_name,group:a.group,total:0,acmi:0,own:0,gnd:0};
-    ops[a.owner_icao].total++;
-    if (a.status==='acmi_active') ops[a.owner_icao].acmi++;
-    else if (a.status==='own_ops') ops[a.owner_icao].own++;
-    else ops[a.owner_icao].gnd++;
-  });
-  document.getElementById('op-grid').innerHTML = Object.values(ops).sort((a,b)=>b.acmi-a.acmi).map(op=>`
-    <div class="op-card">
-      <div class="op-card-header">
-        <div><div class="op-card-name">${op.name}</div><div class="op-card-sub">${op.icao}${op.group!==op.name?' · '+op.group:''}</div></div>
-      </div>
-      <div class="op-stats">
-        <div class="op-stat"><div class="op-stat-val" style="color:var(--accent)">${op.acmi}</div><div class="op-stat-lbl">ACMI Out</div></div>
-        <div class="op-stat"><div class="op-stat-val" style="color:var(--green)">${op.own}</div><div class="op-stat-lbl">Own Ops</div></div>
-        <div class="op-stat"><div class="op-stat-val" style="color:var(--muted)">${op.gnd}</div><div class="op-stat-lbl">Ground</div></div>
-      </div>
-    </div>`).join('');
+// ═══════════════════════════════════════════════════════════════════
+// TAB: OPERATORS
+// ═══════════════════════════════════════════════════════════════════
+function renderOperators(snapFilt, aggFilt, multiDay) {
+  const note=document.getElementById('op-note');
+  const el=document.getElementById('op-grid');
+  const gi=opRegistry.reduce((m,o)=>{m[o.group]=o.colorIdx;return m},{});
+
+  if(!multiDay||!aggFilt) {
+    note.style.display='none';
+    const opMap={};
+    snapFilt.forEach(a=>{
+      const g=a.group||a.owner_name;
+      if(!opMap[g]) opMap[g]={name:a.owner_name,icao:a.owner_icao,group:g,total:0,acmi:0,own:0,gnd:0};
+      opMap[g].total++;
+      if(a.status==='acmi_active') opMap[g].acmi++;
+      else if(a.status==='own_ops') opMap[g].own++;
+      else opMap[g].gnd++;
+    });
+    el.innerHTML=Object.values(opMap).sort((a,b)=>b.acmi-a.acmi).map(o=>`
+      <div class="opc">
+        <div class="opc-hdr"><div><div class="opc-n">${o.name}</div><div class="opc-s">${o.icao}${o.group!==o.name?' · '+o.group:''}</div></div>
+        <div class="opc-dot" style="background:${OP_COLORS[gi[o.group]??0]}"></div></div>
+        <div class="op-stats">
+          <div class="ost"><div class="ost-v" style="color:var(--acc)">${o.acmi}</div><div class="ost-l">ACMI Out</div></div>
+          <div class="ost"><div class="ost-v" style="color:var(--grn)">${o.own}</div><div class="ost-l">Own Ops</div></div>
+          <div class="ost"><div class="ost-v" style="color:var(--mut)">${o.gnd}</div><div class="ost-l">Ground</div></div>
+        </div>
+      </div>`).join('')||`<div class="empty">No operators match selection.</div>`;
+  } else {
+    note.style.display='flex';
+    document.getElementById('op-note-txt').textContent=`Aggregated · ${aggFilt._nDays} days · ${aggFilt.interval_from?.split(' ')[0]} → ${aggFilt.interval_to?.split(' ')[0]}`;
+    const ops=aggFilt.operator_summaries||{};
+    el.innerHTML=Object.entries(ops).sort((a,b)=>b[1].acmi_bh-a[1].acmi_bh).map(([g,d])=>{
+      const tbh=r1(d.total_bh), abh=r1(d.acmi_bh);
+      const rate=tbh>0?Math.round(abh/tbh*100):0;
+      return `<div class="opc">
+        <div class="opc-hdr"><div><div class="opc-n">${g}</div><div class="opc-s">${nDays} days · ${rate}% ACMI rate</div></div>
+        <div class="opc-dot" style="background:${OP_COLORS[gi[g]??0]}"></div></div>
+        <div class="op-stats">
+          <div class="ost"><div class="ost-v" style="color:var(--acc)">${abh}h</div><div class="ost-l">ACMI BH</div></div>
+          <div class="ost"><div class="ost-v" style="color:var(--grn)">${tbh}h</div><div class="ost-l">Total BH</div></div>
+          <div class="ost"><div class="ost-v" style="color:var(--txt)">${d.total_flights}</div><div class="ost-l">Flights</div></div>
+        </div>
+        <div class="op-extra">
+          <div class="oex"><div class="oex-v" style="color:var(--pur)">${d.acmi_flights}</div><div class="oex-l">ACMI Flt</div></div>
+          <div class="oex"><div class="oex-v" style="color:var(--amb)">${rate}%</div><div class="oex-l">Rate</div></div>
+          <div class="oex"><div class="oex-v" style="color:var(--mut)">${nDays}</div><div class="oex-l">Days</div></div>
+        </div>
+      </div>`;
+    }).join('')||`<div class="empty">No operator data for selection.</div>`;
+  }
 }
 
-// ── Tab 4: Daily Report
-function renderReport(hist) {
-  const fleet = hist.fleet || [];
-
-  document.getElementById('report-banner').style.display = 'flex';
-  document.getElementById('report-period').textContent   = `${hist.interval_from||'—'} → ${hist.interval_to||'—'} LT`;
-  const totFlights = fleet.reduce((s,r)=>s+r.total_flights,0);
-  const totBH      = fleet.reduce((s,r)=>s+r.total_bh,0).toFixed(1);
-  const acmiBH     = fleet.reduce((s,r)=>s+r.acmi_bh,0).toFixed(1);
-  document.getElementById('report-total-flights').textContent = totFlights;
-  document.getElementById('report-total-bh').textContent     = `${totBH} BH`;
-  document.getElementById('report-acmi-bh').textContent      = `${acmiBH} BH`;
-
-  const active = fleet.filter(r=>r.total_flights>0).sort((a,b)=>b.total_bh-a.total_bh);
-  const el = document.getElementById('report-list');
-
-  if (!active.length) {
-    el.innerHTML = `<div class="empty">No flight activity recorded for this period.</div>`;
-    return;
-  }
-
-  el.innerHTML =
-    `<div class="t-row t-head report-cols"><span>Reg</span><span>Owner</span><span>Flights</span><span>Total BH</span><span>ACMI BH</span><span>ACMI Flt</span><span>Clients / Routes</span></div>` +
+// ═══════════════════════════════════════════════════════════════════
+// TAB: DAILY REPORT
+// ═══════════════════════════════════════════════════════════════════
+function renderReport(aggFilt) {
+  const fleet=aggFilt.fleet||[];
+  const active=fleet.filter(r=>r.total_flights>0).sort((a,b)=>b.total_bh-a.total_bh);
+  document.getElementById('rep-banner').style.display='flex';
+  document.getElementById('rb-period').textContent = nDays===1
+    ? `${aggFilt.interval_from||'—'} → ${aggFilt.interval_to||'—'} LT`
+    : `${aggFilt.interval_from?.split(' ')[0]} → ${aggFilt.interval_to?.split(' ')[0]}`;
+  document.getElementById('rb-days').textContent   = nDays;
+  document.getElementById('rb-flt').textContent    = fleet.reduce((s,r)=>s+r.total_flights,0);
+  document.getElementById('rb-tbh').textContent    = r1(fleet.reduce((s,r)=>s+r.total_bh,0))+' BH';
+  document.getElementById('rb-abh').textContent    = r1(fleet.reduce((s,r)=>s+r.acmi_bh,0))+' BH';
+  const el=document.getElementById('rep-list');
+  if(!active.length){el.innerHTML=`<div class="empty">No flight activity for selected operators in this period.</div>`;return;}
+  el.innerHTML=
+    `<div class="trow thead rcols"><span>Reg</span><span>Owner</span><span>Flt</span><span>Total BH</span><span>ACMI BH</span><span>A.Flt</span><span>Clients / Routes</span></div>`+
     active.map(r=>{
-      // Support both old format (flat icao) and new format (with name field)
-      const clients = (r.clients||[]).map(c=>`<span class="client-badge" title="${c.icao}">${c.name||c.icao} ${c.bh}h</span>`).join('');
-      const routes  = (r.routes||[]).slice(0,4).map(rt=>`<span class="mono-sm" style="margin-right:6px">${rt}</span>`).join('');
-      return `
-    <div class="t-row report-cols">
-      <span class="reg">${r.registration}</span>
-      <div class="owner"><span class="owner-name">${r.owner_name}</span><span class="owner-sub">${r.group!==r.owner_name?r.group:''}</span></div>
-      <span class="mono-md">${r.total_flights}</span>
-      <span class="${r.total_bh>0?'bh-value':'bh-zero'}">${r.total_bh}</span>
-      <span class="${r.acmi_bh>0?'bh-value':'bh-zero'}">${r.acmi_bh||'—'}</span>
-      <span class="mono-md">${r.acmi_flights||'—'}</span>
-      <div>${clients||'—'}${routes?'<div style="margin-top:4px">'+routes+'</div>':''}</div>
-    </div>`}).join('');
-}
-
-// ── Tab 5: Client Map
-function renderClients(hist) {
-  const cm = hist.client_map || {};
-  const el = document.getElementById('client-grid');
-  if (!Object.keys(cm).length) {
-    el.innerHTML = `<div class="empty">No ACMI activity recorded yet.</div>`;
-    return;
-  }
-
-  // Support both old format (flat providers) and new format (with name + providers keys)
-  const getProviders = (val) => val.providers || val;
-  const getTotalBH   = (val) => {
-    const providers = getProviders(val);
-    return Object.values(providers).reduce((s,x)=>s+x.bh,0);
-  };
-
-  el.innerHTML = Object.entries(cm)
-    .sort((a,b)=>getTotalBH(b[1])-getTotalBH(a[1]))
-    .map(([clientIcao, val])=>{
-      const clientName = val.name || clientIcao;
-      const providers  = getProviders(val);
-      const provRows = Object.entries(providers)
-        .sort((a,b)=>b[1].bh-a[1].bh)
-        .map(([prov,data])=>`
-          <div class="provider-row">
-            <span class="provider-name">${prov}</span>
-            <div class="provider-stats">
-              <span>${data.aircraft_count} ac</span>
-              <span>${data.flights} flt</span>
-              <span style="color:var(--green)">${data.bh} BH</span>
-            </div>
-          </div>`).join('');
-      const totalBH = getTotalBH(val).toFixed(1);
-      return `
-    <div class="client-card">
-      <div class="client-card-header">
-        <div class="client-icao">${clientIcao}</div>
-        <div class="client-name">${clientName !== clientIcao ? clientName + ' · ' : ''}${totalBH} BH received</div>
-      </div>
-      ${provRows}
-    </div>`;
+      const clients=(r.clients||[]).map(c=>`<span class="cbadge">${c.name||c.icao} ${c.bh}h</span>`).join('');
+      const routes=(r.routes||[]).slice(0,4).map(rt=>`<span class="mono-sm" style="margin-right:5px">${rt}</span>`).join('');
+      return `<div class="trow rcols">
+        <span class="reg">${r.registration}</span>
+        <div class="own"><span class="own-n">${r.owner_name}</span><span class="own-s">${r.group!==r.owner_name?r.group:''}</span></div>
+        <span class="mono-md">${r.total_flights}</span>
+        <span class="${r.total_bh>0?'bh':'bh0'}">${r.total_bh}</span>
+        <span class="${r.acmi_bh>0?'bh':'bh0'}">${r.acmi_bh||'—'}</span>
+        <span class="mono-md">${r.acmi_flights||'—'}</span>
+        <div>${clients||'—'}${routes?`<div style="margin-top:3px">${routes}</div>`:''}</div>
+      </div>`;
     }).join('');
 }
 
-// ── Tabs
-function switchTab(name) {
-  const names = ['acmi','fleet','operators','report','clients'];
-  currentTab = name;
-  document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('active',names[i]===name));
-  document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));
-  document.getElementById(`tab-${name}`).classList.add('active');
-  // Update charts to reflect current tab context
-  renderChartsForTab(name);
+// ═══════════════════════════════════════════════════════════════════
+// TAB: CLIENT MAP
+// ═══════════════════════════════════════════════════════════════════
+function renderClients(aggFilt) {
+  const cm=aggFilt.client_map||{};
+  const note=document.getElementById('cl-note');
+  note.style.display=nDays>1?'flex':'none';
+  if(nDays>1) document.getElementById('cl-note-txt').textContent=`${nDays} days · ${aggFilt.interval_from?.split(' ')[0]} → ${aggFilt.interval_to?.split(' ')[0]}`;
+  const el=document.getElementById('cl-grid');
+  if(!Object.keys(cm).length){el.innerHTML=`<div class="empty">No ACMI activity for selected operators in this period.</div>`;return;}
+  const getTot=v=>Object.values(v.providers||v).reduce((s,x)=>s+(x.bh||0),0);
+  el.innerHTML=Object.entries(cm).sort((a,b)=>getTot(b[1])-getTot(a[1])).map(([icao,val])=>{
+    const provs=val.providers||val, cname=val.name||icao;
+    const totBH=r1(getTot(val));
+    return `<div class="clc">
+      <div class="clc-hdr"><div class="cl-icao">${icao}</div><div class="cl-name">${cname!==icao?cname+' · ':''}${totBH} BH received</div></div>
+      ${Object.entries(provs).sort((a,b)=>b[1].bh-a[1].bh).map(([prov,data])=>`
+      <div class="prov-row">
+        <span style="font-weight:500">${prov}</span>
+        <div class="prov-stats"><span>${data.aircraft_count} ac</span><span>${data.flights} flt</span><span style="color:var(--grn)">${data.bh} BH</span></div>
+      </div>`).join('')}
+    </div>`;
+  }).join('');
 }
 
-// ── Helpers
-function fmtRoute(r) {
-  if (!r) return '<span style="color:var(--muted)">—</span>';
-  const [o,d] = r.split('-');
-  return `${o} <span class="route-arrow">→</span> ${d}`;
+// ═══════════════════════════════════════════════════════════════════
+// TABS
+// ═══════════════════════════════════════════════════════════════════
+function swTab(name, el) {
+  const names=['acmi','fleet','op','rep','cl'];
+  currentTab=name;
+  document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('active',names[i]===name));
+  document.querySelectorAll('.tc').forEach(c=>c.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+  const agg=aggregateDays(filtDays);
+  const snap=snapData?.fleet||[];
+  renderCharts(name, agg?{...agg,fleet:filterAggFleet(agg.fleet||[]),operator_summaries:filterOpSum(agg.operator_summaries||{}),client_map:filterClientMap(agg.client_map||{})}:null, filterSnap(snap));
 }
-function fmtTime(iso) {
-  if (!iso) return '—';
-  const d = new Date(iso), now = new Date();
-  const m = Math.floor((now-d)/60000);
-  if (m < 60)   return `${m}m ago`;
-  if (m < 1440) return `${Math.floor(m/60)}h ago`;
+
+// ═══════════════════════════════════════════════════════════════════
+// HELPERS
+// ═══════════════════════════════════════════════════════════════════
+function fmtRoute(r) {
+  if(!r) return '<span style="color:var(--mut)">—</span>';
+  const [o,d]=(r||'').split('-');
+  return `${o} <span style="color:var(--mut)">→</span> ${d}`;
+}
+function fmtTime(ts) {
+  if(!ts) return '—';
+  const d=new Date(ts.replace(' LT','').replace(' ','T')+'Z');
+  if(isNaN(d)) return (ts||'').slice(0,16)||'—';
+  const m=Math.floor((Date.now()-d)/60000);
+  if(m<60)   return `${m}m ago`;
+  if(m<1440) return `${Math.floor(m/60)}h ago`;
   return `${Math.floor(m/1440)}d ago`;
 }
 function statusPill(s) {
-  const map = {acmi_active:['acmi','● ACMI'],own_ops:['own','● Own Ops'],on_ground:['ground','● Ground'],unknown:['unknown','● Unknown']};
-  const [cls,lbl] = map[s]||['unknown','● Unknown'];
-  return `<span class="pill ${cls}">${lbl}</span>`;
+  const map={acmi_active:'pacmi ● ACMI',own_ops:'pown ● Own Ops',on_ground:'pgnd ● Ground',unknown:'punk ● Unknown'};
+  const p=map[s]||'punk ● Unknown';
+  const [cls,...rest]=p.split(' ');
+  return `<span class="pill ${cls}">${rest.join(' ')}</span>`;
 }
 
 // ── Init
