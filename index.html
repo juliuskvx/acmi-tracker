@@ -221,6 +221,49 @@
     .fcols{grid-template-columns:80px 1fr 70px}
     .fcols>*:nth-child(n+4){display:none}
   }
+
+  /* Signals badge on tab */
+  .sig-badge{display:inline-flex;align-items:center;justify-content:center;min-width:15px;height:15px;border-radius:99px;background:var(--amb);color:#1a1200;font-size:9px;font-weight:700;margin-left:5px;padding:0 4px;vertical-align:2px}
+
+  /* Export button */
+  .exp-btn{background:var(--bg3);border:1px solid var(--bdr);border-radius:4px;padding:5px 12px;font-size:11px;font-weight:500;color:var(--mut);cursor:pointer;transition:all .15s;font-family:var(--ui);white-space:nowrap}
+  .exp-btn:hover{border-color:var(--grn);color:var(--grn);background:rgba(0,204,102,.06)}
+
+  /* Trends tab */
+  .trend-toolbar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+  .trend-toolbar-l{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .sig-toolbar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+  .line-chart-wrap{position:relative;width:100%}
+  .line-tooltip{position:absolute;background:var(--bg3);border:1px solid var(--bdr);border-radius:5px;padding:8px 10px;font-size:11px;font-family:var(--mono);pointer-events:none;z-index:30;white-space:nowrap;box-shadow:0 4px 16px rgba(0,0,0,.4)}
+  .line-tooltip .lt-date{color:var(--mut);font-size:9px;margin-bottom:4px;text-transform:uppercase;letter-spacing:.05em}
+  .line-tooltip .lt-row{display:flex;align-items:center;gap:6px;margin-top:2px}
+  .line-tooltip .lt-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+  .line-tooltip .lt-val{margin-left:auto;font-weight:600;padding-left:10px}
+  .line-legend{display:flex;flex-wrap:wrap;gap:12px;margin-top:12px;padding-top:12px;border-top:1px solid var(--bdr)}
+  .ll-item{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--mut);cursor:pointer;user-select:none;transition:opacity .15s}
+  .ll-item.off{opacity:.35}
+  .ll-dot{width:9px;height:9px;border-radius:2px;flex-shrink:0}
+  .ll-name{color:var(--txt)}
+  .ll-val{font-family:var(--mono);color:var(--mut)}
+
+  /* Signals tab */
+  .sig-feed{display:flex;flex-direction:column}
+  .sig-item{display:flex;align-items:flex-start;gap:12px;padding:12px 18px;border-bottom:1px solid var(--bdr)}
+  .sig-item:last-child{border-bottom:none}
+  .sig-ico{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;margin-top:1px}
+  .sig-ico.up{background:rgba(0,204,102,.1);color:var(--grn)}
+  .sig-ico.down{background:rgba(255,68,68,.1);color:var(--red)}
+  .sig-ico.new{background:rgba(0,212,255,.1);color:var(--acc)}
+  .sig-ico.lost{background:rgba(255,170,0,.1);color:var(--amb)}
+  .sig-ico.warn{background:rgba(255,170,0,.1);color:var(--amb)}
+  .sig-body{flex:1;min-width:0}
+  .sig-title{font-size:12px;font-weight:500;line-height:1.4}
+  .sig-title b{color:var(--txt);font-weight:600}
+  .sig-sub{font-size:10px;color:var(--mut);margin-top:3px;font-family:var(--mono)}
+  .sig-delta{font-family:var(--mono);font-size:12px;font-weight:600;flex-shrink:0;white-space:nowrap;margin-top:2px}
+  .sig-delta.up{color:var(--grn)}
+  .sig-delta.down{color:var(--red)}
+  .sig-section-hdr{padding:9px 18px;font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--mut);background:var(--bg3);border-bottom:1px solid var(--bdr)}
 </style>
 </head>
 <body>
@@ -317,6 +360,8 @@
   <div class="tab"        onclick="swTab('op',this)">Operators</div>
   <div class="tab"        onclick="swTab('rep',this)">Daily Report</div>
   <div class="tab"        onclick="swTab('cl',this)">Client Map</div>
+  <div class="tab"        onclick="swTab('trend',this)">Trends</div>
+  <div class="tab"        onclick="swTab('sig',this)">Signals<span class="sig-badge" id="sig-badge" style="display:none"></span></div>
 </div>
 
 <!-- Tab: ACMI Active -->
@@ -358,6 +403,7 @@
     <div><div class="bl">Total Flights</div><div class="bv" id="rb-flt">—</div></div>
     <div><div class="bl">Total BH</div><div class="bv" id="rb-tbh">—</div></div>
     <div><div class="bl">ACMI BH</div><div class="bv" id="rb-abh">—</div></div>
+    <button class="exp-btn" style="margin-left:auto" onclick="exportReportCSV()">⬇ Export CSV</button>
   </div>
   <div class="dtable">
     <div id="rep-list"><div class="empty">Daily report builds after the first overnight run.<br><span style="font-size:10px;margin-top:4px;display:block">Check back at 10:00 AM Lithuanian time.</span></div></div>
@@ -366,8 +412,43 @@
 
 <!-- Tab: Client Map -->
 <div class="tc" id="tab-cl">
-  <div class="range-note" id="cl-note" style="display:none"><span>▸</span><span id="cl-note-txt"></span></div>
+  <div class="range-note" id="cl-note" style="display:flex"><span>▸</span><span id="cl-note-txt">Latest period</span><button class="exp-btn" style="margin-left:auto" onclick="exportClientCSV()">⬇ Export CSV</button></div>
   <div class="cl-grid" id="cl-grid"><div class="empty">Client map builds after the first overnight run.</div></div>
+</div>
+
+<!-- Tab: Trends -->
+<div class="tc" id="tab-trend">
+  <div class="trend-toolbar">
+    <div class="trend-toolbar-l">
+      <span class="fp-lbl" style="min-width:auto">Metric</span>
+      <button class="pbtn act" id="tm-bh" onclick="setTrendMetric('bh',this)">ACMI Block Hours</button>
+      <button class="pbtn" id="tm-flt" onclick="setTrendMetric('flights',this)">ACMI Flights</button>
+      <button class="pbtn" id="tm-share" onclick="setTrendMetric('share',this)">Market Share %</button>
+    </div>
+    <button class="exp-btn" onclick="exportTrendCSV()">⬇ Export CSV</button>
+  </div>
+  <div class="dtable" style="padding:16px 18px">
+    <div class="line-chart-wrap">
+      <svg id="trend-svg" width="100%" height="320" viewBox="0 0 1000 320" preserveAspectRatio="none"></svg>
+      <div id="trend-tooltip" class="line-tooltip" style="display:none"></div>
+    </div>
+    <div class="line-legend" id="trend-legend"></div>
+  </div>
+  <div class="range-note" id="trend-empty" style="display:none"><span>▸</span><span>Need at least 2 days of history to plot trends. Check back after tomorrow's run.</span></div>
+</div>
+
+<!-- Tab: Signals -->
+<div class="tc" id="tab-sig">
+  <div class="sig-toolbar">
+    <span class="fp-lbl" style="min-width:auto">Compare</span>
+    <button class="pbtn act" id="scm-prior" onclick="setSigCompareMode('prior',this)">Prior period</button>
+    <button class="pbtn" id="scm-week" onclick="setSigCompareMode('week',this)">Same period last week</button>
+    <button class="pbtn" id="scm-month" onclick="setSigCompareMode('month',this)">Same period last month</button>
+  </div>
+  <div class="range-note" id="sig-note"><span>▸</span><span id="sig-note-txt">Comparing latest period vs. the prior equivalent period for selected operators.</span></div>
+  <div class="dtable">
+    <div id="sig-list"><div class="loading"><div class="spinner"></div>Loading...</div></div>
+  </div>
 </div>
 
 </main>
@@ -395,6 +476,7 @@ let nDays       = 1;
 let activePreset = 'latest';
 let fleetFilter = 'all';
 let currentTab  = 'acmi';
+let lastAggFilt = null;
 
 // ═══════════════════════════════════════════════════════════════════
 // LOAD
@@ -708,6 +790,9 @@ function renderAll() {
   renderFleet();
   renderOperators(snapFilt, aggFilt, multiDay);
   if(aggFilt) { renderReport(aggFilt); renderClients(aggFilt); }
+  updateSignalBadge();
+  if(currentTab==='trend') renderTrendTab();
+  if(currentTab==='sig')   renderSignals();
 }
 
 function setKPI(id,lbl,val,sub) {
@@ -954,6 +1039,7 @@ function renderOperators(snapFilt, aggFilt, multiDay) {
 // TAB: DAILY REPORT
 // ═══════════════════════════════════════════════════════════════════
 function renderReport(aggFilt) {
+  lastAggFilt = aggFilt;
   const fleet=aggFilt.fleet||[];
   const active=fleet.filter(r=>r.total_flights>0).sort((a,b)=>b.total_bh-a.total_bh);
   document.getElementById('rep-banner').style.display='flex';
@@ -987,10 +1073,11 @@ function renderReport(aggFilt) {
 // TAB: CLIENT MAP
 // ═══════════════════════════════════════════════════════════════════
 function renderClients(aggFilt) {
+  lastAggFilt = aggFilt;
   const cm=aggFilt.client_map||{};
-  const note=document.getElementById('cl-note');
-  note.style.display=nDays>1?'flex':'none';
-  if(nDays>1) document.getElementById('cl-note-txt').textContent=`${nDays} days · ${aggFilt.interval_from?.split(' ')[0]} → ${aggFilt.interval_to?.split(' ')[0]}`;
+  document.getElementById('cl-note-txt').textContent = nDays>1
+    ? `${nDays} days · ${aggFilt.interval_from?.split(' ')[0]} → ${aggFilt.interval_to?.split(' ')[0]}`
+    : `${aggFilt.report_date||'Latest period'}`;
   const el=document.getElementById('cl-grid');
   if(!Object.keys(cm).length){el.innerHTML=`<div class="empty">No ACMI activity for selected operators in this period.</div>`;return;}
   const getTot=v=>Object.values(v.providers||v).reduce((s,x)=>s+(x.bh||0),0);
@@ -1008,11 +1095,415 @@ function renderClients(aggFilt) {
   }).join('');
 }
 
+function exportReportCSV() {
+  if(!lastAggFilt) return;
+  const fleet=(lastAggFilt.fleet||[]).filter(r=>r.total_flights>0).sort((a,b)=>b.total_bh-a.total_bh);
+  const rows=[['registration','owner','group','total_flights','total_bh','acmi_flights','acmi_bh','top_client','routes']];
+  fleet.forEach(r=>{
+    rows.push([r.registration, r.owner_name, r.group, r.total_flights, r.total_bh, r.acmi_flights||0, r.acmi_bh||0, (r.clients&&r.clients[0])?(r.clients[0].name||r.clients[0].icao):'', (r.routes||[]).join(' ')]);
+  });
+  downloadCSV(rows, `acmi-daily-report-${lastAggFilt.report_date||today()}.csv`);
+}
+
+function exportClientCSV() {
+  if(!lastAggFilt) return;
+  const cm=lastAggFilt.client_map||{};
+  const rows=[['client_icao','client_name','provider','aircraft_count','flights','bh']];
+  Object.entries(cm).forEach(([icao,val])=>{
+    const provs=val.providers||val;
+    Object.entries(provs).forEach(([prov,data])=>{
+      rows.push([icao, val.name||icao, prov, data.aircraft_count||0, data.flights||0, data.bh||0]);
+    });
+  });
+  downloadCSV(rows, `acmi-client-map-${lastAggFilt.report_date||today()}.csv`);
+}
+
+
+
+// ═══════════════════════════════════════════════════════════════════
+// TAB: TRENDS — per-operator time series across full history
+// ═══════════════════════════════════════════════════════════════════
+let trendMetric = 'bh';     // 'bh' | 'flights' | 'share'
+let trendHidden = new Set(); // groups toggled off in legend
+
+function setTrendMetric(m, btn) {
+  trendMetric = m;
+  document.querySelectorAll('#tab-trend .pbtn').forEach(b=>b.classList.remove('act'));
+  btn.classList.add('act');
+  renderTrendTab();
+}
+
+// Build per-day, per-group ACMI BH/flights series from allDays, filtered by date range + selOps
+function buildTrendSeries() {
+  const sorted = [...filtDays].sort((a,b)=>a.report_date.localeCompare(b.report_date));
+  const groups = opRegistry.filter(o=>selOps.has(o.group)).map(o=>o.group);
+  const series = {}; // group -> [{date, bh, flights}]
+  groups.forEach(g=>series[g]=[]);
+  const dayTotals = []; // total acmi bh per day (for market share)
+
+  sorted.forEach(day => {
+    const ops = day.operator_summaries || {};
+    let dayTotal = 0;
+    groups.forEach(g => {
+      const d = ops[g] || {acmi_bh:0, acmi_flights:0};
+      dayTotal += d.acmi_bh || 0;
+    });
+    dayTotals.push(dayTotal);
+    groups.forEach(g => {
+      const d = ops[g] || {acmi_bh:0, acmi_flights:0};
+      series[g].push({date:day.report_date, bh:r1(d.acmi_bh||0), flights:d.acmi_flights||0});
+    });
+  });
+
+  return {dates: sorted.map(d=>d.report_date), series, dayTotals, groups};
+}
+
+function renderTrendTab() {
+  const svg = document.getElementById('trend-svg');
+  const legend = document.getElementById('trend-legend');
+  const emptyNote = document.getElementById('trend-empty');
+
+  if (filtDays.length < 2) {
+    svg.innerHTML=''; legend.innerHTML='';
+    emptyNote.style.display='flex';
+    return;
+  }
+  emptyNote.style.display='none';
+
+  const {dates, series, dayTotals, groups} = buildTrendSeries();
+  const gi = opRegistry.reduce((m,o)=>{m[o.group]=o.colorIdx;return m},{});
+  const visibleGroups = groups.filter(g=>!trendHidden.has(g));
+
+  // Compute plotted values per group per day index
+  const W=1000, H=320, padL=40, padR=14, padT=16, padB=28;
+  const plotW = W-padL-padR, plotH = H-padT-padB;
+  const n = dates.length;
+
+  let getVal;
+  let maxVal = 0;
+  if (trendMetric==='share') {
+    getVal = (g,i) => dayTotals[i]>0 ? (series[g][i].bh/dayTotals[i]*100) : 0;
+    maxVal = 100;
+  } else {
+    const key = trendMetric==='bh' ? 'bh' : 'flights';
+    getVal = (g,i) => series[g][i][key];
+    visibleGroups.forEach(g => series[g].forEach(pt => { maxVal = Math.max(maxVal, pt[key]); }));
+    maxVal = maxVal>0 ? maxVal*1.15 : 10;
+  }
+
+  const x = i => padL + (n===1 ? plotW/2 : (i/(n-1))*plotW);
+  const y = v => padT + plotH - (Math.min(v,maxVal)/maxVal)*plotH;
+
+  // Grid lines + Y labels
+  let svgParts = [];
+  const gridN = 4;
+  for (let i=0;i<=gridN;i++) {
+    const v = maxVal*(i/gridN);
+    const yy = y(v);
+    svgParts.push(`<line x1="${padL}" y1="${yy}" x2="${W-padR}" y2="${yy}" stroke="#1e2d42" stroke-width="1"/>`);
+    const lbl = trendMetric==='share' ? Math.round(v)+'%' : (v>=100?Math.round(v):r1(v));
+    svgParts.push(`<text x="${padL-6}" y="${yy+3}" text-anchor="end" font-size="9" fill="#64748b" font-family="JetBrains Mono,monospace">${lbl}</text>`);
+  }
+  // X labels (sparse)
+  const xLabelEvery = Math.max(1, Math.ceil(n/8));
+  dates.forEach((d,i) => {
+    if (i % xLabelEvery !== 0 && i !== n-1) return;
+    svgParts.push(`<text x="${x(i)}" y="${H-8}" text-anchor="middle" font-size="9" fill="#64748b" font-family="JetBrains Mono,monospace">${d.slice(5)}</text>`);
+  });
+
+  // Lines + points
+  visibleGroups.forEach(g => {
+    const color = OP_COLORS[gi[g]??0];
+    const pts = dates.map((d,i)=>`${x(i)},${y(getVal(g,i))}`).join(' ');
+    svgParts.push(`<polyline points="${pts}" fill="none" stroke="${color}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>`);
+    dates.forEach((d,i)=>{
+      svgParts.push(`<circle cx="${x(i)}" cy="${y(getVal(g,i))}" r="2.5" fill="${color}" class="trend-pt" data-g="${g.replace(/"/g,'&quot;')}" data-i="${i}"/>`);
+    });
+  });
+
+  // Invisible hover columns for tooltip
+  dates.forEach((d,i)=>{
+    svgParts.push(`<rect x="${x(i)-(plotW/n)/2}" y="${padT}" width="${Math.max(plotW/n,4)}" height="${plotH}" fill="transparent" class="trend-hover" data-i="${i}" style="cursor:crosshair"/>`);
+  });
+
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+  svg.innerHTML = svgParts.join('');
+
+  // Tooltip interaction
+  const tooltip = document.getElementById('trend-tooltip');
+  svg.querySelectorAll('.trend-hover').forEach(rect=>{
+    rect.addEventListener('mousemove', (e)=>{
+      const i = parseInt(rect.dataset.i);
+      const rows = visibleGroups
+        .map(g=>({g, v:getVal(g,i), color:OP_COLORS[gi[g]??0]}))
+        .sort((a,b)=>b.v-a.v);
+      const unit = trendMetric==='share' ? '%' : trendMetric==='flights' ? '' : 'h';
+      tooltip.innerHTML = `<div class="lt-date">${dates[i]}</div>` +
+        rows.map(r=>`<div class="lt-row"><span class="lt-dot" style="background:${r.color}"></span>${r.g}<span class="lt-val">${trendMetric==='share'?r1(r.v):r.v}${unit}</span></div>`).join('');
+      tooltip.style.display='block';
+      const wrap = svg.parentElement.getBoundingClientRect();
+      const left = (i/(n-1||1)) * wrap.width;
+      tooltip.style.left = Math.min(Math.max(left,80), wrap.width-80)+'px';
+      tooltip.style.top = '0px';
+      tooltip.style.transform = 'translateX(-50%)';
+    });
+    rect.addEventListener('mouseleave', ()=>{ tooltip.style.display='none'; });
+  });
+
+  // Legend with totals + toggle
+  legend.innerHTML = groups.map(g=>{
+    const color = OP_COLORS[gi[g]??0];
+    const total = trendMetric==='flights'
+      ? series[g].reduce((s,p)=>s+p.flights,0)
+      : trendMetric==='share'
+        ? r1(dates.reduce((s,_,i)=>s+getVal(g,i),0)/n)
+        : r1(series[g].reduce((s,p)=>s+p.bh,0));
+    const unit = trendMetric==='share' ? '% avg' : trendMetric==='flights' ? ' flt' : 'h';
+    return `<div class="ll-item ${trendHidden.has(g)?'off':''}" onclick="toggleTrendGroup('${g.replace(/'/g,"\\'")}')">
+      <span class="ll-dot" style="background:${color}"></span>
+      <span class="ll-name">${g}</span>
+      <span class="ll-val">${total}${unit}</span>
+    </div>`;
+  }).join('');
+}
+
+function toggleTrendGroup(g) {
+  if (trendHidden.has(g)) trendHidden.delete(g); else trendHidden.add(g);
+  renderTrendTab();
+}
+
+function exportTrendCSV() {
+  const {dates, series, groups} = buildTrendSeries();
+  const rows = [['date', ...groups.flatMap(g=>[g+'_acmi_bh', g+'_acmi_flights'])]];
+  dates.forEach((d,i)=>{
+    rows.push([d, ...groups.flatMap(g=>[series[g][i].bh, series[g][i].flights])]);
+  });
+  downloadCSV(rows, `acmi-trends-${dates[0]}_to_${dates[dates.length-1]}.csv`);
+}
+
+function downloadCSV(rows, filename) {
+  const csv = rows.map(r=>r.map(c=>{
+    const s = String(c??'');
+    return /[",\n]/.test(s) ? '"'+s.replace(/"/g,'""')+'"' : s;
+  }).join(',')).join('\n');
+  const blob = new Blob([csv], {type:'text/csv;charset=utf-8;'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href=url; a.download=filename;
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// TAB: SIGNALS — period-over-period change detection
+// ═══════════════════════════════════════════════════════════════════
+// Compares the current filtered period (length set by the main date filter)
+// against a comparison window chosen via sigCompareMode:
+//   'prior' — immediately preceding block of equal length (back-to-back)
+//   'week'  — same length window, shifted back exactly 7 calendar days
+//   'month' — same length window, shifted back exactly 30 calendar days
+// 'week'/'month' are date-based (not index-based) so gaps in history don't
+// shift the comparison window — if the matching dates aren't in the data,
+// we fall back to insufficientHistory rather than silently comparing the
+// wrong days.
+let sigCompareMode = 'prior';
+
+function setSigCompareMode(mode, btn) {
+  sigCompareMode = mode;
+  document.querySelectorAll('#tab-sig .pbtn').forEach(b=>b.classList.remove('act'));
+  btn.classList.add('act');
+  renderSignals();
+}
+
+function computeSignals() {
+  const sorted = [...allDays].sort((a,b)=>a.report_date.localeCompare(b.report_date));
+  if (sorted.length < 2) return {signals:[], curLabel:'', prevLabel:''};
+
+  const byDate = {};
+  sorted.forEach(d=>{ byDate[d.report_date]=d; });
+
+  // Determine current window from filtDays; fall back to last 1 day
+  const curSorted = [...filtDays].sort((a,b)=>a.report_date.localeCompare(b.report_date));
+  if (!curSorted.length) return {signals:[], curLabel:'', prevLabel:''};
+  const span = curSorted.length;
+  const curStart = curSorted[0].report_date;
+  const curEnd   = curSorted[curSorted.length-1].report_date;
+  const curDays  = curSorted;
+
+  let prevDays = [];
+  if (sigCompareMode === 'prior') {
+    const curIdxStart = sorted.findIndex(d=>d.report_date===curStart);
+    if (curIdxStart < 0) return {signals:[], curLabel:'', prevLabel:''};
+    const prevIdxEnd = curIdxStart - 1;
+    const prevIdxStart = prevIdxEnd - span + 1;
+    if (prevIdxStart < 0) return {signals:[], curLabel:'', prevLabel:'', insufficientHistory:true};
+    prevDays = sorted.slice(prevIdxStart, prevIdxEnd+1);
+  } else {
+    // 'week' = shift back 7 days, 'month' = shift back 30 days, by calendar date.
+    // Each day in the current window maps to (date - offset); we collect whichever
+    // of those exist in the dataset. If none exist at all, treat as insufficient history.
+    const offsetN = sigCompareMode === 'week' ? 7 : 30;
+    const wanted = curSorted.map(d => offsetDate(d.report_date, -offsetN));
+    prevDays = wanted.map(d => byDate[d]).filter(Boolean);
+    if (!prevDays.length) return {signals:[], curLabel:'', prevLabel:'', insufficientHistory:true};
+  }
+
+  const sumOps = (days) => {
+    const out = {};
+    days.forEach(day=>{
+      Object.entries(day.operator_summaries||{}).forEach(([g,d])=>{
+        if(!out[g]) out[g]={acmi_bh:0, acmi_flights:0, total_bh:0};
+        out[g].acmi_bh += d.acmi_bh||0;
+        out[g].acmi_flights += d.acmi_flights||0;
+        out[g].total_bh += d.total_bh||0;
+      });
+    });
+    return out;
+  };
+  const sumClients = (days) => {
+    // group -> Set of client icaos active
+    const out = {};
+    days.forEach(day=>{
+      Object.entries(day.client_map||{}).forEach(([icao,val])=>{
+        const provs = val.providers||val;
+        Object.entries(provs).forEach(([prov,data])=>{
+          if(!out[prov]) out[prov]=new Map();
+          const ex = out[prov].get(icao) || {name: val.name||icao, bh:0};
+          ex.bh += data.bh||0;
+          out[prov].set(icao, ex);
+        });
+      });
+    });
+    return out;
+  };
+
+  const curOps=sumOps(curDays), prevOps=sumOps(prevDays);
+  const curCl=sumClients(curDays), prevCl=sumClients(prevDays);
+  const allGroups = new Set([...Object.keys(curOps), ...Object.keys(prevOps)]);
+
+  const signals = [];
+
+  allGroups.forEach(g => {
+    if (!selOps.has(g)) return;
+    const c = curOps[g] || {acmi_bh:0, acmi_flights:0};
+    const p = prevOps[g] || {acmi_bh:0, acmi_flights:0};
+    const cBh=r1(c.acmi_bh), pBh=r1(p.acmi_bh);
+
+    // BH change signals (only if meaningful activity exists on either side)
+    if (pBh>0 || cBh>0) {
+      const pct = pBh>0 ? ((cBh-pBh)/pBh*100) : (cBh>0?100:0);
+      if (Math.abs(pct) >= 15 && Math.abs(cBh-pBh) >= 1) {
+        signals.push({
+          type: pct>=0?'up':'down',
+          group: g,
+          title: `<b>${g}</b> ACMI block hours ${pct>=0?'increased':'decreased'} ${Math.abs(Math.round(pct))}%`,
+          sub: `${pBh}h → ${cBh}h vs. prior period`,
+          delta: (pct>=0?'+':'')+Math.round(pct)+'%',
+          sortVal: Math.abs(pct)
+        });
+      }
+    }
+    // Zero-activity flag
+    if (pBh>0 && cBh===0) {
+      signals.push({
+        type:'warn', group:g,
+        title:`<b>${g}</b> had zero ACMI block hours in the latest period`,
+        sub:`Previously ${pBh}h — investigate redeliveries or contract end`,
+        delta:'0h', sortVal: 200
+      });
+    }
+
+    // Client gained/lost for this group.
+    // Threshold of 2 BH filters out incidental single-flight charter overlap
+    // and surfaces only client relationships with real volume behind them.
+    const CLIENT_BH_THRESHOLD = 2;
+    const curClients = curCl[g] || new Map();
+    const prevClients = prevCl[g] || new Map();
+    curClients.forEach((info, icao) => {
+      if (!prevClients.has(icao) && r1(info.bh) >= CLIENT_BH_THRESHOLD) {
+        signals.push({
+          type:'new', group:g,
+          title:`<b>${g}</b> started flying for new client <b>${info.name||icao}</b>`,
+          sub:`${r1(info.bh)}h in latest period · first seen this window`,
+          delta:'NEW', sortVal: 150
+        });
+      }
+    });
+    prevClients.forEach((info, icao) => {
+      if (!curClients.has(icao) && r1(info.bh) >= CLIENT_BH_THRESHOLD) {
+        signals.push({
+          type:'lost', group:g,
+          title:`<b>${g}</b> stopped flying for <b>${info.name||icao}</b>`,
+          sub:`Had ${r1(info.bh)}h in prior period · no activity this window`,
+          delta:'LOST', sortVal: 140
+        });
+      }
+    });
+  });
+
+  signals.sort((a,b)=>b.sortVal-a.sortVal);
+
+  const curLabel = curDays.length===1 ? curDays[0].report_date : `${curDays[0].report_date} → ${curDays[curDays.length-1].report_date}`;
+  const prevLabel = prevDays.length===1 ? prevDays[0].report_date : `${prevDays[0].report_date} → ${prevDays[prevDays.length-1].report_date}`;
+  const partialPrev = sigCompareMode !== 'prior' && prevDays.length < curDays.length;
+
+  return {signals, curLabel, prevLabel, partialPrev, prevCoverage: `${prevDays.length}/${curDays.length} days matched`};
+}
+
+function updateSignalBadge() {
+  const {signals} = computeSignals();
+  const badge = document.getElementById('sig-badge');
+  if (!badge) return;
+  const notable = signals.filter(s=>s.type!=='down' || s.sortVal>=25).length;
+  if (signals.length>0) { badge.style.display='inline-flex'; badge.textContent=signals.length; }
+  else badge.style.display='none';
+}
+
+function renderSignals() {
+  const el = document.getElementById('sig-list');
+  const noteTxt = document.getElementById('sig-note-txt');
+  const {signals, curLabel, prevLabel, insufficientHistory, partialPrev, prevCoverage} = computeSignals();
+  const modeLabel = {prior:'prior period', week:'same period last week', month:'same period last month'}[sigCompareMode];
+
+  if (insufficientHistory) {
+    noteTxt.textContent = sigCompareMode === 'prior'
+      ? `Not enough prior history yet to compare — need ${nDays>1?nDays+' more days':'one more day'} of data before signals like this period vs. last become available.`
+      : `No matching data found ${modeLabel} yet — that window falls before your tracking history begins. Try "Prior period" instead, or check back once more history accumulates.`;
+    el.innerHTML = `<div class="empty">Signals unlock once there's a comparable period in history. Check back after more daily runs accumulate.</div>`;
+    return;
+  }
+  if (!curLabel) {
+    noteTxt.textContent = 'Comparing latest period vs. the prior equivalent period for selected operators.';
+    el.innerHTML = `<div class="empty">No comparable data yet.</div>`;
+    return;
+  }
+
+  noteTxt.textContent = `Current: ${curLabel}  ▸  vs. ${modeLabel}: ${prevLabel}` +
+    (partialPrev ? `  ·  partial match (${prevCoverage})` : '') +
+    `  ·  selected operators`;
+
+  if (!signals.length) {
+    el.innerHTML = `<div class="empty">No significant changes detected for selected operators vs. ${modeLabel}.</div>`;
+    return;
+  }
+
+  const icons = {up:'▲', down:'▼', new:'＋', lost:'－', warn:'!'};
+  el.innerHTML = signals.map(s=>`
+    <div class="sig-item">
+      <div class="sig-ico ${s.type}">${icons[s.type]||'•'}</div>
+      <div class="sig-body">
+        <div class="sig-title">${s.title}</div>
+        <div class="sig-sub">${s.sub}</div>
+      </div>
+      <div class="sig-delta ${s.type==='up'?'up':(s.type==='down'||s.type==='warn'||s.type==='lost')?'down':''}">${s.delta}</div>
+    </div>`).join('');
+}
+
 // ═══════════════════════════════════════════════════════════════════
 // TABS
 // ═══════════════════════════════════════════════════════════════════
 function swTab(name, el) {
-  const names=['acmi','fleet','op','rep','cl'];
+  const names=['acmi','fleet','op','rep','cl','trend','sig'];
   currentTab=name;
   document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('active',names[i]===name));
   document.querySelectorAll('.tc').forEach(c=>c.classList.remove('active'));
@@ -1020,6 +1511,8 @@ function swTab(name, el) {
   const agg=aggregateDays(filtDays);
   const snap=snapData?.fleet||[];
   renderCharts(name, agg?{...agg,fleet:filterAggFleet(agg.fleet||[]),operator_summaries:filterOpSum(agg.operator_summaries||{}),client_map:filterClientMap(agg.client_map||{})}:null, filterSnap(snap));
+  if(name==='trend') renderTrendTab();
+  if(name==='sig')   renderSignals();
 }
 
 // ═══════════════════════════════════════════════════════════════════
