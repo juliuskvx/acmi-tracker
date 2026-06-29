@@ -97,7 +97,6 @@ def append_snapshot(ws, snap):
 
     run_date = snap.get("last_updated", "")[:10]
     fleet    = snap.get("fleet", [])
-    summary  = snap.get("summary", {})
 
     for i, ac in enumerate(fleet):
         status = ac.get("status", "")
@@ -338,6 +337,9 @@ def append_client_map(ws, hist):
                 c.alignment = LEFT
                 c.border    = _border()
 
+            for col in [6, 7, 8]:
+                ws.cell(r, col).alignment = RIGHT
+
             ws.cell(r, 3).font = _f(bold=True, color=C_PURPLE)
             ws.cell(r, 4).font = _f(bold=True, color=C_WHITE)
             ws.cell(r, 5).font = _f(color=C_CYAN)
@@ -462,7 +464,6 @@ def build_dashboard(ws, ops_ws, dr_ws, cm_ws):
         ws.row_dimensions[row].height = 18
 
     def kpi_block(label_row, val_row, items):
-        # items = list of (col, label, value, color)
         for col, label, val, color in items:
             ws.merge_cells(start_row=label_row, start_column=col, end_row=label_row, end_column=col+1)
             lc = ws.cell(label_row, col, label)
@@ -616,14 +617,19 @@ def main():
     if os.path.exists(SNAPSHOT):
         with open(SNAPSHOT) as f:
             snap = json.load(f)
-        print(f"Loaded snapshot: {snap.get('report_date')} — {len(snap.get('fleet',[]))} aircraft")
+        print(f"Loaded snapshot: {snap.get('report_date')} — {len(snap.get('fleet', []))} aircraft")
     else:
         print("WARNING: acmi_data.json not found")
 
     if os.path.exists(HISTORY):
         with open(HISTORY) as f:
-            hist = json.load(f)
-        print(f"Loaded history:  {hist.get('report_date')} — {len(hist.get('fleet',[]))} records")
+            raw_hist = json.load(f)
+        # Support both multi-day {"days": [...]} and legacy single-day format
+        if isinstance(raw_hist.get("days"), list) and raw_hist["days"]:
+            hist = raw_hist["days"][0]  # newest day first
+        else:
+            hist = raw_hist
+        print(f"Loaded history:  {hist.get('report_date')} — {len(hist.get('fleet', []))} records")
     else:
         print("WARNING: acmi_history.json not found")
 
@@ -666,10 +672,8 @@ def main():
     for sname, ref in sheet_filter_ranges.items():
         if sname in wb.sheetnames and not wb[sname].auto_filter.ref:
             wb[sname].auto_filter.ref = ref
-            # Also fix header row (row 1 or 2 depending on old format)
             ws_fix = wb[sname]
             if ws_fix.cell(1, 1).value is None and ws_fix.cell(2, 1).value == "Date":
-                # Old format: header on row 2, blank row 1 — delete row 1
                 ws_fix.delete_rows(1)
             print(f"  ✓ AutoFilter added to {sname}")
 
