@@ -145,8 +145,9 @@ AIRLINE_NAMES = {
     "KRH": "UK Royal Flight",
     # Cargo / specialist
     "BCS": "EAT Leipzig",
-    # Hungary
+    # Hungary / Slovakia
     "TVL": "Travel Service",
+    "TVQ": "Travel Service Slovakia",
     # ACMI operators (own registry — kept for fallback)
     "AVE": "Avion Express",
     "MLT": "Avion Express Malta",
