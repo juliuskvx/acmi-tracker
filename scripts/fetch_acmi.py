@@ -167,6 +167,12 @@ AIRLINE_NAMES = {
     "BBG": "Bluebird Airways",
     "JAF": "TUI fly Belgium",
     "SYR": "Syrian Arab Airlines",
+    "KMM": "KM Malta Airlines",
+    "FOE": "Fly One Airlines",
+    "HAT": "Air Horizont",
+    "APK": "Air Peace",
+    "SZ":  "Somon Air",
+    "TVP": "Smartwings Poland",
 }
 
 # ── API helper ────────────────────────────────────────────────────────────────
