@@ -10,6 +10,7 @@ Does two things:
 
 import json
 import os
+import re
 import time
 import requests
 from datetime import datetime, timezone, timedelta
@@ -145,9 +146,8 @@ AIRLINE_NAMES = {
     "KRH": "UK Royal Flight",
     # Cargo / specialist
     "BCS": "EAT Leipzig",
-    # Hungary / Slovakia
+    # Hungary
     "TVL": "Travel Service",
-    "TVQ": "Travel Service Slovakia",
     # ACMI operators (own registry — kept for fallback)
     "AVE": "Avion Express",
     "MLT": "Avion Express Malta",
@@ -156,11 +156,17 @@ AIRLINE_NAMES = {
     "GJT": "GetJet Airlines",
     "GJM": "GetJet Airlines Malta",
     "AWC": "Titan Airways",
+    "ZT":  "Titan Airways",
     "TMT": "Titan Airways Malta",
     "ENT": "Enter Air",
     "AXQ": "AirExplore",
     "TVS": "Smartwings",
     "QS":  "Smartwings",
+    "TVQ": "Travel Service Slovakia",
+    # Verified 2026-07-09 during contract-window data cleanup
+    "BBG": "Bluebird Airways",
+    "JAF": "TUI fly Belgium",
+    "SYR": "Syrian Arab Airlines",
 }
 
 # ── API helper ────────────────────────────────────────────────────────────────
@@ -219,11 +225,67 @@ def get_day_flights(registration, date_from_utc, date_to_utc):
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
 
-def detect_operator(callsign, owner_icao):
-    if not callsign or len(callsign) < 3:
+_CALLSIGN_PREFIX_RE = re.compile(r'^[A-Z]+')
+
+def build_group_maps(registry):
+    """
+    Per-group sets of ICAO codes and lowercase names. Used so detect_operator
+    can recognise when a flight's callsign belongs to the aircraft's OWN
+    operator group (a sibling AOC, or the same airline under an IATA-format
+    callsign) rather than an external ACMI client — even though the raw code
+    doesn't match this specific aircraft's single owner_icao.
+    """
+    group_icaos = {}
+    group_names = {}
+    for op in registry["operators"]:
+        grp = op.get("group", op["name"])
+        group_icaos.setdefault(grp, set()).add(op["icao"].upper())
+        group_names.setdefault(grp, set()).add(op["name"].strip().lower())
+    return group_icaos, group_names
+
+def detect_operator(callsign, registration, owner_icao, group_icaos, group_names):
+    """
+    Returns (op_icao, is_acmi).
+
+    - (None, False) if callsign is missing/too short, or if the callsign is
+      just the aircraft's own tail number (common on ferry/positioning
+      flights with no ATC callsign assigned) — there is no client here.
+    - Extracts the airline-code prefix as the callsign's actual leading run
+      of letters (2 or 3 chars, whichever it naturally has before its
+      digits) rather than guessing a fixed length. This correctly reads
+      IATA-format callsigns like "AH1125" as "AH" instead of mangling it to
+      "AH1", without ever misreading a genuine 3-letter code (e.g.
+      "KMM612") as a coincidentally-matching 2-letter code from a different
+      airline (an earlier version of this fix had exactly that bug). If the
+      raw 3-character slice is already a known AIRLINE_NAMES entry (some
+      operators use non-standard digit-containing codes, e.g. "AP7" for
+      Air Europa in this fleet's data), that verified mapping always wins.
+    - Treats any code/name belonging to the aircraft's own operator GROUP
+      (not just its single owner_icao) as non-ACMI. This covers intra-group
+      AOC swaps (Heston <-> Valletta, GetJet <-> GetJet Malta) and
+      same-airline IATA-vs-ICAO callsign mismatches (Titan's "ZT" vs
+      "AWC"/"TMT") that were previously mis-flagged as external clients.
+    """
+    if not callsign or len(callsign) < 2:
         return None, False
-    op_icao = callsign[:3].upper()
-    return op_icao, op_icao != owner_icao.upper()
+
+    cs = callsign.upper().strip()
+    reg_clean = registration.upper().replace("-", "")
+    if cs == reg_clean:
+        return None, False  # tail number used as callsign — ferry/positioning, no client
+
+    cs3 = cs[:3]
+    if cs3 in AIRLINE_NAMES:
+        op_icao = cs3  # respects previously-verified non-standard codes (e.g. "AP7")
+    else:
+        m = _CALLSIGN_PREFIX_RE.match(cs)
+        alpha_prefix = m.group(0) if m else ""
+        op_icao = alpha_prefix if 2 <= len(alpha_prefix) <= 3 else cs3
+
+    resolved_name = resolve_airline_name(op_icao).strip().lower()
+    same_group = (op_icao.upper() in group_icaos) or (resolved_name in group_names)
+    is_acmi = (not same_group) and (op_icao.upper() != owner_icao.upper())
+    return op_icao, is_acmi
 
 def resolve_airline_name(icao_code):
     if not icao_code:
@@ -286,6 +348,7 @@ def run_snapshot(registry):
     total   = sum(len(op["aircraft"]) for op in registry["operators"])
     fleet   = []
     queried = acmi_count = own_count = ground_count = 0
+    group_icaos_all, group_names_all = build_group_maps(registry)
 
     print(f"Querying {total} aircraft...\n")
 
@@ -293,6 +356,8 @@ def run_snapshot(registry):
         if not op["aircraft"]:
             continue
         print(f"{op['name']} ({op['icao']}) — {len(op['aircraft'])} aircraft")
+        this_icaos = group_icaos_all.get(op.get("group", op["name"]), {op["icao"].upper()})
+        this_names = group_names_all.get(op.get("group", op["name"]), {op["name"].strip().lower()})
         for ac in op["aircraft"]:
             reg = ac["registration"]
             queried += 1
@@ -323,7 +388,7 @@ def run_snapshot(registry):
 
             if live:
                 callsign         = live.get("callsign", "")
-                op_icao, is_acmi = detect_operator(callsign, op["icao"])
+                op_icao, is_acmi = detect_operator(callsign, reg, op["icao"], this_icaos, this_names)
                 entry.update({
                     "callsign": callsign,
                     "current_operator_icao": op_icao,
@@ -405,11 +470,14 @@ def run_history(registry):
     results    = []
     queried    = 0
     client_map = {}
+    group_icaos_all, group_names_all = build_group_maps(registry)
 
     for op in registry["operators"]:
         if not op["aircraft"]:
             continue
         print(f"{op['name']} ({op['icao']}) — {len(op['aircraft'])} aircraft")
+        this_icaos = group_icaos_all.get(op.get("group", op["name"]), {op["icao"].upper()})
+        this_names = group_names_all.get(op.get("group", op["name"]), {op["name"].strip().lower()})
 
         for ac in op["aircraft"]:
             reg = ac["registration"]
@@ -451,7 +519,7 @@ def run_history(registry):
                 orig     = fl.get("orig_iata") or fl.get("orig_icao", "")
                 dest     = fl.get("dest_iata") or fl.get("dest_icao_actual") or fl.get("dest_icao", "")
                 bh       = calc_block_hours(dep_time, arr_time)
-                op_icao, is_acmi = detect_operator(callsign, op["icao"])
+                op_icao, is_acmi = detect_operator(callsign, reg, op["icao"], this_icaos, this_names)
 
                 total_bh += bh
                 route = f"{orig}-{dest}" if orig and dest else None
