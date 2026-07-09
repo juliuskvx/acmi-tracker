@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-08 07:43 UTC",
+  "generated_at": "2026-07-09 07:43 UTC",
   "date_range": {
     "from": "2026-06-18",
-    "to": "2026-07-07"
+    "to": "2026-07-08"
   },
-  "days_of_history": 18,
+  "days_of_history": 19,
   "gap_tolerance_days": 3,
   "idle_threshold_days": 3,
   "contracts": [
@@ -15,12 +15,12 @@
       "client_icao": "CFG",
       "client_name": "Condor",
       "start_date": "2026-06-18",
-      "end_date": "2026-07-07",
+      "end_date": "2026-07-08",
       "status": "active",
-      "days_active": 18,
-      "span_days": 20,
-      "continuity_pct": 90.0,
-      "total_bh": 243.1,
+      "days_active": 19,
+      "span_days": 21,
+      "continuity_pct": 90.5,
+      "total_bh": 256.8,
       "avg_bh_per_active_day": 13.5,
       "max_internal_gap_days": 3,
       "days_since_last_seen": 0
@@ -32,12 +32,12 @@
       "client_icao": "TVP",
       "client_name": "TVP",
       "start_date": "2026-06-18",
-      "end_date": "2026-07-07",
+      "end_date": "2026-07-08",
       "status": "active",
-      "days_active": 18,
-      "span_days": 20,
-      "continuity_pct": 90.0,
-      "total_bh": 239.7,
+      "days_active": 19,
+      "span_days": 21,
+      "continuity_pct": 90.5,
+      "total_bh": 253.0,
       "avg_bh_per_active_day": 13.3,
       "max_internal_gap_days": 3,
       "days_since_last_seen": 0
@@ -57,24 +57,7 @@
       "total_bh": 204.7,
       "avg_bh_per_active_day": 11.4,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 0
-    },
-    {
-      "registration": "9H-SEY",
-      "owner_name": "Valletta Airlines",
-      "group": "Heston",
-      "client_icao": "AHY",
-      "client_name": "Azerbaijan Airlines",
-      "start_date": "2026-06-18",
-      "end_date": "2026-07-07",
-      "status": "active",
-      "days_active": 18,
-      "span_days": 20,
-      "continuity_pct": 90.0,
-      "total_bh": 193.4,
-      "avg_bh_per_active_day": 10.7,
-      "max_internal_gap_days": 3,
-      "days_since_last_seen": 0
+      "days_since_last_seen": 1
     },
     {
       "registration": "LY-MHL",
@@ -83,13 +66,13 @@
       "client_icao": "AHY",
       "client_name": "Azerbaijan Airlines",
       "start_date": "2026-06-18",
-      "end_date": "2026-07-07",
+      "end_date": "2026-07-08",
       "status": "active",
-      "days_active": 18,
-      "span_days": 20,
-      "continuity_pct": 90.0,
-      "total_bh": 192.1,
-      "avg_bh_per_active_day": 10.7,
+      "days_active": 19,
+      "span_days": 21,
+      "continuity_pct": 90.5,
+      "total_bh": 202.2,
+      "avg_bh_per_active_day": 10.6,
       "max_internal_gap_days": 3,
       "days_since_last_seen": 0
     },
@@ -100,12 +83,29 @@
       "client_icao": "AHY",
       "client_name": "Azerbaijan Airlines",
       "start_date": "2026-06-18",
-      "end_date": "2026-07-07",
+      "end_date": "2026-07-08",
       "status": "active",
-      "days_active": 18,
-      "span_days": 20,
-      "continuity_pct": 90.0,
-      "total_bh": 189.1,
+      "days_active": 19,
+      "span_days": 21,
+      "continuity_pct": 90.5,
+      "total_bh": 201.2,
+      "avg_bh_per_active_day": 10.6,
+      "max_internal_gap_days": 3,
+      "days_since_last_seen": 0
+    },
+    {
+      "registration": "9H-SEY",
+      "owner_name": "Valletta Airlines",
+      "group": "Heston",
+      "client_icao": "AHY",
+      "client_name": "Azerbaijan Airlines",
+      "start_date": "2026-06-18",
+      "end_date": "2026-07-08",
+      "status": "active",
+      "days_active": 19,
+      "span_days": 21,
+      "continuity_pct": 90.5,
+      "total_bh": 198.6,
       "avg_bh_per_active_day": 10.5,
       "max_internal_gap_days": 3,
       "days_since_last_seen": 0
@@ -117,12 +117,12 @@
       "client_icao": "EWG",
       "client_name": "Eurowings",
       "start_date": "2026-06-18",
-      "end_date": "2026-07-07",
+      "end_date": "2026-07-08",
       "status": "active",
-      "days_active": 18,
-      "span_days": 20,
-      "continuity_pct": 90.0,
-      "total_bh": 185.9,
+      "days_active": 19,
+      "span_days": 21,
+      "continuity_pct": 90.5,
+      "total_bh": 194.8,
       "avg_bh_per_active_day": 10.3,
       "max_internal_gap_days": 3,
       "days_since_last_seen": 0
@@ -134,30 +134,13 @@
       "client_icao": "AIZ",
       "client_name": "Arkia Israeli Airlines",
       "start_date": "2026-06-18",
-      "end_date": "2026-07-07",
+      "end_date": "2026-07-08",
       "status": "active",
-      "days_active": 18,
-      "span_days": 20,
-      "continuity_pct": 90.0,
-      "total_bh": 180.9,
-      "avg_bh_per_active_day": 10.1,
-      "max_internal_gap_days": 3,
-      "days_since_last_seen": 0
-    },
-    {
-      "registration": "LY-DAE",
-      "owner_name": "GetJet Airlines",
-      "group": "GetJet",
-      "client_icao": "EWG",
-      "client_name": "Eurowings",
-      "start_date": "2026-06-18",
-      "end_date": "2026-07-07",
-      "status": "active",
-      "days_active": 18,
-      "span_days": 20,
-      "continuity_pct": 90.0,
-      "total_bh": 170.2,
-      "avg_bh_per_active_day": 9.5,
+      "days_active": 19,
+      "span_days": 21,
+      "continuity_pct": 90.5,
+      "total_bh": 194.5,
+      "avg_bh_per_active_day": 10.2,
       "max_internal_gap_days": 3,
       "days_since_last_seen": 0
     },
@@ -168,30 +151,30 @@
       "client_icao": "EWG",
       "client_name": "Eurowings",
       "start_date": "2026-06-18",
-      "end_date": "2026-07-07",
+      "end_date": "2026-07-08",
       "status": "active",
-      "days_active": 18,
-      "span_days": 20,
-      "continuity_pct": 90.0,
-      "total_bh": 169.7,
-      "avg_bh_per_active_day": 9.4,
+      "days_active": 19,
+      "span_days": 21,
+      "continuity_pct": 90.5,
+      "total_bh": 180.7,
+      "avg_bh_per_active_day": 9.5,
       "max_internal_gap_days": 3,
       "days_since_last_seen": 0
     },
     {
-      "registration": "LY-FAS",
+      "registration": "LY-DAE",
       "owner_name": "GetJet Airlines",
       "group": "GetJet",
       "client_icao": "EWG",
       "client_name": "Eurowings",
       "start_date": "2026-06-18",
-      "end_date": "2026-07-07",
+      "end_date": "2026-07-08",
       "status": "active",
-      "days_active": 18,
-      "span_days": 20,
-      "continuity_pct": 90.0,
-      "total_bh": 166.4,
-      "avg_bh_per_active_day": 9.2,
+      "days_active": 19,
+      "span_days": 21,
+      "continuity_pct": 90.5,
+      "total_bh": 178.7,
+      "avg_bh_per_active_day": 9.4,
       "max_internal_gap_days": 3,
       "days_since_last_seen": 0
     },
@@ -202,13 +185,30 @@
       "client_icao": "EWG",
       "client_name": "Eurowings",
       "start_date": "2026-06-18",
-      "end_date": "2026-07-07",
+      "end_date": "2026-07-08",
       "status": "active",
-      "days_active": 18,
-      "span_days": 20,
-      "continuity_pct": 90.0,
-      "total_bh": 165.6,
-      "avg_bh_per_active_day": 9.2,
+      "days_active": 19,
+      "span_days": 21,
+      "continuity_pct": 90.5,
+      "total_bh": 177.6,
+      "avg_bh_per_active_day": 9.3,
+      "max_internal_gap_days": 3,
+      "days_since_last_seen": 0
+    },
+    {
+      "registration": "LY-FAS",
+      "owner_name": "GetJet Airlines",
+      "group": "GetJet",
+      "client_icao": "EWG",
+      "client_name": "Eurowings",
+      "start_date": "2026-06-18",
+      "end_date": "2026-07-08",
+      "status": "active",
+      "days_active": 19,
+      "span_days": 21,
+      "continuity_pct": 90.5,
+      "total_bh": 177.2,
+      "avg_bh_per_active_day": 9.3,
       "max_internal_gap_days": 3,
       "days_since_last_seen": 0
     },
@@ -219,30 +219,13 @@
       "client_icao": "DAH",
       "client_name": "Air Alg\u00e9rie",
       "start_date": "2026-06-18",
-      "end_date": "2026-07-07",
+      "end_date": "2026-07-08",
       "status": "active",
-      "days_active": 18,
-      "span_days": 20,
-      "continuity_pct": 90.0,
-      "total_bh": 165.2,
-      "avg_bh_per_active_day": 9.2,
-      "max_internal_gap_days": 3,
-      "days_since_last_seen": 0
-    },
-    {
-      "registration": "9H-AMK",
-      "owner_name": "Avion Express Malta",
-      "group": "Avion Express",
-      "client_icao": "DAH",
-      "client_name": "Air Alg\u00e9rie",
-      "start_date": "2026-06-18",
-      "end_date": "2026-07-07",
-      "status": "active",
-      "days_active": 18,
-      "span_days": 20,
-      "continuity_pct": 90.0,
-      "total_bh": 160.0,
-      "avg_bh_per_active_day": 8.9,
+      "days_active": 19,
+      "span_days": 21,
+      "continuity_pct": 90.5,
+      "total_bh": 173.6,
+      "avg_bh_per_active_day": 9.1,
       "max_internal_gap_days": 3,
       "days_since_last_seen": 0
     },
@@ -253,13 +236,13 @@
       "client_icao": "DAH",
       "client_name": "Air Alg\u00e9rie",
       "start_date": "2026-06-18",
-      "end_date": "2026-07-07",
+      "end_date": "2026-07-08",
       "status": "active",
-      "days_active": 18,
-      "span_days": 20,
-      "continuity_pct": 90.0,
-      "total_bh": 159.5,
-      "avg_bh_per_active_day": 8.9,
+      "days_active": 19,
+      "span_days": 21,
+      "continuity_pct": 90.5,
+      "total_bh": 170.9,
+      "avg_bh_per_active_day": 9.0,
       "max_internal_gap_days": 3,
       "days_since_last_seen": 0
     },
@@ -270,13 +253,13 @@
       "client_icao": "EWG",
       "client_name": "Eurowings",
       "start_date": "2026-06-18",
-      "end_date": "2026-07-07",
+      "end_date": "2026-07-08",
       "status": "active",
-      "days_active": 17,
-      "span_days": 20,
-      "continuity_pct": 85.0,
-      "total_bh": 159.4,
-      "avg_bh_per_active_day": 9.4,
+      "days_active": 18,
+      "span_days": 21,
+      "continuity_pct": 85.7,
+      "total_bh": 170.5,
+      "avg_bh_per_active_day": 9.5,
       "max_internal_gap_days": 3,
       "days_since_last_seen": 0
     },
@@ -287,13 +270,30 @@
       "client_icao": "EWG",
       "client_name": "Eurowings",
       "start_date": "2026-06-18",
-      "end_date": "2026-07-07",
+      "end_date": "2026-07-08",
       "status": "active",
-      "days_active": 18,
-      "span_days": 20,
-      "continuity_pct": 90.0,
-      "total_bh": 158.4,
-      "avg_bh_per_active_day": 8.8,
+      "days_active": 19,
+      "span_days": 21,
+      "continuity_pct": 90.5,
+      "total_bh": 168.6,
+      "avg_bh_per_active_day": 8.9,
+      "max_internal_gap_days": 3,
+      "days_since_last_seen": 0
+    },
+    {
+      "registration": "9H-AMK",
+      "owner_name": "Avion Express Malta",
+      "group": "Avion Express",
+      "client_icao": "DAH",
+      "client_name": "Air Alg\u00e9rie",
+      "start_date": "2026-06-18",
+      "end_date": "2026-07-08",
+      "status": "active",
+      "days_active": 19,
+      "span_days": 21,
+      "continuity_pct": 90.5,
+      "total_bh": 165.8,
+      "avg_bh_per_active_day": 8.7,
       "max_internal_gap_days": 3,
       "days_since_last_seen": 0
     },
@@ -304,13 +304,13 @@
       "client_icao": "EWG",
       "client_name": "Eurowings",
       "start_date": "2026-06-18",
-      "end_date": "2026-07-07",
+      "end_date": "2026-07-08",
       "status": "active",
-      "days_active": 18,
-      "span_days": 20,
-      "continuity_pct": 90.0,
-      "total_bh": 155.2,
-      "avg_bh_per_active_day": 8.6,
+      "days_active": 19,
+      "span_days": 21,
+      "continuity_pct": 90.5,
+      "total_bh": 164.9,
+      "avg_bh_per_active_day": 8.7,
       "max_internal_gap_days": 3,
       "days_since_last_seen": 0
     },
@@ -321,30 +321,13 @@
       "client_icao": "EWG",
       "client_name": "Eurowings",
       "start_date": "2026-06-18",
-      "end_date": "2026-07-07",
+      "end_date": "2026-07-08",
       "status": "active",
-      "days_active": 18,
-      "span_days": 20,
-      "continuity_pct": 90.0,
-      "total_bh": 152.8,
-      "avg_bh_per_active_day": 8.5,
-      "max_internal_gap_days": 3,
-      "days_since_last_seen": 0
-    },
-    {
-      "registration": "9H-SWG",
-      "owner_name": "Avion Express Malta",
-      "group": "Avion Express",
-      "client_icao": "DAH",
-      "client_name": "Air Alg\u00e9rie",
-      "start_date": "2026-06-18",
-      "end_date": "2026-07-07",
-      "status": "active",
-      "days_active": 18,
-      "span_days": 20,
-      "continuity_pct": 90.0,
-      "total_bh": 151.2,
-      "avg_bh_per_active_day": 8.4,
+      "days_active": 19,
+      "span_days": 21,
+      "continuity_pct": 90.5,
+      "total_bh": 163.2,
+      "avg_bh_per_active_day": 8.6,
       "max_internal_gap_days": 3,
       "days_since_last_seen": 0
     },
@@ -355,13 +338,98 @@
       "client_icao": "ETD",
       "client_name": "Etihad Airways",
       "start_date": "2026-06-18",
-      "end_date": "2026-07-07",
+      "end_date": "2026-07-08",
       "status": "active",
-      "days_active": 18,
-      "span_days": 20,
-      "continuity_pct": 90.0,
-      "total_bh": 151.0,
-      "avg_bh_per_active_day": 8.4,
+      "days_active": 19,
+      "span_days": 21,
+      "continuity_pct": 90.5,
+      "total_bh": 158.2,
+      "avg_bh_per_active_day": 8.3,
+      "max_internal_gap_days": 3,
+      "days_since_last_seen": 0
+    },
+    {
+      "registration": "9H-AMI",
+      "owner_name": "Avion Express Malta",
+      "group": "Avion Express",
+      "client_icao": "TAR",
+      "client_name": "Tunisair",
+      "start_date": "2026-06-18",
+      "end_date": "2026-07-08",
+      "status": "active",
+      "days_active": 19,
+      "span_days": 21,
+      "continuity_pct": 90.5,
+      "total_bh": 156.6,
+      "avg_bh_per_active_day": 8.2,
+      "max_internal_gap_days": 3,
+      "days_since_last_seen": 0
+    },
+    {
+      "registration": "LY-WIL",
+      "owner_name": "GetJet Airlines",
+      "group": "GetJet",
+      "client_icao": "EWG",
+      "client_name": "Eurowings",
+      "start_date": "2026-06-18",
+      "end_date": "2026-07-08",
+      "status": "active",
+      "days_active": 17,
+      "span_days": 21,
+      "continuity_pct": 81.0,
+      "total_bh": 155.9,
+      "avg_bh_per_active_day": 9.2,
+      "max_internal_gap_days": 3,
+      "days_since_last_seen": 0
+    },
+    {
+      "registration": "9H-SWG",
+      "owner_name": "Avion Express Malta",
+      "group": "Avion Express",
+      "client_icao": "DAH",
+      "client_name": "Air Alg\u00e9rie",
+      "start_date": "2026-06-18",
+      "end_date": "2026-07-08",
+      "status": "active",
+      "days_active": 19,
+      "span_days": 21,
+      "continuity_pct": 90.5,
+      "total_bh": 155.7,
+      "avg_bh_per_active_day": 8.2,
+      "max_internal_gap_days": 3,
+      "days_since_last_seen": 0
+    },
+    {
+      "registration": "9H-AMM",
+      "owner_name": "Avion Express Malta",
+      "group": "Avion Express",
+      "client_icao": "TAR",
+      "client_name": "Tunisair",
+      "start_date": "2026-06-18",
+      "end_date": "2026-07-08",
+      "status": "active",
+      "days_active": 19,
+      "span_days": 21,
+      "continuity_pct": 90.5,
+      "total_bh": 152.0,
+      "avg_bh_per_active_day": 8.0,
+      "max_internal_gap_days": 3,
+      "days_since_last_seen": 0
+    },
+    {
+      "registration": "LY-WIZ",
+      "owner_name": "GetJet Airlines",
+      "group": "GetJet",
+      "client_icao": "EWG",
+      "client_name": "Eurowings",
+      "start_date": "2026-06-18",
+      "end_date": "2026-07-08",
+      "status": "active",
+      "days_active": 19,
+      "span_days": 21,
+      "continuity_pct": 90.5,
+      "total_bh": 151.6,
+      "avg_bh_per_active_day": 8.0,
       "max_internal_gap_days": 3,
       "days_since_last_seen": 0
     },
@@ -380,73 +448,22 @@
       "total_bh": 150.5,
       "avg_bh_per_active_day": 9.4,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 1
+      "days_since_last_seen": 2
     },
     {
-      "registration": "9H-AMI",
-      "owner_name": "Avion Express Malta",
-      "group": "Avion Express",
-      "client_icao": "TAR",
-      "client_name": "Tunisair",
+      "registration": "9H-GTS",
+      "owner_name": "GetJet Airlines Malta",
+      "group": "GetJet",
+      "client_icao": "ETD",
+      "client_name": "Etihad Airways",
       "start_date": "2026-06-18",
-      "end_date": "2026-07-07",
+      "end_date": "2026-07-08",
       "status": "active",
       "days_active": 18,
-      "span_days": 20,
-      "continuity_pct": 90.0,
-      "total_bh": 147.5,
+      "span_days": 21,
+      "continuity_pct": 85.7,
+      "total_bh": 147.0,
       "avg_bh_per_active_day": 8.2,
-      "max_internal_gap_days": 3,
-      "days_since_last_seen": 0
-    },
-    {
-      "registration": "9H-AMM",
-      "owner_name": "Avion Express Malta",
-      "group": "Avion Express",
-      "client_icao": "TAR",
-      "client_name": "Tunisair",
-      "start_date": "2026-06-18",
-      "end_date": "2026-07-07",
-      "status": "active",
-      "days_active": 18,
-      "span_days": 20,
-      "continuity_pct": 90.0,
-      "total_bh": 146.2,
-      "avg_bh_per_active_day": 8.1,
-      "max_internal_gap_days": 3,
-      "days_since_last_seen": 0
-    },
-    {
-      "registration": "LY-WIL",
-      "owner_name": "GetJet Airlines",
-      "group": "GetJet",
-      "client_icao": "EWG",
-      "client_name": "Eurowings",
-      "start_date": "2026-06-18",
-      "end_date": "2026-07-07",
-      "status": "active",
-      "days_active": 16,
-      "span_days": 20,
-      "continuity_pct": 80.0,
-      "total_bh": 144.7,
-      "avg_bh_per_active_day": 9.0,
-      "max_internal_gap_days": 3,
-      "days_since_last_seen": 0
-    },
-    {
-      "registration": "LY-WIZ",
-      "owner_name": "GetJet Airlines",
-      "group": "GetJet",
-      "client_icao": "EWG",
-      "client_name": "Eurowings",
-      "start_date": "2026-06-18",
-      "end_date": "2026-07-07",
-      "status": "active",
-      "days_active": 18,
-      "span_days": 20,
-      "continuity_pct": 90.0,
-      "total_bh": 142.1,
-      "avg_bh_per_active_day": 7.9,
       "max_internal_gap_days": 3,
       "days_since_last_seen": 0
     },
@@ -457,49 +474,15 @@
       "client_icao": "EWG",
       "client_name": "Eurowings",
       "start_date": "2026-06-18",
-      "end_date": "2026-07-07",
+      "end_date": "2026-07-08",
       "status": "active",
-      "days_active": 16,
-      "span_days": 20,
-      "continuity_pct": 80.0,
-      "total_bh": 135.9,
+      "days_active": 17,
+      "span_days": 21,
+      "continuity_pct": 81.0,
+      "total_bh": 145.2,
       "avg_bh_per_active_day": 8.5,
       "max_internal_gap_days": 3,
       "days_since_last_seen": 0
-    },
-    {
-      "registration": "9H-GTS",
-      "owner_name": "GetJet Airlines Malta",
-      "group": "GetJet",
-      "client_icao": "ETD",
-      "client_name": "Etihad Airways",
-      "start_date": "2026-06-18",
-      "end_date": "2026-07-07",
-      "status": "active",
-      "days_active": 17,
-      "span_days": 20,
-      "continuity_pct": 85.0,
-      "total_bh": 135.3,
-      "avg_bh_per_active_day": 8.0,
-      "max_internal_gap_days": 3,
-      "days_since_last_seen": 0
-    },
-    {
-      "registration": "LY-TEN",
-      "owner_name": "GetJet Airlines",
-      "group": "GetJet",
-      "client_icao": "ASL",
-      "client_name": "ASL Airlines",
-      "start_date": "2026-06-19",
-      "end_date": "2026-07-04",
-      "status": "active",
-      "days_active": 14,
-      "span_days": 16,
-      "continuity_pct": 87.5,
-      "total_bh": 132.1,
-      "avg_bh_per_active_day": 9.4,
-      "max_internal_gap_days": 3,
-      "days_since_last_seen": 3
     },
     {
       "registration": "LY-NOW",
@@ -508,13 +491,13 @@
       "client_icao": "ETD",
       "client_name": "Etihad Airways",
       "start_date": "2026-06-18",
-      "end_date": "2026-07-07",
+      "end_date": "2026-07-08",
       "status": "active",
-      "days_active": 18,
-      "span_days": 20,
-      "continuity_pct": 90.0,
-      "total_bh": 131.8,
-      "avg_bh_per_active_day": 7.3,
+      "days_active": 19,
+      "span_days": 21,
+      "continuity_pct": 90.5,
+      "total_bh": 143.8,
+      "avg_bh_per_active_day": 7.6,
       "max_internal_gap_days": 3,
       "days_since_last_seen": 0
     },
@@ -525,32 +508,15 @@
       "client_icao": "DAH",
       "client_name": "Air Alg\u00e9rie",
       "start_date": "2026-06-18",
-      "end_date": "2026-07-07",
+      "end_date": "2026-07-08",
       "status": "active",
-      "days_active": 17,
-      "span_days": 20,
-      "continuity_pct": 85.0,
-      "total_bh": 125.0,
-      "avg_bh_per_active_day": 7.4,
+      "days_active": 18,
+      "span_days": 21,
+      "continuity_pct": 85.7,
+      "total_bh": 131.8,
+      "avg_bh_per_active_day": 7.3,
       "max_internal_gap_days": 3,
       "days_since_last_seen": 0
-    },
-    {
-      "registration": "9H-MLU",
-      "owner_name": "Avion Express Malta",
-      "group": "Avion Express",
-      "client_icao": "EWG",
-      "client_name": "Eurowings",
-      "start_date": "2026-06-19",
-      "end_date": "2026-07-04",
-      "status": "active",
-      "days_active": 14,
-      "span_days": 16,
-      "continuity_pct": 87.5,
-      "total_bh": 122.6,
-      "avg_bh_per_active_day": 8.8,
-      "max_internal_gap_days": 3,
-      "days_since_last_seen": 3
     },
     {
       "registration": "LY-SEI",
@@ -559,13 +525,13 @@
       "client_icao": "SZN",
       "client_name": "Air Senegal",
       "start_date": "2026-06-18",
-      "end_date": "2026-07-07",
+      "end_date": "2026-07-08",
       "status": "active",
-      "days_active": 16,
-      "span_days": 20,
-      "continuity_pct": 80.0,
-      "total_bh": 120.6,
-      "avg_bh_per_active_day": 7.5,
+      "days_active": 17,
+      "span_days": 21,
+      "continuity_pct": 81.0,
+      "total_bh": 130.8,
+      "avg_bh_per_active_day": 7.7,
       "max_internal_gap_days": 3,
       "days_since_last_seen": 0
     },
@@ -576,12 +542,12 @@
       "client_icao": "ARU",
       "client_name": "Aruba Airlines",
       "start_date": "2026-06-18",
-      "end_date": "2026-07-07",
+      "end_date": "2026-07-08",
       "status": "active",
-      "days_active": 16,
-      "span_days": 20,
-      "continuity_pct": 80.0,
-      "total_bh": 116.3,
+      "days_active": 17,
+      "span_days": 21,
+      "continuity_pct": 81.0,
+      "total_bh": 124.7,
       "avg_bh_per_active_day": 7.3,
       "max_internal_gap_days": 3,
       "days_since_last_seen": 0
@@ -593,13 +559,30 @@
       "client_icao": "TVQ",
       "client_name": "TVQ",
       "start_date": "2026-06-26",
-      "end_date": "2026-07-07",
+      "end_date": "2026-07-08",
       "status": "active",
-      "days_active": 10,
-      "span_days": 12,
-      "continuity_pct": 83.3,
-      "total_bh": 109.5,
-      "avg_bh_per_active_day": 10.9,
+      "days_active": 11,
+      "span_days": 13,
+      "continuity_pct": 84.6,
+      "total_bh": 123.2,
+      "avg_bh_per_active_day": 11.2,
+      "max_internal_gap_days": 3,
+      "days_since_last_seen": 0
+    },
+    {
+      "registration": "LY-NRU",
+      "owner_name": "Heston Airlines",
+      "group": "Heston",
+      "client_icao": "CFG",
+      "client_name": "Condor",
+      "start_date": "2026-06-28",
+      "end_date": "2026-07-08",
+      "status": "active",
+      "days_active": 9,
+      "span_days": 11,
+      "continuity_pct": 81.8,
+      "total_bh": 119.7,
+      "avg_bh_per_active_day": 13.3,
       "max_internal_gap_days": 3,
       "days_since_last_seen": 0
     },
@@ -610,30 +593,13 @@
       "client_icao": "SZN",
       "client_name": "Air Senegal",
       "start_date": "2026-06-19",
-      "end_date": "2026-07-06",
+      "end_date": "2026-07-08",
       "status": "active",
-      "days_active": 16,
-      "span_days": 18,
-      "continuity_pct": 88.9,
-      "total_bh": 108.0,
+      "days_active": 17,
+      "span_days": 20,
+      "continuity_pct": 85.0,
+      "total_bh": 114.8,
       "avg_bh_per_active_day": 6.8,
-      "max_internal_gap_days": 3,
-      "days_since_last_seen": 1
-    },
-    {
-      "registration": "LY-NRU",
-      "owner_name": "Heston Airlines",
-      "group": "Heston",
-      "client_icao": "CFG",
-      "client_name": "Condor",
-      "start_date": "2026-06-28",
-      "end_date": "2026-07-07",
-      "status": "active",
-      "days_active": 8,
-      "span_days": 10,
-      "continuity_pct": 80.0,
-      "total_bh": 106.0,
-      "avg_bh_per_active_day": 13.2,
       "max_internal_gap_days": 3,
       "days_since_last_seen": 0
     },
@@ -644,12 +610,12 @@
       "client_icao": "APO",
       "client_name": "Azores Airlines",
       "start_date": "2026-06-18",
-      "end_date": "2026-07-07",
+      "end_date": "2026-07-08",
       "status": "active",
-      "days_active": 18,
-      "span_days": 20,
-      "continuity_pct": 90.0,
-      "total_bh": 105.5,
+      "days_active": 19,
+      "span_days": 21,
+      "continuity_pct": 90.5,
+      "total_bh": 111.9,
       "avg_bh_per_active_day": 5.9,
       "max_internal_gap_days": 3,
       "days_since_last_seen": 0
@@ -661,13 +627,13 @@
       "client_icao": "CRC",
       "client_name": "Camair-Co",
       "start_date": "2026-06-18",
-      "end_date": "2026-07-07",
+      "end_date": "2026-07-08",
       "status": "active",
-      "days_active": 18,
-      "span_days": 20,
-      "continuity_pct": 90.0,
-      "total_bh": 90.2,
-      "avg_bh_per_active_day": 5.0,
+      "days_active": 19,
+      "span_days": 21,
+      "continuity_pct": 90.5,
+      "total_bh": 93.7,
+      "avg_bh_per_active_day": 4.9,
       "max_internal_gap_days": 3,
       "days_since_last_seen": 0
     },
@@ -678,15 +644,32 @@
       "client_icao": "NVD",
       "client_name": "Novair",
       "start_date": "2026-06-18",
-      "end_date": "2026-07-05",
+      "end_date": "2026-07-08",
       "status": "active",
-      "days_active": 15,
-      "span_days": 18,
-      "continuity_pct": 83.3,
-      "total_bh": 85.7,
-      "avg_bh_per_active_day": 5.7,
+      "days_active": 16,
+      "span_days": 21,
+      "continuity_pct": 76.2,
+      "total_bh": 89.9,
+      "avg_bh_per_active_day": 5.6,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 2
+      "days_since_last_seen": 0
+    },
+    {
+      "registration": "OM-JEX",
+      "owner_name": "AirExplore",
+      "group": "AirExplore",
+      "client_icao": "ENT",
+      "client_name": "Enter Air",
+      "start_date": "2026-07-03",
+      "end_date": "2026-07-08",
+      "status": "active",
+      "days_active": 6,
+      "span_days": 6,
+      "continuity_pct": 100.0,
+      "total_bh": 80.1,
+      "avg_bh_per_active_day": 13.3,
+      "max_internal_gap_days": 1,
+      "days_since_last_seen": 0
     },
     {
       "registration": "OK-SWF",
@@ -703,90 +686,22 @@
       "total_bh": 80.0,
       "avg_bh_per_active_day": 10.0,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 0
-    },
-    {
-      "registration": "LY-MLF",
-      "owner_name": "Avion Express",
-      "group": "Avion Express",
-      "client_icao": "APO",
-      "client_name": "Azores Airlines",
-      "start_date": "2026-06-18",
-      "end_date": "2026-07-07",
-      "status": "active",
-      "days_active": 18,
-      "span_days": 20,
-      "continuity_pct": 90.0,
-      "total_bh": 70.8,
-      "avg_bh_per_active_day": 3.9,
-      "max_internal_gap_days": 3,
-      "days_since_last_seen": 0
-    },
-    {
-      "registration": "OM-JEX",
-      "owner_name": "AirExplore",
-      "group": "AirExplore",
-      "client_icao": "ENT",
-      "client_name": "Enter Air",
-      "start_date": "2026-07-03",
-      "end_date": "2026-07-07",
-      "status": "active",
-      "days_active": 5,
-      "span_days": 5,
-      "continuity_pct": 100.0,
-      "total_bh": 69.1,
-      "avg_bh_per_active_day": 13.8,
-      "max_internal_gap_days": 1,
-      "days_since_last_seen": 0
-    },
-    {
-      "registration": "LY-TUI",
-      "owner_name": "GetJet Airlines",
-      "group": "GetJet",
-      "client_icao": "GJM",
-      "client_name": "GetJet Airlines Malta",
-      "start_date": "2026-06-19",
-      "end_date": "2026-07-06",
-      "status": "active",
-      "days_active": 11,
-      "span_days": 18,
-      "continuity_pct": 61.1,
-      "total_bh": 65.9,
-      "avg_bh_per_active_day": 6.0,
-      "max_internal_gap_days": 3,
       "days_since_last_seen": 1
     },
     {
-      "registration": "OK-TVJ",
+      "registration": "OK-SWD",
       "owner_name": "Smartwings",
       "group": "Smartwings",
-      "client_icao": "TVP",
-      "client_name": "TVP",
+      "client_icao": "TVL",
+      "client_name": "Travel Service",
       "start_date": "2026-07-03",
-      "end_date": "2026-07-07",
+      "end_date": "2026-07-08",
       "status": "active",
-      "days_active": 5,
-      "span_days": 5,
+      "days_active": 6,
+      "span_days": 6,
       "continuity_pct": 100.0,
-      "total_bh": 62.2,
-      "avg_bh_per_active_day": 12.4,
-      "max_internal_gap_days": 1,
-      "days_since_last_seen": 0
-    },
-    {
-      "registration": "OM-MEX",
-      "owner_name": "AirExplore",
-      "group": "AirExplore",
-      "client_icao": "ENT",
-      "client_name": "Enter Air",
-      "start_date": "2026-07-03",
-      "end_date": "2026-07-07",
-      "status": "active",
-      "days_active": 5,
-      "span_days": 5,
-      "continuity_pct": 100.0,
-      "total_bh": 60.8,
-      "avg_bh_per_active_day": 12.2,
+      "total_bh": 80.0,
+      "avg_bh_per_active_day": 13.3,
       "max_internal_gap_days": 1,
       "days_since_last_seen": 0
     },
@@ -797,47 +712,81 @@
       "client_icao": "EWG",
       "client_name": "Eurowings",
       "start_date": "2026-07-03",
-      "end_date": "2026-07-07",
+      "end_date": "2026-07-08",
       "status": "active",
-      "days_active": 5,
-      "span_days": 5,
+      "days_active": 6,
+      "span_days": 6,
       "continuity_pct": 100.0,
-      "total_bh": 59.9,
-      "avg_bh_per_active_day": 12.0,
+      "total_bh": 76.6,
+      "avg_bh_per_active_day": 12.8,
       "max_internal_gap_days": 1,
       "days_since_last_seen": 0
     },
     {
-      "registration": "OK-SWD",
-      "owner_name": "Smartwings",
-      "group": "Smartwings",
-      "client_icao": "TVL",
-      "client_name": "Travel Service",
-      "start_date": "2026-07-03",
-      "end_date": "2026-07-07",
-      "status": "active",
-      "days_active": 5,
-      "span_days": 5,
-      "continuity_pct": 100.0,
-      "total_bh": 59.5,
-      "avg_bh_per_active_day": 11.9,
-      "max_internal_gap_days": 1,
-      "days_since_last_seen": 0
-    },
-    {
-      "registration": "LY-MLI",
+      "registration": "LY-MLF",
       "owner_name": "Avion Express",
       "group": "Avion Express",
-      "client_icao": "TRA",
-      "client_name": "Transavia",
-      "start_date": "2026-06-29",
-      "end_date": "2026-07-07",
+      "client_icao": "APO",
+      "client_name": "Azores Airlines",
+      "start_date": "2026-06-18",
+      "end_date": "2026-07-08",
       "status": "active",
-      "days_active": 7,
-      "span_days": 9,
-      "continuity_pct": 77.8,
-      "total_bh": 56.9,
-      "avg_bh_per_active_day": 8.1,
+      "days_active": 19,
+      "span_days": 21,
+      "continuity_pct": 90.5,
+      "total_bh": 75.9,
+      "avg_bh_per_active_day": 4.0,
+      "max_internal_gap_days": 3,
+      "days_since_last_seen": 0
+    },
+    {
+      "registration": "OK-TVJ",
+      "owner_name": "Smartwings",
+      "group": "Smartwings",
+      "client_icao": "TVP",
+      "client_name": "TVP",
+      "start_date": "2026-07-03",
+      "end_date": "2026-07-08",
+      "status": "active",
+      "days_active": 6,
+      "span_days": 6,
+      "continuity_pct": 100.0,
+      "total_bh": 73.9,
+      "avg_bh_per_active_day": 12.3,
+      "max_internal_gap_days": 1,
+      "days_since_last_seen": 0
+    },
+    {
+      "registration": "OM-MEX",
+      "owner_name": "AirExplore",
+      "group": "AirExplore",
+      "client_icao": "ENT",
+      "client_name": "Enter Air",
+      "start_date": "2026-07-03",
+      "end_date": "2026-07-08",
+      "status": "active",
+      "days_active": 6,
+      "span_days": 6,
+      "continuity_pct": 100.0,
+      "total_bh": 73.5,
+      "avg_bh_per_active_day": 12.2,
+      "max_internal_gap_days": 1,
+      "days_since_last_seen": 0
+    },
+    {
+      "registration": "LY-TUI",
+      "owner_name": "GetJet Airlines",
+      "group": "GetJet",
+      "client_icao": "GJM",
+      "client_name": "GetJet Airlines Malta",
+      "start_date": "2026-06-19",
+      "end_date": "2026-07-08",
+      "status": "active",
+      "days_active": 12,
+      "span_days": 20,
+      "continuity_pct": 60.0,
+      "total_bh": 72.0,
+      "avg_bh_per_active_day": 6.0,
       "max_internal_gap_days": 3,
       "days_since_last_seen": 0
     },
@@ -848,14 +797,31 @@
       "client_icao": "EWG",
       "client_name": "Eurowings",
       "start_date": "2026-07-03",
-      "end_date": "2026-07-07",
+      "end_date": "2026-07-08",
       "status": "active",
-      "days_active": 5,
-      "span_days": 5,
+      "days_active": 6,
+      "span_days": 6,
       "continuity_pct": 100.0,
-      "total_bh": 53.6,
-      "avg_bh_per_active_day": 10.7,
+      "total_bh": 66.9,
+      "avg_bh_per_active_day": 11.2,
       "max_internal_gap_days": 1,
+      "days_since_last_seen": 0
+    },
+    {
+      "registration": "LY-MLI",
+      "owner_name": "Avion Express",
+      "group": "Avion Express",
+      "client_icao": "TRA",
+      "client_name": "Transavia",
+      "start_date": "2026-06-29",
+      "end_date": "2026-07-08",
+      "status": "active",
+      "days_active": 8,
+      "span_days": 10,
+      "continuity_pct": 80.0,
+      "total_bh": 65.1,
+      "avg_bh_per_active_day": 8.1,
+      "max_internal_gap_days": 3,
       "days_since_last_seen": 0
     },
     {
@@ -865,14 +831,99 @@
       "client_icao": "EWG",
       "client_name": "Eurowings",
       "start_date": "2026-07-03",
-      "end_date": "2026-07-07",
+      "end_date": "2026-07-08",
+      "status": "active",
+      "days_active": 6,
+      "span_days": 6,
+      "continuity_pct": 100.0,
+      "total_bh": 64.5,
+      "avg_bh_per_active_day": 10.8,
+      "max_internal_gap_days": 1,
+      "days_since_last_seen": 0
+    },
+    {
+      "registration": "LY-NVG",
+      "owner_name": "Avion Express",
+      "group": "Avion Express",
+      "client_icao": "VOE",
+      "client_name": "Volotea",
+      "start_date": "2026-06-30",
+      "end_date": "2026-07-08",
+      "status": "active",
+      "days_active": 7,
+      "span_days": 9,
+      "continuity_pct": 77.8,
+      "total_bh": 63.4,
+      "avg_bh_per_active_day": 9.1,
+      "max_internal_gap_days": 3,
+      "days_since_last_seen": 0
+    },
+    {
+      "registration": "G-POWU",
+      "owner_name": "Titan Airways",
+      "group": "Titan Airways",
+      "client_icao": "EXS",
+      "client_name": "Jet2",
+      "start_date": "2026-07-03",
+      "end_date": "2026-07-08",
+      "status": "active",
+      "days_active": 6,
+      "span_days": 6,
+      "continuity_pct": 100.0,
+      "total_bh": 56.2,
+      "avg_bh_per_active_day": 9.4,
+      "max_internal_gap_days": 1,
+      "days_since_last_seen": 0
+    },
+    {
+      "registration": "LY-HMD",
+      "owner_name": "Heston Airlines",
+      "group": "Heston",
+      "client_icao": "AHY",
+      "client_name": "Azerbaijan Airlines",
+      "start_date": "2026-07-03",
+      "end_date": "2026-07-08",
+      "status": "active",
+      "days_active": 6,
+      "span_days": 6,
+      "continuity_pct": 100.0,
+      "total_bh": 55.2,
+      "avg_bh_per_active_day": 9.2,
+      "max_internal_gap_days": 1,
+      "days_since_last_seen": 0
+    },
+    {
+      "registration": "9H-SWC",
+      "owner_name": "Avion Express Malta",
+      "group": "Avion Express",
+      "client_icao": "EWG",
+      "client_name": "Eurowings",
+      "start_date": "2026-07-04",
+      "end_date": "2026-07-08",
       "status": "active",
       "days_active": 5,
       "span_days": 5,
       "continuity_pct": 100.0,
-      "total_bh": 53.2,
-      "avg_bh_per_active_day": 10.6,
+      "total_bh": 54.0,
+      "avg_bh_per_active_day": 10.8,
       "max_internal_gap_days": 1,
+      "days_since_last_seen": 0
+    },
+    {
+      "registration": "G-POWN",
+      "owner_name": "Titan Airways",
+      "group": "Titan Airways",
+      "client_icao": "EXS",
+      "client_name": "Jet2",
+      "start_date": "2026-07-03",
+      "end_date": "2026-07-08",
+      "status": "active",
+      "days_active": 5,
+      "span_days": 6,
+      "continuity_pct": 83.3,
+      "total_bh": 53.6,
+      "avg_bh_per_active_day": 10.7,
+      "max_internal_gap_days": 2,
       "days_since_last_seen": 0
     },
     {
@@ -890,90 +941,39 @@
       "total_bh": 52.8,
       "avg_bh_per_active_day": 7.5,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 1
+      "days_since_last_seen": 2
     },
     {
-      "registration": "LY-NVG",
-      "owner_name": "Avion Express",
-      "group": "Avion Express",
-      "client_icao": "VOE",
-      "client_name": "Volotea",
-      "start_date": "2026-06-30",
-      "end_date": "2026-07-07",
-      "status": "active",
-      "days_active": 6,
-      "span_days": 8,
-      "continuity_pct": 75.0,
-      "total_bh": 52.1,
-      "avg_bh_per_active_day": 8.7,
-      "max_internal_gap_days": 3,
-      "days_since_last_seen": 0
-    },
-    {
-      "registration": "G-POWU",
-      "owner_name": "Titan Airways",
-      "group": "Titan Airways",
-      "client_icao": "EXS",
-      "client_name": "Jet2",
-      "start_date": "2026-07-03",
-      "end_date": "2026-07-07",
-      "status": "active",
-      "days_active": 5,
-      "span_days": 5,
-      "continuity_pct": 100.0,
-      "total_bh": 50.7,
-      "avg_bh_per_active_day": 10.1,
-      "max_internal_gap_days": 1,
-      "days_since_last_seen": 0
-    },
-    {
-      "registration": "G-POWN",
-      "owner_name": "Titan Airways",
-      "group": "Titan Airways",
-      "client_icao": "EXS",
-      "client_name": "Jet2",
-      "start_date": "2026-07-03",
-      "end_date": "2026-07-06",
-      "status": "active",
-      "days_active": 4,
-      "span_days": 4,
-      "continuity_pct": 100.0,
-      "total_bh": 47.0,
-      "avg_bh_per_active_day": 11.8,
-      "max_internal_gap_days": 1,
-      "days_since_last_seen": 1
-    },
-    {
-      "registration": "LY-HMD",
-      "owner_name": "Heston Airlines",
-      "group": "Heston",
-      "client_icao": "AHY",
-      "client_name": "Azerbaijan Airlines",
-      "start_date": "2026-07-03",
-      "end_date": "2026-07-07",
-      "status": "active",
-      "days_active": 5,
-      "span_days": 5,
-      "continuity_pct": 100.0,
-      "total_bh": 44.9,
-      "avg_bh_per_active_day": 9.0,
-      "max_internal_gap_days": 1,
-      "days_since_last_seen": 0
-    },
-    {
-      "registration": "9H-SWC",
+      "registration": "9H-SWJ",
       "owner_name": "Avion Express Malta",
       "group": "Avion Express",
       "client_icao": "EWG",
       "client_name": "Eurowings",
-      "start_date": "2026-07-04",
-      "end_date": "2026-07-07",
+      "start_date": "2026-07-03",
+      "end_date": "2026-07-08",
       "status": "active",
-      "days_active": 4,
-      "span_days": 4,
+      "days_active": 5,
+      "span_days": 6,
+      "continuity_pct": 83.3,
+      "total_bh": 49.4,
+      "avg_bh_per_active_day": 9.9,
+      "max_internal_gap_days": 2,
+      "days_since_last_seen": 0
+    },
+    {
+      "registration": "OM-IEX",
+      "owner_name": "AirExplore",
+      "group": "AirExplore",
+      "client_icao": "APO",
+      "client_name": "Azores Airlines",
+      "start_date": "2026-07-03",
+      "end_date": "2026-07-08",
+      "status": "active",
+      "days_active": 6,
+      "span_days": 6,
       "continuity_pct": 100.0,
-      "total_bh": 43.3,
-      "avg_bh_per_active_day": 10.8,
+      "total_bh": 43.5,
+      "avg_bh_per_active_day": 7.2,
       "max_internal_gap_days": 1,
       "days_since_last_seen": 0
     },
@@ -992,7 +992,7 @@
       "total_bh": 40.9,
       "avg_bh_per_active_day": 10.2,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 1
+      "days_since_last_seen": 2
     },
     {
       "registration": "OK-TSD",
@@ -1009,39 +1009,22 @@
       "total_bh": 40.8,
       "avg_bh_per_active_day": 13.6,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 2
+      "days_since_last_seen": 3
     },
     {
-      "registration": "9H-SWJ",
-      "owner_name": "Avion Express Malta",
-      "group": "Avion Express",
-      "client_icao": "EWG",
-      "client_name": "Eurowings",
-      "start_date": "2026-07-03",
-      "end_date": "2026-07-07",
+      "registration": "OK-SWC",
+      "owner_name": "Smartwings",
+      "group": "Smartwings",
+      "client_icao": "TVP",
+      "client_name": "TVP",
+      "start_date": "2026-07-06",
+      "end_date": "2026-07-08",
       "status": "active",
-      "days_active": 4,
-      "span_days": 5,
-      "continuity_pct": 80.0,
-      "total_bh": 38.1,
-      "avg_bh_per_active_day": 9.5,
-      "max_internal_gap_days": 2,
-      "days_since_last_seen": 0
-    },
-    {
-      "registration": "OM-IEX",
-      "owner_name": "AirExplore",
-      "group": "AirExplore",
-      "client_icao": "APO",
-      "client_name": "Azores Airlines",
-      "start_date": "2026-07-03",
-      "end_date": "2026-07-07",
-      "status": "active",
-      "days_active": 5,
-      "span_days": 5,
+      "days_active": 3,
+      "span_days": 3,
       "continuity_pct": 100.0,
-      "total_bh": 35.1,
-      "avg_bh_per_active_day": 7.0,
+      "total_bh": 40.7,
+      "avg_bh_per_active_day": 13.6,
       "max_internal_gap_days": 1,
       "days_since_last_seen": 0
     },
@@ -1052,47 +1035,13 @@
       "client_icao": "BBG",
       "client_name": "BBG",
       "start_date": "2026-07-04",
-      "end_date": "2026-07-07",
-      "status": "active",
-      "days_active": 4,
-      "span_days": 4,
-      "continuity_pct": 100.0,
-      "total_bh": 30.2,
-      "avg_bh_per_active_day": 7.5,
-      "max_internal_gap_days": 1,
-      "days_since_last_seen": 0
-    },
-    {
-      "registration": "OK-SWC",
-      "owner_name": "Smartwings",
-      "group": "Smartwings",
-      "client_icao": "TVP",
-      "client_name": "TVP",
-      "start_date": "2026-07-06",
-      "end_date": "2026-07-07",
-      "status": "active",
-      "days_active": 2,
-      "span_days": 2,
-      "continuity_pct": 100.0,
-      "total_bh": 29.4,
-      "avg_bh_per_active_day": 14.7,
-      "max_internal_gap_days": 1,
-      "days_since_last_seen": 0
-    },
-    {
-      "registration": "OM-NEX",
-      "owner_name": "AirExplore",
-      "group": "AirExplore",
-      "client_icao": "APO",
-      "client_name": "Azores Airlines",
-      "start_date": "2026-07-03",
-      "end_date": "2026-07-07",
+      "end_date": "2026-07-08",
       "status": "active",
       "days_active": 5,
       "span_days": 5,
       "continuity_pct": 100.0,
-      "total_bh": 28.2,
-      "avg_bh_per_active_day": 5.6,
+      "total_bh": 39.9,
+      "avg_bh_per_active_day": 8.0,
       "max_internal_gap_days": 1,
       "days_since_last_seen": 0
     },
@@ -1103,13 +1052,30 @@
       "client_icao": "EWG",
       "client_name": "Eurowings",
       "start_date": "2026-07-05",
-      "end_date": "2026-07-07",
+      "end_date": "2026-07-08",
       "status": "active",
-      "days_active": 3,
-      "span_days": 3,
+      "days_active": 4,
+      "span_days": 4,
       "continuity_pct": 100.0,
-      "total_bh": 28.0,
-      "avg_bh_per_active_day": 9.3,
+      "total_bh": 37.8,
+      "avg_bh_per_active_day": 9.4,
+      "max_internal_gap_days": 1,
+      "days_since_last_seen": 0
+    },
+    {
+      "registration": "OM-NEX",
+      "owner_name": "AirExplore",
+      "group": "AirExplore",
+      "client_icao": "APO",
+      "client_name": "Azores Airlines",
+      "start_date": "2026-07-03",
+      "end_date": "2026-07-08",
+      "status": "active",
+      "days_active": 6,
+      "span_days": 6,
+      "continuity_pct": 100.0,
+      "total_bh": 35.7,
+      "avg_bh_per_active_day": 6.0,
       "max_internal_gap_days": 1,
       "days_since_last_seen": 0
     },
@@ -1120,14 +1086,31 @@
       "client_icao": "EFW",
       "client_name": "BA Euroflyer",
       "start_date": "2026-07-03",
-      "end_date": "2026-07-07",
+      "end_date": "2026-07-08",
+      "status": "active",
+      "days_active": 6,
+      "span_days": 6,
+      "continuity_pct": 100.0,
+      "total_bh": 34.9,
+      "avg_bh_per_active_day": 5.8,
+      "max_internal_gap_days": 1,
+      "days_since_last_seen": 0
+    },
+    {
+      "registration": "OK-TVS",
+      "owner_name": "Smartwings",
+      "group": "Smartwings",
+      "client_icao": "TVQ",
+      "client_name": "TVQ",
+      "start_date": "2026-07-03",
+      "end_date": "2026-07-08",
       "status": "active",
       "days_active": 5,
-      "span_days": 5,
-      "continuity_pct": 100.0,
-      "total_bh": 27.7,
-      "avg_bh_per_active_day": 5.5,
-      "max_internal_gap_days": 1,
+      "span_days": 6,
+      "continuity_pct": 83.3,
+      "total_bh": 32.1,
+      "avg_bh_per_active_day": 6.4,
+      "max_internal_gap_days": 2,
       "days_since_last_seen": 0
     },
     {
@@ -1137,32 +1120,15 @@
       "client_icao": "MLH",
       "client_name": "Air Alsace",
       "start_date": "2026-06-28",
-      "end_date": "2026-07-05",
+      "end_date": "2026-07-08",
       "status": "active",
-      "days_active": 5,
-      "span_days": 8,
-      "continuity_pct": 62.5,
-      "total_bh": 27.2,
-      "avg_bh_per_active_day": 5.4,
+      "days_active": 6,
+      "span_days": 11,
+      "continuity_pct": 54.5,
+      "total_bh": 31.5,
+      "avg_bh_per_active_day": 5.2,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 2
-    },
-    {
-      "registration": "OK-TVS",
-      "owner_name": "Smartwings",
-      "group": "Smartwings",
-      "client_icao": "TVQ",
-      "client_name": "TVQ",
-      "start_date": "2026-07-03",
-      "end_date": "2026-07-06",
-      "status": "active",
-      "days_active": 4,
-      "span_days": 4,
-      "continuity_pct": 100.0,
-      "total_bh": 26.5,
-      "avg_bh_per_active_day": 6.6,
-      "max_internal_gap_days": 1,
-      "days_since_last_seen": 1
+      "days_since_last_seen": 0
     },
     {
       "registration": "LY-WSA",
@@ -1179,7 +1145,41 @@
       "total_bh": 25.2,
       "avg_bh_per_active_day": 6.3,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 1
+      "days_since_last_seen": 2
+    },
+    {
+      "registration": "LY-CIN",
+      "owner_name": "GetJet Airlines",
+      "group": "GetJet",
+      "client_icao": "GJM",
+      "client_name": "GetJet Airlines Malta",
+      "start_date": "2026-07-04",
+      "end_date": "2026-07-08",
+      "status": "active",
+      "days_active": 4,
+      "span_days": 5,
+      "continuity_pct": 80.0,
+      "total_bh": 23.8,
+      "avg_bh_per_active_day": 6.0,
+      "max_internal_gap_days": 2,
+      "days_since_last_seen": 0
+    },
+    {
+      "registration": "LY-NVJ",
+      "owner_name": "Avion Express",
+      "group": "Avion Express",
+      "client_icao": "KMM",
+      "client_name": "KMM",
+      "start_date": "2026-07-06",
+      "end_date": "2026-07-08",
+      "status": "active",
+      "days_active": 3,
+      "span_days": 3,
+      "continuity_pct": 100.0,
+      "total_bh": 23.8,
+      "avg_bh_per_active_day": 7.9,
+      "max_internal_gap_days": 1,
+      "days_since_last_seen": 0
     },
     {
       "registration": "LY-NVE",
@@ -1196,22 +1196,22 @@
       "total_bh": 18.6,
       "avg_bh_per_active_day": 9.3,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 0
+      "days_since_last_seen": 1
     },
     {
-      "registration": "LY-CIN",
-      "owner_name": "GetJet Airlines",
-      "group": "GetJet",
-      "client_icao": "GJM",
-      "client_name": "GetJet Airlines Malta",
-      "start_date": "2026-07-04",
-      "end_date": "2026-07-07",
+      "registration": "9H-ZTB",
+      "owner_name": "Titan Airways Malta",
+      "group": "Titan Airways",
+      "client_icao": "BCS",
+      "client_name": "EAT Leipzig",
+      "start_date": "2026-07-03",
+      "end_date": "2026-07-08",
       "status": "active",
-      "days_active": 3,
-      "span_days": 4,
-      "continuity_pct": 75.0,
-      "total_bh": 17.8,
-      "avg_bh_per_active_day": 5.9,
+      "days_active": 5,
+      "span_days": 6,
+      "continuity_pct": 83.3,
+      "total_bh": 17.7,
+      "avg_bh_per_active_day": 3.5,
       "max_internal_gap_days": 2,
       "days_since_last_seen": 0
     },
@@ -1230,22 +1230,39 @@
       "total_bh": 17.5,
       "avg_bh_per_active_day": 8.8,
       "max_internal_gap_days": 2,
-      "days_since_last_seen": 1
+      "days_since_last_seen": 2
     },
     {
-      "registration": "LY-NVJ",
-      "owner_name": "Avion Express",
-      "group": "Avion Express",
-      "client_icao": "KMM",
-      "client_name": "KMM",
-      "start_date": "2026-07-06",
-      "end_date": "2026-07-07",
+      "registration": "9H-ZTC",
+      "owner_name": "Titan Airways Malta",
+      "group": "Titan Airways",
+      "client_icao": "BCS",
+      "client_name": "EAT Leipzig",
+      "start_date": "2026-07-03",
+      "end_date": "2026-07-08",
+      "status": "active",
+      "days_active": 5,
+      "span_days": 6,
+      "continuity_pct": 83.3,
+      "total_bh": 14.8,
+      "avg_bh_per_active_day": 3.0,
+      "max_internal_gap_days": 2,
+      "days_since_last_seen": 0
+    },
+    {
+      "registration": "9H-NZL",
+      "owner_name": "Valletta Airlines",
+      "group": "Heston",
+      "client_icao": "HST",
+      "client_name": "Heston Airlines",
+      "start_date": "2026-07-07",
+      "end_date": "2026-07-08",
       "status": "active",
       "days_active": 2,
       "span_days": 2,
       "continuity_pct": 100.0,
-      "total_bh": 15.8,
-      "avg_bh_per_active_day": 7.9,
+      "total_bh": 14.1,
+      "avg_bh_per_active_day": 7.0,
       "max_internal_gap_days": 1,
       "days_since_last_seen": 0
     },
@@ -1264,75 +1281,24 @@
       "total_bh": 14.1,
       "avg_bh_per_active_day": 4.7,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 2
-    },
-    {
-      "registration": "9H-ZTB",
-      "owner_name": "Titan Airways Malta",
-      "group": "Titan Airways",
-      "client_icao": "BCS",
-      "client_name": "EAT Leipzig",
-      "start_date": "2026-07-03",
-      "end_date": "2026-07-07",
-      "status": "active",
-      "days_active": 4,
-      "span_days": 5,
-      "continuity_pct": 80.0,
-      "total_bh": 14.0,
-      "avg_bh_per_active_day": 3.5,
-      "max_internal_gap_days": 2,
-      "days_since_last_seen": 0
-    },
-    {
-      "registration": "9H-NZL",
-      "owner_name": "Valletta Airlines",
-      "group": "Heston",
-      "client_icao": "HST",
-      "client_name": "Heston Airlines",
-      "start_date": "2026-07-07",
-      "end_date": "2026-07-07",
-      "status": "active",
-      "days_active": 1,
-      "span_days": 1,
-      "continuity_pct": 100.0,
-      "total_bh": 12.1,
-      "avg_bh_per_active_day": 12.1,
-      "max_internal_gap_days": 0,
-      "days_since_last_seen": 0
-    },
-    {
-      "registration": "9H-ZTC",
-      "owner_name": "Titan Airways Malta",
-      "group": "Titan Airways",
-      "client_icao": "BCS",
-      "client_name": "EAT Leipzig",
-      "start_date": "2026-07-03",
-      "end_date": "2026-07-07",
-      "status": "active",
-      "days_active": 4,
-      "span_days": 5,
-      "continuity_pct": 80.0,
-      "total_bh": 11.4,
-      "avg_bh_per_active_day": 2.9,
-      "max_internal_gap_days": 2,
-      "days_since_last_seen": 0
-    },
-    {
-      "registration": "OK-SWG",
-      "owner_name": "Smartwings",
-      "group": "Smartwings",
-      "client_icao": "OKS",
-      "client_name": "OKS",
-      "start_date": "2026-07-03",
-      "end_date": "2026-07-04",
-      "status": "active",
-      "days_active": 2,
-      "span_days": 2,
-      "continuity_pct": 100.0,
-      "total_bh": 10.1,
-      "avg_bh_per_active_day": 5.0,
-      "max_internal_gap_days": 1,
       "days_since_last_seen": 3
+    },
+    {
+      "registration": "LY-WSA",
+      "owner_name": "GetJet Airlines",
+      "group": "GetJet",
+      "client_icao": "FOE",
+      "client_name": "FOE",
+      "start_date": "2026-07-06",
+      "end_date": "2026-07-08",
+      "status": "active",
+      "days_active": 3,
+      "span_days": 3,
+      "continuity_pct": 100.0,
+      "total_bh": 13.6,
+      "avg_bh_per_active_day": 4.5,
+      "max_internal_gap_days": 1,
+      "days_since_last_seen": 0
     },
     {
       "registration": "9H-TRI",
@@ -1349,22 +1315,22 @@
       "total_bh": 9.9,
       "avg_bh_per_active_day": 9.9,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 2
+      "days_since_last_seen": 3
     },
     {
-      "registration": "LY-WSA",
-      "owner_name": "GetJet Airlines",
-      "group": "GetJet",
-      "client_icao": "FOE",
-      "client_name": "FOE",
-      "start_date": "2026-07-06",
-      "end_date": "2026-07-07",
+      "registration": "G-GBNI",
+      "owner_name": "Titan Airways",
+      "group": "Titan Airways",
+      "client_icao": "KRH",
+      "client_name": "UK Royal Flight",
+      "start_date": "2026-07-07",
+      "end_date": "2026-07-08",
       "status": "active",
       "days_active": 2,
       "span_days": 2,
       "continuity_pct": 100.0,
-      "total_bh": 8.8,
-      "avg_bh_per_active_day": 4.4,
+      "total_bh": 7.3,
+      "avg_bh_per_active_day": 3.6,
       "max_internal_gap_days": 1,
       "days_since_last_seen": 0
     },
@@ -1383,7 +1349,7 @@
       "total_bh": 7.0,
       "avg_bh_per_active_day": 7.0,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 0
+      "days_since_last_seen": 1
     },
     {
       "registration": "LY-NVE",
@@ -1400,24 +1366,7 @@
       "total_bh": 6.1,
       "avg_bh_per_active_day": 6.1,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 0
-    },
-    {
-      "registration": "LY-WSM",
-      "owner_name": "Heston Airlines",
-      "group": "Heston",
-      "client_icao": "HOT",
-      "client_name": "Valletta Airlines",
-      "start_date": "2026-07-04",
-      "end_date": "2026-07-04",
-      "status": "active",
-      "days_active": 1,
-      "span_days": 1,
-      "continuity_pct": 100.0,
-      "total_bh": 5.9,
-      "avg_bh_per_active_day": 5.9,
-      "max_internal_gap_days": 0,
-      "days_since_last_seen": 3
+      "days_since_last_seen": 1
     },
     {
       "registration": "9H-ZTD",
@@ -1426,30 +1375,30 @@
       "client_icao": "BCS",
       "client_name": "EAT Leipzig",
       "start_date": "2026-07-03",
-      "end_date": "2026-07-07",
+      "end_date": "2026-07-08",
       "status": "active",
-      "days_active": 4,
-      "span_days": 5,
-      "continuity_pct": 80.0,
-      "total_bh": 4.6,
-      "avg_bh_per_active_day": 1.1,
+      "days_active": 5,
+      "span_days": 6,
+      "continuity_pct": 83.3,
+      "total_bh": 6.1,
+      "avg_bh_per_active_day": 1.2,
       "max_internal_gap_days": 2,
       "days_since_last_seen": 0
     },
     {
-      "registration": "G-GBNI",
-      "owner_name": "Titan Airways",
-      "group": "Titan Airways",
-      "client_icao": "KRH",
-      "client_name": "UK Royal Flight",
-      "start_date": "2026-07-07",
-      "end_date": "2026-07-07",
+      "registration": "9H-NZL",
+      "owner_name": "Valletta Airlines",
+      "group": "Heston",
+      "client_icao": "AIZ",
+      "client_name": "Arkia Israeli Airlines",
+      "start_date": "2026-07-08",
+      "end_date": "2026-07-08",
       "status": "active",
       "days_active": 1,
       "span_days": 1,
       "continuity_pct": 100.0,
-      "total_bh": 3.4,
-      "avg_bh_per_active_day": 3.4,
+      "total_bh": 2.5,
+      "avg_bh_per_active_day": 2.5,
       "max_internal_gap_days": 0,
       "days_since_last_seen": 0
     },
@@ -1468,7 +1417,7 @@
       "total_bh": 2.1,
       "avg_bh_per_active_day": 2.1,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 2
+      "days_since_last_seen": 3
     },
     {
       "registration": "9H-AMK",
@@ -1485,7 +1434,41 @@
       "total_bh": 1.6,
       "avg_bh_per_active_day": 1.6,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 2
+      "days_since_last_seen": 3
+    },
+    {
+      "registration": "LY-TAP",
+      "owner_name": "GetJet Airlines",
+      "group": "GetJet",
+      "client_icao": "ASL",
+      "client_name": "ASL Airlines",
+      "start_date": "2026-07-08",
+      "end_date": "2026-07-08",
+      "status": "active",
+      "days_active": 1,
+      "span_days": 1,
+      "continuity_pct": 100.0,
+      "total_bh": 1.6,
+      "avg_bh_per_active_day": 1.6,
+      "max_internal_gap_days": 0,
+      "days_since_last_seen": 0
+    },
+    {
+      "registration": "LY-MLF",
+      "owner_name": "Avion Express",
+      "group": "Avion Express",
+      "client_icao": "AOP",
+      "client_name": "AOP",
+      "start_date": "2026-07-08",
+      "end_date": "2026-07-08",
+      "status": "active",
+      "days_active": 1,
+      "span_days": 1,
+      "continuity_pct": 100.0,
+      "total_bh": 0.6,
+      "avg_bh_per_active_day": 0.6,
+      "max_internal_gap_days": 0,
+      "days_since_last_seen": 0
     },
     {
       "registration": "OK-TVU",
@@ -1502,7 +1485,7 @@
       "total_bh": 164.0,
       "avg_bh_per_active_day": 13.7,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 8
+      "days_since_last_seen": 9
     },
     {
       "registration": "OM-MEX",
@@ -1519,7 +1502,7 @@
       "total_bh": 151.8,
       "avg_bh_per_active_day": 12.7,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 8
+      "days_since_last_seen": 9
     },
     {
       "registration": "OK-SWC",
@@ -1536,7 +1519,7 @@
       "total_bh": 149.6,
       "avg_bh_per_active_day": 11.5,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 7
+      "days_since_last_seen": 8
     },
     {
       "registration": "OK-TVR",
@@ -1553,7 +1536,7 @@
       "total_bh": 148.4,
       "avg_bh_per_active_day": 12.4,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 8
+      "days_since_last_seen": 9
     },
     {
       "registration": "OK-TSU",
@@ -1570,7 +1553,7 @@
       "total_bh": 142.0,
       "avg_bh_per_active_day": 11.8,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 8
+      "days_since_last_seen": 9
     },
     {
       "registration": "LY-MAU",
@@ -1587,7 +1570,7 @@
       "total_bh": 138.7,
       "avg_bh_per_active_day": 12.6,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 9
+      "days_since_last_seen": 10
     },
     {
       "registration": "OK-TVT",
@@ -1604,7 +1587,24 @@
       "total_bh": 137.3,
       "avg_bh_per_active_day": 11.4,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 8
+      "days_since_last_seen": 9
+    },
+    {
+      "registration": "LY-TEN",
+      "owner_name": "GetJet Airlines",
+      "group": "GetJet",
+      "client_icao": "ASL",
+      "client_name": "ASL Airlines",
+      "start_date": "2026-06-19",
+      "end_date": "2026-07-04",
+      "status": "ended",
+      "days_active": 14,
+      "span_days": 16,
+      "continuity_pct": 87.5,
+      "total_bh": 132.1,
+      "avg_bh_per_active_day": 9.4,
+      "max_internal_gap_days": 3,
+      "days_since_last_seen": 4
     },
     {
       "registration": "G-POWU",
@@ -1621,7 +1621,7 @@
       "total_bh": 132.0,
       "avg_bh_per_active_day": 11.0,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 8
+      "days_since_last_seen": 9
     },
     {
       "registration": "9H-SWC",
@@ -1638,7 +1638,7 @@
       "total_bh": 131.8,
       "avg_bh_per_active_day": 10.1,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 7
+      "days_since_last_seen": 8
     },
     {
       "registration": "OK-TVL",
@@ -1655,7 +1655,7 @@
       "total_bh": 129.0,
       "avg_bh_per_active_day": 10.8,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 8
+      "days_since_last_seen": 9
     },
     {
       "registration": "OK-TVV",
@@ -1672,7 +1672,7 @@
       "total_bh": 125.9,
       "avg_bh_per_active_day": 11.4,
       "max_internal_gap_days": 2,
-      "days_since_last_seen": 8
+      "days_since_last_seen": 9
     },
     {
       "registration": "OK-TVJ",
@@ -1689,7 +1689,24 @@
       "total_bh": 125.1,
       "avg_bh_per_active_day": 10.4,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 8
+      "days_since_last_seen": 9
+    },
+    {
+      "registration": "9H-MLU",
+      "owner_name": "Avion Express Malta",
+      "group": "Avion Express",
+      "client_icao": "EWG",
+      "client_name": "Eurowings",
+      "start_date": "2026-06-19",
+      "end_date": "2026-07-04",
+      "status": "ended",
+      "days_active": 14,
+      "span_days": 16,
+      "continuity_pct": 87.5,
+      "total_bh": 122.6,
+      "avg_bh_per_active_day": 8.8,
+      "max_internal_gap_days": 3,
+      "days_since_last_seen": 4
     },
     {
       "registration": "G-POWN",
@@ -1706,7 +1723,7 @@
       "total_bh": 122.1,
       "avg_bh_per_active_day": 10.2,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 8
+      "days_since_last_seen": 9
     },
     {
       "registration": "OK-SWE",
@@ -1723,7 +1740,7 @@
       "total_bh": 111.9,
       "avg_bh_per_active_day": 11.2,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 10
+      "days_since_last_seen": 11
     },
     {
       "registration": "OM-JEX",
@@ -1740,7 +1757,7 @@
       "total_bh": 111.3,
       "avg_bh_per_active_day": 9.3,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 8
+      "days_since_last_seen": 9
     },
     {
       "registration": "OK-TSF",
@@ -1757,7 +1774,7 @@
       "total_bh": 104.9,
       "avg_bh_per_active_day": 10.5,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 4
+      "days_since_last_seen": 5
     },
     {
       "registration": "9H-NZL",
@@ -1774,7 +1791,7 @@
       "total_bh": 98.1,
       "avg_bh_per_active_day": 8.2,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 7
+      "days_since_last_seen": 8
     },
     {
       "registration": "OK-SWD",
@@ -1791,7 +1808,7 @@
       "total_bh": 88.3,
       "avg_bh_per_active_day": 12.6,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 13
+      "days_since_last_seen": 14
     },
     {
       "registration": "OM-IEX",
@@ -1808,7 +1825,7 @@
       "total_bh": 85.3,
       "avg_bh_per_active_day": 7.1,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 8
+      "days_since_last_seen": 9
     },
     {
       "registration": "LY-WSM",
@@ -1825,7 +1842,7 @@
       "total_bh": 83.5,
       "avg_bh_per_active_day": 7.0,
       "max_internal_gap_days": 2,
-      "days_since_last_seen": 7
+      "days_since_last_seen": 8
     },
     {
       "registration": "OK-TVS",
@@ -1842,7 +1859,7 @@
       "total_bh": 57.0,
       "avg_bh_per_active_day": 7.1,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 12
+      "days_since_last_seen": 13
     },
     {
       "registration": "OM-NEX",
@@ -1859,7 +1876,7 @@
       "total_bh": 55.4,
       "avg_bh_per_active_day": 5.5,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 8
+      "days_since_last_seen": 9
     },
     {
       "registration": "9H-TRI",
@@ -1876,7 +1893,7 @@
       "total_bh": 45.2,
       "avg_bh_per_active_day": 7.5,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 8
+      "days_since_last_seen": 9
     },
     {
       "registration": "9H-AMV",
@@ -1893,7 +1910,7 @@
       "total_bh": 42.9,
       "avg_bh_per_active_day": 7.1,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 14
+      "days_since_last_seen": 15
     },
     {
       "registration": "LY-NVE",
@@ -1910,7 +1927,7 @@
       "total_bh": 39.0,
       "avg_bh_per_active_day": 5.6,
       "max_internal_gap_days": 2,
-      "days_since_last_seen": 10
+      "days_since_last_seen": 11
     },
     {
       "registration": "LY-HMD",
@@ -1927,7 +1944,7 @@
       "total_bh": 37.9,
       "avg_bh_per_active_day": 5.4,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 11
+      "days_since_last_seen": 12
     },
     {
       "registration": "LY-JAM",
@@ -1944,7 +1961,7 @@
       "total_bh": 33.0,
       "avg_bh_per_active_day": 11.0,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 17
+      "days_since_last_seen": 18
     },
     {
       "registration": "G-OATW",
@@ -1961,7 +1978,7 @@
       "total_bh": 31.8,
       "avg_bh_per_active_day": 8.0,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 10
+      "days_since_last_seen": 11
     },
     {
       "registration": "LY-MLI",
@@ -1978,7 +1995,7 @@
       "total_bh": 29.8,
       "avg_bh_per_active_day": 7.5,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 16
+      "days_since_last_seen": 17
     },
     {
       "registration": "9H-ZTC",
@@ -1995,7 +2012,7 @@
       "total_bh": 26.3,
       "avg_bh_per_active_day": 3.3,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 8
+      "days_since_last_seen": 9
     },
     {
       "registration": "9H-ZTB",
@@ -2012,7 +2029,7 @@
       "total_bh": 25.3,
       "avg_bh_per_active_day": 3.6,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 11
+      "days_since_last_seen": 12
     },
     {
       "registration": "LY-CIN",
@@ -2029,7 +2046,7 @@
       "total_bh": 23.8,
       "avg_bh_per_active_day": 6.0,
       "max_internal_gap_days": 2,
-      "days_since_last_seen": 9
+      "days_since_last_seen": 10
     },
     {
       "registration": "LY-NVE",
@@ -2046,7 +2063,7 @@
       "total_bh": 18.1,
       "avg_bh_per_active_day": 9.1,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 12
+      "days_since_last_seen": 13
     },
     {
       "registration": "LY-NVE",
@@ -2063,7 +2080,7 @@
       "total_bh": 16.2,
       "avg_bh_per_active_day": 5.4,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 7
+      "days_since_last_seen": 8
     },
     {
       "registration": "G-OATW",
@@ -2080,7 +2097,7 @@
       "total_bh": 15.5,
       "avg_bh_per_active_day": 7.8,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 8
+      "days_since_last_seen": 9
     },
     {
       "registration": "G-POWM",
@@ -2097,7 +2114,7 @@
       "total_bh": 14.9,
       "avg_bh_per_active_day": 5.0,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 8
+      "days_since_last_seen": 9
     },
     {
       "registration": "OK-SWG",
@@ -2114,7 +2131,7 @@
       "total_bh": 14.4,
       "avg_bh_per_active_day": 7.2,
       "max_internal_gap_days": 2,
-      "days_since_last_seen": 10
+      "days_since_last_seen": 11
     },
     {
       "registration": "LY-WSA",
@@ -2131,7 +2148,7 @@
       "total_bh": 14.3,
       "avg_bh_per_active_day": 7.2,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 8
+      "days_since_last_seen": 9
     },
     {
       "registration": "9H-SWJ",
@@ -2148,7 +2165,7 @@
       "total_bh": 13.4,
       "avg_bh_per_active_day": 6.7,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 18
+      "days_since_last_seen": 19
     },
     {
       "registration": "G-POWM",
@@ -2165,7 +2182,7 @@
       "total_bh": 13.4,
       "avg_bh_per_active_day": 4.5,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 17
+      "days_since_last_seen": 18
     },
     {
       "registration": "9H-AMV",
@@ -2182,7 +2199,24 @@
       "total_bh": 11.2,
       "avg_bh_per_active_day": 5.6,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 9
+      "days_since_last_seen": 10
+    },
+    {
+      "registration": "OK-SWG",
+      "owner_name": "Smartwings",
+      "group": "Smartwings",
+      "client_icao": "OKS",
+      "client_name": "OKS",
+      "start_date": "2026-07-03",
+      "end_date": "2026-07-04",
+      "status": "ended",
+      "days_active": 2,
+      "span_days": 2,
+      "continuity_pct": 100.0,
+      "total_bh": 10.1,
+      "avg_bh_per_active_day": 5.0,
+      "max_internal_gap_days": 1,
+      "days_since_last_seen": 4
     },
     {
       "registration": "9H-ZTD",
@@ -2199,7 +2233,7 @@
       "total_bh": 8.6,
       "avg_bh_per_active_day": 1.1,
       "max_internal_gap_days": 2,
-      "days_since_last_seen": 8
+      "days_since_last_seen": 9
     },
     {
       "registration": "LY-WSA",
@@ -2216,7 +2250,7 @@
       "total_bh": 8.0,
       "avg_bh_per_active_day": 8.0,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 16
+      "days_since_last_seen": 17
     },
     {
       "registration": "LY-TAP",
@@ -2233,7 +2267,7 @@
       "total_bh": 7.7,
       "avg_bh_per_active_day": 7.7,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 13
+      "days_since_last_seen": 14
     },
     {
       "registration": "LY-WSA",
@@ -2250,7 +2284,7 @@
       "total_bh": 7.0,
       "avg_bh_per_active_day": 3.5,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 11
+      "days_since_last_seen": 12
     },
     {
       "registration": "LY-NVE",
@@ -2267,7 +2301,7 @@
       "total_bh": 6.1,
       "avg_bh_per_active_day": 6.1,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 19
+      "days_since_last_seen": 20
     },
     {
       "registration": "LY-CIN",
@@ -2284,7 +2318,7 @@
       "total_bh": 6.1,
       "avg_bh_per_active_day": 6.1,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 19
+      "days_since_last_seen": 20
     },
     {
       "registration": "LY-NRU",
@@ -2301,7 +2335,7 @@
       "total_bh": 6.1,
       "avg_bh_per_active_day": 6.1,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 16
+      "days_since_last_seen": 17
     },
     {
       "registration": "OK-SWJ",
@@ -2318,7 +2352,7 @@
       "total_bh": 6.0,
       "avg_bh_per_active_day": 6.0,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 19
+      "days_since_last_seen": 20
     },
     {
       "registration": "LY-NRU",
@@ -2335,7 +2369,24 @@
       "total_bh": 5.9,
       "avg_bh_per_active_day": 5.9,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 17
+      "days_since_last_seen": 18
+    },
+    {
+      "registration": "LY-WSM",
+      "owner_name": "Heston Airlines",
+      "group": "Heston",
+      "client_icao": "HOT",
+      "client_name": "Valletta Airlines",
+      "start_date": "2026-07-04",
+      "end_date": "2026-07-04",
+      "status": "ended",
+      "days_active": 1,
+      "span_days": 1,
+      "continuity_pct": 100.0,
+      "total_bh": 5.9,
+      "avg_bh_per_active_day": 5.9,
+      "max_internal_gap_days": 0,
+      "days_since_last_seen": 4
     },
     {
       "registration": "9H-SWJ",
@@ -2352,7 +2403,7 @@
       "total_bh": 5.5,
       "avg_bh_per_active_day": 5.5,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 13
+      "days_since_last_seen": 14
     },
     {
       "registration": "9H-SWJ",
@@ -2369,7 +2420,7 @@
       "total_bh": 5.3,
       "avg_bh_per_active_day": 5.3,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 9
+      "days_since_last_seen": 10
     },
     {
       "registration": "G-GBNI",
@@ -2386,7 +2437,7 @@
       "total_bh": 3.6,
       "avg_bh_per_active_day": 1.8,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 11
+      "days_since_last_seen": 12
     },
     {
       "registration": "LY-MLF",
@@ -2403,7 +2454,7 @@
       "total_bh": 2.9,
       "avg_bh_per_active_day": 1.0,
       "max_internal_gap_days": 2,
-      "days_since_last_seen": 15
+      "days_since_last_seen": 16
     },
     {
       "registration": "LY-NVL",
@@ -2420,7 +2471,7 @@
       "total_bh": 2.3,
       "avg_bh_per_active_day": 2.3,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 4
+      "days_since_last_seen": 5
     },
     {
       "registration": "LY-NVN",
@@ -2437,7 +2488,7 @@
       "total_bh": 2.2,
       "avg_bh_per_active_day": 1.1,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 13
+      "days_since_last_seen": 14
     },
     {
       "registration": "9H-AMJ",
@@ -2454,7 +2505,7 @@
       "total_bh": 2.2,
       "avg_bh_per_active_day": 2.2,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 15
+      "days_since_last_seen": 16
     },
     {
       "registration": "9H-REU",
@@ -2471,7 +2522,7 @@
       "total_bh": 2.1,
       "avg_bh_per_active_day": 2.1,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 15
+      "days_since_last_seen": 16
     },
     {
       "registration": "9H-AMH",
@@ -2488,7 +2539,7 @@
       "total_bh": 1.9,
       "avg_bh_per_active_day": 1.9,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 18
+      "days_since_last_seen": 19
     },
     {
       "registration": "9H-MLE",
@@ -2505,7 +2556,7 @@
       "total_bh": 1.9,
       "avg_bh_per_active_day": 0.9,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 13
+      "days_since_last_seen": 14
     },
     {
       "registration": "LY-NVN",
@@ -2522,7 +2573,7 @@
       "total_bh": 1.6,
       "avg_bh_per_active_day": 1.6,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 7
+      "days_since_last_seen": 8
     },
     {
       "registration": "G-POWK",
@@ -2539,7 +2590,7 @@
       "total_bh": 1.4,
       "avg_bh_per_active_day": 1.4,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 12
+      "days_since_last_seen": 13
     },
     {
       "registration": "OM-NEX",
@@ -2556,7 +2607,7 @@
       "total_bh": 1.1,
       "avg_bh_per_active_day": 1.1,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 19
+      "days_since_last_seen": 20
     },
     {
       "registration": "LY-UNO",
@@ -2573,7 +2624,7 @@
       "total_bh": 1.1,
       "avg_bh_per_active_day": 1.1,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 12
+      "days_since_last_seen": 13
     },
     {
       "registration": "OK-SWG",
@@ -2590,7 +2641,7 @@
       "total_bh": 1.0,
       "avg_bh_per_active_day": 0.5,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 18
+      "days_since_last_seen": 19
     },
     {
       "registration": "LY-MLF",
@@ -2607,7 +2658,7 @@
       "total_bh": 0.8,
       "avg_bh_per_active_day": 0.8,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 11
+      "days_since_last_seen": 12
     },
     {
       "registration": "G-OATW",
@@ -2624,7 +2675,7 @@
       "total_bh": 0.4,
       "avg_bh_per_active_day": 0.4,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 4
+      "days_since_last_seen": 5
     },
     {
       "registration": "9H-GKK",
@@ -2641,7 +2692,7 @@
       "total_bh": 0.0,
       "avg_bh_per_active_day": 0.0,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 18
+      "days_since_last_seen": 19
     },
     {
       "registration": "9H-AMJ",
@@ -2658,7 +2709,7 @@
       "total_bh": 0.0,
       "avg_bh_per_active_day": 0.0,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 7
+      "days_since_last_seen": 8
     },
     {
       "registration": "LY-MAL",
@@ -2675,7 +2726,7 @@
       "total_bh": 0.0,
       "avg_bh_per_active_day": 0.0,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 7
+      "days_since_last_seen": 8
     },
     {
       "registration": "9H-MLU",
@@ -2692,7 +2743,7 @@
       "total_bh": 0.0,
       "avg_bh_per_active_day": 0.0,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 4
+      "days_since_last_seen": 5
     }
   ],
   "idle_aircraft": [
@@ -2701,7 +2752,7 @@
       "owner_name": "Avion Express Malta",
       "group": "Avion Express",
       "last_flight_date": "2026-06-19",
-      "days_idle": 18,
+      "days_idle": 19,
       "prior_avg_bh": 1.9
     },
     {
@@ -2709,7 +2760,7 @@
       "owner_name": "Heston Airlines",
       "group": "Heston",
       "last_flight_date": "2026-06-20",
-      "days_idle": 17,
+      "days_idle": 18,
       "prior_avg_bh": 11.0
     },
     {
@@ -2717,23 +2768,15 @@
       "owner_name": "Valletta Airlines",
       "group": "Heston",
       "last_flight_date": "2026-06-23",
-      "days_idle": 14,
+      "days_idle": 15,
       "prior_avg_bh": 4.9
-    },
-    {
-      "registration": "LY-TAP",
-      "owner_name": "GetJet Airlines",
-      "group": "GetJet",
-      "last_flight_date": "2026-06-24",
-      "days_idle": 13,
-      "prior_avg_bh": 7.7
     },
     {
       "registration": "OK-TSU",
       "owner_name": "Smartwings",
       "group": "Smartwings",
       "last_flight_date": "2026-06-29",
-      "days_idle": 8,
+      "days_idle": 9,
       "prior_avg_bh": 11.8
     },
     {
@@ -2741,23 +2784,15 @@
       "owner_name": "Titan Airways",
       "group": "Titan Airways",
       "last_flight_date": "2026-06-29",
-      "days_idle": 8,
+      "days_idle": 9,
       "prior_avg_bh": 8.5
-    },
-    {
-      "registration": "G-XATW",
-      "owner_name": "Titan Airways",
-      "group": "Titan Airways",
-      "last_flight_date": "2026-06-29",
-      "days_idle": 8,
-      "prior_avg_bh": 5.9
     },
     {
       "registration": "LY-NVL",
       "owner_name": "Avion Express",
       "group": "Avion Express",
       "last_flight_date": "2026-07-03",
-      "days_idle": 4,
+      "days_idle": 5,
       "prior_avg_bh": 2.3
     },
     {
@@ -2765,7 +2800,7 @@
       "owner_name": "Enter Air",
       "group": "Enter Air",
       "last_flight_date": "2026-07-03",
-      "days_idle": 4,
+      "days_idle": 5,
       "prior_avg_bh": 8.3
     },
     {
@@ -2773,7 +2808,7 @@
       "owner_name": "GetJet Airlines",
       "group": "GetJet",
       "last_flight_date": "2026-07-04",
-      "days_idle": 3,
+      "days_idle": 4,
       "prior_avg_bh": 9.6
     },
     {
@@ -2781,8 +2816,24 @@
       "owner_name": "Smartwings",
       "group": "Smartwings",
       "last_flight_date": "2026-07-04",
-      "days_idle": 3,
+      "days_idle": 4,
       "prior_avg_bh": 6.1
+    },
+    {
+      "registration": "9H-MLU",
+      "owner_name": "Avion Express Malta",
+      "group": "Avion Express",
+      "last_flight_date": "2026-07-05",
+      "days_idle": 3,
+      "prior_avg_bh": 8.2
+    },
+    {
+      "registration": "9H-TRI",
+      "owner_name": "Valletta Airlines",
+      "group": "Heston",
+      "last_flight_date": "2026-07-05",
+      "days_idle": 3,
+      "prior_avg_bh": 8.9
     }
   ],
   "note": "Contract windows and idle flags are inferred purely from already-collected daily history (fleet clients data). No additional FR24 API calls are made. Absence from ACMI client data does not necessarily mean an aircraft is grounded \u2014 it may be flying non-ACMI/own-ops routes not attributed to a client."
