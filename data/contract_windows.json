@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-09-01 07:42 UTC",
+  "generated_at": "2026-09-02 07:42 UTC",
   "date_range": {
     "from": "2026-06-18",
-    "to": "2026-08-31"
+    "to": "2026-09-01"
   },
-  "days_of_history": 67,
+  "days_of_history": 68,
   "gap_tolerance_days": 3,
   "idle_threshold_days": 3,
   "contracts": [
@@ -15,13 +15,13 @@
       "client_icao": "CFG",
       "client_name": "Condor",
       "start_date": "2026-07-15",
-      "end_date": "2026-08-31",
+      "end_date": "2026-09-01",
       "status": "active",
-      "days_active": 48,
-      "span_days": 48,
+      "days_active": 49,
+      "span_days": 49,
       "continuity_pct": 100.0,
-      "total_bh": 635.9,
-      "avg_bh_per_active_day": 13.2,
+      "total_bh": 649.7,
+      "avg_bh_per_active_day": 13.3,
       "max_internal_gap_days": 1,
       "days_since_last_seen": 0
     },
@@ -32,12 +32,12 @@
       "client_icao": "ENT",
       "client_name": "Enter Air",
       "start_date": "2026-07-15",
-      "end_date": "2026-08-31",
+      "end_date": "2026-09-01",
       "status": "active",
-      "days_active": 47,
-      "span_days": 48,
-      "continuity_pct": 97.9,
-      "total_bh": 596.9,
+      "days_active": 48,
+      "span_days": 49,
+      "continuity_pct": 98.0,
+      "total_bh": 608.6,
       "avg_bh_per_active_day": 12.7,
       "max_internal_gap_days": 2,
       "days_since_last_seen": 0
@@ -49,12 +49,12 @@
       "client_icao": "EWG",
       "client_name": "Eurowings",
       "start_date": "2026-07-15",
-      "end_date": "2026-08-31",
+      "end_date": "2026-09-01",
       "status": "active",
-      "days_active": 48,
-      "span_days": 48,
+      "days_active": 49,
+      "span_days": 49,
       "continuity_pct": 100.0,
-      "total_bh": 595.6,
+      "total_bh": 606.3,
       "avg_bh_per_active_day": 12.4,
       "max_internal_gap_days": 1,
       "days_since_last_seen": 0
@@ -66,13 +66,13 @@
       "client_icao": "EWG",
       "client_name": "Eurowings",
       "start_date": "2026-07-15",
-      "end_date": "2026-08-31",
+      "end_date": "2026-09-01",
       "status": "active",
-      "days_active": 48,
-      "span_days": 48,
+      "days_active": 49,
+      "span_days": 49,
       "continuity_pct": 100.0,
-      "total_bh": 586.7,
-      "avg_bh_per_active_day": 12.2,
+      "total_bh": 594.2,
+      "avg_bh_per_active_day": 12.1,
       "max_internal_gap_days": 1,
       "days_since_last_seen": 0
     },
@@ -83,12 +83,12 @@
       "client_icao": "EWG",
       "client_name": "Eurowings",
       "start_date": "2026-07-15",
-      "end_date": "2026-08-31",
+      "end_date": "2026-09-01",
       "status": "active",
-      "days_active": 46,
-      "span_days": 48,
-      "continuity_pct": 95.8,
-      "total_bh": 571.8,
+      "days_active": 47,
+      "span_days": 49,
+      "continuity_pct": 95.9,
+      "total_bh": 585.0,
       "avg_bh_per_active_day": 12.4,
       "max_internal_gap_days": 3,
       "days_since_last_seen": 0
@@ -100,13 +100,13 @@
       "client_icao": "EWG",
       "client_name": "Eurowings",
       "start_date": "2026-07-15",
-      "end_date": "2026-08-31",
+      "end_date": "2026-09-01",
       "status": "active",
-      "days_active": 48,
-      "span_days": 48,
+      "days_active": 49,
+      "span_days": 49,
       "continuity_pct": 100.0,
-      "total_bh": 566.2,
-      "avg_bh_per_active_day": 11.8,
+      "total_bh": 580.8,
+      "avg_bh_per_active_day": 11.9,
       "max_internal_gap_days": 1,
       "days_since_last_seen": 0
     },
@@ -117,30 +117,13 @@
       "client_icao": "ENT",
       "client_name": "Enter Air",
       "start_date": "2026-07-15",
-      "end_date": "2026-08-31",
+      "end_date": "2026-09-01",
       "status": "active",
-      "days_active": 48,
-      "span_days": 48,
+      "days_active": 49,
+      "span_days": 49,
       "continuity_pct": 100.0,
-      "total_bh": 545.2,
-      "avg_bh_per_active_day": 11.4,
-      "max_internal_gap_days": 1,
-      "days_since_last_seen": 0
-    },
-    {
-      "registration": "9H-SWE",
-      "owner_name": "Avion Express Malta",
-      "group": "Avion Express",
-      "client_icao": "EWG",
-      "client_name": "Eurowings",
-      "start_date": "2026-07-15",
-      "end_date": "2026-08-31",
-      "status": "active",
-      "days_active": 48,
-      "span_days": 48,
-      "continuity_pct": 100.0,
-      "total_bh": 500.5,
-      "avg_bh_per_active_day": 10.4,
+      "total_bh": 562.3,
+      "avg_bh_per_active_day": 11.5,
       "max_internal_gap_days": 1,
       "days_since_last_seen": 0
     },
@@ -151,13 +134,13 @@
       "client_icao": "ETD",
       "client_name": "Etihad Airways",
       "start_date": "2026-07-15",
-      "end_date": "2026-08-31",
+      "end_date": "2026-09-01",
       "status": "active",
-      "days_active": 48,
-      "span_days": 48,
+      "days_active": 49,
+      "span_days": 49,
       "continuity_pct": 100.0,
-      "total_bh": 499.9,
-      "avg_bh_per_active_day": 10.4,
+      "total_bh": 512.9,
+      "avg_bh_per_active_day": 10.5,
       "max_internal_gap_days": 1,
       "days_since_last_seen": 0
     },
@@ -168,14 +151,31 @@
       "client_icao": "EXS",
       "client_name": "Jet2",
       "start_date": "2026-07-15",
-      "end_date": "2026-08-31",
+      "end_date": "2026-09-01",
       "status": "active",
-      "days_active": 46,
-      "span_days": 48,
-      "continuity_pct": 95.8,
-      "total_bh": 499.1,
-      "avg_bh_per_active_day": 10.8,
+      "days_active": 47,
+      "span_days": 49,
+      "continuity_pct": 95.9,
+      "total_bh": 510.2,
+      "avg_bh_per_active_day": 10.9,
       "max_internal_gap_days": 3,
+      "days_since_last_seen": 0
+    },
+    {
+      "registration": "9H-SWE",
+      "owner_name": "Avion Express Malta",
+      "group": "Avion Express",
+      "client_icao": "EWG",
+      "client_name": "Eurowings",
+      "start_date": "2026-07-15",
+      "end_date": "2026-09-01",
+      "status": "active",
+      "days_active": 49,
+      "span_days": 49,
+      "continuity_pct": 100.0,
+      "total_bh": 506.7,
+      "avg_bh_per_active_day": 10.3,
+      "max_internal_gap_days": 1,
       "days_since_last_seen": 0
     },
     {
@@ -185,12 +185,12 @@
       "client_icao": "ETD",
       "client_name": "Etihad Airways",
       "start_date": "2026-07-15",
-      "end_date": "2026-08-31",
+      "end_date": "2026-09-01",
       "status": "active",
-      "days_active": 48,
-      "span_days": 48,
+      "days_active": 49,
+      "span_days": 49,
       "continuity_pct": 100.0,
-      "total_bh": 489.6,
+      "total_bh": 501.2,
       "avg_bh_per_active_day": 10.2,
       "max_internal_gap_days": 1,
       "days_since_last_seen": 0
@@ -202,12 +202,12 @@
       "client_icao": "EWG",
       "client_name": "Eurowings",
       "start_date": "2026-07-15",
-      "end_date": "2026-08-31",
+      "end_date": "2026-09-01",
       "status": "active",
-      "days_active": 48,
-      "span_days": 48,
+      "days_active": 49,
+      "span_days": 49,
       "continuity_pct": 100.0,
-      "total_bh": 488.5,
+      "total_bh": 498.7,
       "avg_bh_per_active_day": 10.2,
       "max_internal_gap_days": 1,
       "days_since_last_seen": 0
@@ -219,12 +219,12 @@
       "client_icao": "AIZ",
       "client_name": "Arkia Israeli Airlines",
       "start_date": "2026-07-15",
-      "end_date": "2026-08-31",
+      "end_date": "2026-09-01",
       "status": "active",
-      "days_active": 47,
-      "span_days": 48,
-      "continuity_pct": 97.9,
-      "total_bh": 483.0,
+      "days_active": 48,
+      "span_days": 49,
+      "continuity_pct": 98.0,
+      "total_bh": 492.1,
       "avg_bh_per_active_day": 10.3,
       "max_internal_gap_days": 2,
       "days_since_last_seen": 0
@@ -236,13 +236,13 @@
       "client_icao": "AHY",
       "client_name": "Azerbaijan Airlines",
       "start_date": "2026-07-15",
-      "end_date": "2026-08-31",
+      "end_date": "2026-09-01",
       "status": "active",
-      "days_active": 48,
-      "span_days": 48,
+      "days_active": 49,
+      "span_days": 49,
       "continuity_pct": 100.0,
-      "total_bh": 477.1,
-      "avg_bh_per_active_day": 9.9,
+      "total_bh": 489.8,
+      "avg_bh_per_active_day": 10.0,
       "max_internal_gap_days": 1,
       "days_since_last_seen": 0
     },
@@ -253,13 +253,30 @@
       "client_icao": "EWG",
       "client_name": "Eurowings",
       "start_date": "2026-07-15",
-      "end_date": "2026-08-31",
+      "end_date": "2026-09-01",
       "status": "active",
-      "days_active": 48,
-      "span_days": 48,
+      "days_active": 49,
+      "span_days": 49,
       "continuity_pct": 100.0,
-      "total_bh": 474.4,
+      "total_bh": 484.0,
       "avg_bh_per_active_day": 9.9,
+      "max_internal_gap_days": 1,
+      "days_since_last_seen": 0
+    },
+    {
+      "registration": "LY-PNG",
+      "owner_name": "Heston Airlines",
+      "group": "Heston",
+      "client_icao": "AHY",
+      "client_name": "Azerbaijan Airlines",
+      "start_date": "2026-07-15",
+      "end_date": "2026-09-01",
+      "status": "active",
+      "days_active": 49,
+      "span_days": 49,
+      "continuity_pct": 100.0,
+      "total_bh": 482.0,
+      "avg_bh_per_active_day": 9.8,
       "max_internal_gap_days": 1,
       "days_since_last_seen": 0
     },
@@ -270,12 +287,12 @@
       "client_icao": "EXS",
       "client_name": "Jet2",
       "start_date": "2026-07-16",
-      "end_date": "2026-08-31",
+      "end_date": "2026-09-01",
       "status": "active",
-      "days_active": 47,
-      "span_days": 47,
+      "days_active": 48,
+      "span_days": 48,
       "continuity_pct": 100.0,
-      "total_bh": 470.9,
+      "total_bh": 478.2,
       "avg_bh_per_active_day": 10.0,
       "max_internal_gap_days": 1,
       "days_since_last_seen": 0
@@ -287,29 +304,12 @@
       "client_icao": "EWG",
       "client_name": "Eurowings",
       "start_date": "2026-07-15",
-      "end_date": "2026-08-31",
+      "end_date": "2026-09-01",
       "status": "active",
-      "days_active": 48,
-      "span_days": 48,
+      "days_active": 49,
+      "span_days": 49,
       "continuity_pct": 100.0,
-      "total_bh": 469.9,
-      "avg_bh_per_active_day": 9.8,
-      "max_internal_gap_days": 1,
-      "days_since_last_seen": 0
-    },
-    {
-      "registration": "LY-PNG",
-      "owner_name": "Heston Airlines",
-      "group": "Heston",
-      "client_icao": "AHY",
-      "client_name": "Azerbaijan Airlines",
-      "start_date": "2026-07-15",
-      "end_date": "2026-08-31",
-      "status": "active",
-      "days_active": 48,
-      "span_days": 48,
-      "continuity_pct": 100.0,
-      "total_bh": 466.9,
+      "total_bh": 476.0,
       "avg_bh_per_active_day": 9.7,
       "max_internal_gap_days": 1,
       "days_since_last_seen": 0
@@ -321,12 +321,12 @@
       "client_icao": "AHY",
       "client_name": "Azerbaijan Airlines",
       "start_date": "2026-07-15",
-      "end_date": "2026-08-31",
+      "end_date": "2026-09-01",
       "status": "active",
-      "days_active": 48,
-      "span_days": 48,
+      "days_active": 49,
+      "span_days": 49,
       "continuity_pct": 100.0,
-      "total_bh": 466.9,
+      "total_bh": 474.1,
       "avg_bh_per_active_day": 9.7,
       "max_internal_gap_days": 1,
       "days_since_last_seen": 0
@@ -338,12 +338,12 @@
       "client_icao": "EWG",
       "client_name": "Eurowings",
       "start_date": "2026-07-15",
-      "end_date": "2026-08-31",
+      "end_date": "2026-09-01",
       "status": "active",
-      "days_active": 47,
-      "span_days": 48,
-      "continuity_pct": 97.9,
-      "total_bh": 460.5,
+      "days_active": 48,
+      "span_days": 49,
+      "continuity_pct": 98.0,
+      "total_bh": 470.8,
       "avg_bh_per_active_day": 9.8,
       "max_internal_gap_days": 2,
       "days_since_last_seen": 0
@@ -355,12 +355,12 @@
       "client_icao": "ETD",
       "client_name": "Etihad Airways",
       "start_date": "2026-07-15",
-      "end_date": "2026-08-31",
+      "end_date": "2026-09-01",
       "status": "active",
-      "days_active": 48,
-      "span_days": 48,
+      "days_active": 49,
+      "span_days": 49,
       "continuity_pct": 100.0,
-      "total_bh": 449.7,
+      "total_bh": 459.8,
       "avg_bh_per_active_day": 9.4,
       "max_internal_gap_days": 1,
       "days_since_last_seen": 0
@@ -372,12 +372,12 @@
       "client_icao": "EWG",
       "client_name": "Eurowings",
       "start_date": "2026-07-15",
-      "end_date": "2026-08-31",
+      "end_date": "2026-09-01",
       "status": "active",
-      "days_active": 46,
-      "span_days": 48,
-      "continuity_pct": 95.8,
-      "total_bh": 446.9,
+      "days_active": 47,
+      "span_days": 49,
+      "continuity_pct": 95.9,
+      "total_bh": 455.6,
       "avg_bh_per_active_day": 9.7,
       "max_internal_gap_days": 3,
       "days_since_last_seen": 0
@@ -389,13 +389,13 @@
       "client_icao": "EWG",
       "client_name": "Eurowings",
       "start_date": "2026-07-15",
-      "end_date": "2026-08-31",
+      "end_date": "2026-09-01",
       "status": "active",
-      "days_active": 46,
-      "span_days": 48,
-      "continuity_pct": 95.8,
-      "total_bh": 443.3,
-      "avg_bh_per_active_day": 9.6,
+      "days_active": 47,
+      "span_days": 49,
+      "continuity_pct": 95.9,
+      "total_bh": 455.0,
+      "avg_bh_per_active_day": 9.7,
       "max_internal_gap_days": 3,
       "days_since_last_seen": 0
     },
@@ -406,12 +406,12 @@
       "client_icao": "EWG",
       "client_name": "Eurowings",
       "start_date": "2026-07-15",
-      "end_date": "2026-08-31",
+      "end_date": "2026-09-01",
       "status": "active",
-      "days_active": 48,
-      "span_days": 48,
+      "days_active": 49,
+      "span_days": 49,
       "continuity_pct": 100.0,
-      "total_bh": 436.0,
+      "total_bh": 445.3,
       "avg_bh_per_active_day": 9.1,
       "max_internal_gap_days": 1,
       "days_since_last_seen": 0
@@ -423,13 +423,13 @@
       "client_icao": "EWG",
       "client_name": "Eurowings",
       "start_date": "2026-07-15",
-      "end_date": "2026-08-31",
+      "end_date": "2026-09-01",
       "status": "active",
-      "days_active": 46,
-      "span_days": 48,
-      "continuity_pct": 95.8,
-      "total_bh": 433.2,
-      "avg_bh_per_active_day": 9.4,
+      "days_active": 47,
+      "span_days": 49,
+      "continuity_pct": 95.9,
+      "total_bh": 444.3,
+      "avg_bh_per_active_day": 9.5,
       "max_internal_gap_days": 2,
       "days_since_last_seen": 0
     },
@@ -440,12 +440,12 @@
       "client_icao": "EWG",
       "client_name": "Eurowings",
       "start_date": "2026-07-15",
-      "end_date": "2026-08-31",
+      "end_date": "2026-09-01",
       "status": "active",
-      "days_active": 46,
-      "span_days": 48,
-      "continuity_pct": 95.8,
-      "total_bh": 431.0,
+      "days_active": 47,
+      "span_days": 49,
+      "continuity_pct": 95.9,
+      "total_bh": 442.0,
       "avg_bh_per_active_day": 9.4,
       "max_internal_gap_days": 2,
       "days_since_last_seen": 0
@@ -457,12 +457,12 @@
       "client_icao": "EWG",
       "client_name": "Eurowings",
       "start_date": "2026-07-15",
-      "end_date": "2026-08-31",
+      "end_date": "2026-09-01",
       "status": "active",
-      "days_active": 45,
-      "span_days": 48,
-      "continuity_pct": 93.8,
-      "total_bh": 429.9,
+      "days_active": 46,
+      "span_days": 49,
+      "continuity_pct": 93.9,
+      "total_bh": 440.1,
       "avg_bh_per_active_day": 9.6,
       "max_internal_gap_days": 2,
       "days_since_last_seen": 0
@@ -474,32 +474,15 @@
       "client_icao": "EWG",
       "client_name": "Eurowings",
       "start_date": "2026-07-15",
-      "end_date": "2026-08-31",
+      "end_date": "2026-09-01",
       "status": "active",
-      "days_active": 44,
-      "span_days": 48,
-      "continuity_pct": 91.7,
-      "total_bh": 428.7,
+      "days_active": 45,
+      "span_days": 49,
+      "continuity_pct": 91.8,
+      "total_bh": 437.2,
       "avg_bh_per_active_day": 9.7,
       "max_internal_gap_days": 2,
       "days_since_last_seen": 0
-    },
-    {
-      "registration": "LY-DAE",
-      "owner_name": "GetJet Airlines",
-      "group": "GetJet",
-      "client_icao": "EWG",
-      "client_name": "Eurowings",
-      "start_date": "2026-07-15",
-      "end_date": "2026-08-28",
-      "status": "active",
-      "days_active": 45,
-      "span_days": 45,
-      "continuity_pct": 100.0,
-      "total_bh": 417.5,
-      "avg_bh_per_active_day": 9.3,
-      "max_internal_gap_days": 1,
-      "days_since_last_seen": 3
     },
     {
       "registration": "9H-SWG",
@@ -508,13 +491,30 @@
       "client_icao": "DAH",
       "client_name": "Air Alg\u00e9rie",
       "start_date": "2026-07-15",
-      "end_date": "2026-08-31",
+      "end_date": "2026-09-01",
       "status": "active",
-      "days_active": 48,
-      "span_days": 48,
+      "days_active": 49,
+      "span_days": 49,
       "continuity_pct": 100.0,
-      "total_bh": 417.2,
+      "total_bh": 425.1,
       "avg_bh_per_active_day": 8.7,
+      "max_internal_gap_days": 1,
+      "days_since_last_seen": 0
+    },
+    {
+      "registration": "9H-AMK",
+      "owner_name": "Avion Express Malta",
+      "group": "Avion Express",
+      "client_icao": "DAH",
+      "client_name": "Air Alg\u00e9rie",
+      "start_date": "2026-07-15",
+      "end_date": "2026-09-01",
+      "status": "active",
+      "days_active": 49,
+      "span_days": 49,
+      "continuity_pct": 100.0,
+      "total_bh": 423.0,
+      "avg_bh_per_active_day": 8.6,
       "max_internal_gap_days": 1,
       "days_since_last_seen": 0
     },
@@ -525,30 +525,13 @@
       "client_icao": "TAR",
       "client_name": "Tunisair",
       "start_date": "2026-07-15",
-      "end_date": "2026-08-31",
+      "end_date": "2026-09-01",
       "status": "active",
-      "days_active": 48,
-      "span_days": 48,
+      "days_active": 49,
+      "span_days": 49,
       "continuity_pct": 100.0,
-      "total_bh": 416.0,
-      "avg_bh_per_active_day": 8.7,
-      "max_internal_gap_days": 1,
-      "days_since_last_seen": 0
-    },
-    {
-      "registration": "9H-MLE",
-      "owner_name": "Avion Express Malta",
-      "group": "Avion Express",
-      "client_icao": "DAH",
-      "client_name": "Air Alg\u00e9rie",
-      "start_date": "2026-07-16",
-      "end_date": "2026-08-31",
-      "status": "active",
-      "days_active": 47,
-      "span_days": 47,
-      "continuity_pct": 100.0,
-      "total_bh": 410.2,
-      "avg_bh_per_active_day": 8.7,
+      "total_bh": 421.5,
+      "avg_bh_per_active_day": 8.6,
       "max_internal_gap_days": 1,
       "days_since_last_seen": 0
     },
@@ -559,30 +542,30 @@
       "client_icao": "EWG",
       "client_name": "Eurowings",
       "start_date": "2026-07-15",
-      "end_date": "2026-08-31",
+      "end_date": "2026-09-01",
       "status": "active",
-      "days_active": 46,
-      "span_days": 48,
-      "continuity_pct": 95.8,
-      "total_bh": 408.9,
+      "days_active": 47,
+      "span_days": 49,
+      "continuity_pct": 95.9,
+      "total_bh": 419.9,
       "avg_bh_per_active_day": 8.9,
       "max_internal_gap_days": 2,
       "days_since_last_seen": 0
     },
     {
-      "registration": "9H-AMK",
+      "registration": "9H-MLE",
       "owner_name": "Avion Express Malta",
       "group": "Avion Express",
       "client_icao": "DAH",
       "client_name": "Air Alg\u00e9rie",
-      "start_date": "2026-07-15",
-      "end_date": "2026-08-31",
+      "start_date": "2026-07-16",
+      "end_date": "2026-09-01",
       "status": "active",
       "days_active": 48,
       "span_days": 48,
       "continuity_pct": 100.0,
-      "total_bh": 405.9,
-      "avg_bh_per_active_day": 8.5,
+      "total_bh": 413.0,
+      "avg_bh_per_active_day": 8.6,
       "max_internal_gap_days": 1,
       "days_since_last_seen": 0
     },
@@ -593,13 +576,13 @@
       "client_icao": "TAR",
       "client_name": "Tunisair",
       "start_date": "2026-07-15",
-      "end_date": "2026-08-31",
+      "end_date": "2026-09-01",
       "status": "active",
-      "days_active": 48,
-      "span_days": 48,
+      "days_active": 49,
+      "span_days": 49,
       "continuity_pct": 100.0,
-      "total_bh": 398.5,
-      "avg_bh_per_active_day": 8.3,
+      "total_bh": 409.4,
+      "avg_bh_per_active_day": 8.4,
       "max_internal_gap_days": 1,
       "days_since_last_seen": 0
     },
@@ -610,13 +593,13 @@
       "client_icao": "DAH",
       "client_name": "Air Alg\u00e9rie",
       "start_date": "2026-07-21",
-      "end_date": "2026-08-31",
+      "end_date": "2026-09-01",
       "status": "active",
-      "days_active": 42,
-      "span_days": 42,
+      "days_active": 43,
+      "span_days": 43,
       "continuity_pct": 100.0,
-      "total_bh": 365.0,
-      "avg_bh_per_active_day": 8.7,
+      "total_bh": 371.0,
+      "avg_bh_per_active_day": 8.6,
       "max_internal_gap_days": 1,
       "days_since_last_seen": 0
     },
@@ -627,13 +610,13 @@
       "client_icao": "SZN",
       "client_name": "Air Senegal",
       "start_date": "2026-07-15",
-      "end_date": "2026-08-31",
+      "end_date": "2026-09-01",
       "status": "active",
-      "days_active": 46,
-      "span_days": 48,
-      "continuity_pct": 95.8,
-      "total_bh": 355.6,
-      "avg_bh_per_active_day": 7.7,
+      "days_active": 47,
+      "span_days": 49,
+      "continuity_pct": 95.9,
+      "total_bh": 366.6,
+      "avg_bh_per_active_day": 7.8,
       "max_internal_gap_days": 2,
       "days_since_last_seen": 0
     },
@@ -644,31 +627,14 @@
       "client_icao": "DAH",
       "client_name": "Air Alg\u00e9rie",
       "start_date": "2026-07-15",
-      "end_date": "2026-08-31",
+      "end_date": "2026-09-01",
       "status": "active",
-      "days_active": 45,
-      "span_days": 48,
-      "continuity_pct": 93.8,
-      "total_bh": 353.5,
+      "days_active": 46,
+      "span_days": 49,
+      "continuity_pct": 93.9,
+      "total_bh": 361.3,
       "avg_bh_per_active_day": 7.9,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 0
-    },
-    {
-      "registration": "LY-NVE",
-      "owner_name": "Avion Express",
-      "group": "Avion Express",
-      "client_icao": "FIE",
-      "client_name": "FIE",
-      "start_date": "2026-07-15",
-      "end_date": "2026-08-31",
-      "status": "active",
-      "days_active": 47,
-      "span_days": 48,
-      "continuity_pct": 97.9,
-      "total_bh": 346.3,
-      "avg_bh_per_active_day": 7.4,
-      "max_internal_gap_days": 2,
       "days_since_last_seen": 0
     },
     {
@@ -678,13 +644,30 @@
       "client_icao": "AHY",
       "client_name": "Azerbaijan Airlines",
       "start_date": "2026-07-26",
-      "end_date": "2026-08-31",
+      "end_date": "2026-09-01",
       "status": "active",
-      "days_active": 36,
-      "span_days": 37,
-      "continuity_pct": 97.3,
-      "total_bh": 345.4,
+      "days_active": 37,
+      "span_days": 38,
+      "continuity_pct": 97.4,
+      "total_bh": 356.9,
       "avg_bh_per_active_day": 9.6,
+      "max_internal_gap_days": 2,
+      "days_since_last_seen": 0
+    },
+    {
+      "registration": "LY-NVE",
+      "owner_name": "Avion Express",
+      "group": "Avion Express",
+      "client_icao": "FIE",
+      "client_name": "FIE",
+      "start_date": "2026-07-15",
+      "end_date": "2026-09-01",
+      "status": "active",
+      "days_active": 48,
+      "span_days": 49,
+      "continuity_pct": 98.0,
+      "total_bh": 355.3,
+      "avg_bh_per_active_day": 7.4,
       "max_internal_gap_days": 2,
       "days_since_last_seen": 0
     },
@@ -695,13 +678,13 @@
       "client_icao": "EWG",
       "client_name": "Eurowings",
       "start_date": "2026-07-15",
-      "end_date": "2026-08-31",
+      "end_date": "2026-09-01",
       "status": "active",
-      "days_active": 43,
-      "span_days": 48,
-      "continuity_pct": 89.6,
-      "total_bh": 336.3,
-      "avg_bh_per_active_day": 7.8,
+      "days_active": 44,
+      "span_days": 49,
+      "continuity_pct": 89.8,
+      "total_bh": 348.2,
+      "avg_bh_per_active_day": 7.9,
       "max_internal_gap_days": 3,
       "days_since_last_seen": 0
     },
@@ -712,13 +695,13 @@
       "client_icao": "ISR",
       "client_name": "Israir",
       "start_date": "2026-07-28",
-      "end_date": "2026-08-31",
+      "end_date": "2026-09-01",
       "status": "active",
-      "days_active": 35,
-      "span_days": 35,
+      "days_active": 36,
+      "span_days": 36,
       "continuity_pct": 100.0,
-      "total_bh": 336.3,
-      "avg_bh_per_active_day": 9.6,
+      "total_bh": 347.7,
+      "avg_bh_per_active_day": 9.7,
       "max_internal_gap_days": 1,
       "days_since_last_seen": 0
     },
@@ -737,7 +720,7 @@
       "total_bh": 329.0,
       "avg_bh_per_active_day": 7.5,
       "max_internal_gap_days": 2,
-      "days_since_last_seen": 0
+      "days_since_last_seen": 1
     },
     {
       "registration": "OK-TVU",
@@ -746,14 +729,31 @@
       "client_icao": "TVP",
       "client_name": "TVP",
       "start_date": "2026-08-06",
-      "end_date": "2026-08-31",
+      "end_date": "2026-09-01",
       "status": "active",
-      "days_active": 26,
-      "span_days": 26,
+      "days_active": 27,
+      "span_days": 27,
       "continuity_pct": 100.0,
-      "total_bh": 302.0,
+      "total_bh": 311.9,
       "avg_bh_per_active_day": 11.6,
       "max_internal_gap_days": 1,
+      "days_since_last_seen": 0
+    },
+    {
+      "registration": "9H-REU",
+      "owner_name": "Valletta Airlines",
+      "group": "Heston",
+      "client_icao": "BBG",
+      "client_name": "Bluebird Airways",
+      "start_date": "2026-07-15",
+      "end_date": "2026-09-01",
+      "status": "active",
+      "days_active": 46,
+      "span_days": 49,
+      "continuity_pct": 93.9,
+      "total_bh": 271.8,
+      "avg_bh_per_active_day": 5.9,
+      "max_internal_gap_days": 2,
       "days_since_last_seen": 0
     },
     {
@@ -771,24 +771,7 @@
       "total_bh": 269.2,
       "avg_bh_per_active_day": 5.7,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 1
-    },
-    {
-      "registration": "9H-REU",
-      "owner_name": "Valletta Airlines",
-      "group": "Heston",
-      "client_icao": "BBG",
-      "client_name": "Bluebird Airways",
-      "start_date": "2026-07-15",
-      "end_date": "2026-08-31",
-      "status": "active",
-      "days_active": 45,
-      "span_days": 48,
-      "continuity_pct": 93.8,
-      "total_bh": 265.2,
-      "avg_bh_per_active_day": 5.9,
-      "max_internal_gap_days": 2,
-      "days_since_last_seen": 0
+      "days_since_last_seen": 2
     },
     {
       "registration": "OK-SWE",
@@ -805,7 +788,7 @@
       "total_bh": 220.0,
       "avg_bh_per_active_day": 9.6,
       "max_internal_gap_days": 2,
-      "days_since_last_seen": 0
+      "days_since_last_seen": 1
     },
     {
       "registration": "OK-TVS",
@@ -814,13 +797,13 @@
       "client_icao": "TVP",
       "client_name": "Smartwings Poland",
       "start_date": "2026-08-15",
-      "end_date": "2026-08-31",
+      "end_date": "2026-09-01",
       "status": "active",
-      "days_active": 17,
-      "span_days": 17,
+      "days_active": 18,
+      "span_days": 18,
       "continuity_pct": 100.0,
-      "total_bh": 202.3,
-      "avg_bh_per_active_day": 11.9,
+      "total_bh": 211.7,
+      "avg_bh_per_active_day": 11.8,
       "max_internal_gap_days": 1,
       "days_since_last_seen": 0
     },
@@ -839,24 +822,7 @@
       "total_bh": 156.9,
       "avg_bh_per_active_day": 8.7,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 0
-    },
-    {
-      "registration": "9H-TRI",
-      "owner_name": "Valletta Airlines",
-      "group": "Heston",
-      "client_icao": "AIZ",
-      "client_name": "Arkia Israeli Airlines",
-      "start_date": "2026-08-12",
-      "end_date": "2026-08-28",
-      "status": "active",
-      "days_active": 17,
-      "span_days": 17,
-      "continuity_pct": 100.0,
-      "total_bh": 148.3,
-      "avg_bh_per_active_day": 8.7,
-      "max_internal_gap_days": 1,
-      "days_since_last_seen": 3
+      "days_since_last_seen": 1
     },
     {
       "registration": "LY-MLF",
@@ -865,12 +831,12 @@
       "client_icao": "APO",
       "client_name": "Azores Airlines",
       "start_date": "2026-07-29",
-      "end_date": "2026-08-31",
+      "end_date": "2026-09-01",
       "status": "active",
-      "days_active": 32,
-      "span_days": 34,
-      "continuity_pct": 94.1,
-      "total_bh": 134.4,
+      "days_active": 33,
+      "span_days": 35,
+      "continuity_pct": 94.3,
+      "total_bh": 139.1,
       "avg_bh_per_active_day": 4.2,
       "max_internal_gap_days": 3,
       "days_since_last_seen": 0
@@ -882,12 +848,12 @@
       "client_icao": "CRC",
       "client_name": "Camair-Co",
       "start_date": "2026-08-02",
-      "end_date": "2026-08-31",
+      "end_date": "2026-09-01",
       "status": "active",
-      "days_active": 30,
-      "span_days": 30,
+      "days_active": 31,
+      "span_days": 31,
       "continuity_pct": 100.0,
-      "total_bh": 127.1,
+      "total_bh": 130.4,
       "avg_bh_per_active_day": 4.2,
       "max_internal_gap_days": 1,
       "days_since_last_seen": 0
@@ -899,15 +865,32 @@
       "client_icao": "FKH",
       "client_name": "FKH",
       "start_date": "2026-08-07",
-      "end_date": "2026-08-29",
+      "end_date": "2026-09-01",
       "status": "active",
-      "days_active": 16,
-      "span_days": 23,
-      "continuity_pct": 69.6,
-      "total_bh": 113.9,
-      "avg_bh_per_active_day": 7.1,
+      "days_active": 17,
+      "span_days": 26,
+      "continuity_pct": 65.4,
+      "total_bh": 125.3,
+      "avg_bh_per_active_day": 7.4,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 2
+      "days_since_last_seen": 0
+    },
+    {
+      "registration": "LY-MAF",
+      "owner_name": "Heston Airlines",
+      "group": "Heston",
+      "client_icao": "CFG",
+      "client_name": "Condor",
+      "start_date": "2026-08-24",
+      "end_date": "2026-09-01",
+      "status": "active",
+      "days_active": 9,
+      "span_days": 9,
+      "continuity_pct": 100.0,
+      "total_bh": 115.6,
+      "avg_bh_per_active_day": 12.8,
+      "max_internal_gap_days": 1,
+      "days_since_last_seen": 0
     },
     {
       "registration": "9H-ZTB",
@@ -916,12 +899,12 @@
       "client_icao": "BCS",
       "client_name": "EAT Leipzig",
       "start_date": "2026-07-15",
-      "end_date": "2026-08-31",
+      "end_date": "2026-09-01",
       "status": "active",
-      "days_active": 33,
-      "span_days": 48,
-      "continuity_pct": 68.8,
-      "total_bh": 111.0,
+      "days_active": 34,
+      "span_days": 49,
+      "continuity_pct": 69.4,
+      "total_bh": 114.4,
       "avg_bh_per_active_day": 3.4,
       "max_internal_gap_days": 3,
       "days_since_last_seen": 0
@@ -933,12 +916,12 @@
       "client_icao": "BCS",
       "client_name": "EAT Leipzig",
       "start_date": "2026-07-15",
-      "end_date": "2026-08-31",
+      "end_date": "2026-09-01",
       "status": "active",
-      "days_active": 33,
-      "span_days": 48,
-      "continuity_pct": 68.8,
-      "total_bh": 109.1,
+      "days_active": 34,
+      "span_days": 49,
+      "continuity_pct": 69.4,
+      "total_bh": 112.7,
       "avg_bh_per_active_day": 3.3,
       "max_internal_gap_days": 3,
       "days_since_last_seen": 0
@@ -958,24 +941,7 @@
       "total_bh": 104.5,
       "avg_bh_per_active_day": 7.5,
       "max_internal_gap_days": 2,
-      "days_since_last_seen": 0
-    },
-    {
-      "registration": "LY-MAF",
-      "owner_name": "Heston Airlines",
-      "group": "Heston",
-      "client_icao": "CFG",
-      "client_name": "Condor",
-      "start_date": "2026-08-24",
-      "end_date": "2026-08-31",
-      "status": "active",
-      "days_active": 8,
-      "span_days": 8,
-      "continuity_pct": 100.0,
-      "total_bh": 101.9,
-      "avg_bh_per_active_day": 12.7,
-      "max_internal_gap_days": 1,
-      "days_since_last_seen": 0
+      "days_since_last_seen": 1
     },
     {
       "registration": "OK-TSF",
@@ -984,13 +950,13 @@
       "client_icao": "TVQ",
       "client_name": "Travel Service Slovakia",
       "start_date": "2026-08-20",
-      "end_date": "2026-08-31",
+      "end_date": "2026-09-01",
       "status": "active",
-      "days_active": 12,
-      "span_days": 12,
+      "days_active": 13,
+      "span_days": 13,
       "continuity_pct": 100.0,
-      "total_bh": 85.9,
-      "avg_bh_per_active_day": 7.2,
+      "total_bh": 102.4,
+      "avg_bh_per_active_day": 7.9,
       "max_internal_gap_days": 1,
       "days_since_last_seen": 0
     },
@@ -1001,13 +967,13 @@
       "client_icao": "TVP",
       "client_name": "Smartwings Poland",
       "start_date": "2026-08-25",
-      "end_date": "2026-08-31",
+      "end_date": "2026-09-01",
       "status": "active",
-      "days_active": 7,
-      "span_days": 7,
+      "days_active": 8,
+      "span_days": 8,
       "continuity_pct": 100.0,
-      "total_bh": 84.2,
-      "avg_bh_per_active_day": 12.0,
+      "total_bh": 92.4,
+      "avg_bh_per_active_day": 11.6,
       "max_internal_gap_days": 1,
       "days_since_last_seen": 0
     },
@@ -1018,13 +984,13 @@
       "client_icao": "TOM",
       "client_name": "TUI Airways",
       "start_date": "2026-08-26",
-      "end_date": "2026-08-31",
+      "end_date": "2026-09-01",
       "status": "active",
-      "days_active": 6,
-      "span_days": 6,
+      "days_active": 7,
+      "span_days": 7,
       "continuity_pct": 100.0,
-      "total_bh": 58.7,
-      "avg_bh_per_active_day": 9.8,
+      "total_bh": 64.6,
+      "avg_bh_per_active_day": 9.2,
       "max_internal_gap_days": 1,
       "days_since_last_seen": 0
     },
@@ -1035,12 +1001,12 @@
       "client_icao": "BCS",
       "client_name": "EAT Leipzig",
       "start_date": "2026-07-15",
-      "end_date": "2026-08-31",
+      "end_date": "2026-09-01",
       "status": "active",
-      "days_active": 41,
-      "span_days": 48,
-      "continuity_pct": 85.4,
-      "total_bh": 57.8,
+      "days_active": 42,
+      "span_days": 49,
+      "continuity_pct": 85.7,
+      "total_bh": 59.2,
       "avg_bh_per_active_day": 1.4,
       "max_internal_gap_days": 2,
       "days_since_last_seen": 0
@@ -1060,7 +1026,24 @@
       "total_bh": 50.8,
       "avg_bh_per_active_day": 6.3,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 1
+      "days_since_last_seen": 2
+    },
+    {
+      "registration": "9H-AML",
+      "owner_name": "Avion Express Malta",
+      "group": "Avion Express",
+      "client_icao": "EWG",
+      "client_name": "Eurowings",
+      "start_date": "2026-08-27",
+      "end_date": "2026-09-01",
+      "status": "active",
+      "days_active": 5,
+      "span_days": 6,
+      "continuity_pct": 83.3,
+      "total_bh": 47.5,
+      "avg_bh_per_active_day": 9.5,
+      "max_internal_gap_days": 2,
+      "days_since_last_seen": 0
     },
     {
       "registration": "9H-MLX",
@@ -1077,23 +1060,23 @@
       "total_bh": 41.0,
       "avg_bh_per_active_day": 8.2,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 2
+      "days_since_last_seen": 3
     },
     {
-      "registration": "9H-AML",
-      "owner_name": "Avion Express Malta",
-      "group": "Avion Express",
-      "client_icao": "EWG",
-      "client_name": "Eurowings",
-      "start_date": "2026-08-27",
-      "end_date": "2026-08-31",
+      "registration": "9H-NZL",
+      "owner_name": "Valletta Airlines",
+      "group": "Heston",
+      "client_icao": "AIZ",
+      "client_name": "Arkia Israeli Airlines",
+      "start_date": "2026-08-28",
+      "end_date": "2026-09-01",
       "status": "active",
-      "days_active": 4,
+      "days_active": 5,
       "span_days": 5,
-      "continuity_pct": 80.0,
-      "total_bh": 40.6,
-      "avg_bh_per_active_day": 10.2,
-      "max_internal_gap_days": 2,
+      "continuity_pct": 100.0,
+      "total_bh": 39.9,
+      "avg_bh_per_active_day": 8.0,
+      "max_internal_gap_days": 1,
       "days_since_last_seen": 0
     },
     {
@@ -1111,24 +1094,7 @@
       "total_bh": 34.0,
       "avg_bh_per_active_day": 8.5,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 1
-    },
-    {
-      "registration": "9H-NZL",
-      "owner_name": "Valletta Airlines",
-      "group": "Heston",
-      "client_icao": "AIZ",
-      "client_name": "Arkia Israeli Airlines",
-      "start_date": "2026-08-28",
-      "end_date": "2026-08-31",
-      "status": "active",
-      "days_active": 4,
-      "span_days": 4,
-      "continuity_pct": 100.0,
-      "total_bh": 32.3,
-      "avg_bh_per_active_day": 8.1,
-      "max_internal_gap_days": 1,
-      "days_since_last_seen": 0
+      "days_since_last_seen": 2
     },
     {
       "registration": "LY-NVJ",
@@ -1145,7 +1111,7 @@
       "total_bh": 28.5,
       "avg_bh_per_active_day": 4.8,
       "max_internal_gap_days": 2,
-      "days_since_last_seen": 1
+      "days_since_last_seen": 2
     },
     {
       "registration": "LY-NVJ",
@@ -1162,7 +1128,7 @@
       "total_bh": 25.8,
       "avg_bh_per_active_day": 5.2,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 1
+      "days_since_last_seen": 2
     },
     {
       "registration": "G-POWM",
@@ -1179,7 +1145,24 @@
       "total_bh": 19.4,
       "avg_bh_per_active_day": 4.8,
       "max_internal_gap_days": 2,
-      "days_since_last_seen": 1
+      "days_since_last_seen": 2
+    },
+    {
+      "registration": "LY-WSA",
+      "owner_name": "GetJet Airlines",
+      "group": "GetJet",
+      "client_icao": "ISR",
+      "client_name": "Israir",
+      "start_date": "2026-08-30",
+      "end_date": "2026-09-01",
+      "status": "active",
+      "days_active": 3,
+      "span_days": 3,
+      "continuity_pct": 100.0,
+      "total_bh": 18.9,
+      "avg_bh_per_active_day": 6.3,
+      "max_internal_gap_days": 1,
+      "days_since_last_seen": 0
     },
     {
       "registration": "9H-MLX",
@@ -1196,24 +1179,7 @@
       "total_bh": 14.3,
       "avg_bh_per_active_day": 7.2,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 0
-    },
-    {
-      "registration": "LY-WSA",
-      "owner_name": "GetJet Airlines",
-      "group": "GetJet",
-      "client_icao": "ISR",
-      "client_name": "Israir",
-      "start_date": "2026-08-30",
-      "end_date": "2026-08-31",
-      "status": "active",
-      "days_active": 2,
-      "span_days": 2,
-      "continuity_pct": 100.0,
-      "total_bh": 13.0,
-      "avg_bh_per_active_day": 6.5,
-      "max_internal_gap_days": 1,
-      "days_since_last_seen": 0
+      "days_since_last_seen": 1
     },
     {
       "registration": "G-POWM",
@@ -1230,7 +1196,7 @@
       "total_bh": 10.5,
       "avg_bh_per_active_day": 5.2,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 1
+      "days_since_last_seen": 2
     },
     {
       "registration": "LY-TAP",
@@ -1247,7 +1213,7 @@
       "total_bh": 10.3,
       "avg_bh_per_active_day": 10.3,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 0
+      "days_since_last_seen": 1
     },
     {
       "registration": "LY-TAP",
@@ -1264,7 +1230,41 @@
       "total_bh": 9.5,
       "avg_bh_per_active_day": 4.8,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 2
+      "days_since_last_seen": 3
+    },
+    {
+      "registration": "9H-SWJ",
+      "owner_name": "Avion Express Malta",
+      "group": "Avion Express",
+      "client_icao": "EWG",
+      "client_name": "Eurowings",
+      "start_date": "2026-08-31",
+      "end_date": "2026-09-01",
+      "status": "active",
+      "days_active": 2,
+      "span_days": 2,
+      "continuity_pct": 100.0,
+      "total_bh": 8.8,
+      "avg_bh_per_active_day": 4.4,
+      "max_internal_gap_days": 1,
+      "days_since_last_seen": 0
+    },
+    {
+      "registration": "9H-MLX",
+      "owner_name": "Avion Express Malta",
+      "group": "Avion Express",
+      "client_icao": "MLH",
+      "client_name": "Air Alsace",
+      "start_date": "2026-09-01",
+      "end_date": "2026-09-01",
+      "status": "active",
+      "days_active": 1,
+      "span_days": 1,
+      "continuity_pct": 100.0,
+      "total_bh": 6.1,
+      "avg_bh_per_active_day": 6.1,
+      "max_internal_gap_days": 0,
+      "days_since_last_seen": 0
     },
     {
       "registration": "LY-TAP",
@@ -1281,7 +1281,7 @@
       "total_bh": 5.2,
       "avg_bh_per_active_day": 5.2,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 2
+      "days_since_last_seen": 3
     },
     {
       "registration": "OK-SWJ",
@@ -1290,31 +1290,14 @@
       "client_icao": "TVQ",
       "client_name": "Travel Service Slovakia",
       "start_date": "2026-08-31",
-      "end_date": "2026-08-31",
+      "end_date": "2026-09-01",
       "status": "active",
-      "days_active": 1,
-      "span_days": 1,
+      "days_active": 2,
+      "span_days": 2,
       "continuity_pct": 100.0,
-      "total_bh": 4.3,
-      "avg_bh_per_active_day": 4.3,
-      "max_internal_gap_days": 0,
-      "days_since_last_seen": 0
-    },
-    {
-      "registration": "9H-SWJ",
-      "owner_name": "Avion Express Malta",
-      "group": "Avion Express",
-      "client_icao": "EWG",
-      "client_name": "Eurowings",
-      "start_date": "2026-08-31",
-      "end_date": "2026-08-31",
-      "status": "active",
-      "days_active": 1,
-      "span_days": 1,
-      "continuity_pct": 100.0,
-      "total_bh": 3.4,
-      "avg_bh_per_active_day": 3.4,
-      "max_internal_gap_days": 0,
+      "total_bh": 5.0,
+      "avg_bh_per_active_day": 2.5,
+      "max_internal_gap_days": 1,
       "days_since_last_seen": 0
     },
     {
@@ -1324,13 +1307,64 @@
       "client_icao": "CYF",
       "client_name": "CYF",
       "start_date": "2026-08-31",
-      "end_date": "2026-08-31",
+      "end_date": "2026-09-01",
+      "status": "active",
+      "days_active": 2,
+      "span_days": 2,
+      "continuity_pct": 100.0,
+      "total_bh": 4.5,
+      "avg_bh_per_active_day": 2.2,
+      "max_internal_gap_days": 1,
+      "days_since_last_seen": 0
+    },
+    {
+      "registration": "OK-SWA",
+      "owner_name": "Smartwings",
+      "group": "Smartwings",
+      "client_icao": "TVQ",
+      "client_name": "Travel Service Slovakia",
+      "start_date": "2026-09-01",
+      "end_date": "2026-09-01",
       "status": "active",
       "days_active": 1,
       "span_days": 1,
       "continuity_pct": 100.0,
-      "total_bh": 3.0,
-      "avg_bh_per_active_day": 3.0,
+      "total_bh": 3.2,
+      "avg_bh_per_active_day": 3.2,
+      "max_internal_gap_days": 0,
+      "days_since_last_seen": 0
+    },
+    {
+      "registration": "LY-DAE",
+      "owner_name": "GetJet Airlines",
+      "group": "GetJet",
+      "client_icao": "EWG",
+      "client_name": "Eurowings",
+      "start_date": "2026-09-01",
+      "end_date": "2026-09-01",
+      "status": "active",
+      "days_active": 1,
+      "span_days": 1,
+      "continuity_pct": 100.0,
+      "total_bh": 2.6,
+      "avg_bh_per_active_day": 2.6,
+      "max_internal_gap_days": 0,
+      "days_since_last_seen": 0
+    },
+    {
+      "registration": "G-GBNI",
+      "owner_name": "Titan Airways",
+      "group": "Titan Airways",
+      "client_icao": "KRH",
+      "client_name": "UK Royal Flight",
+      "start_date": "2026-09-01",
+      "end_date": "2026-09-01",
+      "status": "active",
+      "days_active": 1,
+      "span_days": 1,
+      "continuity_pct": 100.0,
+      "total_bh": 0.9,
+      "avg_bh_per_active_day": 0.9,
       "max_internal_gap_days": 0,
       "days_since_last_seen": 0
     },
@@ -1349,7 +1383,7 @@
       "total_bh": 0.8,
       "avg_bh_per_active_day": 0.8,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 2
+      "days_since_last_seen": 3
     },
     {
       "registration": "LY-MLF",
@@ -1366,7 +1400,7 @@
       "total_bh": 0.6,
       "avg_bh_per_active_day": 0.6,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 1
+      "days_since_last_seen": 2
     },
     {
       "registration": "9H-SWC",
@@ -1383,24 +1417,7 @@
       "total_bh": 0.0,
       "avg_bh_per_active_day": 0.0,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 1
-    },
-    {
-      "registration": "9H-AMV",
-      "owner_name": "Avion Express Malta",
-      "group": "Avion Express",
-      "client_icao": "EW",
-      "client_name": "Eurowings",
-      "start_date": "2026-08-28",
-      "end_date": "2026-08-28",
-      "status": "active",
-      "days_active": 1,
-      "span_days": 1,
-      "continuity_pct": 100.0,
-      "total_bh": 0.0,
-      "avg_bh_per_active_day": 0.0,
-      "max_internal_gap_days": 0,
-      "days_since_last_seen": 3
+      "days_since_last_seen": 2
     },
     {
       "registration": "LY-VUT",
@@ -1417,7 +1434,24 @@
       "total_bh": 542.5,
       "avg_bh_per_active_day": 13.2,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 7
+      "days_since_last_seen": 8
+    },
+    {
+      "registration": "LY-DAE",
+      "owner_name": "GetJet Airlines",
+      "group": "GetJet",
+      "client_icao": "EWG",
+      "client_name": "Eurowings",
+      "start_date": "2026-07-15",
+      "end_date": "2026-08-28",
+      "status": "ended",
+      "days_active": 45,
+      "span_days": 45,
+      "continuity_pct": 100.0,
+      "total_bh": 417.5,
+      "avg_bh_per_active_day": 9.3,
+      "max_internal_gap_days": 1,
+      "days_since_last_seen": 4
     },
     {
       "registration": "9H-AML",
@@ -1434,7 +1468,7 @@
       "total_bh": 342.9,
       "avg_bh_per_active_day": 9.3,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 9
+      "days_since_last_seen": 10
     },
     {
       "registration": "OK-SWC",
@@ -1451,7 +1485,7 @@
       "total_bh": 319.1,
       "avg_bh_per_active_day": 13.3,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 7
+      "days_since_last_seen": 8
     },
     {
       "registration": "OM-NEX",
@@ -1468,7 +1502,7 @@
       "total_bh": 272.8,
       "avg_bh_per_active_day": 6.8,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 8
+      "days_since_last_seen": 9
     },
     {
       "registration": "LY-VUT",
@@ -1485,7 +1519,7 @@
       "total_bh": 256.8,
       "avg_bh_per_active_day": 13.5,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "OK-SWI",
@@ -1502,7 +1536,7 @@
       "total_bh": 253.0,
       "avg_bh_per_active_day": 13.3,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "9H-SWJ",
@@ -1519,7 +1553,7 @@
       "total_bh": 232.0,
       "avg_bh_per_active_day": 7.0,
       "max_internal_gap_days": 2,
-      "days_since_last_seen": 8
+      "days_since_last_seen": 9
     },
     {
       "registration": "9H-MLX",
@@ -1536,7 +1570,7 @@
       "total_bh": 224.7,
       "avg_bh_per_active_day": 6.2,
       "max_internal_gap_days": 2,
-      "days_since_last_seen": 7
+      "days_since_last_seen": 8
     },
     {
       "registration": "LY-PNG",
@@ -1553,7 +1587,7 @@
       "total_bh": 204.7,
       "avg_bh_per_active_day": 11.4,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 55
+      "days_since_last_seen": 56
     },
     {
       "registration": "OK-SWD",
@@ -1570,7 +1604,7 @@
       "total_bh": 202.9,
       "avg_bh_per_active_day": 11.9,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 6
+      "days_since_last_seen": 7
     },
     {
       "registration": "LY-MHL",
@@ -1587,7 +1621,7 @@
       "total_bh": 202.2,
       "avg_bh_per_active_day": 10.6,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "LY-MAD",
@@ -1604,7 +1638,7 @@
       "total_bh": 201.2,
       "avg_bh_per_active_day": 10.6,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "9H-SEY",
@@ -1621,7 +1655,7 @@
       "total_bh": 198.6,
       "avg_bh_per_active_day": 10.5,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "LY-EKB",
@@ -1638,7 +1672,7 @@
       "total_bh": 194.8,
       "avg_bh_per_active_day": 10.3,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "9H-BRB",
@@ -1655,7 +1689,7 @@
       "total_bh": 194.5,
       "avg_bh_per_active_day": 10.2,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "OK-TVS",
@@ -1672,7 +1706,7 @@
       "total_bh": 194.3,
       "avg_bh_per_active_day": 9.7,
       "max_internal_gap_days": 2,
-      "days_since_last_seen": 27
+      "days_since_last_seen": 28
     },
     {
       "registration": "LY-NVJ",
@@ -1689,7 +1723,7 @@
       "total_bh": 190.6,
       "avg_bh_per_active_day": 6.4,
       "max_internal_gap_days": 2,
-      "days_since_last_seen": 16
+      "days_since_last_seen": 17
     },
     {
       "registration": "LY-MLI",
@@ -1706,7 +1740,7 @@
       "total_bh": 182.5,
       "avg_bh_per_active_day": 8.7,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 27
+      "days_since_last_seen": 28
     },
     {
       "registration": "9H-GKK",
@@ -1723,7 +1757,7 @@
       "total_bh": 180.7,
       "avg_bh_per_active_day": 9.5,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "LY-DAE",
@@ -1740,7 +1774,7 @@
       "total_bh": 178.7,
       "avg_bh_per_active_day": 9.4,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "OK-TSF",
@@ -1757,7 +1791,7 @@
       "total_bh": 178.7,
       "avg_bh_per_active_day": 12.8,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 16
+      "days_since_last_seen": 17
     },
     {
       "registration": "9H-SWE",
@@ -1774,7 +1808,7 @@
       "total_bh": 177.6,
       "avg_bh_per_active_day": 9.3,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "LY-FAS",
@@ -1791,7 +1825,7 @@
       "total_bh": 177.2,
       "avg_bh_per_active_day": 9.3,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "9H-AMJ",
@@ -1808,7 +1842,7 @@
       "total_bh": 173.6,
       "avg_bh_per_active_day": 9.1,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "9H-SWN",
@@ -1825,7 +1859,7 @@
       "total_bh": 170.9,
       "avg_bh_per_active_day": 9.0,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "9H-MLB",
@@ -1842,7 +1876,7 @@
       "total_bh": 170.5,
       "avg_bh_per_active_day": 9.5,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "9H-SWD",
@@ -1859,7 +1893,7 @@
       "total_bh": 168.6,
       "avg_bh_per_active_day": 8.9,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "9H-AMK",
@@ -1876,7 +1910,7 @@
       "total_bh": 165.8,
       "avg_bh_per_active_day": 8.7,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "9H-SWA",
@@ -1893,7 +1927,7 @@
       "total_bh": 164.9,
       "avg_bh_per_active_day": 8.7,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "OK-TVU",
@@ -1910,7 +1944,7 @@
       "total_bh": 164.0,
       "avg_bh_per_active_day": 13.7,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 63
+      "days_since_last_seen": 64
     },
     {
       "registration": "LY-GYM",
@@ -1927,7 +1961,7 @@
       "total_bh": 163.2,
       "avg_bh_per_active_day": 8.6,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "LY-MAL",
@@ -1944,7 +1978,7 @@
       "total_bh": 158.2,
       "avg_bh_per_active_day": 8.3,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "9H-MLX",
@@ -1961,7 +1995,7 @@
       "total_bh": 158.1,
       "avg_bh_per_active_day": 5.3,
       "max_internal_gap_days": 2,
-      "days_since_last_seen": 6
+      "days_since_last_seen": 7
     },
     {
       "registration": "9H-AMI",
@@ -1978,7 +2012,7 @@
       "total_bh": 156.6,
       "avg_bh_per_active_day": 8.2,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "LY-WIL",
@@ -1995,7 +2029,7 @@
       "total_bh": 155.9,
       "avg_bh_per_active_day": 9.2,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "9H-SWG",
@@ -2012,7 +2046,7 @@
       "total_bh": 155.7,
       "avg_bh_per_active_day": 8.2,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "LY-TAP",
@@ -2029,7 +2063,7 @@
       "total_bh": 153.4,
       "avg_bh_per_active_day": 9.0,
       "max_internal_gap_days": 2,
-      "days_since_last_seen": 30
+      "days_since_last_seen": 31
     },
     {
       "registration": "9H-AMM",
@@ -2046,7 +2080,7 @@
       "total_bh": 152.0,
       "avg_bh_per_active_day": 8.0,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "OM-MEX",
@@ -2063,7 +2097,7 @@
       "total_bh": 151.8,
       "avg_bh_per_active_day": 12.7,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 63
+      "days_since_last_seen": 64
     },
     {
       "registration": "LY-WIZ",
@@ -2080,7 +2114,7 @@
       "total_bh": 151.6,
       "avg_bh_per_active_day": 8.0,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "9H-AML",
@@ -2097,7 +2131,7 @@
       "total_bh": 150.5,
       "avg_bh_per_active_day": 9.4,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 56
+      "days_since_last_seen": 57
     },
     {
       "registration": "OK-SWC",
@@ -2114,7 +2148,7 @@
       "total_bh": 149.6,
       "avg_bh_per_active_day": 11.5,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 62
+      "days_since_last_seen": 63
     },
     {
       "registration": "OK-TVR",
@@ -2131,7 +2165,24 @@
       "total_bh": 148.4,
       "avg_bh_per_active_day": 12.4,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 63
+      "days_since_last_seen": 64
+    },
+    {
+      "registration": "9H-TRI",
+      "owner_name": "Valletta Airlines",
+      "group": "Heston",
+      "client_icao": "AIZ",
+      "client_name": "Arkia Israeli Airlines",
+      "start_date": "2026-08-12",
+      "end_date": "2026-08-28",
+      "status": "ended",
+      "days_active": 17,
+      "span_days": 17,
+      "continuity_pct": 100.0,
+      "total_bh": 148.3,
+      "avg_bh_per_active_day": 8.7,
+      "max_internal_gap_days": 1,
+      "days_since_last_seen": 4
     },
     {
       "registration": "9H-GTS",
@@ -2148,7 +2199,7 @@
       "total_bh": 147.0,
       "avg_bh_per_active_day": 8.2,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "LY-WSM",
@@ -2165,7 +2216,7 @@
       "total_bh": 146.8,
       "avg_bh_per_active_day": 8.2,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 30
+      "days_since_last_seen": 31
     },
     {
       "registration": "LY-CAP",
@@ -2182,7 +2233,7 @@
       "total_bh": 145.2,
       "avg_bh_per_active_day": 8.5,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "LY-NOW",
@@ -2199,7 +2250,7 @@
       "total_bh": 143.8,
       "avg_bh_per_active_day": 7.6,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "OK-TSU",
@@ -2216,7 +2267,7 @@
       "total_bh": 142.0,
       "avg_bh_per_active_day": 11.8,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 63
+      "days_since_last_seen": 64
     },
     {
       "registration": "LY-MAU",
@@ -2233,7 +2284,7 @@
       "total_bh": 138.7,
       "avg_bh_per_active_day": 12.6,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 64
+      "days_since_last_seen": 65
     },
     {
       "registration": "OK-TVT",
@@ -2250,7 +2301,7 @@
       "total_bh": 137.3,
       "avg_bh_per_active_day": 11.4,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 63
+      "days_since_last_seen": 64
     },
     {
       "registration": "OM-IEX",
@@ -2267,7 +2318,7 @@
       "total_bh": 134.0,
       "avg_bh_per_active_day": 6.4,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 27
+      "days_since_last_seen": 28
     },
     {
       "registration": "LY-TEN",
@@ -2284,7 +2335,7 @@
       "total_bh": 132.1,
       "avg_bh_per_active_day": 9.4,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 58
+      "days_since_last_seen": 59
     },
     {
       "registration": "G-POWU",
@@ -2301,7 +2352,7 @@
       "total_bh": 132.0,
       "avg_bh_per_active_day": 11.0,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 63
+      "days_since_last_seen": 64
     },
     {
       "registration": "9H-MLE",
@@ -2318,7 +2369,7 @@
       "total_bh": 131.8,
       "avg_bh_per_active_day": 7.3,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "9H-SWC",
@@ -2335,7 +2386,7 @@
       "total_bh": 131.8,
       "avg_bh_per_active_day": 10.1,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 62
+      "days_since_last_seen": 63
     },
     {
       "registration": "LY-SEI",
@@ -2352,7 +2403,7 @@
       "total_bh": 130.8,
       "avg_bh_per_active_day": 7.7,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "OK-TVL",
@@ -2369,7 +2420,7 @@
       "total_bh": 129.0,
       "avg_bh_per_active_day": 10.8,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 63
+      "days_since_last_seen": 64
     },
     {
       "registration": "OK-TVV",
@@ -2386,7 +2437,7 @@
       "total_bh": 125.9,
       "avg_bh_per_active_day": 11.4,
       "max_internal_gap_days": 2,
-      "days_since_last_seen": 63
+      "days_since_last_seen": 64
     },
     {
       "registration": "OK-TVJ",
@@ -2403,7 +2454,7 @@
       "total_bh": 125.1,
       "avg_bh_per_active_day": 10.4,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 63
+      "days_since_last_seen": 64
     },
     {
       "registration": "9H-REU",
@@ -2420,7 +2471,7 @@
       "total_bh": 124.7,
       "avg_bh_per_active_day": 7.3,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "OK-SWC",
@@ -2437,7 +2488,7 @@
       "total_bh": 124.7,
       "avg_bh_per_active_day": 12.5,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 38
+      "days_since_last_seen": 39
     },
     {
       "registration": "OK-SWH",
@@ -2454,7 +2505,7 @@
       "total_bh": 123.2,
       "avg_bh_per_active_day": 11.2,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "9H-MLU",
@@ -2471,7 +2522,7 @@
       "total_bh": 122.6,
       "avg_bh_per_active_day": 8.8,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 58
+      "days_since_last_seen": 59
     },
     {
       "registration": "G-POWN",
@@ -2488,7 +2539,7 @@
       "total_bh": 122.1,
       "avg_bh_per_active_day": 10.2,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 63
+      "days_since_last_seen": 64
     },
     {
       "registration": "OK-TVU",
@@ -2505,7 +2556,7 @@
       "total_bh": 120.0,
       "avg_bh_per_active_day": 10.0,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 36
+      "days_since_last_seen": 37
     },
     {
       "registration": "LY-NRU",
@@ -2522,7 +2573,7 @@
       "total_bh": 119.7,
       "avg_bh_per_active_day": 13.3,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "OK-SWJ",
@@ -2539,7 +2590,7 @@
       "total_bh": 115.1,
       "avg_bh_per_active_day": 12.8,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 38
+      "days_since_last_seen": 39
     },
     {
       "registration": "LY-UNO",
@@ -2556,7 +2607,7 @@
       "total_bh": 114.8,
       "avg_bh_per_active_day": 6.8,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "LY-NVN",
@@ -2573,7 +2624,7 @@
       "total_bh": 111.9,
       "avg_bh_per_active_day": 5.9,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "OK-SWE",
@@ -2590,7 +2641,7 @@
       "total_bh": 111.9,
       "avg_bh_per_active_day": 11.2,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 65
+      "days_since_last_seen": 66
     },
     {
       "registration": "OM-JEX",
@@ -2607,7 +2658,7 @@
       "total_bh": 111.3,
       "avg_bh_per_active_day": 9.3,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 63
+      "days_since_last_seen": 64
     },
     {
       "registration": "OK-SWJ",
@@ -2624,7 +2675,7 @@
       "total_bh": 108.1,
       "avg_bh_per_active_day": 7.7,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 16
+      "days_since_last_seen": 17
     },
     {
       "registration": "OK-TSF",
@@ -2641,7 +2692,7 @@
       "total_bh": 104.9,
       "avg_bh_per_active_day": 10.5,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 59
+      "days_since_last_seen": 60
     },
     {
       "registration": "LY-MLI",
@@ -2658,7 +2709,7 @@
       "total_bh": 98.1,
       "avg_bh_per_active_day": 7.0,
       "max_internal_gap_days": 2,
-      "days_since_last_seen": 4
+      "days_since_last_seen": 5
     },
     {
       "registration": "OK-SWI",
@@ -2675,7 +2726,7 @@
       "total_bh": 97.5,
       "avg_bh_per_active_day": 13.9,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 31
+      "days_since_last_seen": 32
     },
     {
       "registration": "OK-TSE",
@@ -2692,7 +2743,7 @@
       "total_bh": 93.7,
       "avg_bh_per_active_day": 4.9,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "9H-MLX",
@@ -2709,7 +2760,7 @@
       "total_bh": 89.9,
       "avg_bh_per_active_day": 5.6,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "OK-SWD",
@@ -2726,7 +2777,7 @@
       "total_bh": 88.3,
       "avg_bh_per_active_day": 12.6,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 68
+      "days_since_last_seen": 69
     },
     {
       "registration": "OK-TSF",
@@ -2743,7 +2794,7 @@
       "total_bh": 88.2,
       "avg_bh_per_active_day": 12.6,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 33
+      "days_since_last_seen": 34
     },
     {
       "registration": "OM-IEX",
@@ -2760,7 +2811,7 @@
       "total_bh": 85.3,
       "avg_bh_per_active_day": 7.1,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 63
+      "days_since_last_seen": 64
     },
     {
       "registration": "OM-IEX",
@@ -2777,7 +2828,7 @@
       "total_bh": 84.3,
       "avg_bh_per_active_day": 4.4,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 4
+      "days_since_last_seen": 5
     },
     {
       "registration": "LY-WSM",
@@ -2794,7 +2845,7 @@
       "total_bh": 83.5,
       "avg_bh_per_active_day": 7.0,
       "max_internal_gap_days": 2,
-      "days_since_last_seen": 62
+      "days_since_last_seen": 63
     },
     {
       "registration": "LY-NVG",
@@ -2811,7 +2862,7 @@
       "total_bh": 83.0,
       "avg_bh_per_active_day": 9.2,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 39
+      "days_since_last_seen": 40
     },
     {
       "registration": "OM-JEX",
@@ -2828,7 +2879,7 @@
       "total_bh": 80.1,
       "avg_bh_per_active_day": 13.3,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "OK-SWF",
@@ -2845,7 +2896,7 @@
       "total_bh": 80.0,
       "avg_bh_per_active_day": 10.0,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 55
+      "days_since_last_seen": 56
     },
     {
       "registration": "OK-SWD",
@@ -2862,7 +2913,7 @@
       "total_bh": 80.0,
       "avg_bh_per_active_day": 13.3,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "LY-JAM",
@@ -2879,7 +2930,7 @@
       "total_bh": 77.3,
       "avg_bh_per_active_day": 5.9,
       "max_internal_gap_days": 2,
-      "days_since_last_seen": 34
+      "days_since_last_seen": 35
     },
     {
       "registration": "OK-TVV",
@@ -2896,7 +2947,7 @@
       "total_bh": 76.6,
       "avg_bh_per_active_day": 12.8,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "LY-MLF",
@@ -2913,7 +2964,7 @@
       "total_bh": 75.9,
       "avg_bh_per_active_day": 4.0,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "OK-TVJ",
@@ -2930,7 +2981,7 @@
       "total_bh": 73.9,
       "avg_bh_per_active_day": 12.3,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "OM-MEX",
@@ -2947,7 +2998,7 @@
       "total_bh": 73.5,
       "avg_bh_per_active_day": 12.2,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "OK-SWB",
@@ -2964,7 +3015,7 @@
       "total_bh": 71.4,
       "avg_bh_per_active_day": 10.2,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 41
+      "days_since_last_seen": 42
     },
     {
       "registration": "OK-SWA",
@@ -2981,7 +3032,7 @@
       "total_bh": 70.8,
       "avg_bh_per_active_day": 10.1,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 5
+      "days_since_last_seen": 6
     },
     {
       "registration": "OK-TVL",
@@ -2998,7 +3049,7 @@
       "total_bh": 66.9,
       "avg_bh_per_active_day": 11.2,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "LY-MLI",
@@ -3015,7 +3066,7 @@
       "total_bh": 65.1,
       "avg_bh_per_active_day": 8.1,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "OK-TVT",
@@ -3032,7 +3083,7 @@
       "total_bh": 64.5,
       "avg_bh_per_active_day": 10.8,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "LY-NVG",
@@ -3049,7 +3100,7 @@
       "total_bh": 63.4,
       "avg_bh_per_active_day": 9.1,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "LY-HMD",
@@ -3066,7 +3117,7 @@
       "total_bh": 59.6,
       "avg_bh_per_active_day": 7.5,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 40
+      "days_since_last_seen": 41
     },
     {
       "registration": "LY-WSA",
@@ -3083,7 +3134,7 @@
       "total_bh": 57.6,
       "avg_bh_per_active_day": 7.2,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 38
+      "days_since_last_seen": 39
     },
     {
       "registration": "OK-TVS",
@@ -3100,7 +3151,7 @@
       "total_bh": 57.0,
       "avg_bh_per_active_day": 7.1,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 67
+      "days_since_last_seen": 68
     },
     {
       "registration": "G-POWU",
@@ -3117,7 +3168,7 @@
       "total_bh": 56.2,
       "avg_bh_per_active_day": 9.4,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "OM-NEX",
@@ -3134,7 +3185,7 @@
       "total_bh": 55.4,
       "avg_bh_per_active_day": 5.5,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 63
+      "days_since_last_seen": 64
     },
     {
       "registration": "LY-HMD",
@@ -3151,7 +3202,7 @@
       "total_bh": 55.2,
       "avg_bh_per_active_day": 9.2,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "9H-SWC",
@@ -3168,7 +3219,7 @@
       "total_bh": 54.0,
       "avg_bh_per_active_day": 10.8,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "G-POWN",
@@ -3185,7 +3236,7 @@
       "total_bh": 53.6,
       "avg_bh_per_active_day": 10.7,
       "max_internal_gap_days": 2,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "LY-NVJ",
@@ -3202,7 +3253,7 @@
       "total_bh": 52.8,
       "avg_bh_per_active_day": 7.5,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 56
+      "days_since_last_seen": 57
     },
     {
       "registration": "9H-SWJ",
@@ -3219,7 +3270,7 @@
       "total_bh": 49.4,
       "avg_bh_per_active_day": 9.9,
       "max_internal_gap_days": 2,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "G-OATW",
@@ -3236,7 +3287,7 @@
       "total_bh": 49.4,
       "avg_bh_per_active_day": 7.1,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 29
+      "days_since_last_seen": 30
     },
     {
       "registration": "OK-SWB",
@@ -3253,7 +3304,7 @@
       "total_bh": 48.7,
       "avg_bh_per_active_day": 9.7,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 12
+      "days_since_last_seen": 13
     },
     {
       "registration": "OK-TVU",
@@ -3270,7 +3321,7 @@
       "total_bh": 48.0,
       "avg_bh_per_active_day": 12.0,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 29
+      "days_since_last_seen": 30
     },
     {
       "registration": "OM-IEX",
@@ -3287,7 +3338,7 @@
       "total_bh": 43.5,
       "avg_bh_per_active_day": 7.2,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "9H-AMV",
@@ -3304,7 +3355,7 @@
       "total_bh": 42.9,
       "avg_bh_per_active_day": 7.1,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 69
+      "days_since_last_seen": 70
     },
     {
       "registration": "OK-TVU",
@@ -3321,7 +3372,7 @@
       "total_bh": 40.9,
       "avg_bh_per_active_day": 10.2,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 56
+      "days_since_last_seen": 57
     },
     {
       "registration": "OK-TSD",
@@ -3338,7 +3389,7 @@
       "total_bh": 40.8,
       "avg_bh_per_active_day": 13.6,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 57
+      "days_since_last_seen": 58
     },
     {
       "registration": "OK-SWC",
@@ -3355,7 +3406,7 @@
       "total_bh": 40.7,
       "avg_bh_per_active_day": 13.6,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "LY-WSM",
@@ -3372,7 +3423,7 @@
       "total_bh": 39.9,
       "avg_bh_per_active_day": 8.0,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "LY-NVE",
@@ -3389,7 +3440,7 @@
       "total_bh": 39.0,
       "avg_bh_per_active_day": 5.6,
       "max_internal_gap_days": 2,
-      "days_since_last_seen": 65
+      "days_since_last_seen": 66
     },
     {
       "registration": "LY-HMD",
@@ -3406,7 +3457,7 @@
       "total_bh": 37.9,
       "avg_bh_per_active_day": 5.4,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 66
+      "days_since_last_seen": 67
     },
     {
       "registration": "9H-AMV",
@@ -3423,7 +3474,7 @@
       "total_bh": 37.8,
       "avg_bh_per_active_day": 9.4,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "G-OATW",
@@ -3440,7 +3491,7 @@
       "total_bh": 37.6,
       "avg_bh_per_active_day": 9.4,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 22
+      "days_since_last_seen": 23
     },
     {
       "registration": "OM-NEX",
@@ -3457,7 +3508,7 @@
       "total_bh": 35.7,
       "avg_bh_per_active_day": 6.0,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "9H-REU",
@@ -3474,7 +3525,7 @@
       "total_bh": 35.1,
       "avg_bh_per_active_day": 2.9,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 8
+      "days_since_last_seen": 9
     },
     {
       "registration": "G-POWM",
@@ -3491,7 +3542,7 @@
       "total_bh": 34.9,
       "avg_bh_per_active_day": 5.8,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "LY-JAM",
@@ -3508,7 +3559,7 @@
       "total_bh": 33.0,
       "avg_bh_per_active_day": 11.0,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 72
+      "days_since_last_seen": 73
     },
     {
       "registration": "OK-SWE",
@@ -3525,7 +3576,7 @@
       "total_bh": 33.0,
       "avg_bh_per_active_day": 8.2,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 36
+      "days_since_last_seen": 37
     },
     {
       "registration": "OK-TVS",
@@ -3542,7 +3593,7 @@
       "total_bh": 32.1,
       "avg_bh_per_active_day": 6.4,
       "max_internal_gap_days": 2,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "G-OATW",
@@ -3559,7 +3610,7 @@
       "total_bh": 31.8,
       "avg_bh_per_active_day": 8.0,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 65
+      "days_since_last_seen": 66
     },
     {
       "registration": "9H-MLX",
@@ -3576,7 +3627,7 @@
       "total_bh": 31.5,
       "avg_bh_per_active_day": 5.2,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "LY-DUE",
@@ -3593,7 +3644,7 @@
       "total_bh": 31.1,
       "avg_bh_per_active_day": 7.8,
       "max_internal_gap_days": 2,
-      "days_since_last_seen": 31
+      "days_since_last_seen": 32
     },
     {
       "registration": "OK-SWH",
@@ -3610,7 +3661,7 @@
       "total_bh": 30.7,
       "avg_bh_per_active_day": 7.7,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 42
+      "days_since_last_seen": 43
     },
     {
       "registration": "OK-TSE",
@@ -3627,7 +3678,7 @@
       "total_bh": 30.6,
       "avg_bh_per_active_day": 3.8,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 40
+      "days_since_last_seen": 41
     },
     {
       "registration": "LY-MLI",
@@ -3644,7 +3695,7 @@
       "total_bh": 29.8,
       "avg_bh_per_active_day": 7.5,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 71
+      "days_since_last_seen": 72
     },
     {
       "registration": "LY-TAP",
@@ -3661,7 +3712,7 @@
       "total_bh": 28.1,
       "avg_bh_per_active_day": 7.0,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 14
+      "days_since_last_seen": 15
     },
     {
       "registration": "LY-MAD",
@@ -3678,7 +3729,7 @@
       "total_bh": 27.8,
       "avg_bh_per_active_day": 4.6,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 34
+      "days_since_last_seen": 35
     },
     {
       "registration": "9H-ZTC",
@@ -3695,7 +3746,7 @@
       "total_bh": 26.3,
       "avg_bh_per_active_day": 3.3,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 63
+      "days_since_last_seen": 64
     },
     {
       "registration": "LY-MAU",
@@ -3712,7 +3763,7 @@
       "total_bh": 26.0,
       "avg_bh_per_active_day": 8.7,
       "max_internal_gap_days": 2,
-      "days_since_last_seen": 42
+      "days_since_last_seen": 43
     },
     {
       "registration": "9H-ZTB",
@@ -3729,7 +3780,7 @@
       "total_bh": 25.3,
       "avg_bh_per_active_day": 3.6,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 66
+      "days_since_last_seen": 67
     },
     {
       "registration": "LY-WSA",
@@ -3746,7 +3797,7 @@
       "total_bh": 25.2,
       "avg_bh_per_active_day": 6.3,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 56
+      "days_since_last_seen": 57
     },
     {
       "registration": "G-POWM",
@@ -3763,7 +3814,7 @@
       "total_bh": 24.2,
       "avg_bh_per_active_day": 6.0,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 42
+      "days_since_last_seen": 43
     },
     {
       "registration": "LY-NVJ",
@@ -3780,7 +3831,7 @@
       "total_bh": 23.8,
       "avg_bh_per_active_day": 7.9,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "LY-WSM",
@@ -3797,7 +3848,7 @@
       "total_bh": 23.7,
       "avg_bh_per_active_day": 5.9,
       "max_internal_gap_days": 2,
-      "days_since_last_seen": 10
+      "days_since_last_seen": 11
     },
     {
       "registration": "9H-REU",
@@ -3814,7 +3865,7 @@
       "total_bh": 21.7,
       "avg_bh_per_active_day": 3.6,
       "max_internal_gap_days": 2,
-      "days_since_last_seen": 31
+      "days_since_last_seen": 32
     },
     {
       "registration": "OK-TVJ",
@@ -3831,7 +3882,7 @@
       "total_bh": 21.6,
       "avg_bh_per_active_day": 10.8,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 46
+      "days_since_last_seen": 47
     },
     {
       "registration": "G-OATW",
@@ -3848,7 +3899,7 @@
       "total_bh": 21.1,
       "avg_bh_per_active_day": 7.0,
       "max_internal_gap_days": 2,
-      "days_since_last_seen": 27
+      "days_since_last_seen": 28
     },
     {
       "registration": "G-OATW",
@@ -3865,7 +3916,7 @@
       "total_bh": 19.9,
       "avg_bh_per_active_day": 5.0,
       "max_internal_gap_days": 2,
-      "days_since_last_seen": 17
+      "days_since_last_seen": 18
     },
     {
       "registration": "G-POWM",
@@ -3882,7 +3933,7 @@
       "total_bh": 19.4,
       "avg_bh_per_active_day": 9.7,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 29
+      "days_since_last_seen": 30
     },
     {
       "registration": "G-OATW",
@@ -3899,7 +3950,7 @@
       "total_bh": 18.9,
       "avg_bh_per_active_day": 9.4,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 15
+      "days_since_last_seen": 16
     },
     {
       "registration": "LY-NVE",
@@ -3916,7 +3967,7 @@
       "total_bh": 18.6,
       "avg_bh_per_active_day": 9.3,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 55
+      "days_since_last_seen": 56
     },
     {
       "registration": "OM-NEX",
@@ -3933,7 +3984,7 @@
       "total_bh": 18.3,
       "avg_bh_per_active_day": 9.2,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 6
+      "days_since_last_seen": 7
     },
     {
       "registration": "LY-NVE",
@@ -3950,7 +4001,7 @@
       "total_bh": 18.1,
       "avg_bh_per_active_day": 9.1,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 67
+      "days_since_last_seen": 68
     },
     {
       "registration": "9H-ZTB",
@@ -3967,7 +4018,7 @@
       "total_bh": 17.7,
       "avg_bh_per_active_day": 3.5,
       "max_internal_gap_days": 2,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "LY-WSA",
@@ -3984,7 +4035,7 @@
       "total_bh": 17.7,
       "avg_bh_per_active_day": 4.4,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 14
+      "days_since_last_seen": 15
     },
     {
       "registration": "LY-MAU",
@@ -4001,7 +4052,7 @@
       "total_bh": 17.5,
       "avg_bh_per_active_day": 8.8,
       "max_internal_gap_days": 2,
-      "days_since_last_seen": 56
+      "days_since_last_seen": 57
     },
     {
       "registration": "OK-SWD",
@@ -4018,7 +4069,7 @@
       "total_bh": 16.5,
       "avg_bh_per_active_day": 8.2,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 46
+      "days_since_last_seen": 47
     },
     {
       "registration": "LY-NVE",
@@ -4035,7 +4086,7 @@
       "total_bh": 16.2,
       "avg_bh_per_active_day": 5.4,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 62
+      "days_since_last_seen": 63
     },
     {
       "registration": "LY-TEN",
@@ -4052,7 +4103,7 @@
       "total_bh": 15.9,
       "avg_bh_per_active_day": 8.0,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 37
+      "days_since_last_seen": 38
     },
     {
       "registration": "G-OATW",
@@ -4069,7 +4120,7 @@
       "total_bh": 15.5,
       "avg_bh_per_active_day": 7.8,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 63
+      "days_since_last_seen": 64
     },
     {
       "registration": "G-POWM",
@@ -4086,7 +4137,7 @@
       "total_bh": 14.9,
       "avg_bh_per_active_day": 5.0,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 63
+      "days_since_last_seen": 64
     },
     {
       "registration": "9H-ZTC",
@@ -4103,7 +4154,7 @@
       "total_bh": 14.8,
       "avg_bh_per_active_day": 3.0,
       "max_internal_gap_days": 2,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "LY-DUE",
@@ -4120,7 +4171,7 @@
       "total_bh": 14.6,
       "avg_bh_per_active_day": 7.3,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 28
+      "days_since_last_seen": 29
     },
     {
       "registration": "9H-TRI",
@@ -4137,7 +4188,7 @@
       "total_bh": 14.4,
       "avg_bh_per_active_day": 4.8,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 38
+      "days_since_last_seen": 39
     },
     {
       "registration": "LY-WSA",
@@ -4154,7 +4205,7 @@
       "total_bh": 14.3,
       "avg_bh_per_active_day": 7.2,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 63
+      "days_since_last_seen": 64
     },
     {
       "registration": "9H-NZL",
@@ -4171,7 +4222,7 @@
       "total_bh": 14.1,
       "avg_bh_per_active_day": 4.7,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 57
+      "days_since_last_seen": 58
     },
     {
       "registration": "G-POWM",
@@ -4188,7 +4239,7 @@
       "total_bh": 13.7,
       "avg_bh_per_active_day": 6.8,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 14
+      "days_since_last_seen": 15
     },
     {
       "registration": "LY-WSA",
@@ -4205,7 +4256,7 @@
       "total_bh": 13.6,
       "avg_bh_per_active_day": 4.5,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "LY-TEN",
@@ -4222,7 +4273,7 @@
       "total_bh": 13.6,
       "avg_bh_per_active_day": 4.5,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 40
+      "days_since_last_seen": 41
     },
     {
       "registration": "9H-SWJ",
@@ -4239,7 +4290,7 @@
       "total_bh": 13.4,
       "avg_bh_per_active_day": 6.7,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 73
+      "days_since_last_seen": 74
     },
     {
       "registration": "G-POWM",
@@ -4256,7 +4307,7 @@
       "total_bh": 13.4,
       "avg_bh_per_active_day": 4.5,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 72
+      "days_since_last_seen": 73
     },
     {
       "registration": "G-OATW",
@@ -4273,7 +4324,7 @@
       "total_bh": 13.2,
       "avg_bh_per_active_day": 6.6,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 30
+      "days_since_last_seen": 31
     },
     {
       "registration": "LY-DUE",
@@ -4290,7 +4341,7 @@
       "total_bh": 13.1,
       "avg_bh_per_active_day": 6.5,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 42
+      "days_since_last_seen": 43
     },
     {
       "registration": "9H-TRI",
@@ -4307,7 +4358,7 @@
       "total_bh": 13.1,
       "avg_bh_per_active_day": 6.5,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 35
+      "days_since_last_seen": 36
     },
     {
       "registration": "OK-TVJ",
@@ -4324,7 +4375,7 @@
       "total_bh": 12.7,
       "avg_bh_per_active_day": 6.3,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 17
+      "days_since_last_seen": 18
     },
     {
       "registration": "G-POWM",
@@ -4341,7 +4392,7 @@
       "total_bh": 12.6,
       "avg_bh_per_active_day": 12.6,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 37
+      "days_since_last_seen": 38
     },
     {
       "registration": "G-OATW",
@@ -4358,7 +4409,7 @@
       "total_bh": 12.1,
       "avg_bh_per_active_day": 6.0,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 42
+      "days_since_last_seen": 43
     },
     {
       "registration": "OK-SWA",
@@ -4375,7 +4426,7 @@
       "total_bh": 11.6,
       "avg_bh_per_active_day": 5.8,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 4
+      "days_since_last_seen": 5
     },
     {
       "registration": "LY-WSA",
@@ -4392,7 +4443,7 @@
       "total_bh": 11.5,
       "avg_bh_per_active_day": 5.8,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 22
+      "days_since_last_seen": 23
     },
     {
       "registration": "OK-SWB",
@@ -4409,7 +4460,7 @@
       "total_bh": 11.5,
       "avg_bh_per_active_day": 5.8,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 18
+      "days_since_last_seen": 19
     },
     {
       "registration": "OK-SWA",
@@ -4426,7 +4477,7 @@
       "total_bh": 11.4,
       "avg_bh_per_active_day": 5.7,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 40
+      "days_since_last_seen": 41
     },
     {
       "registration": "LY-TAP",
@@ -4443,7 +4494,7 @@
       "total_bh": 11.4,
       "avg_bh_per_active_day": 11.4,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 11
+      "days_since_last_seen": 12
     },
     {
       "registration": "G-OATW",
@@ -4460,7 +4511,7 @@
       "total_bh": 11.3,
       "avg_bh_per_active_day": 11.3,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 37
+      "days_since_last_seen": 38
     },
     {
       "registration": "9H-AMV",
@@ -4477,7 +4528,7 @@
       "total_bh": 11.2,
       "avg_bh_per_active_day": 5.6,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 64
+      "days_since_last_seen": 65
     },
     {
       "registration": "OK-SWF",
@@ -4494,7 +4545,7 @@
       "total_bh": 10.4,
       "avg_bh_per_active_day": 10.4,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 47
+      "days_since_last_seen": 48
     },
     {
       "registration": "9H-NZL",
@@ -4511,7 +4562,7 @@
       "total_bh": 10.0,
       "avg_bh_per_active_day": 3.3,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 17
+      "days_since_last_seen": 18
     },
     {
       "registration": "OK-SWA",
@@ -4528,7 +4579,7 @@
       "total_bh": 9.8,
       "avg_bh_per_active_day": 9.8,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 38
+      "days_since_last_seen": 39
     },
     {
       "registration": "LY-WSA",
@@ -4545,7 +4596,7 @@
       "total_bh": 9.8,
       "avg_bh_per_active_day": 9.8,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 24
+      "days_since_last_seen": 25
     },
     {
       "registration": "9H-NZL",
@@ -4562,7 +4613,7 @@
       "total_bh": 9.6,
       "avg_bh_per_active_day": 4.8,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 15
+      "days_since_last_seen": 16
     },
     {
       "registration": "LY-TAP",
@@ -4579,7 +4630,7 @@
       "total_bh": 9.6,
       "avg_bh_per_active_day": 9.6,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 14
+      "days_since_last_seen": 15
     },
     {
       "registration": "LY-TEN",
@@ -4596,7 +4647,7 @@
       "total_bh": 9.5,
       "avg_bh_per_active_day": 4.8,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 44
+      "days_since_last_seen": 45
     },
     {
       "registration": "G-POWM",
@@ -4613,7 +4664,7 @@
       "total_bh": 9.3,
       "avg_bh_per_active_day": 4.7,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 46
+      "days_since_last_seen": 47
     },
     {
       "registration": "LY-WSA",
@@ -4630,7 +4681,7 @@
       "total_bh": 9.3,
       "avg_bh_per_active_day": 4.7,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 31
+      "days_since_last_seen": 32
     },
     {
       "registration": "G-OATW",
@@ -4647,7 +4698,7 @@
       "total_bh": 9.2,
       "avg_bh_per_active_day": 4.6,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 44
+      "days_since_last_seen": 45
     },
     {
       "registration": "9H-SWN",
@@ -4664,7 +4715,7 @@
       "total_bh": 9.0,
       "avg_bh_per_active_day": 9.0,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 47
+      "days_since_last_seen": 48
     },
     {
       "registration": "G-POWM",
@@ -4681,7 +4732,7 @@
       "total_bh": 8.8,
       "avg_bh_per_active_day": 8.8,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 22
+      "days_since_last_seen": 23
     },
     {
       "registration": "LY-WSA",
@@ -4698,7 +4749,7 @@
       "total_bh": 8.8,
       "avg_bh_per_active_day": 8.8,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 41
+      "days_since_last_seen": 42
     },
     {
       "registration": "LY-DUE",
@@ -4715,7 +4766,7 @@
       "total_bh": 8.8,
       "avg_bh_per_active_day": 4.4,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 26
+      "days_since_last_seen": 27
     },
     {
       "registration": "9H-ZTD",
@@ -4732,7 +4783,7 @@
       "total_bh": 8.6,
       "avg_bh_per_active_day": 1.1,
       "max_internal_gap_days": 2,
-      "days_since_last_seen": 63
+      "days_since_last_seen": 64
     },
     {
       "registration": "9H-REU",
@@ -4749,7 +4800,7 @@
       "total_bh": 8.5,
       "avg_bh_per_active_day": 4.2,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 45
+      "days_since_last_seen": 46
     },
     {
       "registration": "LY-DUE",
@@ -4766,7 +4817,7 @@
       "total_bh": 8.4,
       "avg_bh_per_active_day": 8.4,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 43
+      "days_since_last_seen": 44
     },
     {
       "registration": "LY-TEN",
@@ -4783,7 +4834,7 @@
       "total_bh": 8.1,
       "avg_bh_per_active_day": 4.0,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 42
+      "days_since_last_seen": 43
     },
     {
       "registration": "LY-WSA",
@@ -4800,7 +4851,7 @@
       "total_bh": 8.0,
       "avg_bh_per_active_day": 8.0,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 71
+      "days_since_last_seen": 72
     },
     {
       "registration": "LY-NVI",
@@ -4817,7 +4868,7 @@
       "total_bh": 7.9,
       "avg_bh_per_active_day": 4.0,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 20
+      "days_since_last_seen": 21
     },
     {
       "registration": "LY-TAP",
@@ -4834,7 +4885,7 @@
       "total_bh": 7.7,
       "avg_bh_per_active_day": 7.7,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 68
+      "days_since_last_seen": 69
     },
     {
       "registration": "OK-SWF",
@@ -4851,7 +4902,7 @@
       "total_bh": 7.7,
       "avg_bh_per_active_day": 3.9,
       "max_internal_gap_days": 2,
-      "days_since_last_seen": 13
+      "days_since_last_seen": 14
     },
     {
       "registration": "G-GBNI",
@@ -4868,7 +4919,7 @@
       "total_bh": 7.3,
       "avg_bh_per_active_day": 3.6,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "LY-WSA",
@@ -4885,7 +4936,7 @@
       "total_bh": 7.0,
       "avg_bh_per_active_day": 3.5,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 66
+      "days_since_last_seen": 67
     },
     {
       "registration": "G-OATW",
@@ -4902,7 +4953,7 @@
       "total_bh": 7.0,
       "avg_bh_per_active_day": 7.0,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 55
+      "days_since_last_seen": 56
     },
     {
       "registration": "G-OATW",
@@ -4919,7 +4970,7 @@
       "total_bh": 6.9,
       "avg_bh_per_active_day": 6.9,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 11
+      "days_since_last_seen": 12
     },
     {
       "registration": "LY-WSM",
@@ -4936,7 +4987,7 @@
       "total_bh": 6.7,
       "avg_bh_per_active_day": 6.7,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 22
+      "days_since_last_seen": 23
     },
     {
       "registration": "9H-TRI",
@@ -4953,7 +5004,7 @@
       "total_bh": 6.7,
       "avg_bh_per_active_day": 2.2,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 19
+      "days_since_last_seen": 20
     },
     {
       "registration": "G-OATW",
@@ -4970,7 +5021,7 @@
       "total_bh": 6.6,
       "avg_bh_per_active_day": 6.6,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 18
+      "days_since_last_seen": 19
     },
     {
       "registration": "LY-NVE",
@@ -4987,7 +5038,7 @@
       "total_bh": 6.1,
       "avg_bh_per_active_day": 6.1,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 74
+      "days_since_last_seen": 75
     },
     {
       "registration": "LY-NVE",
@@ -5004,7 +5055,7 @@
       "total_bh": 6.1,
       "avg_bh_per_active_day": 6.1,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 55
+      "days_since_last_seen": 56
     },
     {
       "registration": "LY-NRU",
@@ -5021,7 +5072,7 @@
       "total_bh": 6.1,
       "avg_bh_per_active_day": 6.1,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 71
+      "days_since_last_seen": 72
     },
     {
       "registration": "9H-ZTD",
@@ -5038,7 +5089,7 @@
       "total_bh": 6.1,
       "avg_bh_per_active_day": 1.2,
       "max_internal_gap_days": 2,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "OK-SWJ",
@@ -5055,7 +5106,7 @@
       "total_bh": 6.0,
       "avg_bh_per_active_day": 6.0,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 74
+      "days_since_last_seen": 75
     },
     {
       "registration": "G-POWM",
@@ -5072,7 +5123,7 @@
       "total_bh": 5.7,
       "avg_bh_per_active_day": 2.9,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 6
+      "days_since_last_seen": 7
     },
     {
       "registration": "9H-SWJ",
@@ -5089,7 +5140,7 @@
       "total_bh": 5.5,
       "avg_bh_per_active_day": 5.5,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 68
+      "days_since_last_seen": 69
     },
     {
       "registration": "9H-SWJ",
@@ -5106,7 +5157,7 @@
       "total_bh": 5.3,
       "avg_bh_per_active_day": 5.3,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 64
+      "days_since_last_seen": 65
     },
     {
       "registration": "OK-SWJ",
@@ -5123,7 +5174,7 @@
       "total_bh": 5.0,
       "avg_bh_per_active_day": 5.0,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 11
+      "days_since_last_seen": 12
     },
     {
       "registration": "OK-TSD",
@@ -5140,7 +5191,7 @@
       "total_bh": 4.9,
       "avg_bh_per_active_day": 4.9,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 14
+      "days_since_last_seen": 15
     },
     {
       "registration": "LY-MLF",
@@ -5157,7 +5208,7 @@
       "total_bh": 4.5,
       "avg_bh_per_active_day": 0.9,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 20
+      "days_since_last_seen": 21
     },
     {
       "registration": "G-GBNI",
@@ -5174,7 +5225,7 @@
       "total_bh": 4.5,
       "avg_bh_per_active_day": 4.5,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 33
+      "days_since_last_seen": 34
     },
     {
       "registration": "LY-MAD",
@@ -5191,7 +5242,7 @@
       "total_bh": 4.3,
       "avg_bh_per_active_day": 4.3,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 47
+      "days_since_last_seen": 48
     },
     {
       "registration": "G-GBNI",
@@ -5208,7 +5259,7 @@
       "total_bh": 3.6,
       "avg_bh_per_active_day": 1.8,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 66
+      "days_since_last_seen": 67
     },
     {
       "registration": "9H-AMK",
@@ -5225,7 +5276,7 @@
       "total_bh": 3.4,
       "avg_bh_per_active_day": 3.4,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 32
+      "days_since_last_seen": 33
     },
     {
       "registration": "LY-HMD",
@@ -5242,7 +5293,7 @@
       "total_bh": 3.4,
       "avg_bh_per_active_day": 3.4,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 15
+      "days_since_last_seen": 16
     },
     {
       "registration": "LY-NVG",
@@ -5259,7 +5310,7 @@
       "total_bh": 3.0,
       "avg_bh_per_active_day": 3.0,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 28
+      "days_since_last_seen": 29
     },
     {
       "registration": "LY-MLF",
@@ -5276,7 +5327,7 @@
       "total_bh": 2.9,
       "avg_bh_per_active_day": 1.0,
       "max_internal_gap_days": 2,
-      "days_since_last_seen": 70
+      "days_since_last_seen": 71
     },
     {
       "registration": "9H-AML",
@@ -5293,7 +5344,7 @@
       "total_bh": 2.9,
       "avg_bh_per_active_day": 1.4,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 5
+      "days_since_last_seen": 6
     },
     {
       "registration": "LY-WSA",
@@ -5310,7 +5361,7 @@
       "total_bh": 2.7,
       "avg_bh_per_active_day": 1.4,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 11
+      "days_since_last_seen": 12
     },
     {
       "registration": "9H-NZL",
@@ -5327,7 +5378,7 @@
       "total_bh": 2.5,
       "avg_bh_per_active_day": 2.5,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "LY-NVJ",
@@ -5344,7 +5395,7 @@
       "total_bh": 2.4,
       "avg_bh_per_active_day": 2.4,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 15
+      "days_since_last_seen": 16
     },
     {
       "registration": "LY-MLF",
@@ -5361,7 +5412,7 @@
       "total_bh": 2.4,
       "avg_bh_per_active_day": 1.2,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 6
+      "days_since_last_seen": 7
     },
     {
       "registration": "G-GBNI",
@@ -5378,7 +5429,7 @@
       "total_bh": 2.3,
       "avg_bh_per_active_day": 1.1,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 4
+      "days_since_last_seen": 5
     },
     {
       "registration": "LY-NVL",
@@ -5395,7 +5446,7 @@
       "total_bh": 2.3,
       "avg_bh_per_active_day": 2.3,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 59
+      "days_since_last_seen": 60
     },
     {
       "registration": "LY-NVN",
@@ -5412,7 +5463,7 @@
       "total_bh": 2.2,
       "avg_bh_per_active_day": 1.1,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 68
+      "days_since_last_seen": 69
     },
     {
       "registration": "9H-AMJ",
@@ -5429,7 +5480,7 @@
       "total_bh": 2.2,
       "avg_bh_per_active_day": 2.2,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 70
+      "days_since_last_seen": 71
     },
     {
       "registration": "9H-REU",
@@ -5446,7 +5497,7 @@
       "total_bh": 2.1,
       "avg_bh_per_active_day": 2.1,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 70
+      "days_since_last_seen": 71
     },
     {
       "registration": "G-GBNI",
@@ -5463,7 +5514,7 @@
       "total_bh": 2.1,
       "avg_bh_per_active_day": 1.1,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 38
+      "days_since_last_seen": 39
     },
     {
       "registration": "9H-MLU",
@@ -5480,7 +5531,7 @@
       "total_bh": 2.1,
       "avg_bh_per_active_day": 2.1,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 57
+      "days_since_last_seen": 58
     },
     {
       "registration": "OM-EDB",
@@ -5497,7 +5548,7 @@
       "total_bh": 2.1,
       "avg_bh_per_active_day": 2.1,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 16
+      "days_since_last_seen": 17
     },
     {
       "registration": "LY-NVN",
@@ -5514,7 +5565,7 @@
       "total_bh": 2.1,
       "avg_bh_per_active_day": 2.1,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 35
+      "days_since_last_seen": 36
     },
     {
       "registration": "9H-AMH",
@@ -5531,7 +5582,7 @@
       "total_bh": 1.9,
       "avg_bh_per_active_day": 1.9,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 73
+      "days_since_last_seen": 74
     },
     {
       "registration": "9H-MLE",
@@ -5548,7 +5599,7 @@
       "total_bh": 1.9,
       "avg_bh_per_active_day": 0.9,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 68
+      "days_since_last_seen": 69
     },
     {
       "registration": "9H-MLE",
@@ -5565,7 +5616,7 @@
       "total_bh": 1.9,
       "avg_bh_per_active_day": 1.9,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 38
+      "days_since_last_seen": 39
     },
     {
       "registration": "LY-NVI",
@@ -5582,7 +5633,7 @@
       "total_bh": 1.9,
       "avg_bh_per_active_day": 1.9,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 15
+      "days_since_last_seen": 16
     },
     {
       "registration": "LY-UNO",
@@ -5599,7 +5650,7 @@
       "total_bh": 1.7,
       "avg_bh_per_active_day": 1.7,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 41
+      "days_since_last_seen": 42
     },
     {
       "registration": "LY-NVN",
@@ -5616,7 +5667,7 @@
       "total_bh": 1.6,
       "avg_bh_per_active_day": 1.6,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 62
+      "days_since_last_seen": 63
     },
     {
       "registration": "9H-AMK",
@@ -5633,7 +5684,7 @@
       "total_bh": 1.6,
       "avg_bh_per_active_day": 1.6,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 57
+      "days_since_last_seen": 58
     },
     {
       "registration": "LY-TAP",
@@ -5650,7 +5701,7 @@
       "total_bh": 1.6,
       "avg_bh_per_active_day": 1.6,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "LY-NVN",
@@ -5667,7 +5718,7 @@
       "total_bh": 1.6,
       "avg_bh_per_active_day": 1.6,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 6
+      "days_since_last_seen": 7
     },
     {
       "registration": "9H-REU",
@@ -5684,7 +5735,7 @@
       "total_bh": 1.5,
       "avg_bh_per_active_day": 1.5,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 4
+      "days_since_last_seen": 5
     },
     {
       "registration": "9H-MLE",
@@ -5701,7 +5752,7 @@
       "total_bh": 1.4,
       "avg_bh_per_active_day": 1.4,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 8
+      "days_since_last_seen": 9
     },
     {
       "registration": "LY-NVI",
@@ -5718,7 +5769,7 @@
       "total_bh": 1.4,
       "avg_bh_per_active_day": 1.4,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 25
+      "days_since_last_seen": 26
     },
     {
       "registration": "LY-MLF",
@@ -5735,7 +5786,7 @@
       "total_bh": 1.4,
       "avg_bh_per_active_day": 0.7,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 6
+      "days_since_last_seen": 7
     },
     {
       "registration": "LY-NVN",
@@ -5752,7 +5803,7 @@
       "total_bh": 1.3,
       "avg_bh_per_active_day": 0.7,
       "max_internal_gap_days": 2,
-      "days_since_last_seen": 33
+      "days_since_last_seen": 34
     },
     {
       "registration": "OM-EDB",
@@ -5769,7 +5820,7 @@
       "total_bh": 1.2,
       "avg_bh_per_active_day": 1.2,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 45
+      "days_since_last_seen": 46
     },
     {
       "registration": "LY-NVN",
@@ -5786,7 +5837,7 @@
       "total_bh": 1.2,
       "avg_bh_per_active_day": 1.2,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 34
+      "days_since_last_seen": 35
     },
     {
       "registration": "OM-NEX",
@@ -5803,7 +5854,7 @@
       "total_bh": 1.1,
       "avg_bh_per_active_day": 1.1,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 74
+      "days_since_last_seen": 75
     },
     {
       "registration": "LY-UNO",
@@ -5820,7 +5871,7 @@
       "total_bh": 1.1,
       "avg_bh_per_active_day": 1.1,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 67
+      "days_since_last_seen": 68
     },
     {
       "registration": "LY-MLF",
@@ -5837,7 +5888,7 @@
       "total_bh": 0.8,
       "avg_bh_per_active_day": 0.8,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 66
+      "days_since_last_seen": 67
     },
     {
       "registration": "LY-NVN",
@@ -5854,7 +5905,7 @@
       "total_bh": 0.8,
       "avg_bh_per_active_day": 0.8,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 36
+      "days_since_last_seen": 37
     },
     {
       "registration": "LY-PNG",
@@ -5871,7 +5922,7 @@
       "total_bh": 0.8,
       "avg_bh_per_active_day": 0.8,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 14
+      "days_since_last_seen": 15
     },
     {
       "registration": "LY-NVN",
@@ -5888,7 +5939,7 @@
       "total_bh": 0.7,
       "avg_bh_per_active_day": 0.7,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 8
+      "days_since_last_seen": 9
     },
     {
       "registration": "LY-NVN",
@@ -5905,7 +5956,7 @@
       "total_bh": 0.7,
       "avg_bh_per_active_day": 0.7,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 40
+      "days_since_last_seen": 41
     },
     {
       "registration": "LY-MLF",
@@ -5922,7 +5973,7 @@
       "total_bh": 0.6,
       "avg_bh_per_active_day": 0.6,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 54
+      "days_since_last_seen": 55
     },
     {
       "registration": "OM-NEX",
@@ -5939,7 +5990,7 @@
       "total_bh": 0.6,
       "avg_bh_per_active_day": 0.6,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 16
+      "days_since_last_seen": 17
     },
     {
       "registration": "G-OATW",
@@ -5956,7 +6007,7 @@
       "total_bh": 0.4,
       "avg_bh_per_active_day": 0.4,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 59
+      "days_since_last_seen": 60
     },
     {
       "registration": "9H-GKK",
@@ -5973,7 +6024,7 @@
       "total_bh": 0.0,
       "avg_bh_per_active_day": 0.0,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 73
+      "days_since_last_seen": 74
     },
     {
       "registration": "9H-GKK",
@@ -5990,7 +6041,7 @@
       "total_bh": 0.0,
       "avg_bh_per_active_day": 0.0,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 34
+      "days_since_last_seen": 35
     },
     {
       "registration": "9H-GKK",
@@ -6007,7 +6058,7 @@
       "total_bh": 0.0,
       "avg_bh_per_active_day": 0.0,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 30
+      "days_since_last_seen": 31
     },
     {
       "registration": "9H-GKK",
@@ -6024,7 +6075,7 @@
       "total_bh": 0.0,
       "avg_bh_per_active_day": 0.0,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 19
+      "days_since_last_seen": 20
     },
     {
       "registration": "9H-GKK",
@@ -6041,7 +6092,7 @@
       "total_bh": 0.0,
       "avg_bh_per_active_day": 0.0,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 7
+      "days_since_last_seen": 8
     },
     {
       "registration": "9H-AMJ",
@@ -6058,7 +6109,7 @@
       "total_bh": 0.0,
       "avg_bh_per_active_day": 0.0,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 62
+      "days_since_last_seen": 63
     },
     {
       "registration": "9H-MLU",
@@ -6075,7 +6126,7 @@
       "total_bh": 0.0,
       "avg_bh_per_active_day": 0.0,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 59
+      "days_since_last_seen": 60
     },
     {
       "registration": "9H-MLU",
@@ -6092,7 +6143,7 @@
       "total_bh": 0.0,
       "avg_bh_per_active_day": 0.0,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 42
+      "days_since_last_seen": 43
     },
     {
       "registration": "9H-MLU",
@@ -6109,7 +6160,7 @@
       "total_bh": 0.0,
       "avg_bh_per_active_day": 0.0,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 27
+      "days_since_last_seen": 28
     },
     {
       "registration": "9H-MLU",
@@ -6126,7 +6177,7 @@
       "total_bh": 0.0,
       "avg_bh_per_active_day": 0.0,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 20
+      "days_since_last_seen": 21
     },
     {
       "registration": "9H-MLU",
@@ -6143,7 +6194,7 @@
       "total_bh": 0.0,
       "avg_bh_per_active_day": 0.0,
       "max_internal_gap_days": 1,
-      "days_since_last_seen": 12
+      "days_since_last_seen": 13
     },
     {
       "registration": "9H-MLU",
@@ -6160,7 +6211,7 @@
       "total_bh": 0.0,
       "avg_bh_per_active_day": 0.0,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 8
+      "days_since_last_seen": 9
     },
     {
       "registration": "9H-MLB",
@@ -6177,7 +6228,7 @@
       "total_bh": 0.0,
       "avg_bh_per_active_day": 0.0,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 43
+      "days_since_last_seen": 44
     },
     {
       "registration": "9H-SWG",
@@ -6194,7 +6245,7 @@
       "total_bh": 0.0,
       "avg_bh_per_active_day": 0.0,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 42
+      "days_since_last_seen": 43
     },
     {
       "registration": "9H-SWC",
@@ -6211,7 +6262,7 @@
       "total_bh": 0.0,
       "avg_bh_per_active_day": 0.0,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 33
+      "days_since_last_seen": 34
     },
     {
       "registration": "9H-SWC",
@@ -6228,7 +6279,7 @@
       "total_bh": 0.0,
       "avg_bh_per_active_day": 0.0,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 29
+      "days_since_last_seen": 30
     },
     {
       "registration": "9H-SWC",
@@ -6245,7 +6296,7 @@
       "total_bh": 0.0,
       "avg_bh_per_active_day": 0.0,
       "max_internal_gap_days": 3,
-      "days_since_last_seen": 13
+      "days_since_last_seen": 14
     },
     {
       "registration": "9H-SWA",
@@ -6262,7 +6313,7 @@
       "total_bh": 0.0,
       "avg_bh_per_active_day": 0.0,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 28
+      "days_since_last_seen": 29
     },
     {
       "registration": "9H-SWN",
@@ -6279,7 +6330,7 @@
       "total_bh": 0.0,
       "avg_bh_per_active_day": 0.0,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 27
+      "days_since_last_seen": 28
     },
     {
       "registration": "9H-AMV",
@@ -6296,7 +6347,24 @@
       "total_bh": 0.0,
       "avg_bh_per_active_day": 0.0,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 26
+      "days_since_last_seen": 27
+    },
+    {
+      "registration": "9H-AMV",
+      "owner_name": "Avion Express Malta",
+      "group": "Avion Express",
+      "client_icao": "EW",
+      "client_name": "Eurowings",
+      "start_date": "2026-08-28",
+      "end_date": "2026-08-28",
+      "status": "ended",
+      "days_active": 1,
+      "span_days": 1,
+      "continuity_pct": 100.0,
+      "total_bh": 0.0,
+      "avg_bh_per_active_day": 0.0,
+      "max_internal_gap_days": 0,
+      "days_since_last_seen": 4
     },
     {
       "registration": "9H-SWE",
@@ -6313,7 +6381,7 @@
       "total_bh": 0.0,
       "avg_bh_per_active_day": 0.0,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 7
+      "days_since_last_seen": 8
     },
     {
       "registration": "9H-SWG",
@@ -6330,7 +6398,7 @@
       "total_bh": 0.0,
       "avg_bh_per_active_day": 0.0,
       "max_internal_gap_days": 0,
-      "days_since_last_seen": 4
+      "days_since_last_seen": 5
     }
   ],
   "idle_aircraft": [
@@ -6339,7 +6407,7 @@
       "owner_name": "Avion Express Malta",
       "group": "Avion Express",
       "last_flight_date": "2026-06-19",
-      "days_idle": 73,
+      "days_idle": 74,
       "prior_avg_bh": 1.9
     },
     {
@@ -6347,7 +6415,7 @@
       "owner_name": "Valletta Airlines",
       "group": "Heston",
       "last_flight_date": "2026-06-23",
-      "days_idle": 69,
+      "days_idle": 70,
       "prior_avg_bh": 4.9
     },
     {
@@ -6355,7 +6423,7 @@
       "owner_name": "Avion Express",
       "group": "Avion Express",
       "last_flight_date": "2026-07-03",
-      "days_idle": 59,
+      "days_idle": 60,
       "prior_avg_bh": 2.3
     },
     {
@@ -6363,7 +6431,7 @@
       "owner_name": "Heston Airlines",
       "group": "Heston",
       "last_flight_date": "2026-07-28",
-      "days_idle": 34,
+      "days_idle": 35,
       "prior_avg_bh": 5.9
     },
     {
@@ -6371,7 +6439,7 @@
       "owner_name": "Heston Airlines",
       "group": "Heston",
       "last_flight_date": "2026-07-28",
-      "days_idle": 34,
+      "days_idle": 35,
       "prior_avg_bh": 4.6
     },
     {
@@ -6379,7 +6447,7 @@
       "owner_name": "Avion Express",
       "group": "Avion Express",
       "last_flight_date": "2026-08-03",
-      "days_idle": 28,
+      "days_idle": 29,
       "prior_avg_bh": 7.1
     },
     {
@@ -6387,7 +6455,7 @@
       "owner_name": "AirExplore",
       "group": "AirExplore",
       "last_flight_date": "2026-08-15",
-      "days_idle": 16,
+      "days_idle": 17,
       "prior_avg_bh": 2.1
     },
     {
@@ -6395,7 +6463,7 @@
       "owner_name": "Heston Airlines",
       "group": "Heston",
       "last_flight_date": "2026-08-24",
-      "days_idle": 7,
+      "days_idle": 8,
       "prior_avg_bh": 12.7
     },
     {
@@ -6403,7 +6471,7 @@
       "owner_name": "AirExplore",
       "group": "AirExplore",
       "last_flight_date": "2026-08-25",
-      "days_idle": 6,
+      "days_idle": 7,
       "prior_avg_bh": 6.6
     },
     {
@@ -6411,7 +6479,7 @@
       "owner_name": "Enter Air",
       "group": "Enter Air",
       "last_flight_date": "2026-08-26",
-      "days_idle": 5,
+      "days_idle": 6,
       "prior_avg_bh": 7.6
     },
     {
@@ -6419,32 +6487,16 @@
       "owner_name": "Avion Express",
       "group": "Avion Express",
       "last_flight_date": "2026-08-27",
-      "days_idle": 4,
+      "days_idle": 5,
       "prior_avg_bh": 7.0
-    },
-    {
-      "registration": "G-GBNI",
-      "owner_name": "Titan Airways",
-      "group": "Titan Airways",
-      "last_flight_date": "2026-08-27",
-      "days_idle": 4,
-      "prior_avg_bh": 1.1
     },
     {
       "registration": "OM-IEX",
       "owner_name": "AirExplore",
       "group": "AirExplore",
       "last_flight_date": "2026-08-27",
-      "days_idle": 4,
+      "days_idle": 5,
       "prior_avg_bh": 5.0
-    },
-    {
-      "registration": "LY-DAE",
-      "owner_name": "GetJet Airlines",
-      "group": "GetJet",
-      "last_flight_date": "2026-08-28",
-      "days_idle": 3,
-      "prior_avg_bh": 8.5
     }
   ],
   "note": "Contract windows and idle flags are inferred purely from already-collected daily history (fleet clients data). No additional FR24 API calls are made. Absence from ACMI client data does not necessarily mean an aircraft is grounded \u2014 it may be flying non-ACMI/own-ops routes not attributed to a client."
