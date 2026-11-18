@@ -1,6 +1,4096 @@
 {
   "days": [
     {
+      "last_updated": "2026-11-18 11:47 LT",
+      "report_date": "2026-11-17",
+      "interval_from": "2026-11-17 00:01",
+      "interval_to": "2026-11-17 23:59",
+      "operator_summaries": {
+        "Avion Express": {
+          "total_flights": 21,
+          "total_bh": 13.8,
+          "acmi_flights": 21,
+          "acmi_bh": 13.8,
+          "active_aircraft": 3
+        },
+        "Heston": {
+          "total_flights": 7,
+          "total_bh": 30.7,
+          "acmi_flights": 3,
+          "acmi_bh": 11.7,
+          "active_aircraft": 3
+        },
+        "GetJet": {
+          "total_flights": 26,
+          "total_bh": 68.5,
+          "acmi_flights": 23,
+          "acmi_bh": 59.2,
+          "active_aircraft": 8
+        },
+        "Enter Air": {
+          "total_flights": 37,
+          "total_bh": 143.7,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "active_aircraft": 16
+        },
+        "Smartwings": {
+          "total_flights": 36,
+          "total_bh": 102.0,
+          "acmi_flights": 21,
+          "acmi_bh": 51.7,
+          "active_aircraft": 12
+        },
+        "Titan Airways": {
+          "total_flights": 10,
+          "total_bh": 16.1,
+          "acmi_flights": 5,
+          "acmi_bh": 7.2,
+          "active_aircraft": 6
+        },
+        "AirExplore": {
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "active_aircraft": 0
+        }
+      },
+      "client_map": {
+        "APO": {
+          "name": "Azores Airlines",
+          "providers": {
+            "Avion Express": {
+              "flights": 21,
+              "bh": 13.8,
+              "aircraft_count": 3,
+              "aircraft": [
+                "LY-MLF",
+                "LY-MLI",
+                "LY-NVJ"
+              ]
+            }
+          }
+        },
+        "SYR": {
+          "name": "Syrian Arab Airlines",
+          "providers": {
+            "Heston": {
+              "flights": 3,
+              "bh": 11.7,
+              "aircraft_count": 1,
+              "aircraft": [
+                "LY-MAU"
+              ]
+            }
+          }
+        },
+        "RWD": {
+          "name": "RWD",
+          "providers": {
+            "GetJet": {
+              "flights": 2,
+              "bh": 11.3,
+              "aircraft_count": 1,
+              "aircraft": [
+                "LY-FAS"
+              ]
+            }
+          }
+        },
+        "ETD": {
+          "name": "Etihad Airways",
+          "providers": {
+            "GetJet": {
+              "flights": 15,
+              "bh": 33.5,
+              "aircraft_count": 3,
+              "aircraft": [
+                "LY-MAL",
+                "LY-NOW",
+                "LY-TEN"
+              ]
+            }
+          }
+        },
+        "FKH": {
+          "name": "FKH",
+          "providers": {
+            "GetJet": {
+              "flights": 4,
+              "bh": 11.6,
+              "aircraft_count": 1,
+              "aircraft": [
+                "LY-DUE"
+              ]
+            }
+          }
+        },
+        "SZN": {
+          "name": "Air Senegal",
+          "providers": {
+            "GetJet": {
+              "flights": 2,
+              "bh": 2.8,
+              "aircraft_count": 1,
+              "aircraft": [
+                "LY-UNO"
+              ]
+            }
+          }
+        },
+        "TVP": {
+          "name": "Smartwings Poland",
+          "providers": {
+            "Smartwings": {
+              "flights": 7,
+              "bh": 33.0,
+              "aircraft_count": 3,
+              "aircraft": [
+                "OK-SWB",
+                "OK-SWH",
+                "OK-SWJ"
+              ]
+            }
+          }
+        },
+        "CRC": {
+          "name": "Camair-Co",
+          "providers": {
+            "Smartwings": {
+              "flights": 8,
+              "bh": 10.6,
+              "aircraft_count": 1,
+              "aircraft": [
+                "OK-TSE"
+              ]
+            }
+          }
+        },
+        "ISR": {
+          "name": "Israir",
+          "providers": {
+            "Smartwings": {
+              "flights": 2,
+              "bh": 5.7,
+              "aircraft_count": 1,
+              "aircraft": [
+                "OK-TSF"
+              ]
+            }
+          }
+        },
+        "CCM": {
+          "name": "CCM",
+          "providers": {
+            "Smartwings": {
+              "flights": 4,
+              "bh": 2.4,
+              "aircraft_count": 1,
+              "aircraft": [
+                "OK-TVT"
+              ]
+            }
+          }
+        },
+        "BCS": {
+          "name": "EAT Leipzig",
+          "providers": {
+            "Titan Airways": {
+              "flights": 5,
+              "bh": 7.2,
+              "aircraft_count": 3,
+              "aircraft": [
+                "9H-ZTB",
+                "9H-ZTC",
+                "9H-ZTD"
+              ]
+            }
+          }
+        }
+      },
+      "fleet": [
+        {
+          "registration": "LY-MLF",
+          "type": "A320",
+          "owner_icao": "AVE",
+          "owner_name": "Avion Express",
+          "group": "Avion Express",
+          "total_flights": 8,
+          "total_bh": 5.1,
+          "acmi_flights": 8,
+          "acmi_bh": 5.1,
+          "clients": [
+            {
+              "icao": "APO",
+              "name": "Azores Airlines",
+              "flights": 8,
+              "bh": 5.1
+            }
+          ],
+          "routes": [
+            "DNMM-DNPO",
+            "DNPO-DNAA",
+            "DNAA-DNPO",
+            "DNPO-DNMM"
+          ],
+          "flight_log": [
+            {
+              "callsign": "APO7190",
+              "operator_icao": "APO",
+              "operator_name": "Azores Airlines",
+              "is_acmi": true,
+              "route": "DNMM-DNPO",
+              "dep_time": "2026-11-17T07:04:14Z",
+              "arr_time": null,
+              "bh": 0.0
+            },
+            {
+              "callsign": "APO7191",
+              "operator_icao": "APO",
+              "operator_name": "Azores Airlines",
+              "is_acmi": true,
+              "route": "DNPO-DNAA",
+              "dep_time": "2026-11-17T08:40:13Z",
+              "arr_time": "2026-11-17T09:38:12Z",
+              "bh": 1.0
+            },
+            {
+              "callsign": "APO7192",
+              "operator_icao": "APO",
+              "operator_name": "Azores Airlines",
+              "is_acmi": true,
+              "route": "DNAA-DNPO",
+              "dep_time": "2026-11-17T10:45:05Z",
+              "arr_time": null,
+              "bh": 0.0
+            },
+            {
+              "callsign": "APO7193",
+              "operator_icao": "APO",
+              "operator_name": "Azores Airlines",
+              "is_acmi": true,
+              "route": "DNPO-DNMM",
+              "dep_time": "2026-11-17T12:33:17Z",
+              "arr_time": "2026-11-17T13:21:36Z",
+              "bh": 0.8
+            },
+            {
+              "callsign": "APO7194",
+              "operator_icao": "APO",
+              "operator_name": "Azores Airlines",
+              "is_acmi": true,
+              "route": "DNMM-DNPO",
+              "dep_time": "2026-11-17T15:00:10Z",
+              "arr_time": "2026-11-17T15:46:30Z",
+              "bh": 0.8
+            },
+            {
+              "callsign": "APO7195",
+              "operator_icao": "APO",
+              "operator_name": "Azores Airlines",
+              "is_acmi": true,
+              "route": "DNPO-DNAA",
+              "dep_time": "2026-11-17T16:38:09Z",
+              "arr_time": "2026-11-17T17:31:03Z",
+              "bh": 0.9
+            },
+            {
+              "callsign": "APO7196",
+              "operator_icao": "APO",
+              "operator_name": "Azores Airlines",
+              "is_acmi": true,
+              "route": "DNAA-DNPO",
+              "dep_time": "2026-11-17T18:28:27Z",
+              "arr_time": "2026-11-17T19:12:24Z",
+              "bh": 0.7
+            },
+            {
+              "callsign": "APO7197",
+              "operator_icao": "APO",
+              "operator_name": "Azores Airlines",
+              "is_acmi": true,
+              "route": "DNPO-DNMM",
+              "dep_time": "2026-11-17T19:56:34Z",
+              "arr_time": "2026-11-17T20:48:03Z",
+              "bh": 0.9
+            }
+          ]
+        },
+        {
+          "registration": "LY-MLG",
+          "type": "A320",
+          "owner_icao": "AVE",
+          "owner_name": "Avion Express",
+          "group": "Avion Express",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "LY-MLI",
+          "type": "A320",
+          "owner_icao": "AVE",
+          "owner_name": "Avion Express",
+          "group": "Avion Express",
+          "total_flights": 7,
+          "total_bh": 4.8,
+          "acmi_flights": 7,
+          "acmi_bh": 4.8,
+          "clients": [
+            {
+              "icao": "APO",
+              "name": "Azores Airlines",
+              "flights": 7,
+              "bh": 4.8
+            }
+          ],
+          "routes": [
+            "DNAA-DNMM",
+            "DNMM-DNAA",
+            "DNMM-DNAS",
+            "DNAS-DNMM"
+          ],
+          "flight_log": [
+            {
+              "callsign": "APO7129",
+              "operator_icao": "APO",
+              "operator_name": "Azores Airlines",
+              "is_acmi": true,
+              "route": "DNAA-DNMM",
+              "dep_time": "2026-11-16T21:43:58Z",
+              "arr_time": "2026-11-16T22:29:04Z",
+              "bh": 0.8
+            },
+            {
+              "callsign": "APO7120",
+              "operator_icao": "APO",
+              "operator_name": "Azores Airlines",
+              "is_acmi": true,
+              "route": "DNMM-DNAA",
+              "dep_time": "2026-11-17T05:43:13Z",
+              "arr_time": "2026-11-17T06:40:11Z",
+              "bh": 0.9
+            },
+            {
+              "callsign": "APO7121",
+              "operator_icao": "APO",
+              "operator_name": "Azores Airlines",
+              "is_acmi": true,
+              "route": "DNAA-DNMM",
+              "dep_time": "2026-11-17T07:51:53Z",
+              "arr_time": "2026-11-17T08:39:31Z",
+              "bh": 0.8
+            },
+            {
+              "callsign": "APO7122",
+              "operator_icao": "APO",
+              "operator_name": "Azores Airlines",
+              "is_acmi": true,
+              "route": "DNMM-DNAA",
+              "dep_time": "2026-11-17T09:47:47Z",
+              "arr_time": null,
+              "bh": 0.0
+            },
+            {
+              "callsign": "APO7123",
+              "operator_icao": "APO",
+              "operator_name": "Azores Airlines",
+              "is_acmi": true,
+              "route": "DNAA-DNMM",
+              "dep_time": "2026-11-17T11:44:40Z",
+              "arr_time": "2026-11-17T12:34:12Z",
+              "bh": 0.8
+            },
+            {
+              "callsign": "APO7864",
+              "operator_icao": "APO",
+              "operator_name": "Azores Airlines",
+              "is_acmi": true,
+              "route": "DNMM-DNAS",
+              "dep_time": "2026-11-17T14:12:57Z",
+              "arr_time": "2026-11-17T14:54:15Z",
+              "bh": 0.7
+            },
+            {
+              "callsign": "APO7867",
+              "operator_icao": "APO",
+              "operator_name": "Azores Airlines",
+              "is_acmi": true,
+              "route": "DNAS-DNMM",
+              "dep_time": "2026-11-17T15:43:46Z",
+              "arr_time": "2026-11-17T16:32:35Z",
+              "bh": 0.8
+            }
+          ]
+        },
+        {
+          "registration": "LY-NVE",
+          "type": "A320",
+          "owner_icao": "AVE",
+          "owner_name": "Avion Express",
+          "group": "Avion Express",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "LY-NVG",
+          "type": "A320",
+          "owner_icao": "AVE",
+          "owner_name": "Avion Express",
+          "group": "Avion Express",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "LY-NVI",
+          "type": "A320",
+          "owner_icao": "AVE",
+          "owner_name": "Avion Express",
+          "group": "Avion Express",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "LY-NVJ",
+          "type": "A320",
+          "owner_icao": "AVE",
+          "owner_name": "Avion Express",
+          "group": "Avion Express",
+          "total_flights": 6,
+          "total_bh": 3.9,
+          "acmi_flights": 6,
+          "acmi_bh": 3.9,
+          "clients": [
+            {
+              "icao": "APO",
+              "name": "Azores Airlines",
+              "flights": 6,
+              "bh": 3.9
+            }
+          ],
+          "routes": [
+            "DNMM-DNAS",
+            "DNAS-DNAA",
+            "DNAA-DNAS",
+            "DNAS-DNMM",
+            "DNMM-DNBE",
+            "DNBE-DNMM"
+          ],
+          "flight_log": [
+            {
+              "callsign": "APO7860",
+              "operator_icao": "APO",
+              "operator_name": "Azores Airlines",
+              "is_acmi": true,
+              "route": "DNMM-DNAS",
+              "dep_time": "2026-11-17T06:48:25Z",
+              "arr_time": "2026-11-17T07:29:00Z",
+              "bh": 0.7
+            },
+            {
+              "callsign": "APO7861",
+              "operator_icao": "APO",
+              "operator_name": "Azores Airlines",
+              "is_acmi": true,
+              "route": "DNAS-DNAA",
+              "dep_time": "2026-11-17T08:18:52Z",
+              "arr_time": "2026-11-17T08:59:52Z",
+              "bh": 0.7
+            },
+            {
+              "callsign": "APO7862",
+              "operator_icao": "APO",
+              "operator_name": "Azores Airlines",
+              "is_acmi": true,
+              "route": "DNAA-DNAS",
+              "dep_time": "2026-11-17T10:23:57Z",
+              "arr_time": "2026-11-17T10:58:12Z",
+              "bh": 0.6
+            },
+            {
+              "callsign": "APO7863",
+              "operator_icao": "APO",
+              "operator_name": "Azores Airlines",
+              "is_acmi": true,
+              "route": "DNAS-DNMM",
+              "dep_time": "2026-11-17T11:48:15Z",
+              "arr_time": "2026-11-17T12:40:20Z",
+              "bh": 0.9
+            },
+            {
+              "callsign": "APO7174",
+              "operator_icao": "APO",
+              "operator_name": "Azores Airlines",
+              "is_acmi": true,
+              "route": "DNMM-DNBE",
+              "dep_time": "2026-11-17T14:04:51Z",
+              "arr_time": "2026-11-17T14:37:44Z",
+              "bh": 0.5
+            },
+            {
+              "callsign": "APO7177",
+              "operator_icao": "APO",
+              "operator_name": "Azores Airlines",
+              "is_acmi": true,
+              "route": "DNBE-DNMM",
+              "dep_time": "2026-11-17T15:31:34Z",
+              "arr_time": "2026-11-17T16:03:21Z",
+              "bh": 0.5
+            }
+          ]
+        },
+        {
+          "registration": "LY-NVL",
+          "type": "A320",
+          "owner_icao": "AVE",
+          "owner_name": "Avion Express",
+          "group": "Avion Express",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "LY-NVM",
+          "type": "A320",
+          "owner_icao": "AVE",
+          "owner_name": "Avion Express",
+          "group": "Avion Express",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "LY-NVN",
+          "type": "A320",
+          "owner_icao": "AVE",
+          "owner_name": "Avion Express",
+          "group": "Avion Express",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "9H-AMH",
+          "type": "A320",
+          "owner_icao": "MLT",
+          "owner_name": "Avion Express Malta",
+          "group": "Avion Express",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "9H-AMI",
+          "type": "A320",
+          "owner_icao": "MLT",
+          "owner_name": "Avion Express Malta",
+          "group": "Avion Express",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "9H-AMJ",
+          "type": "A320",
+          "owner_icao": "MLT",
+          "owner_name": "Avion Express Malta",
+          "group": "Avion Express",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "9H-AMK",
+          "type": "A320",
+          "owner_icao": "MLT",
+          "owner_name": "Avion Express Malta",
+          "group": "Avion Express",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "9H-AML",
+          "type": "A320",
+          "owner_icao": "MLT",
+          "owner_name": "Avion Express Malta",
+          "group": "Avion Express",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "9H-AMM",
+          "type": "A320",
+          "owner_icao": "MLT",
+          "owner_name": "Avion Express Malta",
+          "group": "Avion Express",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "9H-AMP",
+          "type": "A320",
+          "owner_icao": "MLT",
+          "owner_name": "Avion Express Malta",
+          "group": "Avion Express",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "9H-AMV",
+          "type": "A320",
+          "owner_icao": "MLT",
+          "owner_name": "Avion Express Malta",
+          "group": "Avion Express",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "9H-GKJ",
+          "type": "A320",
+          "owner_icao": "MLT",
+          "owner_name": "Avion Express Malta",
+          "group": "Avion Express",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "9H-GKK",
+          "type": "A320",
+          "owner_icao": "MLT",
+          "owner_name": "Avion Express Malta",
+          "group": "Avion Express",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "9H-MLB",
+          "type": "A320",
+          "owner_icao": "MLT",
+          "owner_name": "Avion Express Malta",
+          "group": "Avion Express",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "9H-MLE",
+          "type": "A320",
+          "owner_icao": "MLT",
+          "owner_name": "Avion Express Malta",
+          "group": "Avion Express",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "9H-MLO",
+          "type": "A320",
+          "owner_icao": "MLT",
+          "owner_name": "Avion Express Malta",
+          "group": "Avion Express",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "9H-MLP",
+          "type": "A320",
+          "owner_icao": "MLT",
+          "owner_name": "Avion Express Malta",
+          "group": "Avion Express",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "9H-MLU",
+          "type": "A320",
+          "owner_icao": "MLT",
+          "owner_name": "Avion Express Malta",
+          "group": "Avion Express",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "9H-MLX",
+          "type": "A320",
+          "owner_icao": "MLT",
+          "owner_name": "Avion Express Malta",
+          "group": "Avion Express",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "9H-MLY",
+          "type": "A320",
+          "owner_icao": "MLT",
+          "owner_name": "Avion Express Malta",
+          "group": "Avion Express",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "9H-SWA",
+          "type": "A320",
+          "owner_icao": "MLT",
+          "owner_name": "Avion Express Malta",
+          "group": "Avion Express",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "9H-SWB",
+          "type": "A320",
+          "owner_icao": "MLT",
+          "owner_name": "Avion Express Malta",
+          "group": "Avion Express",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "9H-SWC",
+          "type": "A320",
+          "owner_icao": "MLT",
+          "owner_name": "Avion Express Malta",
+          "group": "Avion Express",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "9H-SWD",
+          "type": "A320",
+          "owner_icao": "MLT",
+          "owner_name": "Avion Express Malta",
+          "group": "Avion Express",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "9H-SWE",
+          "type": "A320",
+          "owner_icao": "MLT",
+          "owner_name": "Avion Express Malta",
+          "group": "Avion Express",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "9H-SWF",
+          "type": "A320",
+          "owner_icao": "MLT",
+          "owner_name": "Avion Express Malta",
+          "group": "Avion Express",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "9H-SWG",
+          "type": "A320",
+          "owner_icao": "MLT",
+          "owner_name": "Avion Express Malta",
+          "group": "Avion Express",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "9H-SWJ",
+          "type": "A320",
+          "owner_icao": "MLT",
+          "owner_name": "Avion Express Malta",
+          "group": "Avion Express",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "9H-SWN",
+          "type": "A320",
+          "owner_icao": "MLT",
+          "owner_name": "Avion Express Malta",
+          "group": "Avion Express",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "LY-HMD",
+          "type": "A320",
+          "owner_icao": "HST",
+          "owner_name": "Heston Airlines",
+          "group": "Heston",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "LY-JAM",
+          "type": "A320",
+          "owner_icao": "HST",
+          "owner_name": "Heston Airlines",
+          "group": "Heston",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "LY-MAD",
+          "type": "A320",
+          "owner_icao": "HST",
+          "owner_name": "Heston Airlines",
+          "group": "Heston",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "LY-MAF",
+          "type": "A320",
+          "owner_icao": "HST",
+          "owner_name": "Heston Airlines",
+          "group": "Heston",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "LY-MAU",
+          "type": "A320",
+          "owner_icao": "HST",
+          "owner_name": "Heston Airlines",
+          "group": "Heston",
+          "total_flights": 3,
+          "total_bh": 11.7,
+          "acmi_flights": 3,
+          "acmi_bh": 11.7,
+          "clients": [
+            {
+              "icao": "SYR",
+              "name": "Syrian Arab Airlines",
+              "flights": 3,
+              "bh": 11.7
+            }
+          ],
+          "routes": [
+            "OSDI-EDDB",
+            "EDDB-OSDI",
+            "OSDI-LOWW"
+          ],
+          "flight_log": [
+            {
+              "callsign": "SYR280",
+              "operator_icao": "SYR",
+              "operator_name": "Syrian Arab Airlines",
+              "is_acmi": true,
+              "route": "OSDI-EDDB",
+              "dep_time": "2026-11-17T04:06:57Z",
+              "arr_time": "2026-11-17T08:17:26Z",
+              "bh": 4.2
+            },
+            {
+              "callsign": "SYR279",
+              "operator_icao": "SYR",
+              "operator_name": "Syrian Arab Airlines",
+              "is_acmi": true,
+              "route": "EDDB-OSDI",
+              "dep_time": "2026-11-17T09:44:14Z",
+              "arr_time": "2026-11-17T13:30:22Z",
+              "bh": 3.8
+            },
+            {
+              "callsign": "SYR274",
+              "operator_icao": "SYR",
+              "operator_name": "Syrian Arab Airlines",
+              "is_acmi": true,
+              "route": "OSDI-LOWW",
+              "dep_time": "2026-11-17T14:40:03Z",
+              "arr_time": "2026-11-17T18:24:27Z",
+              "bh": 3.7
+            }
+          ]
+        },
+        {
+          "registration": "LY-MHL",
+          "type": "A320",
+          "owner_icao": "HST",
+          "owner_name": "Heston Airlines",
+          "group": "Heston",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "LY-NRU",
+          "type": "A320",
+          "owner_icao": "HST",
+          "owner_name": "Heston Airlines",
+          "group": "Heston",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "LY-PNG",
+          "type": "A320",
+          "owner_icao": "HST",
+          "owner_name": "Heston Airlines",
+          "group": "Heston",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "LY-VUT",
+          "type": "A320",
+          "owner_icao": "HST",
+          "owner_name": "Heston Airlines",
+          "group": "Heston",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "LY-WSM",
+          "type": "A320",
+          "owner_icao": "HST",
+          "owner_name": "Heston Airlines",
+          "group": "Heston",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "9H-BRB",
+          "type": "A320",
+          "owner_icao": "HOT",
+          "owner_name": "Valletta Airlines",
+          "group": "Heston",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "9H-FJI",
+          "type": "A320",
+          "owner_icao": "HOT",
+          "owner_name": "Valletta Airlines",
+          "group": "Heston",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "9H-NZL",
+          "type": "A320",
+          "owner_icao": "HOT",
+          "owner_name": "Valletta Airlines",
+          "group": "Heston",
+          "total_flights": 2,
+          "total_bh": 9.4,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [
+            "EYVI-HESH",
+            "HESH-EETN"
+          ],
+          "flight_log": [
+            {
+              "callsign": "HST6431",
+              "operator_icao": "HST",
+              "operator_name": "Heston Airlines",
+              "is_acmi": false,
+              "route": "EYVI-HESH",
+              "dep_time": "2026-11-17T02:39:41Z",
+              "arr_time": "2026-11-17T06:55:49Z",
+              "bh": 4.3
+            },
+            {
+              "callsign": "HST3454",
+              "operator_icao": "HST",
+              "operator_name": "Heston Airlines",
+              "is_acmi": false,
+              "route": "HESH-EETN",
+              "dep_time": "2026-11-17T20:00:25Z",
+              "arr_time": "2026-11-18T01:09:23Z",
+              "bh": 5.1
+            }
+          ]
+        },
+        {
+          "registration": "9H-REU",
+          "type": "A320",
+          "owner_icao": "HOT",
+          "owner_name": "Valletta Airlines",
+          "group": "Heston",
+          "total_flights": 2,
+          "total_bh": 9.6,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [
+            "EETN-HEGN",
+            "HEGN-EYVI"
+          ],
+          "flight_log": [
+            {
+              "callsign": "HST3481",
+              "operator_icao": "HST",
+              "operator_name": "Heston Airlines",
+              "is_acmi": false,
+              "route": "EETN-HEGN",
+              "dep_time": "2026-11-17T02:37:47Z",
+              "arr_time": "2026-11-17T07:33:50Z",
+              "bh": 4.9
+            },
+            {
+              "callsign": "HST6532",
+              "operator_icao": "HST",
+              "operator_name": "Heston Airlines",
+              "is_acmi": false,
+              "route": "HEGN-EYVI",
+              "dep_time": "2026-11-17T20:11:26Z",
+              "arr_time": "2026-11-18T00:52:31Z",
+              "bh": 4.7
+            }
+          ]
+        },
+        {
+          "registration": "9H-SEY",
+          "type": "A320",
+          "owner_icao": "HOT",
+          "owner_name": "Valletta Airlines",
+          "group": "Heston",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "9H-TRI",
+          "type": "A320",
+          "owner_icao": "HOT",
+          "owner_name": "Valletta Airlines",
+          "group": "Heston",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "LY-CAP",
+          "type": "A320",
+          "owner_icao": "GJT",
+          "owner_name": "GetJet Airlines",
+          "group": "GetJet",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "LY-DAE",
+          "type": "A320",
+          "owner_icao": "GJT",
+          "owner_name": "GetJet Airlines",
+          "group": "GetJet",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "LY-EKB",
+          "type": "A320",
+          "owner_icao": "GJT",
+          "owner_name": "GetJet Airlines",
+          "group": "GetJet",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "LY-FAS",
+          "type": "A320",
+          "owner_icao": "GJT",
+          "owner_name": "GetJet Airlines",
+          "group": "GetJet",
+          "total_flights": 2,
+          "total_bh": 11.3,
+          "acmi_flights": 2,
+          "acmi_bh": 11.3,
+          "clients": [
+            {
+              "icao": "RWD",
+              "name": "RWD",
+              "flights": 2,
+              "bh": 11.3
+            }
+          ],
+          "routes": [
+            "HRYR-OMDB",
+            "OMDB-HRYR"
+          ],
+          "flight_log": [
+            {
+              "callsign": "RWD304",
+              "operator_icao": "RWD",
+              "operator_name": "RWD",
+              "is_acmi": true,
+              "route": "HRYR-OMDB",
+              "dep_time": "2026-11-16T22:43:22Z",
+              "arr_time": "2026-11-17T04:03:43Z",
+              "bh": 5.3
+            },
+            {
+              "callsign": "RWD305",
+              "operator_icao": "RWD",
+              "operator_name": "RWD",
+              "is_acmi": true,
+              "route": "OMDB-HRYR",
+              "dep_time": "2026-11-17T22:17:52Z",
+              "arr_time": "2026-11-18T04:19:14Z",
+              "bh": 6.0
+            }
+          ]
+        },
+        {
+          "registration": "LY-FOX",
+          "type": "A320",
+          "owner_icao": "GJT",
+          "owner_name": "GetJet Airlines",
+          "group": "GetJet",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "LY-GYM",
+          "type": "A320",
+          "owner_icao": "GJT",
+          "owner_name": "GetJet Airlines",
+          "group": "GetJet",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "LY-MAL",
+          "type": "A320",
+          "owner_icao": "GJT",
+          "owner_name": "GetJet Airlines",
+          "group": "GetJet",
+          "total_flights": 5,
+          "total_bh": 10.9,
+          "acmi_flights": 5,
+          "acmi_bh": 10.9,
+          "clients": [
+            {
+              "icao": "ETD",
+              "name": "Etihad Airways",
+              "flights": 5,
+              "bh": 10.9
+            }
+          ],
+          "routes": [
+            "OMAA-OPPS",
+            "OPPS-OMAA",
+            "OMAA-OPKC",
+            "OPKC-OMAA"
+          ],
+          "flight_log": [
+            {
+              "callsign": "ETD276",
+              "operator_icao": "ETD",
+              "operator_name": "Etihad Airways",
+              "is_acmi": true,
+              "route": "OMAA-OPPS",
+              "dep_time": "2026-11-16T23:01:12Z",
+              "arr_time": "2026-11-17T01:41:04Z",
+              "bh": 2.7
+            },
+            {
+              "callsign": "ETD277",
+              "operator_icao": "ETD",
+              "operator_name": "Etihad Airways",
+              "is_acmi": true,
+              "route": "OPPS-OMAA",
+              "dep_time": "2026-11-17T02:57:56Z",
+              "arr_time": "2026-11-17T05:52:09Z",
+              "bh": 2.9
+            },
+            {
+              "callsign": "ETD294",
+              "operator_icao": "ETD",
+              "operator_name": "Etihad Airways",
+              "is_acmi": true,
+              "route": "OMAA-OPKC",
+              "dep_time": "2026-11-17T10:48:47Z",
+              "arr_time": "2026-11-17T12:31:51Z",
+              "bh": 1.7
+            },
+            {
+              "callsign": "ETD295",
+              "operator_icao": "ETD",
+              "operator_name": "Etihad Airways",
+              "is_acmi": true,
+              "route": "OPKC-OMAA",
+              "dep_time": "2026-11-17T16:19:06Z",
+              "arr_time": "2026-11-17T18:10:38Z",
+              "bh": 1.9
+            },
+            {
+              "callsign": "ETD296",
+              "operator_icao": "ETD",
+              "operator_name": "Etihad Airways",
+              "is_acmi": true,
+              "route": "OMAA-OPKC",
+              "dep_time": "2026-11-17T20:00:34Z",
+              "arr_time": "2026-11-17T21:40:46Z",
+              "bh": 1.7
+            }
+          ]
+        },
+        {
+          "registration": "LY-NOW",
+          "type": "A320",
+          "owner_icao": "GJT",
+          "owner_name": "GetJet Airlines",
+          "group": "GetJet",
+          "total_flights": 5,
+          "total_bh": 12.1,
+          "acmi_flights": 5,
+          "acmi_bh": 12.1,
+          "clients": [
+            {
+              "icao": "ETD",
+              "name": "Etihad Airways",
+              "flights": 5,
+              "bh": 12.1
+            }
+          ],
+          "routes": [
+            "OPKC-OMAA",
+            "OMAA-OPKC",
+            "OMAA-HECA",
+            "HECA-OMAA"
+          ],
+          "flight_log": [
+            {
+              "callsign": "ETD297",
+              "operator_icao": "ETD",
+              "operator_name": "Etihad Airways",
+              "is_acmi": true,
+              "route": "OPKC-OMAA",
+              "dep_time": "2026-11-17T00:10:23Z",
+              "arr_time": "2026-11-17T01:59:33Z",
+              "bh": 1.8
+            },
+            {
+              "callsign": "ETD292",
+              "operator_icao": "ETD",
+              "operator_name": "Etihad Airways",
+              "is_acmi": true,
+              "route": "OMAA-OPKC",
+              "dep_time": "2026-11-17T04:39:55Z",
+              "arr_time": "2026-11-17T06:23:30Z",
+              "bh": 1.7
+            },
+            {
+              "callsign": "ETD293",
+              "operator_icao": "ETD",
+              "operator_name": "Etihad Airways",
+              "is_acmi": true,
+              "route": "OPKC-OMAA",
+              "dep_time": "2026-11-17T07:38:48Z",
+              "arr_time": "2026-11-17T09:27:42Z",
+              "bh": 1.8
+            },
+            {
+              "callsign": "ETD715",
+              "operator_icao": "ETD",
+              "operator_name": "Etihad Airways",
+              "is_acmi": true,
+              "route": "OMAA-HECA",
+              "dep_time": "2026-11-17T10:52:22Z",
+              "arr_time": "2026-11-17T14:41:08Z",
+              "bh": 3.8
+            },
+            {
+              "callsign": "ETD716",
+              "operator_icao": "ETD",
+              "operator_name": "Etihad Airways",
+              "is_acmi": true,
+              "route": "HECA-OMAA",
+              "dep_time": "2026-11-17T16:53:59Z",
+              "arr_time": "2026-11-17T19:53:05Z",
+              "bh": 3.0
+            }
+          ]
+        },
+        {
+          "registration": "LY-TAP",
+          "type": "A320",
+          "owner_icao": "GJT",
+          "owner_name": "GetJet Airlines",
+          "group": "GetJet",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "LY-TEN",
+          "type": "A320",
+          "owner_icao": "GJT",
+          "owner_name": "GetJet Airlines",
+          "group": "GetJet",
+          "total_flights": 5,
+          "total_bh": 10.5,
+          "acmi_flights": 5,
+          "acmi_bh": 10.5,
+          "clients": [
+            {
+              "icao": "ETD",
+              "name": "Etihad Airways",
+              "flights": 5,
+              "bh": 10.5
+            }
+          ],
+          "routes": [
+            "OPIS-OMAA",
+            "OMAA-OOMS",
+            "OOMS-OMAA",
+            "OMAA-OPIS"
+          ],
+          "flight_log": [
+            {
+              "callsign": "ETD303",
+              "operator_icao": "ETD",
+              "operator_name": "Etihad Airways",
+              "is_acmi": true,
+              "route": "OPIS-OMAA",
+              "dep_time": "2026-11-17T00:00:10Z",
+              "arr_time": "2026-11-17T03:04:10Z",
+              "bh": 3.1
+            },
+            {
+              "callsign": "ETD692",
+              "operator_icao": "ETD",
+              "operator_name": "Etihad Airways",
+              "is_acmi": true,
+              "route": "OMAA-OOMS",
+              "dep_time": "2026-11-17T05:40:00Z",
+              "arr_time": "2026-11-17T06:26:26Z",
+              "bh": 0.8
+            },
+            {
+              "callsign": "ETD693",
+              "operator_icao": "ETD",
+              "operator_name": "Etihad Airways",
+              "is_acmi": true,
+              "route": "OOMS-OMAA",
+              "dep_time": "2026-11-17T08:00:48Z",
+              "arr_time": "2026-11-17T08:44:06Z",
+              "bh": 0.7
+            },
+            {
+              "callsign": "ETD300",
+              "operator_icao": "ETD",
+              "operator_name": "Etihad Airways",
+              "is_acmi": true,
+              "route": "OMAA-OPIS",
+              "dep_time": "2026-11-17T10:23:33Z",
+              "arr_time": "2026-11-17T13:19:22Z",
+              "bh": 2.9
+            },
+            {
+              "callsign": "ETD301",
+              "operator_icao": "ETD",
+              "operator_name": "Etihad Airways",
+              "is_acmi": true,
+              "route": "OPIS-OMAA",
+              "dep_time": "2026-11-17T17:04:08Z",
+              "arr_time": "2026-11-17T20:04:49Z",
+              "bh": 3.0
+            }
+          ]
+        },
+        {
+          "registration": "LY-WIL",
+          "type": "A320",
+          "owner_icao": "GJT",
+          "owner_name": "GetJet Airlines",
+          "group": "GetJet",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "LY-WIZ",
+          "type": "A320",
+          "owner_icao": "GJT",
+          "owner_name": "GetJet Airlines",
+          "group": "GetJet",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "LY-WSA",
+          "type": "A321",
+          "owner_icao": "GJT",
+          "owner_name": "GetJet Airlines",
+          "group": "GetJet",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "LY-CIN",
+          "type": "B738",
+          "owner_icao": "GJT",
+          "owner_name": "GetJet Airlines",
+          "group": "GetJet",
+          "total_flights": 2,
+          "total_bh": 9.3,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [
+            "EYVI-HEGN",
+            "HEGN-EYVI"
+          ],
+          "flight_log": [
+            {
+              "callsign": "GJT72B",
+              "operator_icao": "GJT",
+              "operator_name": "GetJet Airlines",
+              "is_acmi": false,
+              "route": "EYVI-HEGN",
+              "dep_time": "2026-11-17T05:08:47Z",
+              "arr_time": "2026-11-17T09:24:23Z",
+              "bh": 4.3
+            },
+            {
+              "callsign": "GJT48P",
+              "operator_icao": "GJT",
+              "operator_name": "GetJet Airlines",
+              "is_acmi": false,
+              "route": "HEGN-EYVI",
+              "dep_time": "2026-11-17T11:02:29Z",
+              "arr_time": "2026-11-17T16:04:20Z",
+              "bh": 5.0
+            }
+          ]
+        },
+        {
+          "registration": "LY-DUE",
+          "type": "B738",
+          "owner_icao": "GJT",
+          "owner_name": "GetJet Airlines",
+          "group": "GetJet",
+          "total_flights": 4,
+          "total_bh": 11.6,
+          "acmi_flights": 4,
+          "acmi_bh": 11.6,
+          "clients": [
+            {
+              "icao": "FKH",
+              "name": "FKH",
+              "flights": 4,
+              "bh": 11.6
+            }
+          ],
+          "routes": [
+            "UZST-UZTT",
+            "UZTT-UZNU",
+            "UZNU-OEMA",
+            "OEMA-UZSK"
+          ],
+          "flight_log": [
+            {
+              "callsign": "FKH1910",
+              "operator_icao": "FKH",
+              "operator_name": "FKH",
+              "is_acmi": true,
+              "route": "UZST-UZTT",
+              "dep_time": "2026-11-17T03:37:08Z",
+              "arr_time": "2026-11-17T04:26:47Z",
+              "bh": 0.8
+            },
+            {
+              "callsign": "FKH1001",
+              "operator_icao": "FKH",
+              "operator_name": "FKH",
+              "is_acmi": true,
+              "route": "UZTT-UZNU",
+              "dep_time": "2026-11-17T05:51:37Z",
+              "arr_time": "2026-11-17T07:06:12Z",
+              "bh": 1.2
+            },
+            {
+              "callsign": "FKH7001",
+              "operator_icao": "FKH",
+              "operator_name": "FKH",
+              "is_acmi": true,
+              "route": "UZNU-OEMA",
+              "dep_time": "2026-11-17T08:42:45Z",
+              "arr_time": "2026-11-17T13:29:33Z",
+              "bh": 4.8
+            },
+            {
+              "callsign": "FKH7604",
+              "operator_icao": "FKH",
+              "operator_name": "FKH",
+              "is_acmi": true,
+              "route": "OEMA-UZSK",
+              "dep_time": "2026-11-17T15:28:17Z",
+              "arr_time": "2026-11-17T20:18:23Z",
+              "bh": 4.8
+            }
+          ]
+        },
+        {
+          "registration": "LY-KUA",
+          "type": "B738",
+          "owner_icao": "GJT",
+          "owner_name": "GetJet Airlines",
+          "group": "GetJet",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "LY-SEI",
+          "type": "B738",
+          "owner_icao": "GJT",
+          "owner_name": "GetJet Airlines",
+          "group": "GetJet",
+          "total_flights": 1,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": [
+            {
+              "callsign": null,
+              "operator_icao": null,
+              "operator_name": null,
+              "is_acmi": false,
+              "route": null,
+              "dep_time": null,
+              "arr_time": null,
+              "bh": 0.0
+            }
+          ]
+        },
+        {
+          "registration": "LY-TUI",
+          "type": "B738",
+          "owner_icao": "GJT",
+          "owner_name": "GetJet Airlines",
+          "group": "GetJet",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "LY-UNO",
+          "type": "B738",
+          "owner_icao": "GJT",
+          "owner_name": "GetJet Airlines",
+          "group": "GetJet",
+          "total_flights": 2,
+          "total_bh": 2.8,
+          "acmi_flights": 2,
+          "acmi_bh": 2.8,
+          "clients": [
+            {
+              "icao": "SZN",
+              "name": "Air Senegal",
+              "flights": 2,
+              "bh": 2.8
+            }
+          ],
+          "routes": [
+            "GOBD-GUCY",
+            "GUCY-DIAP"
+          ],
+          "flight_log": [
+            {
+              "callsign": "SZN215",
+              "operator_icao": "SZN",
+              "operator_name": "Air Senegal",
+              "is_acmi": true,
+              "route": "GOBD-GUCY",
+              "dep_time": "2026-11-17T15:59:24Z",
+              "arr_time": "2026-11-17T17:08:52Z",
+              "bh": 1.2
+            },
+            {
+              "callsign": "SZN215",
+              "operator_icao": "SZN",
+              "operator_name": "Air Senegal",
+              "is_acmi": true,
+              "route": "GUCY-DIAP",
+              "dep_time": "2026-11-17T18:24:19Z",
+              "arr_time": "2026-11-17T20:00:46Z",
+              "bh": 1.6
+            }
+          ]
+        },
+        {
+          "registration": "9H-GTS",
+          "type": "A320",
+          "owner_icao": "GJM",
+          "owner_name": "GetJet Airlines Malta",
+          "group": "GetJet",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "SP-ENG",
+          "type": "B738",
+          "owner_icao": "ENT",
+          "owner_name": "Enter Air",
+          "group": "Enter Air",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "SP-ENL",
+          "type": "B738",
+          "owner_icao": "ENT",
+          "owner_name": "Enter Air",
+          "group": "Enter Air",
+          "total_flights": 1,
+          "total_bh": 1.6,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [
+            "LFQQ-EPKK"
+          ],
+          "flight_log": [
+            {
+              "callsign": "ENT2ME",
+              "operator_icao": "ENT",
+              "operator_name": "Enter Air",
+              "is_acmi": false,
+              "route": "LFQQ-EPKK",
+              "dep_time": "2026-11-17T05:58:14Z",
+              "arr_time": "2026-11-17T07:32:20Z",
+              "bh": 1.6
+            }
+          ]
+        },
+        {
+          "registration": "SP-ENM",
+          "type": "B738",
+          "owner_icao": "ENT",
+          "owner_name": "Enter Air",
+          "group": "Enter Air",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "SP-ENN",
+          "type": "B738",
+          "owner_icao": "ENT",
+          "owner_name": "Enter Air",
+          "group": "Enter Air",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "SP-ENO",
+          "type": "B738",
+          "owner_icao": "ENT",
+          "owner_name": "Enter Air",
+          "group": "Enter Air",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "SP-ENP",
+          "type": "B738",
+          "owner_icao": "ENT",
+          "owner_name": "Enter Air",
+          "group": "Enter Air",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "SP-ENQ",
+          "type": "B738",
+          "owner_icao": "ENT",
+          "owner_name": "Enter Air",
+          "group": "Enter Air",
+          "total_flights": 4,
+          "total_bh": 11.9,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [
+            "EPKT-HEMA",
+            "HEMA-EPKT",
+            "EPKT-HESH",
+            "HESH-EPKT"
+          ],
+          "flight_log": [
+            {
+              "callsign": "ENT7597",
+              "operator_icao": "ENT",
+              "operator_name": "Enter Air",
+              "is_acmi": false,
+              "route": "EPKT-HEMA",
+              "dep_time": "2026-11-17T01:51:45Z",
+              "arr_time": "2026-11-17T05:47:29Z",
+              "bh": 3.9
+            },
+            {
+              "callsign": "ENT7598",
+              "operator_icao": "ENT",
+              "operator_name": "Enter Air",
+              "is_acmi": false,
+              "route": "HEMA-EPKT",
+              "dep_time": "2026-11-17T06:52:56Z",
+              "arr_time": "2026-11-17T11:27:47Z",
+              "bh": 4.6
+            },
+            {
+              "callsign": "ENT7175",
+              "operator_icao": "ENT",
+              "operator_name": "Enter Air",
+              "is_acmi": false,
+              "route": "EPKT-HESH",
+              "dep_time": "2026-11-17T14:13:40Z",
+              "arr_time": "2026-11-17T17:39:58Z",
+              "bh": 3.4
+            },
+            {
+              "callsign": "ENT7176",
+              "operator_icao": "ENT",
+              "operator_name": "Enter Air",
+              "is_acmi": false,
+              "route": "HESH-EPKT",
+              "dep_time": null,
+              "arr_time": "2026-11-17T23:07:52Z",
+              "bh": 0.0
+            }
+          ]
+        },
+        {
+          "registration": "SP-ENR",
+          "type": "B738",
+          "owner_icao": "ENT",
+          "owner_name": "Enter Air",
+          "group": "Enter Air",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "SP-ENT",
+          "type": "B738",
+          "owner_icao": "ENT",
+          "owner_name": "Enter Air",
+          "group": "Enter Air",
+          "total_flights": 1,
+          "total_bh": 0.6,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [
+            "EPWA-EPKT"
+          ],
+          "flight_log": [
+            {
+              "callsign": "ENT3CP",
+              "operator_icao": "ENT",
+              "operator_name": "Enter Air",
+              "is_acmi": false,
+              "route": "EPWA-EPKT",
+              "dep_time": "2026-11-17T07:52:22Z",
+              "arr_time": "2026-11-17T08:27:57Z",
+              "bh": 0.6
+            }
+          ]
+        },
+        {
+          "registration": "SP-ENU",
+          "type": "B738",
+          "owner_icao": "ENT",
+          "owner_name": "Enter Air",
+          "group": "Enter Air",
+          "total_flights": 2,
+          "total_bh": 6.6,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [
+            "EPKT-LLBG",
+            "LLBG-EPKT"
+          ],
+          "flight_log": [
+            {
+              "callsign": "ENT228",
+              "operator_icao": "ENT",
+              "operator_name": "Enter Air",
+              "is_acmi": false,
+              "route": "EPKT-LLBG",
+              "dep_time": "2026-11-16T22:44:56Z",
+              "arr_time": "2026-11-17T01:51:04Z",
+              "bh": 3.1
+            },
+            {
+              "callsign": "ENT229",
+              "operator_icao": "ENT",
+              "operator_name": "Enter Air",
+              "is_acmi": false,
+              "route": "LLBG-EPKT",
+              "dep_time": "2026-11-17T03:43:09Z",
+              "arr_time": "2026-11-17T07:14:49Z",
+              "bh": 3.5
+            }
+          ]
+        },
+        {
+          "registration": "SP-ENV",
+          "type": "B738",
+          "owner_icao": "ENT",
+          "owner_name": "Enter Air",
+          "group": "Enter Air",
+          "total_flights": 3,
+          "total_bh": 13.5,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [
+            "EPPO-HEMA",
+            "HEMA-EPBY",
+            "EPBY-HEMA"
+          ],
+          "flight_log": [
+            {
+              "callsign": "ENT4433",
+              "operator_icao": "ENT",
+              "operator_name": "Enter Air",
+              "is_acmi": false,
+              "route": "EPPO-HEMA",
+              "dep_time": "2026-11-17T04:26:09Z",
+              "arr_time": "2026-11-17T08:36:46Z",
+              "bh": 4.2
+            },
+            {
+              "callsign": "ENT4220",
+              "operator_icao": "ENT",
+              "operator_name": "Enter Air",
+              "is_acmi": false,
+              "route": "HEMA-EPBY",
+              "dep_time": "2026-11-17T09:45:46Z",
+              "arr_time": "2026-11-17T14:46:17Z",
+              "bh": 5.0
+            },
+            {
+              "callsign": "ENT4219",
+              "operator_icao": "ENT",
+              "operator_name": "Enter Air",
+              "is_acmi": false,
+              "route": "EPBY-HEMA",
+              "dep_time": "2026-11-17T17:46:42Z",
+              "arr_time": "2026-11-17T22:03:57Z",
+              "bh": 4.3
+            }
+          ]
+        },
+        {
+          "registration": "SP-ENW",
+          "type": "B738",
+          "owner_icao": "ENT",
+          "owner_name": "Enter Air",
+          "group": "Enter Air",
+          "total_flights": 3,
+          "total_bh": 7.3,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [
+            "EPWA-LLBG",
+            "LLBG-EPKT",
+            "EPKT-EPWA"
+          ],
+          "flight_log": [
+            {
+              "callsign": "ENT220",
+              "operator_icao": "ENT",
+              "operator_name": "Enter Air",
+              "is_acmi": false,
+              "route": "EPWA-LLBG",
+              "dep_time": "2026-11-16T21:59:23Z",
+              "arr_time": "2026-11-17T01:16:43Z",
+              "bh": 3.3
+            },
+            {
+              "callsign": "ENT221",
+              "operator_icao": "ENT",
+              "operator_name": "Enter Air",
+              "is_acmi": false,
+              "route": "LLBG-EPKT",
+              "dep_time": "2026-11-17T03:39:23Z",
+              "arr_time": "2026-11-17T07:10:00Z",
+              "bh": 3.5
+            },
+            {
+              "callsign": "ENT8RB",
+              "operator_icao": "ENT",
+              "operator_name": "Enter Air",
+              "is_acmi": false,
+              "route": "EPKT-EPWA",
+              "dep_time": "2026-11-17T08:02:51Z",
+              "arr_time": "2026-11-17T08:34:32Z",
+              "bh": 0.5
+            }
+          ]
+        },
+        {
+          "registration": "SP-ENX",
+          "type": "B738",
+          "owner_icao": "ENT",
+          "owner_name": "Enter Air",
+          "group": "Enter Air",
+          "total_flights": 2,
+          "total_bh": 9.4,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [
+            "EPGD-HEMA",
+            "HEMA-EPGD"
+          ],
+          "flight_log": [
+            {
+              "callsign": "ENT7225",
+              "operator_icao": "ENT",
+              "operator_name": "Enter Air",
+              "is_acmi": false,
+              "route": "EPGD-HEMA",
+              "dep_time": "2026-11-17T14:39:21Z",
+              "arr_time": "2026-11-17T19:01:12Z",
+              "bh": 4.4
+            },
+            {
+              "callsign": "ENT7226",
+              "operator_icao": "ENT",
+              "operator_name": "Enter Air",
+              "is_acmi": false,
+              "route": "HEMA-EPGD",
+              "dep_time": "2026-11-17T20:25:11Z",
+              "arr_time": "2026-11-18T01:23:57Z",
+              "bh": 5.0
+            }
+          ]
+        },
+        {
+          "registration": "SP-ENY",
+          "type": "B738",
+          "owner_icao": "ENT",
+          "owner_name": "Enter Air",
+          "group": "Enter Air",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "SP-ENZ",
+          "type": "B738",
+          "owner_icao": "ENT",
+          "owner_name": "Enter Air",
+          "group": "Enter Air",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "SP-ESA",
+          "type": "B738",
+          "owner_icao": "ENT",
+          "owner_name": "Enter Air",
+          "group": "Enter Air",
+          "total_flights": 2,
+          "total_bh": 7.8,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [
+            "EPKT-HEGN",
+            "HEGN-EPKT"
+          ],
+          "flight_log": [
+            {
+              "callsign": "ENT4035",
+              "operator_icao": "ENT",
+              "operator_name": "Enter Air",
+              "is_acmi": false,
+              "route": "EPKT-HEGN",
+              "dep_time": "2026-11-17T03:05:30Z",
+              "arr_time": "2026-11-17T06:42:45Z",
+              "bh": 3.6
+            },
+            {
+              "callsign": "ENT4036",
+              "operator_icao": "ENT",
+              "operator_name": "Enter Air",
+              "is_acmi": false,
+              "route": "HEGN-EPKT",
+              "dep_time": "2026-11-17T08:11:03Z",
+              "arr_time": "2026-11-17T12:22:09Z",
+              "bh": 4.2
+            }
+          ]
+        },
+        {
+          "registration": "SP-ESB",
+          "type": "B738",
+          "owner_icao": "ENT",
+          "owner_name": "Enter Air",
+          "group": "Enter Air",
+          "total_flights": 2,
+          "total_bh": 9.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [
+            "EPPO-HEMA",
+            "HEMA-EPPO"
+          ],
+          "flight_log": [
+            {
+              "callsign": "ENT7381",
+              "operator_icao": "ENT",
+              "operator_name": "Enter Air",
+              "is_acmi": false,
+              "route": "EPPO-HEMA",
+              "dep_time": "2026-11-17T04:10:05Z",
+              "arr_time": "2026-11-17T08:20:55Z",
+              "bh": 4.2
+            },
+            {
+              "callsign": "ENT7382",
+              "operator_icao": "ENT",
+              "operator_name": "Enter Air",
+              "is_acmi": false,
+              "route": "HEMA-EPPO",
+              "dep_time": "2026-11-17T09:22:42Z",
+              "arr_time": "2026-11-17T14:13:33Z",
+              "bh": 4.8
+            }
+          ]
+        },
+        {
+          "registration": "SP-ESC",
+          "type": "B738",
+          "owner_icao": "ENT",
+          "owner_name": "Enter Air",
+          "group": "Enter Air",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "SP-ESD",
+          "type": "B738",
+          "owner_icao": "ENT",
+          "owner_name": "Enter Air",
+          "group": "Enter Air",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "SP-ESE",
+          "type": "B738",
+          "owner_icao": "ENT",
+          "owner_name": "Enter Air",
+          "group": "Enter Air",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "SP-ESF",
+          "type": "B738",
+          "owner_icao": "ENT",
+          "owner_name": "Enter Air",
+          "group": "Enter Air",
+          "total_flights": 3,
+          "total_bh": 13.4,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [
+            "EPWA-HEGN",
+            "HEGN-HKMO",
+            "HKMO-HEGN"
+          ],
+          "flight_log": [
+            {
+              "callsign": "ENT7039",
+              "operator_icao": "ENT",
+              "operator_name": "Enter Air",
+              "is_acmi": false,
+              "route": "EPWA-HEGN",
+              "dep_time": "2026-11-17T07:44:56Z",
+              "arr_time": "2026-11-17T11:30:36Z",
+              "bh": 3.8
+            },
+            {
+              "callsign": "ENT7039",
+              "operator_icao": "ENT",
+              "operator_name": "Enter Air",
+              "is_acmi": false,
+              "route": "HEGN-HKMO",
+              "dep_time": "2026-11-17T12:58:09Z",
+              "arr_time": "2026-11-17T17:37:38Z",
+              "bh": 4.7
+            },
+            {
+              "callsign": "ENT7040",
+              "operator_icao": "ENT",
+              "operator_name": "Enter Air",
+              "is_acmi": false,
+              "route": "HKMO-HEGN",
+              "dep_time": "2026-11-17T19:02:21Z",
+              "arr_time": "2026-11-17T23:54:09Z",
+              "bh": 4.9
+            }
+          ]
+        },
+        {
+          "registration": "SP-ESG",
+          "type": "B738",
+          "owner_icao": "ENT",
+          "owner_name": "Enter Air",
+          "group": "Enter Air",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "SP-ESH",
+          "type": "B738",
+          "owner_icao": "ENT",
+          "owner_name": "Enter Air",
+          "group": "Enter Air",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "SP-ESI",
+          "type": "B738",
+          "owner_icao": "ENT",
+          "owner_name": "Enter Air",
+          "group": "Enter Air",
+          "total_flights": 4,
+          "total_bh": 15.6,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [
+            "EPKT-LLBG",
+            "LLBG-EPWA",
+            "EPWA-HEMA",
+            "HEMA-EPWA"
+          ],
+          "flight_log": [
+            {
+              "callsign": "ENT350",
+              "operator_icao": "ENT",
+              "operator_name": "Enter Air",
+              "is_acmi": false,
+              "route": "EPKT-LLBG",
+              "dep_time": "2026-11-16T23:35:50Z",
+              "arr_time": "2026-11-17T02:39:41Z",
+              "bh": 3.1
+            },
+            {
+              "callsign": "ENT351",
+              "operator_icao": "ENT",
+              "operator_name": "Enter Air",
+              "is_acmi": false,
+              "route": "LLBG-EPWA",
+              "dep_time": "2026-11-17T04:20:23Z",
+              "arr_time": "2026-11-17T08:07:09Z",
+              "bh": 3.8
+            },
+            {
+              "callsign": "ENT7029",
+              "operator_icao": "ENT",
+              "operator_name": "Enter Air",
+              "is_acmi": false,
+              "route": "EPWA-HEMA",
+              "dep_time": "2026-11-17T09:26:02Z",
+              "arr_time": "2026-11-17T13:25:57Z",
+              "bh": 4.0
+            },
+            {
+              "callsign": "ENT7030",
+              "operator_icao": "ENT",
+              "operator_name": "Enter Air",
+              "is_acmi": false,
+              "route": "HEMA-EPWA",
+              "dep_time": "2026-11-17T15:14:05Z",
+              "arr_time": "2026-11-17T19:55:52Z",
+              "bh": 4.7
+            }
+          ]
+        },
+        {
+          "registration": "SP-ESK",
+          "type": "B738",
+          "owner_icao": "ENT",
+          "owner_name": "Enter Air",
+          "group": "Enter Air",
+          "total_flights": 2,
+          "total_bh": 8.3,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [
+            "EPKT-HEMA",
+            "HEMA-EPKT"
+          ],
+          "flight_log": [
+            {
+              "callsign": "ENT7553",
+              "operator_icao": "ENT",
+              "operator_name": "Enter Air",
+              "is_acmi": false,
+              "route": "EPKT-HEMA",
+              "dep_time": "2026-11-17T00:53:54Z",
+              "arr_time": "2026-11-17T04:49:27Z",
+              "bh": 3.9
+            },
+            {
+              "callsign": "ENT7554",
+              "operator_icao": "ENT",
+              "operator_name": "Enter Air",
+              "is_acmi": false,
+              "route": "HEMA-EPKT",
+              "dep_time": "2026-11-17T05:50:59Z",
+              "arr_time": "2026-11-17T10:16:35Z",
+              "bh": 4.4
+            }
+          ]
+        },
+        {
+          "registration": "SP-ESQ",
+          "type": "B738",
+          "owner_icao": "ENT",
+          "owner_name": "Enter Air",
+          "group": "Enter Air",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "SP-EXA",
+          "type": "B38M",
+          "owner_icao": "ENT",
+          "owner_name": "Enter Air",
+          "group": "Enter Air",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "SP-EXB",
+          "type": "B38M",
+          "owner_icao": "ENT",
+          "owner_name": "Enter Air",
+          "group": "Enter Air",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "SP-EXC",
+          "type": "B38M",
+          "owner_icao": "ENT",
+          "owner_name": "Enter Air",
+          "group": "Enter Air",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "SP-EXD",
+          "type": "B38M",
+          "owner_icao": "ENT",
+          "owner_name": "Enter Air",
+          "group": "Enter Air",
+          "total_flights": 2,
+          "total_bh": 8.4,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [
+            "GVAC-EPWA",
+            "EPWA-ESKN"
+          ],
+          "flight_log": [
+            {
+              "callsign": "ENT7004",
+              "operator_icao": "ENT",
+              "operator_name": "Enter Air",
+              "is_acmi": false,
+              "route": "GVAC-EPWA",
+              "dep_time": "2026-11-17T00:59:49Z",
+              "arr_time": "2026-11-17T08:04:39Z",
+              "bh": 7.1
+            },
+            {
+              "callsign": "ENT3YM",
+              "operator_icao": "ENT",
+              "operator_name": "Enter Air",
+              "is_acmi": false,
+              "route": "EPWA-ESKN",
+              "dep_time": "2026-11-17T09:10:34Z",
+              "arr_time": "2026-11-17T10:28:52Z",
+              "bh": 1.3
+            }
+          ]
+        },
+        {
+          "registration": "SP-EXE",
+          "type": "B38M",
+          "owner_icao": "ENT",
+          "owner_name": "Enter Air",
+          "group": "Enter Air",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "SP-EXF",
+          "type": "B38M",
+          "owner_icao": "ENT",
+          "owner_name": "Enter Air",
+          "group": "Enter Air",
+          "total_flights": 2,
+          "total_bh": 10.7,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [
+            "EPWA-GCLP",
+            "GCLP-EPWA"
+          ],
+          "flight_log": [
+            {
+              "callsign": "ENT8NC",
+              "operator_icao": "ENT",
+              "operator_name": "Enter Air",
+              "is_acmi": false,
+              "route": "EPWA-GCLP",
+              "dep_time": "2026-11-17T06:09:14Z",
+              "arr_time": "2026-11-17T11:37:01Z",
+              "bh": 5.5
+            },
+            {
+              "callsign": "ENT4TG",
+              "operator_icao": "ENT",
+              "operator_name": "Enter Air",
+              "is_acmi": false,
+              "route": "GCLP-EPWA",
+              "dep_time": "2026-11-17T12:52:20Z",
+              "arr_time": "2026-11-17T18:01:20Z",
+              "bh": 5.2
+            }
+          ]
+        },
+        {
+          "registration": "SP-EXG",
+          "type": "B38M",
+          "owner_icao": "ENT",
+          "owner_name": "Enter Air",
+          "group": "Enter Air",
+          "total_flights": 2,
+          "total_bh": 9.8,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [
+            "EPKT-GCLP",
+            "GCLP-EPKT"
+          ],
+          "flight_log": [
+            {
+              "callsign": "ENT1XC",
+              "operator_icao": "ENT",
+              "operator_name": "Enter Air",
+              "is_acmi": false,
+              "route": "EPKT-GCLP",
+              "dep_time": "2026-11-17T06:56:58Z",
+              "arr_time": "2026-11-17T11:58:54Z",
+              "bh": 5.0
+            },
+            {
+              "callsign": "ENT3FG",
+              "operator_icao": "ENT",
+              "operator_name": "Enter Air",
+              "is_acmi": false,
+              "route": "GCLP-EPKT",
+              "dep_time": "2026-11-17T13:37:18Z",
+              "arr_time": "2026-11-17T18:25:58Z",
+              "bh": 4.8
+            }
+          ]
+        },
+        {
+          "registration": "SP-EXH",
+          "type": "B38M",
+          "owner_icao": "ENT",
+          "owner_name": "Enter Air",
+          "group": "Enter Air",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "SP-EXI",
+          "type": "B38M",
+          "owner_icao": "ENT",
+          "owner_name": "Enter Air",
+          "group": "Enter Air",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "SP-EXJ",
+          "type": "B38M",
+          "owner_icao": "ENT",
+          "owner_name": "Enter Air",
+          "group": "Enter Air",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "SP-EXK",
+          "type": "B38M",
+          "owner_icao": "ENT",
+          "owner_name": "Enter Air",
+          "group": "Enter Air",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "SP-EXM",
+          "type": "B38M",
+          "owner_icao": "ENT",
+          "owner_name": "Enter Air",
+          "group": "Enter Air",
+          "total_flights": 2,
+          "total_bh": 9.8,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [
+            "EPPO-GCLP",
+            "GCLP-EPPO"
+          ],
+          "flight_log": [
+            {
+              "callsign": "ENT5DM",
+              "operator_icao": "ENT",
+              "operator_name": "Enter Air",
+              "is_acmi": false,
+              "route": "EPPO-GCLP",
+              "dep_time": "2026-11-17T12:27:02Z",
+              "arr_time": "2026-11-17T17:38:56Z",
+              "bh": 5.2
+            },
+            {
+              "callsign": "ENT6MT",
+              "operator_icao": "ENT",
+              "operator_name": "Enter Air",
+              "is_acmi": false,
+              "route": "GCLP-EPPO",
+              "dep_time": "2026-11-17T18:50:45Z",
+              "arr_time": "2026-11-17T23:23:55Z",
+              "bh": 4.6
+            }
+          ]
+        },
+        {
+          "registration": "OK-SWA",
+          "type": "B38M",
+          "owner_icao": "TVS",
+          "owner_name": "Smartwings",
+          "group": "Smartwings",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "OK-SWB",
+          "type": "B38M",
+          "owner_icao": "TVS",
+          "owner_name": "Smartwings",
+          "group": "Smartwings",
+          "total_flights": 1,
+          "total_bh": 7.1,
+          "acmi_flights": 1,
+          "acmi_bh": 7.1,
+          "clients": [
+            {
+              "icao": "TVP",
+              "name": "Smartwings Poland",
+              "flights": 1,
+              "bh": 7.1
+            }
+          ],
+          "routes": [
+            "GVAC-EPWA"
+          ],
+          "flight_log": [
+            {
+              "callsign": "TVP7605",
+              "operator_icao": "TVP",
+              "operator_name": "Smartwings Poland",
+              "is_acmi": true,
+              "route": "GVAC-EPWA",
+              "dep_time": "2026-11-16T22:31:29Z",
+              "arr_time": "2026-11-17T05:35:26Z",
+              "bh": 7.1
+            }
+          ]
+        },
+        {
+          "registration": "OK-SWC",
+          "type": "B38M",
+          "owner_icao": "TVS",
+          "owner_name": "Smartwings",
+          "group": "Smartwings",
+          "total_flights": 2,
+          "total_bh": 8.4,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [
+            "LKPR-LPMA",
+            "LPMA-LKPR"
+          ],
+          "flight_log": [
+            {
+              "callsign": "TVS6N7",
+              "operator_icao": "TVS",
+              "operator_name": "Smartwings",
+              "is_acmi": false,
+              "route": "LKPR-LPMA",
+              "dep_time": "2026-11-17T11:21:50Z",
+              "arr_time": "2026-11-17T15:58:58Z",
+              "bh": 4.6
+            },
+            {
+              "callsign": "TVS6P7",
+              "operator_icao": "TVS",
+              "operator_name": "Smartwings",
+              "is_acmi": false,
+              "route": "LPMA-LKPR",
+              "dep_time": "2026-11-17T16:58:31Z",
+              "arr_time": "2026-11-17T20:45:36Z",
+              "bh": 3.8
+            }
+          ]
+        },
+        {
+          "registration": "OK-SWD",
+          "type": "B38M",
+          "owner_icao": "TVS",
+          "owner_name": "Smartwings",
+          "group": "Smartwings",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "OK-SWE",
+          "type": "B38M",
+          "owner_icao": "TVS",
+          "owner_name": "Smartwings",
+          "group": "Smartwings",
+          "total_flights": 2,
+          "total_bh": 8.8,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [
+            "LKPR-GCRR",
+            "GCRR-LKPR"
+          ],
+          "flight_log": [
+            {
+              "callsign": "TVS26M",
+              "operator_icao": "TVS",
+              "operator_name": "Smartwings",
+              "is_acmi": false,
+              "route": "LKPR-GCRR",
+              "dep_time": "2026-11-17T11:12:38Z",
+              "arr_time": "2026-11-17T15:40:10Z",
+              "bh": 4.5
+            },
+            {
+              "callsign": "TVS27N",
+              "operator_icao": "TVS",
+              "operator_name": "Smartwings",
+              "is_acmi": false,
+              "route": "GCRR-LKPR",
+              "dep_time": "2026-11-17T17:18:45Z",
+              "arr_time": "2026-11-17T21:37:07Z",
+              "bh": 4.3
+            }
+          ]
+        },
+        {
+          "registration": "OK-SWF",
+          "type": "B38M",
+          "owner_icao": "TVS",
+          "owner_name": "Smartwings",
+          "group": "Smartwings",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "OK-SWG",
+          "type": "B38M",
+          "owner_icao": "TVS",
+          "owner_name": "Smartwings",
+          "group": "Smartwings",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "OK-SWH",
+          "type": "B38M",
+          "owner_icao": "TVS",
+          "owner_name": "Smartwings",
+          "group": "Smartwings",
+          "total_flights": 3,
+          "total_bh": 13.0,
+          "acmi_flights": 3,
+          "acmi_bh": 13.0,
+          "clients": [
+            {
+              "icao": "TVP",
+              "name": "Smartwings Poland",
+              "flights": 3,
+              "bh": 13.0
+            }
+          ],
+          "routes": [
+            "EPKT-HEGN",
+            "HEGN-HKMO",
+            "HKMO-HEGN"
+          ],
+          "flight_log": [
+            {
+              "callsign": "TVP7632",
+              "operator_icao": "TVP",
+              "operator_name": "Smartwings Poland",
+              "is_acmi": true,
+              "route": "EPKT-HEGN",
+              "dep_time": "2026-11-17T06:49:22Z",
+              "arr_time": "2026-11-17T10:31:12Z",
+              "bh": 3.7
+            },
+            {
+              "callsign": "TVP7632",
+              "operator_icao": "TVP",
+              "operator_name": "Smartwings Poland",
+              "is_acmi": true,
+              "route": "HEGN-HKMO",
+              "dep_time": "2026-11-17T12:07:20Z",
+              "arr_time": "2026-11-17T16:47:46Z",
+              "bh": 4.7
+            },
+            {
+              "callsign": "TVP7633",
+              "operator_icao": "TVP",
+              "operator_name": "Smartwings Poland",
+              "is_acmi": true,
+              "route": "HKMO-HEGN",
+              "dep_time": "2026-11-17T18:10:33Z",
+              "arr_time": "2026-11-17T22:46:19Z",
+              "bh": 4.6
+            }
+          ]
+        },
+        {
+          "registration": "OK-SWI",
+          "type": "B38M",
+          "owner_icao": "TVS",
+          "owner_name": "Smartwings",
+          "group": "Smartwings",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "OK-SWJ",
+          "type": "B38M",
+          "owner_icao": "TVS",
+          "owner_name": "Smartwings",
+          "group": "Smartwings",
+          "total_flights": 3,
+          "total_bh": 12.9,
+          "acmi_flights": 3,
+          "acmi_bh": 12.9,
+          "clients": [
+            {
+              "icao": "TVP",
+              "name": "Smartwings Poland",
+              "flights": 3,
+              "bh": 12.9
+            }
+          ],
+          "routes": [
+            "EPWA-HEGN",
+            "HEGN-HKMO",
+            "HKMO-HEGN"
+          ],
+          "flight_log": [
+            {
+              "callsign": "TVP7640",
+              "operator_icao": "TVP",
+              "operator_name": "Smartwings Poland",
+              "is_acmi": true,
+              "route": "EPWA-HEGN",
+              "dep_time": "2026-11-17T08:16:38Z",
+              "arr_time": "2026-11-17T12:00:05Z",
+              "bh": 3.7
+            },
+            {
+              "callsign": "TVP7640",
+              "operator_icao": "TVP",
+              "operator_name": "Smartwings Poland",
+              "is_acmi": true,
+              "route": "HEGN-HKMO",
+              "dep_time": "2026-11-17T13:27:18Z",
+              "arr_time": "2026-11-17T18:01:42Z",
+              "bh": 4.6
+            },
+            {
+              "callsign": "TVP7641",
+              "operator_icao": "TVP",
+              "operator_name": "Smartwings Poland",
+              "is_acmi": true,
+              "route": "HKMO-HEGN",
+              "dep_time": "2026-11-17T19:27:04Z",
+              "arr_time": "2026-11-18T00:06:03Z",
+              "bh": 4.6
+            }
+          ]
+        },
+        {
+          "registration": "OK-TSE",
+          "type": "B738",
+          "owner_icao": "TVS",
+          "owner_name": "Smartwings",
+          "group": "Smartwings",
+          "total_flights": 8,
+          "total_bh": 10.6,
+          "acmi_flights": 8,
+          "acmi_bh": 10.6,
+          "clients": [
+            {
+              "icao": "CRC",
+              "name": "Camair-Co",
+              "flights": 8,
+              "bh": 10.6
+            }
+          ],
+          "routes": [
+            "FBSK-FKYS",
+            "FKYS-FKKD",
+            "FKKD-FOOL",
+            "FOOL-DBBB",
+            "DBBB-FOOL",
+            "FOOL-FKKD",
+            "FKKD-FCBB",
+            "FCBB-FKKD"
+          ],
+          "flight_log": [
+            {
+              "callsign": "CRC1711",
+              "operator_icao": "CRC",
+              "operator_name": "Camair-Co",
+              "is_acmi": true,
+              "route": "FBSK-FKYS",
+              "dep_time": "2026-11-16T21:54:57Z",
+              "arr_time": "2026-11-17T03:20:50Z",
+              "bh": 5.4
+            },
+            {
+              "callsign": "CRC1711",
+              "operator_icao": "CRC",
+              "operator_name": "Camair-Co",
+              "is_acmi": true,
+              "route": "FKYS-FKKD",
+              "dep_time": "2026-11-17T04:06:17Z",
+              "arr_time": "2026-11-17T04:32:22Z",
+              "bh": 0.4
+            },
+            {
+              "callsign": "CRC306",
+              "operator_icao": "CRC",
+              "operator_name": "Camair-Co",
+              "is_acmi": true,
+              "route": "FKKD-FOOL",
+              "dep_time": "2026-11-17T08:10:55Z",
+              "arr_time": null,
+              "bh": 0.0
+            },
+            {
+              "callsign": "CRC306",
+              "operator_icao": "CRC",
+              "operator_name": "Camair-Co",
+              "is_acmi": true,
+              "route": "FOOL-DBBB",
+              "dep_time": null,
+              "arr_time": "2026-11-17T11:17:51Z",
+              "bh": 0.0
+            },
+            {
+              "callsign": "CRC307",
+              "operator_icao": "CRC",
+              "operator_name": "Camair-Co",
+              "is_acmi": true,
+              "route": "DBBB-FOOL",
+              "dep_time": "2026-11-17T12:40:55Z",
+              "arr_time": "2026-11-17T14:14:14Z",
+              "bh": 1.6
+            },
+            {
+              "callsign": "CRC307",
+              "operator_icao": "CRC",
+              "operator_name": "Camair-Co",
+              "is_acmi": true,
+              "route": "FOOL-FKKD",
+              "dep_time": null,
+              "arr_time": "2026-11-17T15:54:04Z",
+              "bh": 0.0
+            },
+            {
+              "callsign": "CRC310",
+              "operator_icao": "CRC",
+              "operator_name": "Camair-Co",
+              "is_acmi": true,
+              "route": "FKKD-FCBB",
+              "dep_time": "2026-11-17T17:12:32Z",
+              "arr_time": "2026-11-17T18:50:34Z",
+              "bh": 1.6
+            },
+            {
+              "callsign": "CRC311",
+              "operator_icao": "CRC",
+              "operator_name": "Camair-Co",
+              "is_acmi": true,
+              "route": "FCBB-FKKD",
+              "dep_time": "2026-11-17T19:50:21Z",
+              "arr_time": "2026-11-17T21:23:39Z",
+              "bh": 1.6
+            }
+          ]
+        },
+        {
+          "registration": "OK-TSF",
+          "type": "B738",
+          "owner_icao": "TVS",
+          "owner_name": "Smartwings",
+          "group": "Smartwings",
+          "total_flights": 2,
+          "total_bh": 5.7,
+          "acmi_flights": 2,
+          "acmi_bh": 5.7,
+          "clients": [
+            {
+              "icao": "ISR",
+              "name": "Israir",
+              "flights": 2,
+              "bh": 5.7
+            }
+          ],
+          "routes": [
+            "LKPR-LLBG",
+            "LLBG-UGTB"
+          ],
+          "flight_log": [
+            {
+              "callsign": "ISR762",
+              "operator_icao": "ISR",
+              "operator_name": "Israir",
+              "is_acmi": true,
+              "route": "LKPR-LLBG",
+              "dep_time": "2026-11-17T14:44:06Z",
+              "arr_time": "2026-11-17T18:05:51Z",
+              "bh": 3.4
+            },
+            {
+              "callsign": "ISR897",
+              "operator_icao": "ISR",
+              "operator_name": "Israir",
+              "is_acmi": true,
+              "route": "LLBG-UGTB",
+              "dep_time": "2026-11-17T19:26:18Z",
+              "arr_time": "2026-11-17T21:46:18Z",
+              "bh": 2.3
+            }
+          ]
+        },
+        {
+          "registration": "OK-TSO",
+          "type": "B738",
+          "owner_icao": "TVS",
+          "owner_name": "Smartwings",
+          "group": "Smartwings",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "OK-TSU",
+          "type": "B738",
+          "owner_icao": "TVS",
+          "owner_name": "Smartwings",
+          "group": "Smartwings",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "OK-TSD",
+          "type": "B738",
+          "owner_icao": "TVS",
+          "owner_name": "Smartwings",
+          "group": "Smartwings",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "OK-TVH",
+          "type": "B738",
+          "owner_icao": "TVS",
+          "owner_name": "Smartwings",
+          "group": "Smartwings",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "OK-TVJ",
+          "type": "B738",
+          "owner_icao": "TVS",
+          "owner_name": "Smartwings",
+          "group": "Smartwings",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "OK-TVL",
+          "type": "B738",
+          "owner_icao": "TVS",
+          "owner_name": "Smartwings",
+          "group": "Smartwings",
+          "total_flights": 2,
+          "total_bh": 2.7,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [
+            "LKPR-LFPG",
+            "LFPG-LKPR"
+          ],
+          "flight_log": [
+            {
+              "callsign": "TVS2DZ",
+              "operator_icao": "TVS",
+              "operator_name": "Smartwings",
+              "is_acmi": false,
+              "route": "LKPR-LFPG",
+              "dep_time": "2026-11-17T11:32:13Z",
+              "arr_time": "2026-11-17T13:01:19Z",
+              "bh": 1.5
+            },
+            {
+              "callsign": "TVS1DZ",
+              "operator_icao": "TVS",
+              "operator_name": "Smartwings",
+              "is_acmi": false,
+              "route": "LFPG-LKPR",
+              "dep_time": "2026-11-17T14:23:46Z",
+              "arr_time": "2026-11-17T15:37:34Z",
+              "bh": 1.2
+            }
+          ]
+        },
+        {
+          "registration": "OK-TVR",
+          "type": "B738",
+          "owner_icao": "TVS",
+          "owner_name": "Smartwings",
+          "group": "Smartwings",
+          "total_flights": 2,
+          "total_bh": 8.8,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [
+            "LKPR-HEMA",
+            "HEMA-LKPR"
+          ],
+          "flight_log": [
+            {
+              "callsign": "TVS5NR",
+              "operator_icao": "TVS",
+              "operator_name": "Smartwings",
+              "is_acmi": false,
+              "route": "LKPR-HEMA",
+              "dep_time": "2026-11-17T12:38:55Z",
+              "arr_time": "2026-11-17T16:44:03Z",
+              "bh": 4.1
+            },
+            {
+              "callsign": "TVS6NR",
+              "operator_icao": "TVS",
+              "operator_name": "Smartwings",
+              "is_acmi": false,
+              "route": "HEMA-LKPR",
+              "dep_time": "2026-11-17T17:51:02Z",
+              "arr_time": "2026-11-17T22:30:30Z",
+              "bh": 4.7
+            }
+          ]
+        },
+        {
+          "registration": "OK-TVS",
+          "type": "B738",
+          "owner_icao": "TVS",
+          "owner_name": "Smartwings",
+          "group": "Smartwings",
+          "total_flights": 3,
+          "total_bh": 4.4,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [
+            "LKPR-LDZA",
+            "LDZA-LIRI",
+            "LIRI-EVRA"
+          ],
+          "flight_log": [
+            {
+              "callsign": "TVS4575",
+              "operator_icao": "TVS",
+              "operator_name": "Smartwings",
+              "is_acmi": false,
+              "route": "LKPR-LDZA",
+              "dep_time": "2026-11-17T13:14:16Z",
+              "arr_time": "2026-11-17T14:04:48Z",
+              "bh": 0.8
+            },
+            {
+              "callsign": "TVS4573",
+              "operator_icao": "TVS",
+              "operator_name": "Smartwings",
+              "is_acmi": false,
+              "route": "LDZA-LIRI",
+              "dep_time": "2026-11-17T15:05:41Z",
+              "arr_time": "2026-11-17T16:06:27Z",
+              "bh": 1.0
+            },
+            {
+              "callsign": "TVS4571",
+              "operator_icao": "TVS",
+              "operator_name": "Smartwings",
+              "is_acmi": false,
+              "route": "LIRI-EVRA",
+              "dep_time": "2026-11-17T17:19:08Z",
+              "arr_time": "2026-11-17T19:57:02Z",
+              "bh": 2.6
+            }
+          ]
+        },
+        {
+          "registration": "OK-TVT",
+          "type": "B738",
+          "owner_icao": "TVS",
+          "owner_name": "Smartwings",
+          "group": "Smartwings",
+          "total_flights": 4,
+          "total_bh": 2.4,
+          "acmi_flights": 4,
+          "acmi_bh": 2.4,
+          "clients": [
+            {
+              "icao": "CCM",
+              "name": "CCM",
+              "flights": 4,
+              "bh": 2.4
+            }
+          ],
+          "routes": [
+            "LFKB-LFMN",
+            "LFMN-LFKB"
+          ],
+          "flight_log": [
+            {
+              "callsign": "CCM56NZ",
+              "operator_icao": "CCM",
+              "operator_name": "CCM",
+              "is_acmi": true,
+              "route": "LFKB-LFMN",
+              "dep_time": "2026-11-17T13:38:44Z",
+              "arr_time": "2026-11-17T14:18:49Z",
+              "bh": 0.7
+            },
+            {
+              "callsign": "CCM42VO",
+              "operator_icao": "CCM",
+              "operator_name": "CCM",
+              "is_acmi": true,
+              "route": "LFMN-LFKB",
+              "dep_time": "2026-11-17T16:47:59Z",
+              "arr_time": "2026-11-17T17:21:29Z",
+              "bh": 0.6
+            },
+            {
+              "callsign": "CCM20XQ",
+              "operator_icao": "CCM",
+              "operator_name": "CCM",
+              "is_acmi": true,
+              "route": "LFKB-LFMN",
+              "dep_time": "2026-11-17T18:34:01Z",
+              "arr_time": "2026-11-17T19:08:31Z",
+              "bh": 0.6
+            },
+            {
+              "callsign": "CCM76XG",
+              "operator_icao": "CCM",
+              "operator_name": "CCM",
+              "is_acmi": true,
+              "route": "LFMN-LFKB",
+              "dep_time": "2026-11-17T19:59:35Z",
+              "arr_time": "2026-11-17T20:32:25Z",
+              "bh": 0.5
+            }
+          ]
+        },
+        {
+          "registration": "OK-TVU",
+          "type": "B738",
+          "owner_icao": "TVS",
+          "owner_name": "Smartwings",
+          "group": "Smartwings",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "OK-TVV",
+          "type": "B738",
+          "owner_icao": "TVS",
+          "owner_name": "Smartwings",
+          "group": "Smartwings",
+          "total_flights": 4,
+          "total_bh": 17.2,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [
+            "LKPR-HEGN",
+            "HEGN-HKMO",
+            "HKMO-HEGN",
+            "HEGN-LKPR"
+          ],
+          "flight_log": [
+            {
+              "callsign": "TVS4118",
+              "operator_icao": "TVS",
+              "operator_name": "Smartwings",
+              "is_acmi": false,
+              "route": "LKPR-HEGN",
+              "dep_time": "2026-11-17T00:42:15Z",
+              "arr_time": "2026-11-17T04:24:49Z",
+              "bh": 3.7
+            },
+            {
+              "callsign": "TVS4118",
+              "operator_icao": "TVS",
+              "operator_name": "Smartwings",
+              "is_acmi": false,
+              "route": "HEGN-HKMO",
+              "dep_time": "2026-11-17T06:02:30Z",
+              "arr_time": "2026-11-17T10:37:05Z",
+              "bh": 4.6
+            },
+            {
+              "callsign": "TVS4119",
+              "operator_icao": "TVS",
+              "operator_name": "Smartwings",
+              "is_acmi": false,
+              "route": "HKMO-HEGN",
+              "dep_time": "2026-11-17T12:11:39Z",
+              "arr_time": "2026-11-17T16:48:45Z",
+              "bh": 4.6
+            },
+            {
+              "callsign": "TVS4119",
+              "operator_icao": "TVS",
+              "operator_name": "Smartwings",
+              "is_acmi": false,
+              "route": "HEGN-LKPR",
+              "dep_time": "2026-11-17T18:14:56Z",
+              "arr_time": "2026-11-17T22:34:44Z",
+              "bh": 4.3
+            }
+          ]
+        },
+        {
+          "registration": "G-POWK",
+          "type": "A320",
+          "owner_icao": "AWC",
+          "owner_name": "Titan Airways",
+          "group": "Titan Airways",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "G-POWM",
+          "type": "A320",
+          "owner_icao": "AWC",
+          "owner_name": "Titan Airways",
+          "group": "Titan Airways",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "G-POWN",
+          "type": "A321",
+          "owner_icao": "AWC",
+          "owner_name": "Titan Airways",
+          "group": "Titan Airways",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "G-POWU",
+          "type": "A321",
+          "owner_icao": "AWC",
+          "owner_name": "Titan Airways",
+          "group": "Titan Airways",
+          "total_flights": 3,
+          "total_bh": 2.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [
+            "EGSS-LFPG",
+            "LFPG-EGKK",
+            "EGKK-EGSS"
+          ],
+          "flight_log": [
+            {
+              "callsign": "AWC941",
+              "operator_icao": "AWC",
+              "operator_name": "Titan Airways",
+              "is_acmi": false,
+              "route": "EGSS-LFPG",
+              "dep_time": "2026-11-17T08:17:09Z",
+              "arr_time": "2026-11-17T09:11:04Z",
+              "bh": 0.9
+            },
+            {
+              "callsign": "AWC942",
+              "operator_icao": "AWC",
+              "operator_name": "Titan Airways",
+              "is_acmi": false,
+              "route": "LFPG-EGKK",
+              "dep_time": "2026-11-17T11:19:39Z",
+              "arr_time": "2026-11-17T11:59:23Z",
+              "bh": 0.7
+            },
+            {
+              "callsign": "AWC94W",
+              "operator_icao": "AWC",
+              "operator_name": "Titan Airways",
+              "is_acmi": false,
+              "route": "EGKK-EGSS",
+              "dep_time": "2026-11-17T12:55:56Z",
+              "arr_time": "2026-11-17T13:21:46Z",
+              "bh": 0.4
+            }
+          ]
+        },
+        {
+          "registration": "G-GBNI",
+          "type": "A321N",
+          "owner_icao": "AWC",
+          "owner_name": "Titan Airways",
+          "group": "Titan Airways",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "G-OATW",
+          "type": "A321N",
+          "owner_icao": "AWC",
+          "owner_name": "Titan Airways",
+          "group": "Titan Airways",
+          "total_flights": 1,
+          "total_bh": 6.9,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [
+            "VIAG-HKJK"
+          ],
+          "flight_log": [
+            {
+              "callsign": "AWC610",
+              "operator_icao": "AWC",
+              "operator_name": "Titan Airways",
+              "is_acmi": false,
+              "route": "VIAG-HKJK",
+              "dep_time": "2026-11-17T03:45:10Z",
+              "arr_time": "2026-11-17T10:37:12Z",
+              "bh": 6.9
+            }
+          ]
+        },
+        {
+          "registration": "G-XATW",
+          "type": "A321N",
+          "owner_icao": "AWC",
+          "owner_name": "Titan Airways",
+          "group": "Titan Airways",
+          "total_flights": 1,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [
+            "HELX-HECA"
+          ],
+          "flight_log": [
+            {
+              "callsign": "AWC672",
+              "operator_icao": "AWC",
+              "operator_name": "Titan Airways",
+              "is_acmi": false,
+              "route": "HELX-HECA",
+              "dep_time": null,
+              "arr_time": "2026-11-17T07:58:37Z",
+              "bh": 0.0
+            }
+          ]
+        },
+        {
+          "registration": "G-POWX",
+          "type": "E190",
+          "owner_icao": "AWC",
+          "owner_name": "Titan Airways",
+          "group": "Titan Airways",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "9H-ZTB",
+          "type": "A321F",
+          "owner_icao": "TMT",
+          "owner_name": "Titan Airways Malta",
+          "group": "Titan Airways",
+          "total_flights": 2,
+          "total_bh": 1.9,
+          "acmi_flights": 2,
+          "acmi_bh": 1.9,
+          "clients": [
+            {
+              "icao": "BCS",
+              "name": "EAT Leipzig",
+              "flights": 2,
+              "bh": 1.9
+            }
+          ],
+          "routes": [
+            "LKTB-EDDP",
+            "EDDP-EKBI"
+          ],
+          "flight_log": [
+            {
+              "callsign": "BCS1YM",
+              "operator_icao": "BCS",
+              "operator_name": "EAT Leipzig",
+              "is_acmi": true,
+              "route": "LKTB-EDDP",
+              "dep_time": "2026-11-16T21:12:17Z",
+              "arr_time": "2026-11-16T21:58:25Z",
+              "bh": 0.8
+            },
+            {
+              "callsign": "BCS3844",
+              "operator_icao": "BCS",
+              "operator_name": "EAT Leipzig",
+              "is_acmi": true,
+              "route": "EDDP-EKBI",
+              "dep_time": "2026-11-17T04:31:48Z",
+              "arr_time": "2026-11-17T05:35:31Z",
+              "bh": 1.1
+            }
+          ]
+        },
+        {
+          "registration": "9H-ZTC",
+          "type": "A321F",
+          "owner_icao": "TMT",
+          "owner_name": "Titan Airways Malta",
+          "group": "Titan Airways",
+          "total_flights": 2,
+          "total_bh": 3.3,
+          "acmi_flights": 2,
+          "acmi_bh": 3.3,
+          "clients": [
+            {
+              "icao": "BCS",
+              "name": "EAT Leipzig",
+              "flights": 2,
+              "bh": 3.3
+            }
+          ],
+          "routes": [
+            "LFRS-EDDP",
+            "EDDP-LFRS"
+          ],
+          "flight_log": [
+            {
+              "callsign": "BCS43A",
+              "operator_icao": "BCS",
+              "operator_name": "EAT Leipzig",
+              "is_acmi": true,
+              "route": "LFRS-EDDP",
+              "dep_time": "2026-11-16T21:22:54Z",
+              "arr_time": "2026-11-16T22:54:07Z",
+              "bh": 1.5
+            },
+            {
+              "callsign": "BCS7DP",
+              "operator_icao": "BCS",
+              "operator_name": "EAT Leipzig",
+              "is_acmi": true,
+              "route": "EDDP-LFRS",
+              "dep_time": "2026-11-17T03:29:31Z",
+              "arr_time": "2026-11-17T05:19:49Z",
+              "bh": 1.8
+            }
+          ]
+        },
+        {
+          "registration": "9H-ZTD",
+          "type": "A321F",
+          "owner_icao": "TMT",
+          "owner_name": "Titan Airways Malta",
+          "group": "Titan Airways",
+          "total_flights": 1,
+          "total_bh": 2.0,
+          "acmi_flights": 1,
+          "acmi_bh": 2.0,
+          "clients": [
+            {
+              "icao": "BCS",
+              "name": "EAT Leipzig",
+              "flights": 1,
+              "bh": 2.0
+            }
+          ],
+          "routes": [
+            "EDDP-EIDW"
+          ],
+          "flight_log": [
+            {
+              "callsign": "BCS2882",
+              "operator_icao": "BCS",
+              "operator_name": "EAT Leipzig",
+              "is_acmi": true,
+              "route": "EDDP-EIDW",
+              "dep_time": "2026-11-17T03:31:50Z",
+              "arr_time": "2026-11-17T05:31:52Z",
+              "bh": 2.0
+            }
+          ]
+        },
+        {
+          "registration": "OM-EDB",
+          "type": "B738F",
+          "owner_icao": "AXQ",
+          "owner_name": "AirExplore",
+          "group": "AirExplore",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "OM-EDC",
+          "type": "B738F",
+          "owner_icao": "AXQ",
+          "owner_name": "AirExplore",
+          "group": "AirExplore",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "OM-EDD",
+          "type": "B738F",
+          "owner_icao": "AXQ",
+          "owner_name": "AirExplore",
+          "group": "AirExplore",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "OM-EDH",
+          "type": "B738F",
+          "owner_icao": "AXQ",
+          "owner_name": "AirExplore",
+          "group": "AirExplore",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "OM-IEX",
+          "type": "B738",
+          "owner_icao": "AXQ",
+          "owner_name": "AirExplore",
+          "group": "AirExplore",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "OM-JEX",
+          "type": "B738",
+          "owner_icao": "AXQ",
+          "owner_name": "AirExplore",
+          "group": "AirExplore",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "OM-KEX",
+          "type": "B738",
+          "owner_icao": "AXQ",
+          "owner_name": "AirExplore",
+          "group": "AirExplore",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "OM-LEX",
+          "type": "B738",
+          "owner_icao": "AXQ",
+          "owner_name": "AirExplore",
+          "group": "AirExplore",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "OM-MEX",
+          "type": "B738",
+          "owner_icao": "AXQ",
+          "owner_name": "AirExplore",
+          "group": "AirExplore",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        },
+        {
+          "registration": "OM-NEX",
+          "type": "B738",
+          "owner_icao": "AXQ",
+          "owner_name": "AirExplore",
+          "group": "AirExplore",
+          "total_flights": 0,
+          "total_bh": 0.0,
+          "acmi_flights": 0,
+          "acmi_bh": 0.0,
+          "clients": [],
+          "routes": [],
+          "flight_log": []
+        }
+      ]
+    },
+    {
       "last_updated": "2026-11-17 11:47 LT",
       "report_date": "2026-11-16",
       "interval_from": "2026-11-16 00:01",
